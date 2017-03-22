@@ -1,0 +1,79 @@
+{
+	"_version": "1.0.0",
+	"sap.app": {
+		"_version": "1.0.0",
+		"id": "cmsfrontend",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+	    "dataSources": {
+    	}
+	},
+	"sap.ui": {
+		"_version": "1.0.0",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal",
+			"sap_belize"
+		],
+		"fullWidth" : true
+	},
+	"sap.ui5": {
+		"_version": "1.0.0",
+		"rootView": {
+			"viewName": "cmsfrontend.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.40.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "cmsfrontend.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+	      	"config" : {
+	      		"routerClass": "sap.m.routing.Router",
+				"viewType" : "XML",
+				"viewPath" : "cmsfrontend.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages"
+			},
+			"routes" : [
+				{
+					"pattern" : "",
+					"name" : "login",
+					"target" : "login",
+					"targetControl": "idAppControl"
+				}
+			],
+			"targets" : {
+				"login" : {
+					"viewName" : "Login"
+				}
+			}
+	    }
+	}
+}
