@@ -21,7 +21,6 @@ sap.ui.define([
 
     onPressLogOn: function onPressLogOn(oControlEvent) {
       var oLoginModel = this.getView().getModel();
-      console.log(oLoginModel.getJSON());
 
       $.ajax({
         url: 'https://isdb-cms-api.herokuapp.com/api/v1/sessions/',
