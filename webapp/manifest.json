@@ -10,8 +10,8 @@
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
-      "dataSources": {
-      }
+    "dataSources": {
+    }
   },
   "sap.ui": {
     "_version": "1.0.0",
@@ -54,12 +54,15 @@
       }
     },
     "routing": {
-          "config" : {
-            "routerClass": "sap.m.routing.Router",
+      "config" : {
+        "routerClass": "sap.m.routing.Router",
         "viewType" : "XML",
         "viewPath" : "cmsfrontend.view",
         "controlId": "idAppControl",
-        "controlAggregation": "pages"
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        }
       },
       "routes" : [
         {
@@ -72,8 +75,11 @@
       "targets" : {
         "login" : {
           "viewName" : "Login"
+        },
+        "notFound": {
+          "viewName": "NotFound"
         }
       }
-      }
+    }
   }
 }

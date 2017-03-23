@@ -1,0 +1,233 @@
+<mvc:View
+    controllerName="cmsfrontend.controller.old.ConIndOverview"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+    >
+  <VBox alignItems="Center" >
+    <items>
+      <l:HorizontalLayout width="1024px" >
+        <l:content>
+          <!-- Left Vertical Layout -->
+          <l:VerticalLayout
+              width="307px"
+              class="sapUiTinyMargin"
+              >
+            <l:content>
+              <!-- Profile Image -->
+              <Panel class="sapUiMediumMarginTopBottom sapUiNoContentPadding">
+                <headerToolbar>
+                  <Toolbar>
+                    <l:VerticalLayout>
+                      <l:content>
+                        <Title text="DACON Registration" />
+                        <Text text="Individual" />
+                      </l:content>
+                    </l:VerticalLayout>
+                  </Toolbar>
+                </headerToolbar>
+                <content>
+                  <StandardListItem
+                      class="sapThemeHighlight-asColor"
+                      title="{mock>/individual/name}"
+                      />
+                  <Image
+                    src="{mock>/individual/img}"
+                    class="sapUiTinyMarginBottom"
+                    width="307px"
+                    densityAware="false"
+                    />
+                </content>
+              </Panel><!-- // Profile Image -->
+
+              <!-- Quick Links -->
+              <Panel class="sapUiMediumMarginTopBottom sapUiNoContentPadding">
+                <headerToolbar>
+                  <Toolbar>
+                    <Title text="Quick Links" />
+                  </Toolbar>
+                </headerToolbar>
+                <content>
+                  <StandardListItem
+                      title="Update Registration"
+                      description="Optional Subtitle"
+                      />
+                  <StandardListItem
+                      title="Manage Contracts"
+                      description="Optional Subtitle"
+                      />
+                  <StandardListItem
+                      title="Create Invoice"
+                      description="Optional Subtitle"
+                      />
+                </content>
+              </Panel><!-- // Quick Links -->
+
+            </l:content>
+          </l:VerticalLayout>
+
+          <l:VerticalLayout
+              width="717px"
+              class="sapUiTinyMargin"
+              >
+            <l:content>
+
+              <!-- IEOI Table -->
+              <Panel class="sapUiMediumMarginTopBottom sapUiNoContentPadding">
+                <headerToolbar>
+                  <Toolbar>
+                    <l:VerticalLayout
+                        >
+                      <l:content>
+                        <Title text="New IEOIs" />
+                        <Text
+                            text="Invitation for Expression of Interest"
+                            class="sapUiTinyMarginTopAndBottom"
+                            />
+                      </l:content>
+                    </l:VerticalLayout>
+                  </Toolbar>
+                </headerToolbar>
+                <content>
+
+                  <Table
+                      class="sapUiTinyMarginBelow"
+                      items="{
+                          path: 'mock>/individual/ieoi'
+                        }"
+                      footerText="{
+                          parts: [
+                            'i18n>tableFooter',
+                            'mock>/sizeLimit',
+                            'mock>/individual/ieoi'
+                            ],
+                          formatter: '.formatter.tableFooterFormatter'
+                        }"
+                      >
+                    <columns>
+                      <Column width="20em">
+                        <Text text="Project"/>
+                      </Column>
+                      <Column>
+                        <Text text="Location" />
+                      </Column>
+                      <Column>
+                        <Text text="Deadline" />
+                      </Column>
+                      <Column>
+                        <Text text="Budget" />
+                      </Column>
+                    </columns>
+                    <items>
+                      <ColumnListItem>
+                        <cells>
+                          <Text text="{mock>project}" />
+                          <Text text="{mock>location}" />
+                          <Text text="{
+                                  path: 'mock>deadline',
+                                  type: 'sap.ui.model.type.Date',
+                                  formatOptions: {
+                                    style: 'medium'
+                                  }
+                                }"
+                              />
+                          <Text text="{
+                                  path: 'mock>budget',
+                                  type: 'sap.ui.model.type.Currency',
+                                  formatOptions: {
+                                    minFractionDigits: 0,
+                                    style: 'short'
+                                  }
+                                }"
+                              />
+                        </cells>
+                      </ColumnListItem>
+                    </items>
+                  </Table>
+                </content>
+              </Panel><!-- // IEOI Table -->
+
+              <!-- EOI Table -->
+              <Panel class="sapUiMediumMarginTopBottom sapUiNoContentPadding">
+                <headerToolbar>
+                  <Toolbar>
+                    <l:VerticalLayout
+                        >
+                      <l:content>
+                        <Title text="Manage EOIs" />
+                        <Text
+                            text="Expression of Interest"
+                            class="sapUiTinyMarginTopAndBottom"
+                            />
+                      </l:content>
+                    </l:VerticalLayout>
+                  </Toolbar>
+                </headerToolbar>
+                <content>
+
+                  <Table
+                      class="sapUiTinyMarginBelow"
+                      items="{
+                          path: 'mock>/individual/eoi'
+                        }"
+                      footerText="{
+                          parts: [
+                            'i18n>tableFooter',
+                            'mock>/sizeLimit',
+                            'mock>/individual/eoi'
+                            ],
+                          formatter: '.formatter.tableFooterFormatter'
+                        }"
+                      >
+                    <columns>
+                      <Column width="20em">
+                        <Text text="Project"/>
+                      </Column>
+                      <Column>
+                        <Text text="Deadline" />
+                      </Column>
+                      <Column>
+                        <Text text="Submitted" />
+                      </Column>
+                      <Column>
+                        <Text text="Status" />
+                      </Column>
+                    </columns>
+                    <items>
+                      <ColumnListItem>
+                        <cells>
+                          <Text text="{mock>project}" />
+                          <Text text="{
+                                  path: 'mock>deadline',
+                                  type: 'sap.ui.model.type.Date',
+                                  formatOptions: {
+                                    style: 'medium'
+                                  }
+                                }"
+                              />
+                          <Text text="{
+                                  path: 'mock>submitted',
+                                  type: 'sap.ui.model.type.Date',
+                                  formatOptions: {
+                                    style: 'medium'
+                                  }
+                                }"
+                              />
+                          <Text text="{mock>status}" />
+                        </cells>
+                      </ColumnListItem>
+                    </items>
+                  </Table><!-- // IEOI Table -->
+
+
+                </content>
+              </Panel><!-- // Profile Image -->
+            </l:content>
+          </l:VerticalLayout>
+
+        </l:content>
+      </l:HorizontalLayout>
+    </items>
+  </VBox>
+</mvc:View>
