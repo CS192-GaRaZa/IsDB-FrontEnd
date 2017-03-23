@@ -1,10 +1,89 @@
 <mvc:View
+    controllerName="cmsfrontend.controller.Login"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:html="http://www.w3.org/1999/xhtml"
     >
-  <Page title="{i18n>homePageTitle}">
+  <html:style>
+    .center-control {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </html:style>
+  <Page
+      title="{i18n>loginPageTitle}"
+      showHeader="false"
+      >
     <content>
-      <Label text="{i18n>helloWorld}" />
+      <VBox
+          class="center-control"
+          justifyContent="Center"
+          width="300px"
+          >
+        <items>
+          <f:Form>
+            <f:layout>
+              <f:ResponsiveGridLayout backgroundDesign="Transparent" />
+            </f:layout>
+            <f:formContainers>
+              <f:FormContainer>
+                <f:formElements>
+                  <f:FormElement>
+                    <f:fields>
+                      <Input
+                          id="idInputUser"
+                          type="Text"
+                          placeholder="{i18n>loginLabelUser}"
+                          />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Input
+                          id="idInputPassword"
+                          type="Password"
+                          placeholder="{i18n>loginLabelPassword}"
+                          />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Button
+                          type="Default"
+                          text="{i18n>loginLabelLogOn}"
+                          press="onPressLogOn"
+                          />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Link
+                         text="{i18n>loginLabelCreateAccount}"
+                         textAlign="Center"
+                         class="sapUiTinyMarginTopBottom"
+                         press="onPressCreateAccount"
+                         />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Link
+                         text="{i18n>loginLabelChangePassword}"
+                         textAlign="Center"
+                         class="sapUiTinyMarginBottom"
+                         press="onPressChangePassword"
+                         />
+                    </f:fields>
+                  </f:FormElement>
+                </f:formElements>
+              </f:FormContainer>
+            </f:formContainers>
+          </f:Form>
+        </items>
+      </VBox>
     </content>
   </Page>
 </mvc:View>
