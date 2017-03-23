@@ -36,6 +36,7 @@
                       <Input
                           id="idInputUser"
                           type="Text"
+                          value="{/user/email}"
                           placeholder="{i18n>loginLabelUser}"
                           />
                     </f:fields>
@@ -45,6 +46,7 @@
                       <Input
                           id="idInputPassword"
                           type="Password"
+                          value="{/user/password}"
                           placeholder="{i18n>loginLabelPassword}"
                           />
                     </f:fields>
