@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+     xmlns="sap.m"
+     xmlns:core="sap.ui.core"
+     >
+  <Dialog id="idAccountCreated" title="Account Created!">
+    <content>
+      <HBox alignItems="Center" justifyContent="Center" width="auto" fitContainer="true">
+        <items>
+          <core:Icon
+              color="green"
+              src="sap-icon://sys-enter"
+              size="8rem"
+              class="sapUiMediumMargin"
+              />
+        </items>
+      </HBox>
+    </content>
+    <beginButton>
+      <Button text="Ok" press="onPressOk" />
+    </beginButton>
+  </Dialog>
+</core:FragmentDefinition>

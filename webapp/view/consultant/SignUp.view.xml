@@ -57,7 +57,7 @@
                       <Input
                           id="idPassword"
                           type="Password"
-                          value="{/user/pass}"
+                          value="{/user/password}"
                           placeholder="{i18n>Password}"
                           />
                     </f:fields>
