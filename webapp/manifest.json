@@ -85,6 +85,11 @@
           "pattern": "consultant/signup",
           "name": "consultant_signup",
           "target": "consultant_signup"
+        },
+        {
+          "pattern": "consultingfirm/signup",
+          "name": "consultingfirm_signup",
+          "target": "consultingfirm_signup"
         }
       ],
       "targets" : {
@@ -102,6 +107,9 @@
         },
         "consultant_signup": {
           "viewName": "consultant.SignUp"
+        },
+        "consultingfirm_signup": {
+          "viewName": "consultingfirm.SignUp"
         }
       }
     }
