@@ -90,6 +90,11 @@
           "pattern": "consultingfirm/signup",
           "name": "consultingfirm_signup",
           "target": "consultingfirm_signup"
+        },
+        {
+          "pattern": "vendor/signup",
+          "name": "vendor_signup",
+          "target": "vendor_signup"
         }
       ],
       "targets" : {
@@ -110,6 +115,9 @@
         },
         "consultingfirm_signup": {
           "viewName": "consultingfirm.SignUp"
+        },
+        "vendor_signup": {
+          "viewName": "vendor.SignUp"
         }
       }
     }
