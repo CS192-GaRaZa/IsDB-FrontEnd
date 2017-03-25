@@ -3,70 +3,52 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
     >
-  <Page
-      title="{i18n>loginPageTitle}"
-      showHeader="false"
-      >
+  <Page showHeader="false">
     <content>
-      <VBox
-          class="center-control"
-          justifyContent="Center"
-          width="300px"
-          >
+      <HBox height="100%" alignItems="Center">
         <items>
-          <f:Form>
-            <f:layout>
-              <f:ResponsiveGridLayout backgroundDesign="Transparent" />
-            </f:layout>
-            <f:formContainers>
-              <f:FormContainer>
-                <f:formElements>
-                  <f:FormElement>
-                    <f:fields>
-                      <Input
-                          id="idInputUser"
-                          type="Text"
-                          value="{/user/email}"
-                          placeholder="{i18n>loginLabelUser}"
-                          />
-                    </f:fields>
-                  </f:FormElement>
-                  <f:FormElement>
-                    <f:fields>
-                      <Input
-                          id="idInputPassword"
-                          type="Password"
-                          value="{/user/password}"
-                          placeholder="{i18n>loginLabelPassword}"
-                          />
-                    </f:fields>
-                  </f:FormElement>
-                  <f:FormElement>
-                    <f:fields>
-                      <Button
-                          type="Default"
-                          text="{i18n>loginLabelLogOn}"
-                          press="onPressLogOn"
-                          />
-                    </f:fields>
-                  </f:FormElement>
-                  <f:FormElement>
-                    <f:fields>
-                      <Link
-                         text="{i18n>loginLabelCreateAccount}"
-                         textAlign="Center"
-                         class="sapUiTinyMarginTopBottom"
-                         press="onPressCreateAccount"
-                         />
-                    </f:fields>
-                  </f:FormElement>
-                </f:formElements>
-              </f:FormContainer>
-            </f:formContainers>
-          </f:Form>
+          <VBox width="100%" alignItems="Center">
+            <items>
+              <l:Grid
+                  class="sapUiResponsiveMargin"
+                  position="Center"
+                  containerQuery="true"
+                  vSpacing="0.5"
+                  defaultSpan="XL4 L4 M8 S12"
+                  defaultIndent="XL4 L4 M2 S0"
+                  >
+                <l:content>
+                  <Input
+                      type="Text"
+                      value="{/user/email}"
+                      placeholder="{i18n>Email}"
+                      submit="onSubmit"
+                      />
+                  <Input
+                      type="Password"
+                      value="{/user/password}"
+                      placeholder="{i18n>Password}"
+                      submit="onSubmit"
+                      />
+                  <Button
+                      text="Log In"
+                      width="100%"
+                      press="onSubmit"
+                      />
+                  <Link
+                      text="Sign Up"
+                      textAlign="Center"
+                      width="100%"
+                      press="onSignUpLinkPress"
+                      />
+                </l:content>
+              </l:Grid>
+            </items>
+          </VBox>
         </items>
-      </VBox>
+      </HBox>
     </content>
   </Page>
 </mvc:View>

@@ -22,7 +22,8 @@ sap.ui.define([
       this.getView().setModel(oAccountTypesModel, "account_types");
     },
 
-    onPressLogOn: function onPressLogOn(oControlEvent) {
+    // TODO: Add verification for blank fields and display errors
+    onSubmit: function (oControlEvent) {
       var oLoginModel = this.getView().getModel();
 
       $.ajax({
@@ -55,7 +56,7 @@ sap.ui.define([
       oRouter.navTo(sAccountType + "_profile");
     },
 
-    onPressCreateAccount: function onPressCreateAccount() {
+    onSignUpLinkPress: function () {
       var _this = this;
       var oView = this.getView();
       var oDialog = oView.byId("idAccountTypeDialog");
