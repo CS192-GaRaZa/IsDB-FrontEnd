@@ -70,6 +70,16 @@
           "name" : "login",
           "target" : "login",
           "targetControl": "idAppControl"
+        },
+        {
+          "pattern": "profile/consultant",
+          "name": "consultant_profile",
+          "target": "consultant_profile"
+        },
+        {
+          "pattern": "profile/consulting_firm",
+          "name": "consulting_firm_profile",
+          "target": "consulting_firm_profile"
         }
       ],
       "targets" : {
@@ -78,6 +88,12 @@
         },
         "notFound": {
           "viewName": "NotFound"
+        },
+        "consultant_profile": {
+          "viewName": "Profile"
+        },
+        "consulting_firm_profile": {
+          "viewName": "Profile1"
         }
       }
     }

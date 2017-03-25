@@ -1,0 +1,538 @@
+<!-- Format: width of input and select boxes links (like the linked in or
+	email) -->
+
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:uxap="sap.uxap"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<uxap:ObjectPageLayout
+		id="objectPageLayoutEdit"
+		upperCaseAnchorBar="false"
+		alwaysShowContentHeader="false"
+		showAnchorBarPopover="false"
+		useIconTabBar="true"
+		navigate="trackSelectedSection">
+
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader
+				objectTitle="{/full_name}"
+				objectSubtitle="{/unique_id}" />
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<Image
+				src="img/testIMG.jpg"
+				width="150px"
+				height="150px" />
+			<VBox width="80%">
+				<HBox>
+					<Label text="Type: " />
+					<Text text="{/kind}" />
+				</HBox>
+
+				<!-- I'm using these empty labels to add spacing between the entries.
+					Is there a better way? -->
+
+				<HBox>
+					<Label text="Date of Birth: " />
+					<Text text="{/date_of_birth}" />
+				</HBox>
+				<HBox>
+					<Label text="Citizenship: " />
+					<Text text="{/citizenship}" />
+				</HBox>
+				<HBox wrap="Wrap">
+					<Label text="Summary:" />
+					<Text text="{/description}" />
+				</HBox>
+
+			</VBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editProfileSection"
+				title="Profile"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Surname" />
+										<Input value="{/surname}" />
+										<Label text="Type" />
+										<Select
+											id="kindSelect"
+											width="auto"
+											value="{/kind}"
+											path="{/kind}">
+											<items>
+												<core:Item text="Self-Employed" />
+												<core:Item text="Employed" />
+												<core:Item text="Unemployed" />
+											</items>
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</Select>
+										<Label text="Gender" />
+										<Select
+											id="genderSelect"
+											width="auto"
+											value="{/gender}"
+											path="{/gender}">
+
+											<core:Item text="Male" />
+											<core:Item text="Female" />
+
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<Label text="LinkedIn Profile" />
+										<Input value="{/linkedin}" />
+										<core:Title />
+										<Label text="Given Name" />
+										<Input value="{/given_name}" />
+										<Label text="Date of Birth" />
+										<DatePicker
+											valueFormat="MM-dd-yyyy"
+											displayFormat="MM-dd-yyyy"
+											value="{/date_of_birth}" />
+										<core:Title />
+										<Label text="Middle Name" />
+										<Input value="{/middle_name}" />
+										<Label text="Citizenship" />
+										<Input value="{/citizenship}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label text="Summary:" />
+								<TextArea
+									width="100%"
+									growing="true"
+									value="{/description}" />
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Consulting Background"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Sectors (comma separated)" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/sector_list}" />
+										<Label text="Previously Engaged by IsDB" />
+										<Select
+											id="prevEngagedSelect"
+											width="auto"
+											value="{/previously_engaged_with_isdb}"
+											path="{/previously_engaged_with_isdb}">
+											<items>
+												<core:Item text="Yes" />
+												<core:Item text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<core:Title />
+										<Label text="Expertise (comma separated)" />
+										<Input value="{/expertise_list}" />
+										<Label text="Details on previous IsDB Engagement" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/previous_isdb_project_details}" />
+										<core:Title />
+										<Label text="Countries of Work Experience" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/countries_of_work_experience}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Education"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="1"
+									singleContainerFullSize="false">
+									<f:content>
+										<core:Title />
+										<Label text="Previous Education" />
+										<Table
+											inset="false"
+											items="{/educations}"
+											mode="Delete"
+											delete="handleDeletePressEducation">
+											<headerToolbar>
+												<Toolbar>
+													<ToolbarSpacer />
+													<Button
+														text="Add Entry"
+														press="addRowEducation" />
+												</Toolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="auto">
+													<Text text="Program" />
+												</Column>
+												<Column
+													minScreenWidth="Tablet"
+													demandPopin="true"
+
+													width="20%">
+													<Text text="Degree" />
+												</Column>
+												<Column>
+													<Text text="School" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Input value="{degree}" />
+														<Input value="{level}" />
+														<Input value="{school}" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</f:content>
+								</f:SimpleForm>
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Professional"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="2">
+									<f:content>
+										<core:Title />
+										<Label text="Membership/License" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/membership_license}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+										<Label text="Trainings" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/trainings}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+										<core:Title />
+										<Label text="Languages" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/languages}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+									</f:content>
+								</f:SimpleForm>
+
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Contact"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Text text="Permanent Address" />
+										<Label text="Street" />
+										<Input value="{/perm_street}" />
+										<Label text="City" />
+										<Input value="{/perm_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/perm_zipcode}" />
+										<Label text="State/Province" />
+										<Input value="{/perm_state}" />
+										<Label text="Country" />
+										<Input value="{/perm_country}" />
+										<core:Title />
+										<Text text="Mailing Address" />
+										<Label text="Street" />
+										<Input value="{/mail_street}" />
+										<Label text="City" />
+										<Input value="{/mail_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/mail_zipcode}" />
+										<Label text="State/Province" />
+										<Input value="{/mail_state}" />
+										<Label text="Country" />
+										<Input value="{/mail_country}" />
+										<core:Title />
+										<Text text="Email and Phone" />
+										<Label text="Email" />
+										<Input value="{/email}" />
+										<Label text="Phone" />
+										<Input value="{/phone_number}" />
+										<Label text="Mobile" />
+										<Input value="{/mobile_number}" />
+										<Label text="Skype ID" />
+										<Input value="{/skype_id}" />
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editEmploymentSection"
+				title="Employment"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Former IsDB Employee" />
+										<Select
+											id="formerEmployeeSelect"
+											width="auto"
+											value="{/former_isdb_employee}"
+											path="{/former_isdb_employee}">
+											<items>
+												<core:Item text="Yes" />
+												<core:Item text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<core:Title />
+										<Label text="Employee ID" />
+										<Input value="{/employee_id}">
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Input>
+										<core:Title />
+										<Label text="Date Cleared for Consulting" />
+										<DatePicker
+											valueFormat="MM-dd-yyyy"
+											displayFormat="MM-dd-yyyy"
+											value="{/date_cleared_consulting}">
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</DatePicker>
+									</f:content>
+								</f:SimpleForm>
+								<Table
+									inset="false"
+									items="{/employments}"
+									mode="Delete"
+									delete="handleDeletePressEmployment">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Employment"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowEmployment" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Employer" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="From" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="To" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Position Held" />
+										</Column>
+										<Column hAlign="Left">
+											<Text text="Main Responsibilities" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{employer}" />
+												<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{from}" />
+												<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{to}" />
+												<Input value="{position_held}" />
+												<Input value="{main_responsibilities}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editAssignmentsSection"
+				title="Assignments"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/assignments}"
+									mode="Delete"
+									delete="handleDeletePressAssignment">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Assignments"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowAssignment" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto" />
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<VBox>
+													<Label text="Title:" />
+													<Input value="{title}" />
+													<Label />
+													<Label text="Description:" />
+													<TextArea
+														width="100%"
+														growing="true"
+														value="{description}" />
+													<Label />
+													<Label text="Role:" />
+													<TextArea
+														width="100%"
+														growing="true"
+														value="{role}" />
+												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

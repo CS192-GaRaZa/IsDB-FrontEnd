@@ -1,0 +1,288 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:uxap="sap.uxap"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<uxap:ObjectPageLayout
+		id="objectPageLayoutDisplay1"
+		upperCaseAnchorBar="false"
+		alwaysShowContentHeader="false"
+		showAnchorBarPopover="false"
+		useIconTabBar="true"
+		navigate="trackSelectedSection">
+
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader
+				objectTitle="{/cf_name}"
+				objectSubtitle="{/unique_id}" />
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<Image
+				src="img/bluebiz.png"
+				width="auto"
+				height="auto" />
+			<VBox width="80%">
+				<HBox>
+					<Label text="Country: " />
+					<Text text="{/cf_country}" />
+				</HBox>
+
+				<!-- I'm using these empty labels to add spacing between the entries.
+					Is there a better way? -->
+
+				<HBox>
+					<Label text="Website: " />
+					<Text text="{/website}" />
+				</HBox>
+				<HBox>
+					<Label text="Acronym: " />
+					<Text text="{/cf_acronym}" />
+				</HBox>
+				<HBox wrap="Wrap">
+					<Label text="Summary:" />
+					<Text text="{/summary}" />
+				</HBox>
+
+			</VBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayProfileSection1"
+				title="Profile"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Name" />
+										<Text text="{/cf_name}" />
+										<Label text="Type" />
+										<Text text="{/cf_type_of_business}" />
+										<Label text="Website" />
+										<Text text="{/website}" />
+										<Label text="Branches" />
+										<Text text="{/branches}" />
+										<core:Title />
+										<Label text="Acronym" />
+										<Text text="{/cf_acronym}" />
+										<Label text="Number of Employees" />
+										<Text text="{/cf_number_of_employees}" />
+										<core:Title />
+										<Label text="Country of Incorporation" />
+										<Text text="{/cf_country}" />
+										<Label text="Average Annual Turnover" />
+										<Text text="{/cf_avg_annual_turnover}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label text="Summary:" />
+								<Text text="{/summary}" />
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Consulting Background"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Sectors" />
+										<Text text="{/sector_list}" />
+										<core:Title />
+										<Label text="Expertise" />
+										<Text text="{/expertise_list}" />
+									</f:content>
+								</f:SimpleForm>
+
+
+								<f:SimpleForm
+									title="Contact"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Text text="Permanent Address" />
+										<Label text="Street" />
+										<Text text="{/perm_street}" />
+										<Label text="City" />
+										<Text text="{/perm_city}" />
+										<Label text="Zip Code" />
+										<Text text="{/perm_zipcode}" />
+										<Label text="State/Province" />
+										<Text text="{/perm_state}" />
+										<Label text="Country" />
+										<Text text="{/perm_country}" />
+										<core:Title />
+										<Text text="Mailing Address" />
+										<Label text="Street" />
+										<Text text="{/mail_street}" />
+										<Label text="City" />
+										<Text text="{/mail_city}" />
+										<Label text="Zip Code" />
+										<Text text="{/mail_zipcode}" />
+										<Label text="State/Province" />
+										<Text text="{/mail_state}" />
+										<Label text="Country" />
+										<Text text="{/mail_country}" />
+										<core:Title />
+										<Text text="Email and Phone" />
+										<Label text="Email" />
+										<Text text="{/email}" />
+										<Label text="Phone" />
+										<Text text="{/phone_number}" />
+										<Label text="Mobile" />
+										<Text text="{/mobile_number}" />
+										<Label text="Skype ID" />
+										<Text text="{/skype_id}" />
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayPersonnelSection1"
+				title="Personnel"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="4"
+
+									columnsL="1">
+									<f:content>
+										<core:Title />
+										<Label text="Board Of Directors" />
+										<Text text="{/cf_board_of_directors}" />
+
+										<Label text="Senior Managment" />
+										<Text text="{/cf_senior_management}" />
+
+										<Label text="Key Professional Personnel" />
+										<Text text="{/cf_professional_personnel}" />
+									</f:content>
+								</f:SimpleForm>
+
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayExperienceSection1"
+				title="Experience"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									fixedLayout="false"
+									items="{/experiences}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Experience in the Past 10 Years"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Client" />
+										</Column>
+										<Column width="auto">
+											<Text text="Project" />
+										</Column>
+										<Column width="auto">
+											<Text text="Country" />
+										</Column>
+										<Column width="auto">
+											<Text text="Role" />
+										</Column>
+										<Column width="auto">
+											<Text text="From" />
+										</Column>
+										<Column width="auto">
+											<Text text="To" />
+										</Column>
+										<Column width="auto">
+											<Text text="Contract Value" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{client}" />
+												<Text text="{project}" />
+												<Text text="{country}" />
+												<Text text="{role}" />
+												<Text text="{from}" formatter=".formatDate"/>
+												<Text text="{to}" />
+												<Text text="{contract_value}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,27 @@
+<mvc:View
+	height="100%"
+	controllerName="cmsfrontend.controller.Profile1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Page
+		id="profile1"
+		showHeader="true"
+		showNavButton="true"
+		navButtonPress="handleNavPress" >
+		<headerContent>
+
+		</headerContent>
+		<content>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="edit1" text="Edit" press="handleEditPress" />
+					<Button id="save1" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+					<Button id="cancel1" text="Cancel" visible="false" press="handleCancelPress" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
