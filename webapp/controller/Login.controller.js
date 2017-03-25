@@ -15,8 +15,11 @@ sap.ui.define([
           password: ''
         }
       });
-
       this.getView().setModel(oLoginModel);
+
+      var oAccountTypesModel = new JSONModel("./model/account_types.json")
+          .setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
+      this.getView().setModel(oAccountTypesModel, "account_types");
     },
 
     onPressLogOn: function onPressLogOn(oControlEvent) {
@@ -40,7 +43,31 @@ sap.ui.define([
     },
 
     onPressCreateAccount: function onPressCreateAccount() {
+      var _this = this;
+      var oView = this.getView();
+      var oDialog = oView.byId("idAccountTypeDialog");
 
+      if (!oDialog) {
+        var oFragmentController = {
+          onPressItem: function onPressItem(oEvent) {
+            oDialog.close();
+            var sAccountType = oEvent.getParameter("item").getKey();
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(_this);
+            oRouter.navTo(sAccountType + "_signup");
+          },
+
+          onPressCancel: function onPressCanel() {
+            oDialog.close();
+          }
+        };
+
+        oDialog = sap.ui.xmlfragment(oView.getId(),
+            "cmsfrontend.view.fragments.AccountTypeDialog",
+            oFragmentController);
+        oView.addDependent(oDialog);
+      }
+
+      oDialog.open();
     }
   });
 });
