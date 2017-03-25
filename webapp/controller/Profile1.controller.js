@@ -7,12 +7,16 @@ sap.ui.define([
 
 sap.ui.controller("cmsfrontend.controller.Profile1", {
 
+    _getSessionData: function () {
+      return Cookies.getJSON("isdb");
+    },
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf cmsfrontend.profile
 */
   onInit: function(oEvent) {
+
 
     var oUserDataLocal = {
           "email": "bluebiz@email.com",
@@ -51,8 +55,10 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
           "expertises": []
         };
 
+    var sUniqueID = this._getSessionData().unique_id;
+    var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
     var oUserData = $.ajax({
-           url : "https://isdb-cms-api.herokuapp.com/api/v1/users/CF-4",
+           url : sURL,
            type : "GET",
            async: false,
            dataType: 'json',
@@ -165,7 +171,7 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
            url : "https://isdb-cms-api.herokuapp.com/api/v1/experiences/" + iId,
            type : "DELETE",
            headers:{
-             "Session-Key":"Qi3RcXYcxHvhDTFdXxTnpKDs"
+             "Session-Key": this._getSessionData().token
            },
            contentType : "application/json",
            success : function(data, textStatus, jqXHR) {
@@ -226,11 +232,17 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
         "user":this.getView().getModel().getData()
       };
 
+      var oSessionData = this._getSessionData();
+      var sUniqueID = oSessionData.unique_id;
+      var sToken = oSessionData.token;
+      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/"
+          + sUniqueID;
+
       $.ajax({
-             url : "https://isdb-cms-api.herokuapp.com/api/v1/users/C-2",
+             url : sURL,
              type : "PUT",
              headers:{
-               "Session-Key":"Qi3RcXYcxHvhDTFdXxTnpKDs"
+               "Session-Key": sToken
              },
              data : JSON.stringify(oSendData),
              contentType : "application/json",
