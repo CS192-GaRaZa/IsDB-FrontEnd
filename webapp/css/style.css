@@ -5,3 +5,10 @@
 .sapMPageHeader::before {
     border-top-width: 0rem;
 }
+
+.center-control {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

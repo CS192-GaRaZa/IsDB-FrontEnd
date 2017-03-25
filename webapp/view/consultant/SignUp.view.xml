@@ -1,12 +1,12 @@
+
 <mvc:View
-    controllerName="cmsfrontend.controller.Login"
+    controllerName="cmsfrontend.controller.consultant.SignUp"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.ui.layout.form"
     >
   <Page
-      title="{i18n>loginPageTitle}"
-      showHeader="false"
+      title="{i18n>Consultant} — {i18n>SignUp}"
       >
     <content>
       <VBox
@@ -25,20 +25,40 @@
                   <f:FormElement>
                     <f:fields>
                       <Input
-                          id="idInputUser"
+                          id="idGivenName"
                           type="Text"
-                          value="{/user/email}"
-                          placeholder="{i18n>loginLabelUser}"
+                          value="{/user/given_name}"
+                          placeholder="{i18n>GivenName}"
                           />
                     </f:fields>
                   </f:FormElement>
                   <f:FormElement>
                     <f:fields>
                       <Input
-                          id="idInputPassword"
+                          id="idSurname"
+                          type="Text"
+                          value="{/user/surname}"
+                          placeholder="{i18n>Surname}"
+                          />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Input
+                          id="idEmail"
+                          type="Text"
+                          value="{/user/email}"
+                          placeholder="{i18n>Email}"
+                          />
+                    </f:fields>
+                  </f:FormElement>
+                  <f:FormElement>
+                    <f:fields>
+                      <Input
+                          id="idPassword"
                           type="Password"
-                          value="{/user/password}"
-                          placeholder="{i18n>loginLabelPassword}"
+                          value="{/user/pass}"
+                          placeholder="{i18n>Password}"
                           />
                     </f:fields>
                   </f:FormElement>
@@ -46,19 +66,9 @@
                     <f:fields>
                       <Button
                           type="Default"
-                          text="{i18n>loginLabelLogOn}"
-                          press="onPressLogOn"
+                          text="{i18n>Confirm}"
+                          press="onPressConfirm"
                           />
-                    </f:fields>
-                  </f:FormElement>
-                  <f:FormElement>
-                    <f:fields>
-                      <Link
-                         text="{i18n>loginLabelCreateAccount}"
-                         textAlign="Center"
-                         class="sapUiTinyMarginTopBottom"
-                         press="onPressCreateAccount"
-                         />
                     </f:fields>
                   </f:FormElement>
                 </f:formElements>

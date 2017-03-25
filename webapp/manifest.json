@@ -80,6 +80,11 @@
           "pattern": "profile/consulting_firm",
           "name": "consulting_firm_profile",
           "target": "consulting_firm_profile"
+        },
+        {
+          "pattern": "consultant/signup",
+          "name": "consultant_signup",
+          "target": "consultant_signup"
         }
       ],
       "targets" : {
@@ -94,6 +99,9 @@
         },
         "consulting_firm_profile": {
           "viewName": "Profile1"
+        },
+        "consultant_signup": {
+          "viewName": "consultant.SignUp"
         }
       }
     }

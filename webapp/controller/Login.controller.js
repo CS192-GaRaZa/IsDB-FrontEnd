@@ -37,6 +37,10 @@ sap.ui.define([
           console.log('errorThrown: ', errorThrown);
         }
       });
+    },
+
+    onPressCreateAccount: function onPressCreateAccount() {
+
     }
   });
 });
