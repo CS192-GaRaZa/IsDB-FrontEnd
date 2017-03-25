@@ -70,16 +70,6 @@
                          />
                     </f:fields>
                   </f:FormElement>
-                  <f:FormElement>
-                    <f:fields>
-                      <Link
-                         text="{i18n>loginLabelChangePassword}"
-                         textAlign="Center"
-                         class="sapUiTinyMarginBottom"
-                         press="onPressChangePassword"
-                         />
-                    </f:fields>
-                  </f:FormElement>
                 </f:formElements>
               </f:FormContainer>
             </f:formContainers>
