@@ -56,9 +56,11 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 			    "expertises": []
 			  };**/
 
+		var sUniqueID = Cookies.getJSON("isdb").unique_id;
+		var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
 
 		var oUserData = $.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/users/C-2",
+		       url : sURL,
 		       type : "GET",
 		       async: false,
 		       dataType: 'json',
@@ -187,7 +189,7 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		       url : "https://isdb-cms-api.herokuapp.com/api/v1/employments/" + iId,
 		       type : "DELETE",
 		       headers:{
-		    	   "Session-Key":"F5sFV6z8RR6XRRzFJh6ybodo"
+		    	   "Session-Key": Cookies.getJSON("isdb").token
 		       },
 		       contentType : "application/json",
 		       success : function(data, textStatus, jqXHR) {
@@ -222,7 +224,7 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		       url : "https://isdb-cms-api.herokuapp.com/api/v1/assignments/" + iId,
 		       type : "DELETE",
 		       headers:{
-		    	   "Session-Key":"F5sFV6z8RR6XRRzFJh6ybodo"
+		    	   "Session-Key": Cookies.getJSON("isdb").token
 		       },
 		       contentType : "application/json",
 		       success : function(data, textStatus, jqXHR) {
@@ -255,7 +257,7 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		       url : "https://isdb-cms-api.herokuapp.com/api/v1/educations/" + iId,
 		       type : "DELETE",
 		       headers:{
-		    	   "Session-Key":"F5sFV6z8RR6XRRzFJh6ybodo"
+		    	   "Session-Key": Cookies.getJSON("isdb").token
 		       },
 		       contentType : "application/json",
 		       success : function(data, textStatus, jqXHR) {
@@ -328,11 +330,16 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 			"user":this.getView().getModel().getData()
 		};
 
+		var oSessionData = Cookies.getJSON("isdb");
+		var oUniqueID = oSessionData.unique_id;
+		var oToken = oSessionData.token;
+		var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + oUniqueID;
+
 		$.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/users/C-2",
+		       url : sURL,
 		       type : "PUT",
 		       headers:{
-		    	   "Session-Key":"F5sFV6z8RR6XRRzFJh6ybodo"
+		    	   "Session-Key": oUniqueID,
 		       },
 		       data : JSON.stringify(oSendData),
 		       contentType : "application/json",

@@ -30,9 +30,7 @@ sap.ui.define([
         method: 'POST',
         data: oLoginModel.getJSON(),
         contentType: 'application/json',
-        success: function(data, textStatus, jqXHR) {
-          Cookies.set('isdb', data);
-        },
+        success: this._onLoginPOSTSuccess.bind(this),
         error: function(xhr, status, errorThrown) {
           console.log('ERROR POSTING REQUEST');
           console.log('xhr: ', xhr);
@@ -40,6 +38,21 @@ sap.ui.define([
           console.log('errorThrown: ', errorThrown);
         }
       });
+    },
+
+    _onLoginPOSTSuccess: function (oData, sTextStatus, jqXHR) {
+      var sUniqueIDPrefix = oData.unique_id.match(/(\w*)\-\d*/)[1];
+      var sAccountType = {
+        "C": "consultant",
+        "CF": "consulting_firm",
+        "V": "vendor"
+      }[sUniqueIDPrefix];
+
+      oData.account_type = sAccountType;
+      Cookies.set('isdb', oData);
+
+      var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      oRouter.navTo(sAccountType + "_profile");
     },
 
     onPressCreateAccount: function onPressCreateAccount() {
