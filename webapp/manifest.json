@@ -72,12 +72,12 @@
           "targetControl": "idAppControl"
         },
         {
-          "pattern": "profile/consultant",
+          "pattern": "consultant/profile",
           "name": "consultant_profile",
           "target": "consultant_profile"
         },
         {
-          "pattern": "profile/consulting_firm",
+          "pattern": "consulting_firm/profile",
           "name": "consulting_firm_profile",
           "target": "consulting_firm_profile"
         },
