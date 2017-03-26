@@ -1,0 +1,109 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    >
+  <Table
+      class="sapUiNoContentPadding"
+      inset="true"
+      items="{
+        path: '/nieos'
+        }"
+      footerText="{
+        parts: [
+          { path: '/nieos' },
+          { path: 'config>/size_limit' }
+        ] ,
+        formatter: '.formatTableFooterText'
+        }"
+      >
+    <layoutData>
+      <l:GridData
+          span="XL7 L7 M8 S12"
+          indent="XL0 L0 M2 S0"
+          />
+    </layoutData>
+    <headerToolbar>
+      <OverflowToolbar
+          design="Solid"
+          height="5rem"
+          >
+        <content>
+          <HBox
+              alignItems="Center"
+              height="100%"
+              >
+            <items>
+              <l:VerticalLayout>
+                <l:content>
+                  <Title
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>NewIEOIs}"
+                      textAlign="Begin"
+                      level="H2"
+                      titleStyle="H3"
+                      />
+                  <Text
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>InvitationForExpressionOfInterest}"
+                      />
+                </l:content>
+              </l:VerticalLayout>
+            </items>
+          </HBox>
+        </content>
+      </OverflowToolbar>
+    </headerToolbar>
+    <columns>
+      <Column width="16rem">
+        <Label text="{i18n>Project}" />
+      </Column>
+      <Column
+          minScreenWidth="Large"
+          demandPopin="true"
+          >
+        <Label text="{i18n>Location}" />
+      </Column>
+      <Column>
+        <Label text="{i18n>Deadline}" />
+      </Column>
+      <Column
+          minScreenWidth="Large"
+          demandPopin="true"
+          >
+        <Label text="{i18n>Budget}" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem
+          class="sapUiContentPadding"
+          >
+        <cells>
+          <ObjectIdentifier
+              title="{project}"
+              />
+          <Text
+              text="{location}"
+              />
+          <Text
+              text="{
+                path: 'deadline',
+                type: 'sap.ui.model.type.Date',
+                formatOptions: { style: 'medium' }
+                }"
+              />
+          <Text
+              text="{
+                path: 'budget',
+                type: 'sap.ui.model.type.Currency',
+                formatOptions: {
+                  minFractionDigits: 0,
+                  style: 'short'
+                  }
+                }"
+              />
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+</core:FragmentDefinition>
