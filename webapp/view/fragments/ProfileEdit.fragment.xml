@@ -168,7 +168,10 @@
 										</Select>
 										<core:Title />
 										<Label text="Expertise (comma separated)" />
-										<Input value="{/expertise_list}" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/expertise_list}" />
 										<Label text="Details on previous IsDB Engagement" />
 										<TextArea
 											width="100%"

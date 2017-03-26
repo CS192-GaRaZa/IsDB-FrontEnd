@@ -31,7 +31,7 @@
 					<Text text="{/cf_country}" />
 				</HBox>
 
-				<!-- I'm using these empty labels to add spacing between the entries. 
+				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
 				<HBox>
