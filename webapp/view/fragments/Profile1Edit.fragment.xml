@@ -26,26 +26,26 @@
 				width="auto"
 				height="auto" />
 			<VBox width="80%">
-				<HBox>
+				<VBox>
 					<Label text="Country: " />
 					<Text text="{/cf_country}" />
-				</HBox>
+				</VBox>
 
 				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
-				<HBox>
+				<VBox>
 					<Label text="Website: " />
 					<Text text="{/website}" />
-				</HBox>
-				<HBox>
+				</VBox>
+				<VBox>
 					<Label text="Acronym: " />
 					<Text text="{/cf_acronym}" />
-				</HBox>
-				<HBox wrap="Wrap">
+				</VBox>
+				<VBox wrap="Wrap">
 					<Label text="Summary:" />
 					<Text text="{/summary}" />
-				</HBox>
+				</VBox>
 
 			</VBox>
 		</uxap:headerContent>
