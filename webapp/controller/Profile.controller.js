@@ -339,7 +339,7 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		       url : sURL,
 		       type : "PUT",
 		       headers:{
-		    	   "Session-Key": oUniqueID,
+		    	   "Session-Key": oToken,
 		       },
 		       data : JSON.stringify(oSendData),
 		       contentType : "application/json",
