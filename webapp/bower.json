@@ -1,0 +1,22 @@
+{
+  "name": "cmsfrontend",
+  "homepage": "https://github.com/CS192-GaRaZa/IsDB-FrontEnd",
+  "authors": [
+    "Gabriel Patron",
+    "Rafa Cantero",
+    "Zachary Ubias"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "js-cookie": "^2.1.3"
+  }
+}
