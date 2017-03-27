@@ -331,8 +331,6 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 			"user":this.getView().getModel().getData()
 		};
 
-		debugger;
-
 		var oSessionData = Cookies.getJSON("isdb");
 		var oUniqueID = oSessionData.unique_id;
 		var oToken = oSessionData.token;
