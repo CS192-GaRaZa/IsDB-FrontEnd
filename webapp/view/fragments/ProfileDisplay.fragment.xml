@@ -36,7 +36,12 @@
 
 				<HBox>
 					<Label text="Date of Birth: " />
-					<Text text="{/date_of_birth}" />
+					<Text text="{
+								path: '/date_of_birth',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: { style: 'long' }
+								}"
+							/>
 				</HBox>
 				<HBox>
 					<Label text="Citizenship: " />
@@ -85,7 +90,12 @@
 										<Label text="Given Name" />
 										<Text text="{/given_name}" />
 										<Label text="Date of Birth" />
-										<Text text="{/date_of_birth}" />
+										<Text text="{
+													path: '/date_of_birth',
+													type: 'sap.ui.model.type.Date',
+													formatOptions: { style: 'long' }
+													}"
+												/>
 										<core:Title />
 										<Label text="Middle Name" />
 										<Text text="{/middle_name}" />

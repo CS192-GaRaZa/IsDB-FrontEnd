@@ -69,8 +69,9 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		    	  // console.log("data: ", data);
 		    	  // console.log("textStatus: ", textStatus);
 		    	  // console.log("jqxhr: ", jqXHR);
-		    	   return data;
 
+		    	  data.date_of_birth = new Date(data.date_of_birth);
+	    	  	return data;
 		       },
 		       error: function(xhr, status)
 		       {
@@ -329,6 +330,8 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		var oSendData = {
 			"user":this.getView().getModel().getData()
 		};
+
+		debugger;
 
 		var oSessionData = Cookies.getJSON("isdb");
 		var oUniqueID = oSessionData.unique_id;

@@ -39,7 +39,12 @@
 
 				<HBox>
 					<Label text="Date of Birth: " />
-					<Text text="{/date_of_birth}" />
+					<Text text="{
+								path: '/date_of_birth',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: { style: 'long' }
+								}"
+							/>
 				</HBox>
 				<HBox>
 					<Label text="Citizenship: " />
@@ -116,7 +121,12 @@
 										<DatePicker
 											valueFormat="MM-dd-yyyy"
 											displayFormat="MM-dd-yyyy"
-											value="{/date_of_birth}" />
+											value="{
+													path: '/date_of_birth',
+													type: 'sap.ui.model.type.Date',
+													formatOptions: { style: 'long' }
+													}"
+													/>
 										<core:Title />
 										<Label text="Middle Name" />
 										<Input value="{/middle_name}" />
