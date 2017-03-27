@@ -306,7 +306,12 @@
 										<Text text="{/employee_id}" />
 										<core:Title />
 										<Label text="Date Cleared for Consulting" />
-										<Text text="{/date_cleared_consulting}" />
+										<Text text="{
+													path: '/date_cleared_consulting',
+													type: 'sap.ui.model.type.Date',
+													formatOptions: { style: 'long' }
+													}"
+												/>
 									</f:content>
 								</f:SimpleForm>
 								<Table
@@ -354,8 +359,18 @@
 										<ColumnListItem>
 											<cells>
 												<ObjectIdentifier title="{employer}" />
-												<Text text="{from}" />
-												<Text text="{to}" />
+												<Text text="{
+															path: 'from',
+															type: 'sap.ui.model.type.Date',
+															formatOptions: { style: 'medium' }
+															}"
+														/>
+												<Text text="{
+															path: 'to',
+															type: 'sap.ui.model.type.Date',
+															formatOptions: { style: 'medium' }
+															}"
+														/>
 												<Text text="{position_held}" />
 												<Text text="{main_responsibilities}" />
 											</cells>

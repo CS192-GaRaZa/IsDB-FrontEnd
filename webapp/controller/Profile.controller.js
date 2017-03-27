@@ -69,12 +69,10 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		    	  // console.log("data: ", data);
 		    	  // console.log("textStatus: ", textStatus);
 		    	  // console.log("jqxhr: ", jqXHR);
-
-		    	  data.date_of_birth = new Date(data.date_of_birth);
+		    	  this._convertDatesISOToObj(data);
 	    	  	return data;
-		       },
-		       error: function(xhr, status)
-		       {
+		       }.bind(this),
+		       error: function(xhr, status) {
 		    	  // console.log("ERROR POSTING REQUEST");
 		          // console.log("xhr: ", xhr);
 		          // console.log("status: ", status);
@@ -109,6 +107,18 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		});
 
 
+	},
+
+	_convertDatesISOToObj: function (data) {
+	  data.date_of_birth = new Date(data.date_of_birth);
+	  data.date_cleared_consulting = new Date(data.date_cleared_consulting);
+
+	  var employment;
+	  for (var i = 0; i < data.employments.length; i++) {
+	  	employment = data.employments[i];
+	  	employment.from = new Date(employment.from);
+	  	employment.to = new Date(employment.to);
+	  }
 	},
 
 /**

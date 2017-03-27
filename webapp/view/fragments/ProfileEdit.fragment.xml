@@ -410,7 +410,12 @@
 										<DatePicker
 											valueFormat="MM-dd-yyyy"
 											displayFormat="MM-dd-yyyy"
-											value="{/date_cleared_consulting}">
+											value="{
+														path: '/date_cleared_consulting',
+														type: 'sap.ui.type.model.Date',
+														formatOptions: { style: 'long' }
+														}"
+													>
 											<layoutData>
 												<l:GridData span="L4 M4 S4" />
 											</layoutData>
@@ -469,11 +474,21 @@
 												<DatePicker
 													valueFormat="MM-dd-yyyy"
 													displayFormat="MM-dd-yyyy"
-													value="{from}" />
+													value="{
+														path: 'from',
+														type: 'sap.ui.model.type.Date',
+														formatOptions: { style: 'medium' }
+														}"
+													/>
 												<DatePicker
 													valueFormat="MM-dd-yyyy"
 													displayFormat="MM-dd-yyyy"
-													value="{to}" />
+													value="{
+														path: 'to',
+														type: 'sap.ui.model.type.Date',
+														formatOptions: { style: 'medium' }
+														}"
+													/>
 												<Input value="{position_held}" />
 												<Input value="{main_responsibilities}" />
 											</cells>
