@@ -109,6 +109,11 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 
 	},
 
+	formatSurname: function (sLastName, sSurname, sMiddleName) {
+		return sLastName + ", " + sSurname +
+				(sMiddleName ? " " + sMiddleName : "");
+	},
+
 	_convertDatesISOToObj: function (data) {
 	  data.date_of_birth = new Date(data.date_of_birth);
 	  data.date_cleared_consulting = new Date(data.date_cleared_consulting);

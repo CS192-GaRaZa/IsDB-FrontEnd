@@ -20,7 +20,14 @@
 
 		<uxap:headerTitle>
 			<uxap:ObjectPageHeader
-				objectTitle="{/full_name}"
+				objectTitle="{
+					parts: [
+						{ path: '/surname' },
+						{ path: '/given_name' },
+						{ path: '/middle_name' }
+					],
+					formatter: '.formatSurname'
+					}"
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
