@@ -29,7 +29,7 @@
 		</uxap:headerTitle>
 		<uxap:headerContent>
 			<Image
-				src="img/testIMG.jpg"
+				src="{/image_url}"
 				width="150px"
 				height="150px" />
 			<VBox width="80%">

@@ -70,6 +70,10 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		    	  // console.log("textStatus: ", textStatus);
 		    	  // console.log("jqxhr: ", jqXHR);
 		    	  this._convertDatesISOToObj(data);
+		    	  if (!data.image_url) {
+			    	  data.image_url = "/img/testIMG.jpg";
+		    	  }
+
 	    	  	return data;
 		       }.bind(this),
 		       error: function(xhr, status) {
@@ -327,51 +331,43 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 	handleSavePress : function () {
 
 		this._toggleButtonsAndView(false);
-
+		var oView = this.getView();
+		var oModel = oView.getModel();
 
 		// handle changes to the FullName element in the data
-		var sFullName = this.getView().getModel().getData().surname + ", " + this.getView().getModel().getData().given_name + " " + this.getView().getModel().getData().middle_name;
-		this.getView().getModel().setData({full_name:sFullName}, true);
+		var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
+		oModel.setData({full_name:sFullName}, true);
 
 		// handle all the changes to the select inputs
-		this.getView().getModel().setData({gender:this.getView().byId("genderSelect").getSelectedItem().getText()}, true);
-		this.getView().getModel().setData({previously_engaged_with_isdb:this.getView().byId("prevEngagedSelect").getSelectedItem().getText()}, true);
-		this.getView().getModel().setData({former_isdb_employee:this.getView().byId("formerEmployeeSelect").getSelectedItem().getText()}, true);
-		this.getView().getModel().setData({kind:this.getView().byId("kindSelect").getSelectedItem().getText()}, true);
+		oModel.setData({gender:oView.byId("genderSelect").getSelectedItem().getText()}, true);
+		oModel.setData({previously_engaged_with_isdb:oView.byId("prevEngagedSelect").getSelectedItem().getText()}, true);
+		oModel.setData({former_isdb_employee:oView.byId("formerEmployeeSelect").getSelectedItem().getText()}, true);
+		oModel.setData({kind:oView.byId("kindSelect").getSelectedItem().getText()}, true);
 
-		this.getView().getModel().setData({sectors:this.getView().getModel().getData().sector_list}, true);
-		this.getView().getModel().setData({expertises:this.getView().getModel().getData().expertise_list}, true);
-
-		var oSendData = {
-			"user":this.getView().getModel().getData()
-		};
+		oModel.setData({sectors:oModel.getData().sector_list}, true);
+		oModel.setData({expertises:oModel.getData().expertise_list}, true);
 
 		var oSessionData = Cookies.getJSON("isdb");
-		var oUniqueID = oSessionData.unique_id;
-		var oToken = oSessionData.token;
-		var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + oUniqueID;
+		var sUniqueID = oSessionData.unique_id;
+
 
 		$.ajax({
-		       url : sURL,
-		       type : "PUT",
-		       headers:{
-		    	   "Session-Key": oToken,
-		       },
-		       data : JSON.stringify(oSendData),
-		       contentType : "application/json",
-		       success : function(data, textStatus, jqXHR) {
-		              response = data;
-		              console.log("SUCCESS");
-		              console.log("data: ", data);
-		       },
-		       error: function(xhr, status)
-		       {
-		              console.log("ERROR POSTING REQUEST");
-		              console.log("xhr: ", xhr);
-		              console.log("status: ", status);
-		       },
+			url : "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID,
+			type : "PUT",
+			headers: { "Session-Key": oSessionData.token },
+			data : JSON.stringify({ user: oModel.getData() }),
+			contentType : "application/json",
+			success : function(data, textStatus, jqXHR) {
+				response = data;
+				console.log("SUCCESS");
+				console.log("data: ", data);
+			},
+			error: function(xhr, status) {
+				console.log("ERROR POSTING REQUEST");
+				console.log("xhr: ", xhr);
+				console.log("status: ", status);
+			},
 		});
-
 	},
 
 	// adds an empty row to the education table
@@ -384,6 +380,21 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		this.getView().getModel().getData().educations.push(emptyRow);
 		this.getView().getModel().refresh();
     },
+
+    // TODO: Refactor this, since it seems kind of hacked
+    // The ideal scenrio is to push the uploaded image as a
+    // temporary file while the user hasn't pressed save.
+    // The danger with this is that when multiple users
+    // change their profile pictures, the number of profile
+    // images in the cloud double in size. Also, adding
+    // a progress icon would be nice for responsiveness.
+    onProfileImageUploaderComplete: function (oEvent) {
+      var oModel = oEvent.getSource().getModel();
+      var oResponseData = JSON.parse(oEvent.getParameters().response);
+
+      oModel.setData({ image_url: oResponseData.secure_url  }, true);
+    },
+
 
 	// adds an empty row to the employment table
 	addRowEmployment : function() {
