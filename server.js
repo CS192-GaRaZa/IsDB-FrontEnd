@@ -43,7 +43,6 @@ app.post('/upload', upload.single('file'), (req, res) => {
   };
 
   cloudinary.uploader.upload(req.file.path, function(result) {
-    console.log(result);
     res.send(JSON.stringify(result));
   }, options);
 });
