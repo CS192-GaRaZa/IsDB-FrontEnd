@@ -44,10 +44,10 @@
         <l:content>
           <Link
               class="sapUiSmallMargin overviewNameLink"
-              text="{/name}"
+              text="{/given_name} {/surname}"
               />
           <Image
-              src="http://localhost:12121/img/testIMG.jpg"
+              src="{/image_url}"
               width="100%"
           />
         </l:content>

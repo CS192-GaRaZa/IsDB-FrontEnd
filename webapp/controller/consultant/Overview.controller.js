@@ -76,10 +76,13 @@ sap.ui.define([
       this.getView().setModel(oConfigModel, "config");
 
       var oModel = new JSONModel({
-        name: "Yari Marilao",
         nieos: this._getDummyIEOs(),
         ieos: this._getDummyIEOs()
       });
+      var sUniqueID = Cookies.getJSON("isdb").unique_id;
+
+      oModel.loadData("https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID,
+          {}, true, 'GET', true);
       oModel.setSizeLimit(iSizeLimit);
       this.getView().setModel(oModel);
     }
