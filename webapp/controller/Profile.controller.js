@@ -214,8 +214,6 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 	handleSelectionFinish: function(oEvent) {
 		var selectedItems = oEvent.getParameter("selectedItems");
 		_selectedCitizenship = selectedItems;
-
-		console.log("selected keys: ", oEvent.getParameter("selectedKeys"));
 	},
 
 	handleNavPress : function () {
