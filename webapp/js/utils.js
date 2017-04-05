@@ -1,6 +1,6 @@
 /** Place all global utility function here
  */
-(function Utils(window) {
+;(function Utils(window) {
 
   window.appUtils = {};
 

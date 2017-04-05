@@ -100,6 +100,11 @@
           "pattern": "consultant/overview",
           "name": "consultant_overview",
           "target": "consultant_overview"
+        },
+        {
+          "pattern": "{role}/{id}",
+          "name": "overview",
+          "target": "overview"
         }
       ],
       "targets" : {
@@ -126,6 +131,9 @@
         },
         "consultant_overview": {
           "viewName": "consultant.Overview"
+        },
+        "overview": {
+          "viewName": "Overview"
         }
       }
     }

@@ -1,6 +1,6 @@
 /**Declare all app constants in this file.
  */
-(function Constants(window) {
+;(function Constants(window) {
   "use strict";
 
   window.appConstants = {};
