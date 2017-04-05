@@ -56,6 +56,39 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 			    "expertises": []
 			  };**/
 
+		var oCountryList = {"list":[
+								{"countryName":"USA"},
+								{"countryName":"Canada"},
+								{"countryName":"Philippines"}
+							]};
+
+		var oCountryData = $.ajax({
+		       url : "https://isdb-cms-api.herokuapp.com/api/v1/countries",
+		       type : "GET",
+		       async: false,
+		       dataType: 'json',
+		       contentType : "application/json",
+		       success : function(data, textStatus, jqXHR) {
+		    	  // console.log("data: ", data);
+		    	  // console.log("textStatus: ", textStatus);
+		    	  // console.log("jqxhr: ", jqXHR);
+		    	  this._convertDatesISOToObj(data);
+	    	  	return data;
+		       }.bind(this),
+		       error: function(xhr, status) {
+		    	  // console.log("ERROR POSTING REQUEST");
+		          // console.log("xhr: ", xhr);
+		          // console.log("status: ", status);
+		           return status;
+		       },
+		}).responseJSON;
+
+		console.log(oCountryList);
+
+		var oCountriesModel = new sap.ui.model.json.JSONModel(oCountryData);
+		oCountriesModel.setSizeLimit(500);
+		this.getView().setModel(oCountriesModel, "countryModel");
+
 		var sUniqueID = Cookies.getJSON("isdb").unique_id;
 		var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
 
@@ -185,6 +218,11 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 	     jQuery.sap.require("sap.ui.core.format.DateFormat");
 	     var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "dd-MM-YYYY"});
 	     return oDateFormat.format(new Date(v));
+	},
+
+	handleSelectionFinish: function(oEvent) {
+		var selectedItems = oEvent.getParameter("selectedItems");
+		_selectedCitizenship = selectedItems;
 	},
 
 	handleNavPress : function () {
@@ -331,8 +369,17 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 	handleSavePress : function () {
 
 		this._toggleButtonsAndView(false);
+
 		var oView = this.getView();
 		var oModel = oView.getModel();
+
+		// handle changes to the citizenship multicombo box
+		var temp = [];
+		// since each item is an object, we need to get its "name" field
+		for (var i = 0; i < _selectedCitizenship.length; i++) {
+			temp.push(_selectedCitizenship[i].getText());
+		};
+		this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
 
 		// handle changes to the FullName element in the data
 		var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
@@ -433,6 +480,9 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		// Set the right form type
 		this._showFormFragment(bEdit ? "ProfileEdit" : "ProfileDisplay");
 	},
+
+	// array of items currently selected in the Citizenship multicombo box
+	_selectedCitizenship: {},
 
 	// bool that tells us if the Edit page has been initialized already. Used when adding the event delegate
 	_bHasEditInit: false,
