@@ -45,7 +45,10 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 			    "bank_account_number": "11111111",
 			    "bank_swift_number": "1111111",
 			    "bank_iban": "ASD1234X23ASD",
-			    "activities": ["activity 1", "activity 2"],
+			    "activities": [
+			    	{"activity":"activity 1"}, 
+			    	{"activity":"activity 2"}
+			    ],
 			    "customers": [{
 			    	"name":"Rafael Miguel F. Cantero",
 			    	"country":"Philippines",
@@ -67,12 +70,6 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 			    }]
 			  };
 
-		var oCountryList = {"list":[
-								{"countryName":"USA"},
-								{"countryName":"Canada"},
-								{"countryName":"Philippines"}
-							]};
-
 		var oCountryData = $.ajax({
 		       url : "https://isdb-cms-api.herokuapp.com/api/v1/countries",
 		       type : "GET",
@@ -93,8 +90,6 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 		           return status;
 		       },
 		}).responseJSON;
-
-		console.log(oCountryList);
 
 		var oCountriesModel = new sap.ui.model.json.JSONModel(oCountryData);
 		oCountriesModel.setSizeLimit(500);
@@ -129,10 +124,6 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 		}).responseJSON;
 
 		var oModel = new sap.ui.model.json.JSONModel(oUserData);
-
-		// add a fullName field to the data
-		var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
-		oModel.setData({full_name:sFullName}, true);
 
 		/**
 		// remove all the time in the data so that we are only left with yyyy-MM-dd
@@ -236,7 +227,7 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 
 	},
 
-	handleDeletePressEmployment : function (oEvent) {
+	handleDeletePressActivities : function (oEvent) {
 		var oList = oEvent.getSource();
 		var oItem = oEvent.getParameter("listItem");
 		var sPath = oItem.getBindingContext().getPath();
@@ -244,13 +235,13 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 		// since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
 		var iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-		var iId = this.getView().getModel().getData().employments[iIndex].id
+		var iId = this.getView().getModel().getData().activities[iIndex].id
 
-		this.getView().getModel().getData().employments.splice(iIndex, 1);
+		this.getView().getModel().getData().activities.splice(iIndex, 1);
 		this.getView().getModel().refresh();
 
 		$.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/employments/" + iId,
+		       url : "https://isdb-cms-api.herokuapp.com/api/v1/activities/" + iId,
 		       type : "DELETE",
 		       headers:{
 		    	   "Session-Key": Cookies.getJSON("isdb").token
@@ -271,7 +262,7 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 
 	},
 
-	handleDeletePressAssignment : function (oEvent) {
+	handleDeletePressCustomers : function (oEvent) {
 		var oList = oEvent.getSource();
 		var oItem = oEvent.getParameter("listItem");
 		var sPath = oItem.getBindingContext().getPath();
@@ -279,13 +270,13 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 		// since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
 		var iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-		var iId = this.getView().getModel().getData().assignments[iIndex].id
+		var iId = this.getView().getModel().getData().customers[iIndex].id
 
-		this.getView().getModel().getData().assignments.splice(iIndex, 1);
+		this.getView().getModel().getData().customers.splice(iIndex, 1);
 		this.getView().getModel().refresh();
 
 		$.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/assignments/" + iId,
+		       url : "https://isdb-cms-api.herokuapp.com/api/v1/customers/" + iId,
 		       type : "DELETE",
 		       headers:{
 		    	   "Session-Key": Cookies.getJSON("isdb").token
@@ -306,19 +297,56 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 
 	},
 
-	handleDeletePressEducation : function (oEvent) {
+	handleDeletePressProjects : function (oEvent) {
 		var oList = oEvent.getSource();
-		oItem = oEvent.getParameter("listItem");
-		sPath = oItem.getBindingContext().getPath();
+		var oItem = oEvent.getParameter("listItem");
+		var sPath = oItem.getBindingContext().getPath();
 
 		// since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-		index = sPath.replace ( /[^\d.]/g, '' );
+		var index = sPath.replace ( /[^\d.]/g, '' );
 
-		this.getView().getModel().getData().educations.splice(index, 1);
+		var iId = this.getView().getModel().getData().projects[iIndex].id
+
+		this.getView().getModel().getData().projects.splice(index, 1);
 		this.getView().getModel().refresh();
 
 		$.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/educations/" + iId,
+		       url : "https://isdb-cms-api.herokuapp.com/api/v1/projects/" + iId,
+		       type : "DELETE",
+		       headers:{
+		    	   "Session-Key": Cookies.getJSON("isdb").token
+		       },
+		       contentType : "application/json",
+		       success : function(data, textStatus, jqXHR) {
+		              response = data;
+		              console.log("SUCCESS");
+		              console.log("data: ", data);
+		       },
+		       error: function(xhr, status)
+		       {
+		              console.log("ERROR POSTING REQUEST");
+		              console.log("xhr: ", xhr);
+		              console.log("status: ", status);
+		       },
+		});
+
+	},
+
+	handleDeletePressContactPersons : function (oEvent) {
+		var oList = oEvent.getSource();
+		var oItem = oEvent.getParameter("listItem");
+		var sPath = oItem.getBindingContext().getPath();
+
+		// since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+		var index = sPath.replace ( /[^\d.]/g, '' );
+
+		var iId = this.getView().getModel().getData().contact_persons[iIndex].id
+
+		this.getView().getModel().getData().contact_persons.splice(index, 1);
+		this.getView().getModel().refresh();
+
+		$.ajax({
+		       url : "https://isdb-cms-api.herokuapp.com/api/v1/contact_persons/" + iId,
 		       type : "DELETE",
 		       headers:{
 		    	   "Session-Key": Cookies.getJSON("isdb").token
@@ -423,17 +451,6 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 		});
 	},
 
-	// adds an empty row to the education table
-	addRowEducation : function() {
-        var emptyRow = {
-				degree:"",
-				level:"",
-				school:""
-        };
-		this.getView().getModel().getData().educations.push(emptyRow);
-		this.getView().getModel().refresh();
-    },
-
     // TODO: Refactor this, since it seems kind of hacked
     // The ideal scenrio is to push the uploaded image as a
     // temporary file while the user hasn't pressed save.
@@ -448,31 +465,68 @@ sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
       oModel.setData({ image_url: oResponseData.secure_url  }, true);
     },
 
+    "activities": ["activity 1", "activity 2"],
+			    "customers": [{
+			    	"name":"Rafael Miguel F. Cantero",
+			    	"country":"Philippines",
+			    	"city":"Pasig"
+			    }],
+			    "projects": [{
+			    	"project_name":"Project 1",
+			    	"benefiters":"Lorem Ipsum",
+			    	"from":"11/11/1111",
+			    	"to":"11/11/1111",
+			    	"contract_value":"999,999 USD"
+			    }],
+			    "contact_persons": [{
+			    	"name":"John S. Smith",
+			    	"position":"Manager",
+			    	"office_phone":"0912394123",
+			    	"mobile":"09172231242",
+			    	"email":"John@yahoo.com"
+			    }]
 
-	// adds an empty row to the employment table
-	addRowEmployment : function() {
+	addRowActivities : function() {
         var emptyRow = {
-				Employer:"",
-				From:"",
-				To:"",
-				PosHeld:"",
-				MainResp:""
+				"activity":""
         };
-		this.getView().getModel().getData().employments.push(emptyRow);
+		this.getView().getModel().getData().activities.push(emptyRow);
 		this.getView().getModel().refresh();
     },
 
-    // adds an empty row to the assignments table
-	addRowAssignment : function() {
+	addRowCustomers : function() {
         var emptyRow = {
-				title:"",
-				decription:"",
-				role:""
+				"name":"",
+			    "country":"",
+			    "city":""
         };
-		this.getView().getModel().getData().assignments.push(emptyRow);
+		this.getView().getModel().getData().customers.push(emptyRow);
 		this.getView().getModel().refresh();
     },
 
+    addRowProjects : function() {
+        var emptyRow = {
+				"project_name":"",
+			    "benefiters":"",
+			    "from":"",
+			    "to":"",
+			    "contract_value":""
+        };
+		this.getView().getModel().getData().projects.push(emptyRow);
+		this.getView().getModel().refresh();
+    },
+
+	addRowContactPersons : function() {
+        var emptyRow = {
+				"name":"",
+		    	"position":"",
+		    	"office_phone":"",
+		    	"mobile":"",
+		    	"email":""
+        };
+		this.getView().getModel().getData().contact_persons.push(emptyRow);
+		this.getView().getModel().refresh();
+    },
 
 	//Function to change the button from Edit to Cancel/Save as well as to change the view from display to edit
 	_toggleButtonsAndView : function (bEdit) {

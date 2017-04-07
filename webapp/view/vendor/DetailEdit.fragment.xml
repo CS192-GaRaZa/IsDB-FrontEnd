@@ -188,7 +188,7 @@
 		<uxap:sections>
 			<uxap:ObjectPageSection
 				id="editActivitiesSection"
-				title="Employment"
+				title="Activities"
 				titleUppercase="false">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection
@@ -200,12 +200,18 @@
 							<VBox>
 								<Table
 									inset="false"
-									items="{/activities}">
+									items="{/activities}"
+									mode="Delete"
+									delete="handleDeletePressActivities">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Activities"
 												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowActivities" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>
@@ -218,7 +224,7 @@
 													<TextArea
 														width="100%"
 														growing="true"
-														value="{/text}" />
+														value="{activity}" />
 												</VBox>
 											</cells>
 										</ColumnListItem>
@@ -245,12 +251,18 @@
 							<VBox>
 								<Table
 									inset="false"
-									items="{/customers}">
+									items="{/customers}"
+									mode="Delete"
+									delete="handleDeletePressCustomers">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Most Important Customers"
 												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowCustomers" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>
@@ -303,12 +315,18 @@
 							<VBox>
 								<Table
 									inset="false"
-									items="{/projects}">
+									items="{/projects}"
+									mode="Delete"
+									delete="handleDeletePressProjects">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Projects and Agreement"
 												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowProjects" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>
@@ -391,12 +409,18 @@
 							<VBox>
 								<Table
 									inset="false"
-									items="{/contact_persons}">
+									items="{/contact_persons}"
+									mode="Delete"
+									delete="handleDeletePressContactPersons">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Contact Persons"
 												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowContactPersons" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>

@@ -209,7 +209,7 @@
 										<ColumnListItem>
 											<cells>
 												<VBox>
-													<Text text="{text}" />
+													<Text text="{activity}" />
 												</VBox>
 											</cells>
 										</ColumnListItem>
