@@ -1,6 +1,6 @@
 <mvc:View
 	height="100%"
-	controllerName="cmsfrontend.controller.vendor.Profile"
+	controllerName="cmsfrontend.controller.vendor.Detail"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.m">
