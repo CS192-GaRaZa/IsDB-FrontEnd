@@ -1,0 +1,455 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:uxap="sap.uxap"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<uxap:ObjectPageLayout
+		id="objectPageLayoutEditVendor"
+		upperCaseAnchorBar="false"
+		alwaysShowContentHeader="false"
+		showAnchorBarPopover="false"
+		useIconTabBar="true"
+		navigate="trackSelectedSection">
+
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader
+				objectTitle="{/vendor_name}"
+				objectSubtitle="{/unique_id}" />
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<Image
+				src="{/image_url}"
+				width="150px"
+				height="150px" />
+			<VBox width="80%">
+				<HBox>
+					<Label text="Company Type: " />
+					<Text text="{/vendor_type}" />
+				</HBox>
+
+				<!-- I'm using these empty labels to add spacing between the entries.
+					Is there a better way? -->
+
+				<HBox>
+					<Label text="Establishment Date: " />
+					<Text text="{
+								path: '/vendor_establishment_date',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: { style: 'long' }
+								}"
+							/>
+				</HBox>
+			</VBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<!-- the id here is called displayProfileSection in other pages (consultant, CF) change it to displayConsultantSection--> 
+			<uxap:ObjectPageSection
+				id="editVendorSection"
+				title="General"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Company Name" />
+										<Input value="{/vendor_name}" />
+										<Label text="Company Type" />
+										<Input value="{/vendor_type}" />
+										<Label text="Number of Employees" />
+										<Input value="{/vendor_number_of_employees}" />
+										<core:Title />
+										<Label text="Owner" />
+										<Input value="{/vendor_owner}" />
+										<Label text="Manager Name" />
+										<Input value="{/vendor_manager}" />
+										<Label text="Commercial Registration" />
+										<Input value="{/vendor_commercial_registration}" />
+										<core:Title />
+										<Label text="Establishment Date" />
+										<DatePicker
+											valueFormat="MM-dd-yyyy"
+											displayFormat="MM-dd-yyyy"
+											value="{
+													path: '/vendor_establishment_date',
+													type: 'sap.ui.model.type.Date',
+													formatOptions: { style: 'long' }
+													}"
+												/>
+										<Label text="Membership Number" />
+										<Input value="{vendor_membership_number}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label text="Summary:" />
+								<TextArea
+									width="100%"
+									growing="true"
+									value="{/description}" />
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Contact"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Input value="Address" />
+										<Label text="Street" />
+										<Input value="{/perm_street}" />
+										<Label text="City" />
+										<Input value="{/perm_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/perm_zipcode}" />
+										<Label text="P.O. Box" />
+										<Input value="{/vendor_pobox}" />
+										<Label text="Country" />
+										<Input value="{/perm_country}" />
+										<core:Title />
+										<Input value="Email and Phone" />
+										<Label text="Email" />
+										<Input value="{/email}" />
+										<Label text="Phone" />
+										<Input value="{/phone_number}" />
+										<Label text="Fax" />
+										<Input value="{/vendor_fax}" />
+										<Label text="Skype ID" />
+										<Input value="{/skype_id}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<f:SimpleForm
+									title="Financial Information"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Input value="Bank Address" />
+										<Label text="Bank Name" />
+										<Input value="{/bank_name}" />
+										<Label text="Street" />
+										<Input value="{/bank_street}" />
+										<Label text="City" />
+										<Input value="{/bank_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/bank_zipcode}" />
+										<Label text="Country" />
+										<Input value="{/bank_country}" />
+										<core:Title />
+										<Label text="Account Holder Name" />
+										<Input value="{/bank_account_holder}" />
+										<Label text="Bank Account Number" />
+										<Input value="{/bank_account_number}" />
+										<Label text="Swift Number" />
+										<Input value="{/bank_swift_number}" />
+										<Label text="IBAN" />
+										<Input value="{/bank_iban}" />
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editActivitiesSection"
+				title="Employment"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/activities}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Activities"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto" />
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<VBox>
+													<TextArea
+														width="100%"
+														growing="true"
+														value="{/text}" />
+												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editCustomersSection"
+				title="Customers"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/customers}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Most Important Customers"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Customer Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Country" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="City" />
+										</Column>	
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{name}" />
+												<Input value="{country}"/>
+												<Input value="{city}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editProjectsSection"
+				title="Projects"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/projects}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Projects and Agreement"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Project Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Benefiters" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="From" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="To" />
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Contract Value" />
+										</Column>
+										</Column>	
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{project_name}" />
+												<Input value="{benefiters}"/>
+												<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{
+														path: 'from',
+														type: 'sap.ui.model.type.Date',
+														formatOptions: { style: 'medium' }
+														}" />
+												<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{
+														path: 'to',
+														type: 'sap.ui.model.type.Date',
+														formatOptions: { style: 'medium' }
+														}" />
+												<Input value="{contract_value}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editContactSection"
+				title="Contact"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/contact_persons}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Contact Persons"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Staff Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Position" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Office Phone" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Mobile" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Email" />
+										</Column>
+										</Column>	
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{name}" />
+												<Input value="{position}"/>
+												<Input value="{office_phone}"/>
+												<Input value="{mobile}"/>
+												<Input value="{email}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>
