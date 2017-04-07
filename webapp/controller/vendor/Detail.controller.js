@@ -5,7 +5,7 @@ sap.ui.define([
 		'sap/ui/model/json/JSONModel'
 	]);
 
-sap.ui.controller("cmsfrontend.controller.vendor.Profile", {
+sap.ui.controller("cmsfrontend.controller.vendor.Detail", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.

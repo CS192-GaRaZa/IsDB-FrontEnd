@@ -430,7 +430,6 @@
 											hAlign="Left"
 											width="20%">
 											<Text text="Email" />
-										</Column>
 										</Column>	
 									</columns>
 									<items>
