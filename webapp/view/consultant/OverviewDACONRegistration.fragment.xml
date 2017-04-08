@@ -45,6 +45,7 @@
           <Link
               class="sapUiSmallMargin overviewNameLink"
               text="{/given_name} {/surname}"
+              press="onNameLinkPress"
               />
           <Image
               src="{/image_url}"

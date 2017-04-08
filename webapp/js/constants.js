@@ -10,11 +10,13 @@
    *  conveniently access properties that are specific to roles.
    */
   function Role(
-      sKey,           /**< Key used by the server to identify this role. */
-      sHomeRoute,     /**< Route to direct to from logging in. */
-      fnParamGetter   /**< Function returning the parameters for the route. */
+      sKey,             /**< Key used by the server to identify this role. */
+      sUniqueIDPrefix,  /**< Prefix used in unique IDs. */
+      sHomeRoute,       /**< Route to direct to from logging in. */
+      fnParamGetter     /**< Function returning the params for the route. */
       ) {
     this._sKey = sKey;
+    this._sUniqueIDPrefix = sUniqueIDPrefix;
     this._sHomeRoute = sHomeRoute;
     this._fnParamGetter = fnParamGetter || function (oContext) {
       return oContext;
@@ -22,6 +24,9 @@
   }
 
   Role.prototype.getKey = function () { return this._sKey;  };
+  Role.prototype.getUniqueIDPrefix = function () {
+    return this._sUniqueIDPrefix;
+  };
   Role.prototype.getHome = function (oContext) {
     return {
       route: this._sHomeRoute,
@@ -35,8 +40,9 @@
   window.appConstants = {};
 
   appConstants.role = {
-    Conultant: new Role("consultant", "consultantOverview"),
-    ConsultingFirm: new Role("consulting_firm", "consultingFirmOverview"),
-    Vendor: new Role("vendor", "vendorDetail"/*, "vendorOverview"*/)
+    Consultant: new Role("consultant", "C", "consultantOverview"),
+    ConsultingFirm: new Role("consulting_firm", "CF",
+        "consultingFirmOverview"),
+    Vendor: new Role("vendor", "V", "vendorDetail"/*, "vendorOverview"*/)
   };
 })(window);

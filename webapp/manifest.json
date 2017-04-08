@@ -120,6 +120,12 @@
           "pattern": "vendor_temp/detail",
           "name": "vendorDetail",
           "target": "vendorDetail"
+        },
+        {
+          "pattern": "detail/:subsection:",
+          "name": "consultantDetail",
+          "parent": "consultantOverview",
+          "target": "consultantDetail"
         }
       ],
       "targets" : {
@@ -161,6 +167,9 @@
         },
         "vendorDetail": {
           "viewName": "vendor.Detail"
+        },
+        "consultantDetail": {
+          "viewName": "consultant.Detail"
         }
       }
     }

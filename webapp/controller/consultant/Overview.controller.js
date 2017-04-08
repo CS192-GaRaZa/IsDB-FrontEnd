@@ -1,9 +1,11 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
-  "sap/ui/model/json/JSONModel"
+  "sap/ui/model/json/JSONModel",
+  "sap/ui/core/UIComponent"
 ], function OverviewController(
   Controller,
-  JSONModel
+  JSONModel,
+  UIComponent
 ) {
   "use strict";
   return Controller.extend("cmsfrontend.controller.consultant.Overview", {
@@ -67,25 +69,51 @@ sap.ui.define([
       return "Showing " + iSizeLimit + " of " + oList.length;
     },
 
-    onInit: function () {
-      var iSizeLimit = 3;
+    _iTableSizeLimit: 3,
 
-      var oConfigModel = new JSONModel({
-        size_limit: iSizeLimit
-      });
-      this.getView().setModel(oConfigModel, "config");
+    _onRouteMatched: function (oEvent) {
+      var oArgs;
+      var sUniqueID;
+      var sEndPoint;
+      var oModel;
 
-      var oModel = new JSONModel({
+      oArgs = oEvent.getParameter("arguments");
+      this._sID = oArgs.id;
+      sUniqueID = appUtils.getUniqueID(appConstants.role.Consultant.getKey(),
+          oArgs.id);
+      sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+          sUniqueID;
+
+      oModel = new JSONModel({
         nieos: this._getDummyIEOs(),
         ieos: this._getDummyIEOs()
       });
-      var sUniqueID = Cookies.getJSON("isdb").unique_id;
-
-      oModel.loadData("https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID,
-          {}, true, 'GET', true);
-      oModel.setSizeLimit(iSizeLimit);
+      oModel.loadData(sEndPoint, {}, true, 'GET', true);
+      oModel.setSizeLimit(this._iTableSizeLimit);
       this.getView().setModel(oModel);
-    }
+    },
 
+    onInit: function () {
+      var oRouter;
+      var oConfigModel;
+      var oView;
+      var oModel;
+
+      oRouter = UIComponent.getRouterFor(this);
+      oRouter.getRoute("consultantOverview")
+          .attachMatched(this._onRouteMatched, this);
+
+      oConfigModel = new JSONModel({ size_limit: this._iTableSizeLimit });
+      oView = this.getView();
+      oView.setModel(oConfigModel, "config");
+    },
+
+    onNameLinkPress: function (oEvent) {
+      var oRouter = UIComponent.getRouterFor(this);
+      oRouter.navTo("consultantDetail", {
+        id: this._sID,
+        subsection: "profile"
+      });
+    }
   });
 });
