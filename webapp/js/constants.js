@@ -21,14 +21,14 @@
     };
   }
 
-  Role.prototype.getKey = function () { return this._sKey  };
+  Role.prototype.getKey = function () { return this._sKey;  };
   Role.prototype.getHome = function (oContext) {
     return {
       route: this._sHomeRoute,
-      parameters: this._fnParamGetter(oContext);
-    }
+      parameters: this._fnParamGetter(oContext)
+    };
   };
-  Role.prototype.toString = function () { return this._sKey  };
+  Role.prototype.toString = function () { return this._sKey;  };
   /* --End of Role Class definition -- */
 
 
@@ -37,6 +37,6 @@
   appConstants.role = {
     Conultant: new Role("consultant", "consultantOverview"),
     ConsultingFirm: new Role("consulting_firm", "consultingFirmOverview"),
-    Vendor: new Role("vendor", "vendorOverview"),
+    Vendor: new Role("vendor", "vendorOverview")
   };
 })(window);
