@@ -102,9 +102,19 @@
           "target": "consultant_overview"
         },
         {
-          "pattern": "{role}/{id}",
-          "name": "overview",
-          "target": "overview"
+          "pattern": "consultant/{id}",
+          "name": "consultantOverview",
+          "target": "consultantOverview"
+        },
+        {
+          "pattern": "consultingFirm/{id}",
+          "name": "consultingFirmOverview",
+          "target": "consultingFirmOverview"
+        },
+        {
+          "pattern": "vendor/{id}",
+          "name": "vendorOverview",
+          "target": "vendorOverview"
         }
       ],
       "targets" : {
@@ -134,6 +144,15 @@
         },
         "overview": {
           "viewName": "Overview"
+        },
+        "consultantOverview": {
+          "viewName": "consultant.Overview"
+        },
+        "consultingFirmOverview": {
+          "viewName": "consultingFirm.Overview"
+        },
+        "vendorOverview": {
+          "viewName": "vendor.Overview"
         }
       }
     }
