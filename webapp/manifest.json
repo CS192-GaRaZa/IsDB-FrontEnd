@@ -117,7 +117,7 @@
           "target": "vendorOverview"
         },
         {
-          "pattern": "vendor/detail",
+          "pattern": "vendor_temp/detail",
           "name": "vendorDetail",
           "target": "vendorDetail"
         }
