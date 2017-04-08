@@ -165,8 +165,6 @@
 									value="{/description}" />
 
 								<Label />
-								<Label />
-								<Label />
 
 								<f:SimpleForm
 									title="Consulting Background"
@@ -220,8 +218,6 @@
 								</f:SimpleForm>
 
 								<Label />
-								<Label />
-								<Label />
 
 								<f:SimpleForm
 									title="Education"
@@ -235,8 +231,6 @@
 									columnsL="1"
 									singleContainerFullSize="false">
 									<f:content>
-										<core:Title />
-										<Label text="Previous Education" />
 										<Table
 											inset="false"
 											items="{/educations}"
@@ -278,8 +272,6 @@
 									</f:content>
 								</f:SimpleForm>
 
-								<Label />
-								<Label />
 								<Label />
 
 								<f:SimpleForm
@@ -327,8 +319,6 @@
 
 
 								<Label />
-								<Label />
-								<Label />
 
 								<f:SimpleForm
 									title="Contact"
@@ -342,7 +332,7 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Text text="Permanent Address" />
+										<Title text="Permanent Address" />
 										<Label text="Street" />
 										<Input value="{/perm_street}" />
 										<Label text="City" />
@@ -354,7 +344,7 @@
 										<Label text="Country" />
 										<Input value="{/perm_country}" />
 										<core:Title />
-										<Text text="Mailing Address" />
+										<Title text="Mailing Address" />
 										<Label text="Street" />
 										<Input value="{/mail_street}" />
 										<Label text="City" />
@@ -366,7 +356,7 @@
 										<Label text="Country" />
 										<Input value="{/mail_country}" />
 										<core:Title />
-										<Text text="Email and Phone" />
+										<Title text="Email and Phone" />
 										<Label text="Email" />
 										<Input value="{/email}" />
 										<Label text="Phone" />

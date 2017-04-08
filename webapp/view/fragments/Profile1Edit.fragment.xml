@@ -101,8 +101,6 @@
 									value="{/summary}" />
 
 								<Label />
-								<Label />
-								<Label />
 
 								<f:SimpleForm
 									title="Consulting Background"
