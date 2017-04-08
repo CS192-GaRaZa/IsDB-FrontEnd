@@ -1,0 +1,3692 @@
+[
+  {
+    "name": "Andorra",
+    "states": [
+      "Canillo",
+      "Encamp",
+      "La Massana",
+      "Ordino",
+      "Sant Julià de Loria",
+      "Andorra la Vella",
+      "Escaldes-Engordany"
+    ]
+  },
+  {
+    "name": "United Arab Emirates",
+    "states": [
+      "Abu Dhabi",
+      "Dubai",
+      "Al Fujayrah",
+      "Ra's al Khaymah",
+      "Ash Shariqah"
+    ]
+  },
+  {
+    "name": "Afghanistan",
+    "states": [
+      "Daykundi",
+      "Herat",
+      "Kabul",
+      "Kandahar",
+      "Wardak",
+      "Zabul"
+    ]
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "states": [
+      "Parish of Saint George",
+      "Parish of Saint John",
+      "Parish of Saint Mary",
+      "Parish of Saint Peter",
+      "Barbuda"
+    ]
+  },
+  {
+    "name": "Anguilla",
+    "states": []
+  },
+  {
+    "name": "Albania",
+    "states": [
+      "Qarku i Beratit",
+      "Qarku i Durresit",
+      "Qarku i Elbasanit",
+      "Qarku i Gjirokastres",
+      "Qarku i Korces",
+      "Qarku i Shkodres",
+      "Qarku i Tiranes",
+      "Qarku i Vlores"
+    ]
+  },
+  {
+    "name": "Armenia",
+    "states": [
+      "Aragatsotni Marz",
+      "Armaviri Marz",
+      "Yerevan",
+      "Kotayk'i Marz",
+      "Lorru Marz",
+      "Syunik'i Marz",
+      "Tavushi Marz",
+      "Vayots' Dzori Marz"
+    ]
+  },
+  {
+    "name": "Angola",
+    "states": [
+      "Bengo Province",
+      "Benguela",
+      "Provincia do Bie",
+      "Cabinda",
+      "Kuando Kubango",
+      "Cunene Province",
+      "Cuanza Norte Province",
+      "Kwanza Sul",
+      "Huambo",
+      "Huila Province",
+      "Lunda Norte Province",
+      "Lunda Sul",
+      "Luanda Province",
+      "Malanje Province",
+      "Moxico",
+      "Namibe Province",
+      "Provincia do Uige"
+    ]
+  },
+  {
+    "name": "Antarctica",
+    "states": []
+  },
+  {
+    "name": "Argentina",
+    "states": [
+      "Salta",
+      "Buenos Aires",
+      "Buenos Aires F.D.",
+      "Provincia de San Luis",
+      "Entre Rios",
+      "Provincia de La Rioja",
+      "Santiago del Estero",
+      "Chaco",
+      "Provincia de San Juan",
+      "Provincia de Catamarca",
+      "La Pampa",
+      "Mendoza",
+      "Provincia de Misiones",
+      "Formosa",
+      "Neuquen",
+      "Rio Negro",
+      "Santa Fe",
+      "Provincia de Tucuman",
+      "Chubut",
+      "Tierra del Fuego",
+      "Corrientes",
+      "Cordoba",
+      "Provincia de Jujuy",
+      "Santa Cruz"
+    ]
+  },
+  {
+    "name": "American Samoa",
+    "states": [
+      "Eastern District"
+    ]
+  },
+  {
+    "name": "Austria",
+    "states": [
+      "Burgenland",
+      "Carinthia",
+      "Lower Austria",
+      "Upper Austria",
+      "Salzburg",
+      "Styria",
+      "Tyrol",
+      "Vorarlberg",
+      "Vienna"
+    ]
+  },
+  {
+    "name": "Australia",
+    "states": [
+      "Australian Capital Territory",
+      "New South Wales",
+      "Northern Territory",
+      "Queensland",
+      "South Australia",
+      "Tasmania",
+      "Victoria",
+      "Western Australia"
+    ]
+  },
+  {
+    "name": "Aruba",
+    "states": []
+  },
+  {
+    "name": "Åland",
+    "states": [
+      "Alands landsbygd",
+      "Alands skaergard",
+      "Mariehamns stad"
+    ]
+  },
+  {
+    "name": "Azerbaijan",
+    "states": [
+      "Absheron Rayon",
+      "Baku City",
+      "Nakhichevan",
+      "Quba Rayon",
+      "Qusar Rayon",
+      "Shaki City",
+      "Sumqayit City",
+      "Khachmaz Rayon",
+      "Goygol Rayon"
+    ]
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "states": [
+      "Federation of Bosnia and Herzegovina",
+      "Brčko",
+      "Republika Srpska"
+    ]
+  },
+  {
+    "name": "Barbados",
+    "states": [
+      "Christ Church",
+      "Saint Andrew",
+      "Saint James",
+      "Saint Lucy",
+      "Saint Michael",
+      "Saint Thomas"
+    ]
+  },
+  {
+    "name": "Bangladesh",
+    "states": [
+      "Barisal Division",
+      "Chittagong",
+      "Dhaka Division",
+      "Khulna Division",
+      "Rajshahi Division",
+      "Rangpur Division"
+    ]
+  },
+  {
+    "name": "Belgium",
+    "states": [
+      "Brussels Capital",
+      "Flanders",
+      "Wallonia"
+    ]
+  },
+  {
+    "name": "Burkina Faso",
+    "states": [
+      "Centre",
+      "Centre-Est",
+      "High-Basins Region"
+    ]
+  },
+  {
+    "name": "Bulgaria",
+    "states": [
+      "Blagoevgrad",
+      "Burgas",
+      "Varna",
+      "Oblast Veliko Turnovo",
+      "Oblast Vidin",
+      "Oblast Vratsa",
+      "Gabrovo",
+      "Oblast Dobrich",
+      "Oblast Kurdzhali",
+      "Oblast Kyustendil",
+      "Lovech",
+      "Oblast Montana",
+      "Pazardzhik",
+      "Pernik",
+      "Oblast Pleven",
+      "Plovdiv",
+      "Oblast Razgrad",
+      "Oblast Ruse",
+      "Oblast Silistra",
+      "Oblast Sliven",
+      "Oblast Smolyan",
+      "Sofia-Capital",
+      "Sofiya",
+      "Oblast Stara Zagora",
+      "Oblast Turgovishte",
+      "Oblast Khaskovo",
+      "Oblast Shumen",
+      "Oblast Yambol"
+    ]
+  },
+  {
+    "name": "Bahrain",
+    "states": [
+      "Manama",
+      "Southern Governorate",
+      "Muharraq",
+      "Central Governorate",
+      "Northern"
+    ]
+  },
+  {
+    "name": "Burundi",
+    "states": [
+      "Bujumbura Mairie Province"
+    ]
+  },
+  {
+    "name": "Benin",
+    "states": [
+      "Atlantique Department",
+      "Littoral"
+    ]
+  },
+  {
+    "name": "Saint-Barthélemy",
+    "states": []
+  },
+  {
+    "name": "Bermuda",
+    "states": [
+      "Saint George",
+      "Hamilton city",
+      "Sandys Parish"
+    ]
+  },
+  {
+    "name": "Brunei",
+    "states": [
+      "Belait District",
+      "Brunei and Muara District",
+      "Temburong District",
+      "Tutong District"
+    ]
+  },
+  {
+    "name": "Bolivia",
+    "states": [
+      "El Beni",
+      "Departamento de Cochabamba",
+      "Departamento de Chuquisaca",
+      "Departamento de La Paz",
+      "Departamento de Pando",
+      "Oruro",
+      "Departamento de Potosi",
+      "Departamento de Santa Cruz",
+      "Departamento de Tarija"
+    ]
+  },
+  {
+    "name": "Bonaire",
+    "states": [
+      "Bonaire"
+    ]
+  },
+  {
+    "name": "Brazil",
+    "states": [
+      "Acre",
+      "Alagoas",
+      "Amazonas",
+      "Amapa",
+      "Bahia",
+      "Ceara",
+      "Federal District",
+      "Espirito Santo",
+      "Goias",
+      "Maranhao",
+      "Minas Gerais",
+      "Mato Grosso do Sul",
+      "Mato Grosso",
+      "Para",
+      "Paraiba",
+      "Pernambuco",
+      "Piaui",
+      "Parana",
+      "Rio de Janeiro",
+      "Rio Grande do Norte",
+      "Rondonia",
+      "Roraima",
+      "Rio Grande do Sul",
+      "Santa Catarina",
+      "Sergipe",
+      "Sao Paulo",
+      "Tocantins"
+    ]
+  },
+  {
+    "name": "Bahamas",
+    "states": [
+      "Bimini",
+      "Central Eleuthera District",
+      "Central Abaco District",
+      "City of Freeport District",
+      "Harbour Island",
+      "New Providence District",
+      "North Andros District",
+      "Spanish Wells District"
+    ]
+  },
+  {
+    "name": "Bhutan",
+    "states": [
+      "Paro",
+      "Chhukha Dzongkhag",
+      "Thimphu Dzongkhag",
+      "Mongar Dzongkhag"
+    ]
+  },
+  {
+    "name": "Botswana",
+    "states": [
+      "Central District",
+      "North East District",
+      "South East District"
+    ]
+  },
+  {
+    "name": "Belarus",
+    "states": [
+      "Brest",
+      "Minsk",
+      "Gomel",
+      "Grodnenskaya",
+      "Mogilev",
+      "Minsk",
+      "Vitebsk"
+    ]
+  },
+  {
+    "name": "Belize",
+    "states": [
+      "Belize District",
+      "Cayo District",
+      "Stann Creek District"
+    ]
+  },
+  {
+    "name": "Canada",
+    "states": [
+      "Alberta",
+      "British Columbia",
+      "Manitoba",
+      "New Brunswick",
+      "Newfoundland and Labrador",
+      "Nova Scotia",
+      "Northwest Territories",
+      "Nunavut",
+      "Ontario",
+      "Prince Edward Island",
+      "Quebec",
+      "Saskatchewan",
+      "Yukon"
+    ]
+  },
+  {
+    "name": "Cocos [Keeling] Islands",
+    "states": []
+  },
+  {
+    "name": "Congo",
+    "states": [
+      "Province du Bas-Congo",
+      "Katanga Province",
+      "Kinshasa City",
+      "Nord Kivu"
+    ]
+  },
+  {
+    "name": "Central African Republic",
+    "states": [
+      "Commune de Bangui"
+    ]
+  },
+  {
+    "name": "Republic of the Congo",
+    "states": [
+      "Sangha",
+      "Commune de Brazzaville"
+    ]
+  },
+  {
+    "name": "Switzerland",
+    "states": [
+      "Aargau",
+      "Appenzell Innerrhoden",
+      "Appenzell Ausserrhoden",
+      "Bern",
+      "Basel-Landschaft",
+      "Basel-City",
+      "Fribourg",
+      "Geneva",
+      "Glarus",
+      "Grisons",
+      "Jura",
+      "Lucerne",
+      "Neuchâtel",
+      "Nidwalden",
+      "Obwalden",
+      "Saint Gallen",
+      "Schaffhausen",
+      "Solothurn",
+      "Schwyz",
+      "Thurgau",
+      "Ticino",
+      "Uri",
+      "Vaud",
+      "Valais",
+      "Zug",
+      "Zurich"
+    ]
+  },
+  {
+    "name": "Ivory Coast",
+    "states": [
+      "Lagunes",
+      "Haut-Sassandra"
+    ]
+  },
+  {
+    "name": "Cook Islands",
+    "states": []
+  },
+  {
+    "name": "Chile",
+    "states": [
+      "Aysen",
+      "Antofagasta",
+      "Region de Arica y Parinacota",
+      "Region de la Araucania",
+      "Atacama",
+      "Region del Biobio",
+      "Coquimbo",
+      "Region del Libertador General Bernardo O'Higgins",
+      "Los Lagos",
+      "Region de Los Rios",
+      "Region de Magallanes y de la Antartica Chilena",
+      "Maule",
+      "Santiago Metropolitan",
+      "Tarapacá",
+      "Region de Valparaiso"
+    ]
+  },
+  {
+    "name": "Cameroon",
+    "states": [
+      "Adamaoua",
+      "Centre",
+      "Littoral",
+      "North Region",
+      "North-West Region",
+      "West",
+      "South Region",
+      "South-West Region"
+    ]
+  },
+  {
+    "name": "China",
+    "states": [
+      "Beijing Shi",
+      "Tianjin Shi",
+      "Hebei",
+      "Shanxi Sheng",
+      "Inner Mongolia",
+      "Liaoning",
+      "Jilin Sheng",
+      "Heilongjiang Sheng",
+      "Shanghai Shi",
+      "Jiangsu Sheng",
+      "Zhejiang Sheng",
+      "Anhui Sheng",
+      "Fujian",
+      "Jiangxi Sheng",
+      "Shandong Sheng",
+      "Henan Sheng",
+      "Hubei",
+      "Hunan",
+      "Guangdong",
+      "Guangxi Zhuangzu Zizhiqu",
+      "Hainan",
+      "Chongqing Shi",
+      "Sichuan Sheng",
+      "Guizhou Sheng",
+      "Yunnan",
+      "Tibet Autonomous Region",
+      "Shaanxi",
+      "Gansu Sheng",
+      "Qinghai Sheng",
+      "Ningxia Huizu Zizhiqu",
+      "Xinjiang Uygur Zizhiqu"
+    ]
+  },
+  {
+    "name": "Colombia",
+    "states": [
+      "Departamento del Amazonas",
+      "Antioquia",
+      "Departamento de Arauca",
+      "Atlántico",
+      "Departamento de Bolivar",
+      "Departamento de Boyaca",
+      "Departamento de Caldas",
+      "Departamento del Caqueta",
+      "Departamento de Casanare",
+      "Departamento del Cauca",
+      "Departamento del Cesar",
+      "Departamento de Cordoba",
+      "Cundinamarca",
+      "Bogota D.C.",
+      "Departamento del Guainia",
+      "Departamento del Guaviare",
+      "Departamento del Huila",
+      "Departamento de La Guajira",
+      "Departamento del Magdalena",
+      "Departamento del Meta",
+      "Departamento de Narino",
+      "Departamento de Norte de Santander",
+      "Quindio Department",
+      "Departamento de Risaralda",
+      "Departamento de Santander",
+      "Departamento de Sucre",
+      "Departamento de Tolima",
+      "Departamento del Valle del Cauca",
+      "Departamento del Vaupes",
+      "Departamento del Vichada"
+    ]
+  },
+  {
+    "name": "country_name",
+    "states": []
+  },
+  {
+    "name": "Costa Rica",
+    "states": [
+      "Provincia de Alajuela",
+      "Provincia de Cartago",
+      "Provincia de Guanacaste",
+      "Provincia de Heredia",
+      "Provincia de Limon",
+      "Provincia de Puntarenas",
+      "Provincia de San Jose"
+    ]
+  },
+  {
+    "name": "Cuba",
+    "states": [
+      "Provincia de Pinar del Rio",
+      "La Habana",
+      "Provincia de Matanzas",
+      "Provincia de Cienfuegos",
+      "Provincia de Sancti Spiritus",
+      "Provincia de Ciego de Avila",
+      "Provincia de Camaguey",
+      "Las Tunas",
+      "Provincia de Holguin",
+      "Provincia Granma",
+      "Provincia de Santiago de Cuba",
+      "Provincia de Guantanamo",
+      "Artemisa"
+    ]
+  },
+  {
+    "name": "Cape Verde",
+    "states": [
+      "Concelho da Praia"
+    ]
+  },
+  {
+    "name": "Curaçao",
+    "states": []
+  },
+  {
+    "name": "Christmas Island",
+    "states": []
+  },
+  {
+    "name": "Cyprus",
+    "states": [
+      "Lefkosia",
+      "Limassol",
+      "Larnaka",
+      "Ammochostos",
+      "Pafos",
+      "Keryneia"
+    ]
+  },
+  {
+    "name": "Czech Republic",
+    "states": [
+      "Jihocesky kraj",
+      "South Moravian",
+      "Karlovarsky kraj",
+      "Kralovehradecky kraj",
+      "Liberecky kraj",
+      "Moravskoslezsky kraj",
+      "Olomoucky kraj",
+      "Pardubicky kraj",
+      "Plzensky kraj",
+      "Hlavni mesto Praha",
+      "Central Bohemia",
+      "Ustecky kraj",
+      "Kraj Vysocina",
+      "Zlín"
+    ]
+  },
+  {
+    "name": "Germany",
+    "states": [
+      "Brandenburg",
+      "Land Berlin",
+      "Baden-Württemberg Region",
+      "Bavaria",
+      "Bremen",
+      "Hesse",
+      "Hamburg",
+      "Mecklenburg-Vorpommern",
+      "Lower Saxony",
+      "North Rhine-Westphalia",
+      "Rheinland-Pfalz",
+      "Schleswig-Holstein",
+      "Saarland",
+      "Saxony",
+      "Saxony-Anhalt",
+      "Thuringia"
+    ]
+  },
+  {
+    "name": "Djibouti",
+    "states": []
+  },
+  {
+    "name": "Denmark",
+    "states": [
+      "North Denmark",
+      "Central Jutland",
+      "South Denmark",
+      "Capital Region",
+      "Zealand"
+    ]
+  },
+  {
+    "name": "Dominica",
+    "states": [
+      "Saint Andrew",
+      "Saint George",
+      "Saint Patrick"
+    ]
+  },
+  {
+    "name": "Dominican Republic",
+    "states": [
+      "Provincia de San Jose de Ocoa",
+      "Provincia de Santo Domingo",
+      "Nacional",
+      "Provincia de Barahona",
+      "Provincia Duarte",
+      "Provincia de El Seibo",
+      "Provincia Espaillat",
+      "Provincia de Independencia",
+      "Provincia de La Altagracia",
+      "Provincia de La Romana",
+      "Provincia de La Vega",
+      "Provincia de Monte Cristi",
+      "Provincia de Pedernales",
+      "Provincia de Peravia",
+      "Puerto Plata",
+      "Provincia de San Cristobal",
+      "Provincia de San Juan",
+      "Provincia de San Pedro de Macoris",
+      "Provincia Sanchez Ramirez",
+      "Provincia de Santiago",
+      "Provincia de Santiago Rodriguez",
+      "Provincia de Hato Mayor"
+    ]
+  },
+  {
+    "name": "Algeria",
+    "states": [
+      "Wilaya de Chlef",
+      "Wilaya de Laghouat",
+      "Wilaya de Batna",
+      "Wilaya de Bejaia",
+      "Wilaya de Bechar",
+      "Wilaya de Blida",
+      "Wilaya de Tamanrasset",
+      "Wilaya de Tlemcen",
+      "Wilaya de Tiaret",
+      "Wilaya de Tizi Ouzou",
+      "Wilaya d' Alger",
+      "Wilaya de Djelfa",
+      "Wilaya de Jijel",
+      "Wilaya de Setif",
+      "Wilaya de Saida",
+      "Annaba",
+      "Wilaya de Constantine",
+      "Wilaya de Mascara",
+      "Wilaya de Ouargla",
+      "Oran",
+      "Illizi",
+      "Wilaya de Bordj Bou Arreridj",
+      "El Tarf",
+      "Wilaya de Tissemsilt",
+      "Wilaya de Souk Ahras",
+      "Wilaya de Tipaza",
+      "Wilaya de Ghardaia",
+      "Wilaya de Relizane"
+    ]
+  },
+  {
+    "name": "Ecuador",
+    "states": [
+      "Provincia del Azuay",
+      "Provincia de Bolivar",
+      "Provincia del Carchi",
+      "Provincia de Francisco de Orellana",
+      "Provincia de Esmeraldas",
+      "Provincia del Canar",
+      "Provincia del Guayas",
+      "Provincia del Chimborazo",
+      "Provincia de Imbabura",
+      "Provincia de Loja",
+      "Provincia de Manabi",
+      "Provincia de Napo",
+      "Provincia de El Oro",
+      "Provincia de Pichincha",
+      "Provincia de Los Rios",
+      "Provincia de Morona-Santiago",
+      "Provincia de Santo Domingo de los Tsachilas",
+      "Provincia de Santa Elena",
+      "Provincia del Tungurahua",
+      "Provincia de Sucumbios",
+      "Provincia de Cotopaxi",
+      "Provincia del Pastaza",
+      "Provincia de Zamora-Chinchipe"
+    ]
+  },
+  {
+    "name": "Estonia",
+    "states": [
+      "Harju",
+      "Hiiumaa",
+      "Ida-Virumaa",
+      "Jõgevamaa",
+      "Järvamaa",
+      "Lääne",
+      "Lääne-Virumaa",
+      "Põlvamaa",
+      "Pärnumaa",
+      "Raplamaa",
+      "Saare",
+      "Tartu",
+      "Valgamaa",
+      "Viljandimaa",
+      "Võrumaa"
+    ]
+  },
+  {
+    "name": "Egypt",
+    "states": [
+      "Alexandria",
+      "Muhafazat Asyut",
+      "Red Sea",
+      "Beheira Governorate",
+      "Muhafazat Bani Suwayf",
+      "Muhafazat al Qahirah",
+      "Muhafazat ad Daqahliyah",
+      "Muhafazat Dumyat",
+      "Muhafazat al Gharbiyah",
+      "Muhafazat al Jizah",
+      "Ismailia Governorate",
+      "Muhafazat al Qalyubiyah",
+      "Luxor",
+      "Muhafazat al Minya",
+      "Muhafazat Bur Sa`id",
+      "Muhafazat Suhaj",
+      "Eastern Province",
+      "Muhafazat Shamal Sina'",
+      "As Suways"
+    ]
+  },
+  {
+    "name": "Eritrea",
+    "states": [
+      "Maekel Region"
+    ]
+  },
+  {
+    "name": "Spain",
+    "states": [
+      "Andalusia",
+      "Aragon",
+      "Principality of Asturias",
+      "Cantabria",
+      "Ceuta",
+      "Castille and León",
+      "Castille-La Mancha",
+      "Canary Islands",
+      "Catalonia",
+      "Extremadura",
+      "Galicia",
+      "Balearic Islands",
+      "Murcia",
+      "Madrid",
+      "Melilla",
+      "Navarre",
+      "Basque Country",
+      "La Rioja",
+      "Valencia"
+    ]
+  },
+  {
+    "name": "Ethiopia",
+    "states": [
+      "Adis Abeba Astedader",
+      "Afar Region",
+      "Amhara",
+      "Bīnshangul Gumuz",
+      "Dire Dawa",
+      "Gambela",
+      "Harari Region",
+      "Oromiya",
+      "Somali",
+      "Tigray"
+    ]
+  },
+  {
+    "name": "Finland",
+    "states": [
+      "South Karelia",
+      "Southern Ostrobothnia",
+      "Southern Savonia",
+      "Kainuu",
+      "Haeme",
+      "Central Ostrobothnia",
+      "Central Finland",
+      "Lapland",
+      "Pirkanmaa",
+      "Ostrobothnia",
+      "North Karelia",
+      "Northern Ostrobothnia",
+      "Northern Savo",
+      "Päijänne Tavastia",
+      "Satakunta",
+      "Uusimaa",
+      "Varsinais-Suomi",
+      "Oulu"
+    ]
+  },
+  {
+    "name": "Fiji",
+    "states": [
+      "Central",
+      "Western"
+    ]
+  },
+  {
+    "name": "Falkland Islands",
+    "states": []
+  },
+  {
+    "name": "Federated States of Micronesia",
+    "states": []
+  },
+  {
+    "name": "Faroe Islands",
+    "states": [
+      "Eysturoy",
+      "Norðoyar",
+      "Streymoy",
+      "Suðuroy"
+    ]
+  },
+  {
+    "name": "France",
+    "states": [
+      "Alsace",
+      "Aquitaine",
+      "Auvergne",
+      "Bourgogne",
+      "Brittany",
+      "Centre",
+      "Champagne-Ardenne",
+      "Corsica",
+      "Franche-Comté",
+      "Île-de-France",
+      "Languedoc-Roussillon",
+      "Limousin",
+      "Lorraine",
+      "Midi-Pyrénées",
+      "Nord-Pas-de-Calais",
+      "Lower Normandy",
+      "Haute-Normandie",
+      "Pays de la Loire",
+      "Picardie",
+      "Poitou-Charentes",
+      "Provence-Alpes-Côte d'Azur",
+      "Rhône-Alpes"
+    ]
+  },
+  {
+    "name": "Gabon",
+    "states": [
+      "Estuaire",
+      "Province du Haut-Ogooue",
+      "Province du Moyen-Ogooue",
+      "Province de la Ngounie",
+      "Province de l'Ogooue-Maritime"
+    ]
+  },
+  {
+    "name": "United Kingdom",
+    "states": [
+      "England",
+      "Kent",
+      "City of London",
+      "Northern Ireland",
+      "Scotland",
+      "Somerset",
+      "Surrey",
+      "Wales"
+    ]
+  },
+  {
+    "name": "Grenada",
+    "states": [
+      "Saint George",
+      "Saint John",
+      "Saint Patrick"
+    ]
+  },
+  {
+    "name": "Georgia",
+    "states": [
+      "Abkhazia",
+      "Ajaria",
+      "Guria",
+      "Imereti",
+      "Mtskheta-Mtianeti",
+      "Racha-Lechkhumi and Kvemo Svaneti",
+      "Shida Kartli",
+      "Samegrelo and Zemo Svaneti",
+      "K'alak'i T'bilisi"
+    ]
+  },
+  {
+    "name": "French Guiana",
+    "states": []
+  },
+  {
+    "name": "Guernsey",
+    "states": [
+      "Saint Peter Port"
+    ]
+  },
+  {
+    "name": "Ghana",
+    "states": [
+      "Greater Accra Region",
+      "Ashanti Region",
+      "Brong-Ahafo",
+      "Central Region",
+      "Eastern Region",
+      "Volta Region",
+      "Upper East Region",
+      "Upper West Region",
+      "Western Region"
+    ]
+  },
+  {
+    "name": "Gibraltar",
+    "states": []
+  },
+  {
+    "name": "Greenland",
+    "states": [
+      "Kujalleq",
+      "Qaasuitsup",
+      "Qeqqata",
+      "Sermersooq"
+    ]
+  },
+  {
+    "name": "Gambia",
+    "states": [
+      "City of Banjul"
+    ]
+  },
+  {
+    "name": "Guinea",
+    "states": [
+      "Boke Region",
+      "Conakry Region",
+      "Kindia",
+      "Faranah",
+      "Kankan Region",
+      "Labe Region",
+      "Mamou Region",
+      "Nzerekore Region"
+    ]
+  },
+  {
+    "name": "Guadeloupe",
+    "states": []
+  },
+  {
+    "name": "Equatorial Guinea",
+    "states": [
+      "Provincia de Bioko Norte"
+    ]
+  },
+  {
+    "name": "Greece",
+    "states": [
+      "East Macedonia and Thrace",
+      "Central Macedonia",
+      "West Macedonia",
+      "Epirus",
+      "Thessaly",
+      "Ionian Islands",
+      "West Greece",
+      "Central Greece",
+      "Attica",
+      "Peloponnese",
+      "North Aegean",
+      "South Aegean",
+      "Crete"
+    ]
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "states": []
+  },
+  {
+    "name": "Guatemala",
+    "states": [
+      "Departamento de Alta Verapaz",
+      "Departamento de Chimaltenango",
+      "Departamento de Chiquimula",
+      "Departamento de Escuintla",
+      "Departamento de Guatemala",
+      "Departamento de Huehuetenango",
+      "Departamento de Izabal",
+      "Departamento de Jutiapa",
+      "Departamento del Peten",
+      "Departamento de Quetzaltenango",
+      "Departamento de Retalhuleu",
+      "Departamento de Sacatepequez",
+      "Departamento de San Marcos",
+      "Departamento de Solola",
+      "Departamento de Santa Rosa",
+      "Suchitepeque",
+      "Departamento de Totonicapan",
+      "Departamento de Zacapa"
+    ]
+  },
+  {
+    "name": "Guam",
+    "states": [
+      "Santa Rita Municipality",
+      "Barrigada",
+      "Dededo",
+      "Hagatna",
+      "Inarajan",
+      "Tamuning",
+      "Yigo"
+    ]
+  },
+  {
+    "name": "Guinea-Bissau",
+    "states": [
+      "Bissau",
+      "Cacheu Region"
+    ]
+  },
+  {
+    "name": "Guyana",
+    "states": [
+      "Demerara-Mahaica Region",
+      "East Berbice-Corentyne Region",
+      "Upper Demerara-Berbice Region"
+    ]
+  },
+  {
+    "name": "Hong Kong",
+    "states": [
+      "Southern",
+      "Wanchai",
+      "Kowloon City",
+      "Kwon Tong",
+      "Sham Shui Po",
+      "Wong Tai Sin",
+      "Sha Tin",
+      "Yuen Long District"
+    ]
+  },
+  {
+    "name": "Honduras",
+    "states": [
+      "Departamento de Atlantida",
+      "Departamento de Comayagua",
+      "Departamento de Copan",
+      "Departamento de Cortes",
+      "Departamento de El Paraiso",
+      "Departamento de Francisco Morazan",
+      "Departamento de Gracias a Dios",
+      "Bay Islands",
+      "Departamento de Intibuca",
+      "Departamento de Lempira",
+      "Departamento de Santa Barbara",
+      "Departamento de Valle",
+      "Departamento de Yoro"
+    ]
+  },
+  {
+    "name": "Croatia",
+    "states": [
+      "Zagreb County",
+      "Krapinsko-Zagorska Zupanija",
+      "Sisacko-Moslavacka Zupanija",
+      "Karlovacka Zupanija",
+      "Varazdinska Zupanija",
+      "Koprivnicko-Krizevacka Zupanija",
+      "Bjelovarsko-Bilogorska Zupanija",
+      "Primorsko-Goranska Zupanija",
+      "Licko-Senjska Zupanija",
+      "Viroviticko-Podravska Zupanija",
+      "Pozesko-Slavonska Zupanija",
+      "Brodsko-Posavska Zupanija",
+      "Zadarska Zupanija",
+      "Osjecko-Baranjska Zupanija",
+      "Sibensko-Kninska Zupanija",
+      "Vukovarsko-Srijemska Zupanija",
+      "Splitsko-Dalmatinska Zupanija",
+      "Istarska Zupanija",
+      "Dubrovacko-Neretvanska Zupanija",
+      "Medimurska Zupanija",
+      "Grad Zagreb"
+    ]
+  },
+  {
+    "name": "Haiti",
+    "states": [
+      "Centre",
+      "Nord",
+      "Departement du Nord-Est",
+      "Departement de l'Ouest",
+      "Sud-Est"
+    ]
+  },
+  {
+    "name": "Hungary",
+    "states": [
+      "Baranya",
+      "Bekes",
+      "Bács-Kiskun",
+      "Budapest fovaros",
+      "Borsod-Abaúj-Zemplén",
+      "Csongrad megye",
+      "Fejér",
+      "Győr-Moson-Sopron",
+      "Hajdú-Bihar",
+      "Heves megye",
+      "Jász-Nagykun-Szolnok",
+      "Komárom-Esztergom",
+      "Nograd megye",
+      "Pest megye",
+      "Somogy megye",
+      "Szabolcs-Szatmár-Bereg",
+      "Tolna megye",
+      "Vas",
+      "Veszprem megye",
+      "Zala"
+    ]
+  },
+  {
+    "name": "Indonesia",
+    "states": [
+      "Nanggroe Aceh Darussalam Province",
+      "Bali",
+      "Bangka–Belitung Islands",
+      "Propinsi Bengkulu",
+      "Banten",
+      "Provinsi Gorontalo",
+      "Provinsi Jambi",
+      "West Java",
+      "East Java",
+      "Daerah Khusus Ibukota Jakarta",
+      "Central Java",
+      "West Kalimantan",
+      "East Kalimantan",
+      "Riau Islands",
+      "South Kalimantan",
+      "Central Kalimantan",
+      "Provinsi Lampung",
+      "Provinsi Maluku",
+      "Provinsi Maluku Utara",
+      "West Nusa Tenggara",
+      "East Nusa Tenggara",
+      "Provinsi Papua",
+      "West Papua",
+      "Provinsi Riau",
+      "North Sulawesi",
+      "West Sumatra",
+      "Sulawesi Tenggara",
+      "South Sulawesi",
+      "Provinsi Sulawesi Barat",
+      "South Sumatra",
+      "Central Sulawesi",
+      "North Sumatra",
+      "Daerah Istimewa Yogyakarta"
+    ]
+  },
+  {
+    "name": "Ireland",
+    "states": [
+      "Connaught",
+      "County Galway",
+      "Leinster",
+      "Munster",
+      "Ulster",
+      "County Wexford"
+    ]
+  },
+  {
+    "name": "Israel",
+    "states": [
+      "Southern District",
+      "Haifa",
+      "Jerusalem",
+      "Central District",
+      "Tel Aviv",
+      "Northern District"
+    ]
+  },
+  {
+    "name": "Isle of Man",
+    "states": []
+  },
+  {
+    "name": "India",
+    "states": [
+      "Union Territory of Andaman and Nicobar Islands",
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chandigarh",
+      "State of Chhattisgarh",
+      "Daman and Diu",
+      "National Capital Territory of Delhi",
+      "Dadra and Nagar Haveli",
+      "Goa",
+      "Gujarat",
+      "State of Himachal Pradesh",
+      "Haryana",
+      "State of Jharkhand",
+      "Kashmir",
+      "Karnataka",
+      "Kerala",
+      "Laccadives",
+      "Maharashtra",
+      "Meghalaya",
+      "Manipur",
+      "Madhya Pradesh",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "State of Punjab",
+      "Union Territory of Puducherry",
+      "Rajasthan",
+      "Sikkim",
+      "Telangana",
+      "Tamil Nadu",
+      "Tripura",
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "West Bengal"
+    ]
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "states": []
+  },
+  {
+    "name": "Iraq",
+    "states": [
+      "Anbar",
+      "Muhafazat Arbil",
+      "Muhafazat al Basrah",
+      "Muhafazat Babil",
+      "Mayorality of Baghdad",
+      "Dihok",
+      "Diyālá",
+      "Dhi Qar",
+      "Maysan",
+      "An Najaf",
+      "Muhafazat Ninawa",
+      "Muhafazat Salah ad Din",
+      "Muhafazat as Sulaymaniyah",
+      "Muhafazat Kirkuk"
+    ]
+  },
+  {
+    "name": "Iran",
+    "states": [
+      "East Azerbaijan",
+      "Ostan-e Azarbayjan-e Gharbi",
+      "Ostan-e Ardabil",
+      "Isfahan",
+      "Ostan-e Ilam",
+      "Bushehr",
+      "Ostan-e Tehran",
+      "Ostan-e Chahar Mahal va Bakhtiari",
+      "Khuzestan",
+      "Zanjan",
+      "Semnān",
+      "Sistan and Baluchestan",
+      "Fars",
+      "Kerman",
+      "Ostan-e Kordestan",
+      "Ostan-e Kermanshah",
+      "Ostan-e Kohgiluyeh va Bowyer Ahmad",
+      "Ostan-e Gilan",
+      "Ostan-e Lorestan",
+      "Māzandarān",
+      "Markazi",
+      "Hormozgan",
+      "Ostan-e Hamadan",
+      "Yazd",
+      "Qom",
+      "Ostan-e Golestan",
+      "Ostan-e Qazvin",
+      "Ostan-e Khorasan-e Jonubi",
+      "Razavi Khorasan",
+      "Ostan-e Khorasan-e Shomali",
+      "Alborz"
+    ]
+  },
+  {
+    "name": "Iceland",
+    "states": [
+      "Capital Region",
+      "Southern Peninsula",
+      "West",
+      "Westfjords",
+      "Northwest",
+      "Northeast",
+      "South"
+    ]
+  },
+  {
+    "name": "Italy",
+    "states": [
+      "Piedmont",
+      "Aosta Valley",
+      "Lombardy",
+      "Trentino-Alto Adige",
+      "Veneto",
+      "Friuli Venezia Giulia",
+      "Liguria",
+      "Emilia-Romagna",
+      "Tuscany",
+      "Umbria",
+      "The Marches",
+      "Latium",
+      "Abruzzo",
+      "Molise",
+      "Campania",
+      "Apulia",
+      "Basilicate",
+      "Calabria",
+      "Sicily",
+      "Sardinia"
+    ]
+  },
+  {
+    "name": "Jersey",
+    "states": [
+      "Saint Helier"
+    ]
+  },
+  {
+    "name": "Jamaica",
+    "states": [
+      "Kingston",
+      "Parish of Saint Andrew",
+      "Parish of Saint Mary",
+      "Parish of Saint Ann",
+      "Parish of Saint James",
+      "Parish of Westmoreland",
+      "St. Elizabeth",
+      "Parish of Manchester",
+      "Parish of Clarendon",
+      "Parish of Saint Catherine"
+    ]
+  },
+  {
+    "name": "Hashemite Kingdom of Jordan",
+    "states": [
+      "Amman",
+      "Balqa",
+      "Irbid",
+      "Mafraq",
+      "Madaba"
+    ]
+  },
+  {
+    "name": "Japan",
+    "states": [
+      "Hokkaidō",
+      "Aomori",
+      "Iwate",
+      "Miyagi",
+      "Akita",
+      "Yamagata",
+      "Fukushima-ken",
+      "Ibaraki",
+      "Tochigi",
+      "Gunma",
+      "Saitama",
+      "Chiba",
+      "Tōkyō",
+      "Kanagawa",
+      "Niigata",
+      "Toyama",
+      "Ishikawa",
+      "Fukui",
+      "Yamanashi",
+      "Nagano",
+      "Gifu",
+      "Shizuoka",
+      "Aichi",
+      "Mie",
+      "Shiga Prefecture",
+      "Kyōto",
+      "Ōsaka",
+      "Hyōgo",
+      "Nara",
+      "Wakayama",
+      "Tottori",
+      "Shimane",
+      "Okayama",
+      "Hiroshima",
+      "Yamaguchi",
+      "Tokushima",
+      "Kagawa",
+      "Ehime",
+      "Kōchi",
+      "Fukuoka",
+      "Saga Prefecture",
+      "Nagasaki",
+      "Kumamoto",
+      "Ōita",
+      "Miyazaki",
+      "Kagoshima",
+      "Okinawa"
+    ]
+  },
+  {
+    "name": "Kenya",
+    "states": [
+      "Garissa District",
+      "Homa Bay District",
+      "Kakamega District",
+      "Kiambu District",
+      "Kisii District",
+      "Kitui District",
+      "Kwale District",
+      "Machakos District",
+      "Makueni District",
+      "Mandera District",
+      "Mombasa District",
+      "Nakuru District",
+      "Nandi South District",
+      "Siaya District",
+      "Tharaka District",
+      "Trans Nzoia District",
+      "Uasin Gishu",
+      "Nairobi Province",
+      "Kisumu"
+    ]
+  },
+  {
+    "name": "Kyrgyzstan",
+    "states": [
+      "Chuyskaya Oblast'"
+    ]
+  },
+  {
+    "name": "Cambodia",
+    "states": [
+      "Banteay Meanchey",
+      "Phnom Penh",
+      "Preah Sihanouk",
+      "Battambang",
+      "Kampong Chhnang",
+      "Kampong Speu",
+      "Kampong Thom",
+      "Kandal"
+    ]
+  },
+  {
+    "name": "Kiribati",
+    "states": [
+      "Gilbert Islands"
+    ]
+  },
+  {
+    "name": "Comoros",
+    "states": [
+      "Ndzuwani",
+      "Grande Comore"
+    ]
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "states": [
+      "Saint Anne Sandy Point",
+      "Saint George Basseterre",
+      "Saint Paul Charlestown"
+    ]
+  },
+  {
+    "name": "North Korea",
+    "states": [
+      "Pyongyang"
+    ]
+  },
+  {
+    "name": "Republic of Korea",
+    "states": [
+      "Seoul",
+      "Busan",
+      "Daegu",
+      "Incheon",
+      "Gwangju",
+      "Daejeon",
+      "Ulsan",
+      "Gyeonggi-do",
+      "Gangwon-do",
+      "Chungcheongbuk-do",
+      "Chungcheongnam-do",
+      "Jeollabuk-do",
+      "Jeollanam-do",
+      "Gyeongsangbuk-do",
+      "Gyeongsangnam-do",
+      "Jeju-do"
+    ]
+  },
+  {
+    "name": "Kuwait",
+    "states": [
+      "Al Aḩmadī",
+      "Al Farwaniyah",
+      "Muhafazat Hawalli",
+      "Al Asimah"
+    ]
+  },
+  {
+    "name": "Cayman Islands",
+    "states": []
+  },
+  {
+    "name": "Kazakhstan",
+    "states": [
+      "Aqmola Oblysy",
+      "Aktyubinskaya Oblast'",
+      "Almaty Qalasy",
+      "Almaty Oblysy",
+      "Astana Qalasy",
+      "Atyrau Oblysy",
+      "Bayqongyr Qalasy",
+      "Qaraghandy Oblysy",
+      "Qostanay Oblysy",
+      "Qyzylorda Oblysy",
+      "Mangistauskaya Oblast'",
+      "Pavlodar Oblysy",
+      "Severo-Kazakhstanskaya Oblast'",
+      "East Kazakhstan",
+      "Yuzhno-Kazakhstanskaya Oblast'",
+      "Batys Qazaqstan Oblysy",
+      "Zhambyl Oblysy"
+    ]
+  },
+  {
+    "name": "Laos",
+    "states": [
+      "Vientiane"
+    ]
+  },
+  {
+    "name": "Lebanon",
+    "states": [
+      "Mohafazat Aakkar",
+      "Mohafazat Liban-Nord",
+      "Beyrouth",
+      "Mohafazat Baalbek-Hermel",
+      "Mohafazat Liban-Sud",
+      "Mohafazat Mont-Liban"
+    ]
+  },
+  {
+    "name": "Saint Lucia",
+    "states": [
+      "Anse-la-Raye",
+      "Castries Quarter",
+      "Choiseul Quarter",
+      "Gros-Islet",
+      "Vieux-Fort"
+    ]
+  },
+  {
+    "name": "Liechtenstein",
+    "states": [
+      "Balzers",
+      "Eschen",
+      "Gemeinde Gamprin",
+      "Mauren",
+      "Planken",
+      "Ruggell",
+      "Schaan",
+      "Schellenberg",
+      "Triesen",
+      "Triesenberg",
+      "Vaduz"
+    ]
+  },
+  {
+    "name": "Sri Lanka",
+    "states": [
+      "Western Province",
+      "Central Province",
+      "Eastern Province",
+      "North Western Province",
+      "North Central Province",
+      "Province of Uva"
+    ]
+  },
+  {
+    "name": "Liberia",
+    "states": [
+      "River Gee County",
+      "Montserrado County"
+    ]
+  },
+  {
+    "name": "Lesotho",
+    "states": [
+      "Maseru"
+    ]
+  },
+  {
+    "name": "Republic of Lithuania",
+    "states": [
+      "Alytaus apskritis",
+      "Klaipedos apskritis",
+      "Kauno apskritis",
+      "Marijampoles apskritis",
+      "Panevėžys",
+      "Siauliu apskritis",
+      "Taurages apskritis",
+      "Telsiu apskritis",
+      "Utenos apskritis",
+      "Vilnius County"
+    ]
+  },
+  {
+    "name": "Luxembourg",
+    "states": [
+      "District de Diekirch",
+      "District de Grevenmacher",
+      "District de Luxembourg"
+    ]
+  },
+  {
+    "name": "Latvia",
+    "states": [
+      "Aizkraukles Rajons",
+      "Aizpute",
+      "Aluksnes Rajons",
+      "Ādaži",
+      "Baldone",
+      "Balvu Rajons",
+      "Bauskas Rajons",
+      "Carnikava",
+      "Cesu Rajons",
+      "Daugavpils",
+      "Dobeles Rajons",
+      "Dundaga",
+      "Engure",
+      "Gulbenes Rajons",
+      "Ikšķile",
+      "Jaunjelgava",
+      "Jelgavas Rajons",
+      "Jekabpils Municipality",
+      "Kandava",
+      "Kraslavas Rajons",
+      "Kuldigas Rajons",
+      "Ķegums",
+      "Ķekava",
+      "Lielvārde",
+      "Limbazu Rajons",
+      "Līvāni",
+      "Ludzas Rajons",
+      "Madona Municipality",
+      "Mazsalaca",
+      "Mālpils",
+      "Mārupe",
+      "Ogre",
+      "Olaine",
+      "Ozolnieku Novads",
+      "Preili Municipality",
+      "Rezeknes Rajons",
+      "Ropazu Novads",
+      "Rundales Novads",
+      "Salaspils Novads",
+      "Saldus Municipality",
+      "Siguldas Novads",
+      "Smiltenes Novads",
+      "Strencu Novads",
+      "Talsi Municipality",
+      "Tukuma Rajons",
+      "Valka Municipality",
+      "Varaklanu Novads",
+      "Ventspils Municipality",
+      "Viesites Novads",
+      "Zilupes Novads",
+      "Jelgava",
+      "Jurmala",
+      "Liepaja",
+      "Rezekne",
+      "Riga",
+      "Valmiera District"
+    ]
+  },
+  {
+    "name": "Libya",
+    "states": [
+      "Sha`biyat Banghazi",
+      "Sha`biyat Misratah",
+      "Sha`biyat Nalut",
+      "Sha`biyat Sabha",
+      "Tripoli"
+    ]
+  },
+  {
+    "name": "Morocco",
+    "states": [
+      "Region de Tanger-Tetouan",
+      "Gharb-Chrarda-Beni Hssen",
+      "Taza-Al Hoceima-Taounate",
+      "Oriental",
+      "Region de Fes-Boulemane",
+      "Region de Meknes-Tafilalet",
+      "Region de Rabat-Sale-Zemmour-Zaer",
+      "Region du Grand Casablanca",
+      "Chaouia-Ouardigha",
+      "Doukkala-Abda",
+      "Marrakech-Tensift-Al Haouz",
+      "Tadla-Azilal",
+      "Region de Souss-Massa-Draa",
+      "Guelmim-Es Semara",
+      "Laayoune-Boujdour-Sakia El Hamra"
+    ]
+  },
+  {
+    "name": "Monaco",
+    "states": []
+  },
+  {
+    "name": "Republic of Moldova",
+    "states": [
+      "Anenii Noi",
+      "Municipiul Balti",
+      "Municipiul Bender",
+      "Cahul",
+      "Raionul Calarasi",
+      "Criuleni",
+      "Municipiul Chisinau",
+      "Donduşeni",
+      "Drochia",
+      "Raionul Edineţ",
+      "Gagauzia",
+      "Hînceşti",
+      "Laloveni",
+      "Nisporeni",
+      "Orhei",
+      "Unitatea Teritoriala din Stinga Nistrului",
+      "Raionul Soroca",
+      "Strășeni"
+    ]
+  },
+  {
+    "name": "Montenegro",
+    "states": [
+      "Budva",
+      "Herceg Novi",
+      "Kotor",
+      "Opstina Niksic",
+      "Pljevlja",
+      "Podgorica",
+      "Ulcinj"
+    ]
+  },
+  {
+    "name": "Saint Martin",
+    "states": []
+  },
+  {
+    "name": "Madagascar",
+    "states": [
+      "Analamanga Region",
+      "Atsimo-Andrefana Region",
+      "Atsinanana Region",
+      "Boeny Region",
+      "Diana Region",
+      "Sava Region",
+      "Upper Matsiatra",
+      "Vakinankaratra Region"
+    ]
+  },
+  {
+    "name": "Marshall Islands",
+    "states": []
+  },
+  {
+    "name": "Macedonia",
+    "states": [
+      "Berovo",
+      "Bitola",
+      "Bogdanci",
+      "Veles",
+      "Gevgelija",
+      "Gostivar",
+      "Debar",
+      "Opstina Delcevo",
+      "Demir Hisar",
+      "Ilinden",
+      "Kavadarci",
+      "Opstina Karpos",
+      "Opstina Kicevo",
+      "Opstina Kocani",
+      "Kumanovo",
+      "Makedonska Kamenica",
+      "Negotino",
+      "Novo Selo",
+      "Ohrid",
+      "Prilep",
+      "Opstina Probistip",
+      "Opstina Radovis",
+      "Opstina Stip",
+      "Struga",
+      "Strumica",
+      "Tetovo",
+      "Čair"
+    ]
+  },
+  {
+    "name": "Mali",
+    "states": [
+      "Bamako Region"
+    ]
+  },
+  {
+    "name": "Myanmar [Burma]",
+    "states": [
+      "Magway Region",
+      "Mandalay Region",
+      "Yangon Region",
+      "Kayin State",
+      "Shan State"
+    ]
+  },
+  {
+    "name": "Mongolia",
+    "states": [
+      "Darhan-Uul Aymag",
+      "Hentiy Aymag",
+      "Hovsgol Aymag",
+      "Hovd",
+      "Central Aimak",
+      "Selenge Aymag",
+      "Suhbaatar Aymag",
+      "Ömnögovĭ",
+      "Övörhangay",
+      "Dzavhan Aymag",
+      "Middle Govĭ",
+      "East Aimak",
+      "East Gobi Aymag",
+      "Govi-Sumber",
+      "Govi-Altay Aymag",
+      "Bulgan",
+      "Bayanhongor Aymag",
+      "Bayan-Olgiy Aymag",
+      "Arhangay Aymag",
+      "Ulaanbaatar Hot"
+    ]
+  },
+  {
+    "name": "Macao",
+    "states": []
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "states": [
+      "Saipan"
+    ]
+  },
+  {
+    "name": "Martinique",
+    "states": []
+  },
+  {
+    "name": "Mauritania",
+    "states": [
+      "District de Nouakchott"
+    ]
+  },
+  {
+    "name": "Montserrat",
+    "states": [
+      "Parish of Saint Peter"
+    ]
+  },
+  {
+    "name": "Malta",
+    "states": [
+      "Attard",
+      "Balzan",
+      "Il-Birgu",
+      "Birkirkara",
+      "Birzebbuga",
+      "Bormla",
+      "Dingli",
+      "Il-Furjana",
+      "Il-Gudja",
+      "Il-Gzira",
+      "Ghajnsielem",
+      "L-Gharb",
+      "Hal Gharghur",
+      "L-Ghasri",
+      "Hal Ghaxaq",
+      "Il-Hamrun",
+      "L-Iklin",
+      "L-Isla",
+      "Kirkop",
+      "Lija",
+      "Luqa",
+      "Il-Marsa",
+      "Marsaskala",
+      "Marsaxlokk",
+      "L-Imdina",
+      "Il-Mellieha",
+      "L-Imgarr",
+      "Il-Mosta",
+      "L-Imqabba",
+      "L-Imsida",
+      "L-Imtarfa",
+      "Il-Munxar",
+      "In-Nadur",
+      "In-Naxxar",
+      "Paola",
+      "Tal-Pieta",
+      "Qormi",
+      "Il-Qrendi",
+      "Victoria",
+      "Ir-Rabat",
+      "Safi",
+      "Saint Julian",
+      "Saint John",
+      "Saint Lawrence",
+      "Saint Paul’s Bay",
+      "Sannat",
+      "Saint Lucia",
+      "Saint Venera",
+      "Is-Siggiewi",
+      "Tas-Sliema",
+      "Is-Swieqi",
+      "Tarxien",
+      "Ta' Xbiex",
+      "Il-Belt Valletta",
+      "Ix-Xaghra",
+      "Ix-Xewkija",
+      "Haz-Zabbar",
+      "Iz-Zebbug",
+      "Haz-Zebbug",
+      "Iz-Zejtun",
+      "Iz-Zurrieq"
+    ]
+  },
+  {
+    "name": "Mauritius",
+    "states": [
+      "Black River District",
+      "Moka District",
+      "Port Louis District",
+      "Plaines Wilhems District",
+      "Rodrigues",
+      "Riviere du Rempart District",
+      "Savanne District"
+    ]
+  },
+  {
+    "name": "Maldives",
+    "states": [
+      "Maale"
+    ]
+  },
+  {
+    "name": "Malawi",
+    "states": [
+      "Central Region",
+      "Northern Region",
+      "Southern Region"
+    ]
+  },
+  {
+    "name": "Mexico",
+    "states": [
+      "Aguascalientes",
+      "Estado de Baja California",
+      "Baja California Sur",
+      "Campeche",
+      "Chihuahua",
+      "Chiapas",
+      "Coahuila",
+      "Colima",
+      "Mexico City",
+      "Durango",
+      "Guerrero",
+      "Guanajuato",
+      "Hidalgo",
+      "Jalisco",
+      "Estado de Mexico",
+      "Michoacán",
+      "Morelos",
+      "Nayarit",
+      "Nuevo León",
+      "Oaxaca",
+      "Puebla",
+      "Querétaro",
+      "Quintana Roo",
+      "Sinaloa",
+      "San Luis Potosí",
+      "Sonora",
+      "Tabasco",
+      "Tamaulipas",
+      "Tlaxcala",
+      "Veracruz",
+      "Yucatán",
+      "Zacatecas"
+    ]
+  },
+  {
+    "name": "Malaysia",
+    "states": [
+      "Johor",
+      "Kedah",
+      "Kelantan",
+      "Melaka",
+      "Negeri Sembilan",
+      "Pahang",
+      "Penang",
+      "Perak",
+      "Perlis",
+      "Selangor",
+      "Terengganu",
+      "Sabah",
+      "Sarawak",
+      "Kuala Lumpur",
+      "Labuan",
+      "Putrajaya"
+    ]
+  },
+  {
+    "name": "Mozambique",
+    "states": [
+      "Maputo Province",
+      "Cidade de Maputo",
+      "Nampula",
+      "Cabo Delgado Province",
+      "Provincia de Zambezia",
+      "Sofala Province",
+      "Tete"
+    ]
+  },
+  {
+    "name": "Namibia",
+    "states": [
+      "Zambezi Region",
+      "Erongo",
+      "Karas",
+      "Khomas",
+      "Kunene",
+      "Otjozondjupa",
+      "Oshana",
+      "Omusati",
+      "Oshikoto"
+    ]
+  },
+  {
+    "name": "New Caledonia",
+    "states": [
+      "South Province"
+    ]
+  },
+  {
+    "name": "Niger",
+    "states": [
+      "Niamey"
+    ]
+  },
+  {
+    "name": "Norfolk Island",
+    "states": []
+  },
+  {
+    "name": "Nigeria",
+    "states": [
+      "Abia State",
+      "Adamawa",
+      "Akwa Ibom State",
+      "Benue State",
+      "Cross River State",
+      "Delta",
+      "Ebonyi State",
+      "Edo",
+      "Ekiti State",
+      "Enugu State",
+      "Federal Capital Territory",
+      "Imo State",
+      "Kaduna State",
+      "Kebbi State",
+      "Kano State",
+      "Kogi State",
+      "Katsina State",
+      "Kwara State",
+      "Lagos",
+      "Niger State",
+      "Ogun State",
+      "Ondo State",
+      "Osun State",
+      "Oyo State",
+      "Plateau State",
+      "Rivers State",
+      "Sokoto State",
+      "Taraba State",
+      "Yobe State",
+      "Zamfara State"
+    ]
+  },
+  {
+    "name": "Nicaragua",
+    "states": [
+      "Region Autonoma Atlantico Sur",
+      "Departamento de Chinandega",
+      "Departamento de Esteli",
+      "Departamento de Granada",
+      "Departamento de Jinotega",
+      "Departamento de Leon",
+      "Departamento de Managua",
+      "Departamento de Masaya",
+      "Departamento de Matagalpa",
+      "Departamento de Nueva Segovia",
+      "Departamento de Rivas"
+    ]
+  },
+  {
+    "name": "Netherlands",
+    "states": [
+      "Provincie Drenthe",
+      "Provincie Flevoland",
+      "Friesland",
+      "Provincie Gelderland",
+      "Groningen",
+      "Limburg",
+      "North Brabant",
+      "North Holland",
+      "Provincie Overijssel",
+      "Provincie Utrecht",
+      "Provincie Zeeland",
+      "South Holland"
+    ]
+  },
+  {
+    "name": "Norway",
+    "states": [
+      "Østfold",
+      "Akershus",
+      "Oslo County",
+      "Hedmark",
+      "Oppland",
+      "Buskerud",
+      "Vestfold",
+      "Telemark",
+      "Aust-Agder",
+      "Vest-Agder Fylke",
+      "Rogaland Fylke",
+      "Hordaland Fylke",
+      "Sogn og Fjordane Fylke",
+      "More og Romsdal fylke",
+      "Sor-Trondelag Fylke",
+      "Nord-Trondelag Fylke",
+      "Nordland Fylke",
+      "Troms Fylke",
+      "Finnmark Fylke"
+    ]
+  },
+  {
+    "name": "Nepal",
+    "states": [
+      "Central Region",
+      "Western Region"
+    ]
+  },
+  {
+    "name": "Nauru",
+    "states": [
+      "Anabar"
+    ]
+  },
+  {
+    "name": "Niue",
+    "states": []
+  },
+  {
+    "name": "New Zealand",
+    "states": [
+      "Auckland",
+      "Bay of Plenty",
+      "Canterbury",
+      "Gisborne",
+      "Hawke's Bay",
+      "Marlborough",
+      "Manawatu-Wanganui",
+      "Nelson",
+      "Northland",
+      "Otago",
+      "Southland",
+      "Tasman",
+      "Taranaki",
+      "Wellington",
+      "Waikato",
+      "West Coast"
+    ]
+  },
+  {
+    "name": "Oman",
+    "states": [
+      "Al Batinah",
+      "Ash Sharqiyah",
+      "Muhafazat ad Dakhiliyah",
+      "Muhafazat Masqat",
+      "Muhafazat Zufar"
+    ]
+  },
+  {
+    "name": "Panama",
+    "states": [
+      "Provincia de Bocas del Toro",
+      "Provincia de Cocle",
+      "Provincia de Colon",
+      "Provincia de Chiriqui",
+      "Provincia del Darien",
+      "Provincia de Herrera",
+      "Provincia de Los Santos",
+      "Provincia de Panama",
+      "Provincia de Veraguas",
+      "Embera-Wounaan",
+      "Guna Yala",
+      "Ngoebe-Bugle"
+    ]
+  },
+  {
+    "name": "Peru",
+    "states": [
+      "Amazonas",
+      "Ancash",
+      "Apurimac",
+      "Arequipa",
+      "Ayacucho",
+      "Cajamarca",
+      "Callao",
+      "Cusco",
+      "Region de Huanuco",
+      "Huancavelica",
+      "Ica",
+      "Junin",
+      "La Libertad",
+      "Lambayeque",
+      "Lima",
+      "Provincia de Lima",
+      "Loreto",
+      "Madre de Dios",
+      "Departamento de Moquegua",
+      "Pasco",
+      "Piura",
+      "Puno",
+      "Region de San Martin",
+      "Tacna",
+      "Tumbes",
+      "Ucayali"
+    ]
+  },
+  {
+    "name": "French Polynesia",
+    "states": [
+      "Iles du Vent"
+    ]
+  },
+  {
+    "name": "Papua New Guinea",
+    "states": [
+      "Chimbu Province",
+      "Central Province",
+      "East New Britain Province",
+      "Eastern Highlands Province",
+      "Enga Province",
+      "East Sepik Province",
+      "Gulf Province",
+      "Milne Bay Province",
+      "Morobe Province",
+      "Madang Province",
+      "Manus Province",
+      "National Capital",
+      "New Ireland",
+      "Northern Province",
+      "Bougainville",
+      "West Sepik Province",
+      "Southern Highlands Province",
+      "West New Britain Province",
+      "Western Highlands Province",
+      "Western Province"
+    ]
+  },
+  {
+    "name": "Philippines",
+    "states": [
+      "National Capital Region",
+      "Ilocos",
+      "Cagayan Valley",
+      "Central Luzon",
+      "Bicol",
+      "Western Visayas",
+      "Central Visayas",
+      "Eastern Visayas",
+      "Zamboanga Peninsula",
+      "Northern Mindanao",
+      "Davao",
+      "Soccsksargen",
+      "Caraga",
+      "Autonomous Region in Muslim Mindanao",
+      "Cordillera",
+      "Calabarzon",
+      "Mimaropa",
+      "Province of Cebu",
+      "Province of Laguna",
+      "Province of Pampanga",
+      "Province of Pangasinan"
+    ]
+  },
+  {
+    "name": "Pakistan",
+    "states": [
+      "Balochistan",
+      "Islamabad Capital Territory",
+      "Azad Kashmir",
+      "Gilgit-Baltistan",
+      "Khyber Pakhtunkhwa",
+      "Punjab",
+      "Sindh",
+      "Federally Administered Tribal Areas"
+    ]
+  },
+  {
+    "name": "Poland",
+    "states": [
+      "Lower Silesian Voivodeship",
+      "Kujawsko-Pomorskie",
+      "Lubusz",
+      "Łódź Voivodeship",
+      "Lublin Voivodeship",
+      "Lesser Poland Voivodeship",
+      "Masovian Voivodeship",
+      "Opole Voivodeship",
+      "Podlasie",
+      "Subcarpathian Voivodeship",
+      "Pomeranian Voivodeship",
+      "Świętokrzyskie",
+      "Silesian Voivodeship",
+      "Warmian-Masurian Voivodeship",
+      "Greater Poland Voivodeship",
+      "West Pomeranian Voivodeship"
+    ]
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "states": []
+  },
+  {
+    "name": "Pitcairn Islands",
+    "states": []
+  },
+  {
+    "name": "Puerto Rico",
+    "states": [
+      "Aguas Buenas",
+      "Bayamon Municipio",
+      "Cabo Rojo Municipio",
+      "Caguas Municipio",
+      "Camuy Municipio",
+      "Canovanas Municipio",
+      "Carolina Municipio",
+      "Catano Municipio",
+      "Cayey Municipio",
+      "Ceiba Municipio",
+      "Ciales Municipio",
+      "Cidra Municipio",
+      "Coamo Municipio",
+      "Corozal Municipio",
+      "Culebra Municipio",
+      "Dorado Municipio",
+      "Fajardo Municipio",
+      "Guanica Municipio",
+      "Guayama Municipio",
+      "Guayanilla Municipio",
+      "Guaynabo Municipio",
+      "Gurabo Municipio",
+      "Hatillo Municipio",
+      "Hormigueros Municipio",
+      "Humacao Municipio",
+      "Juana Diaz Municipio",
+      "Lajas Municipio",
+      "Lares Municipio",
+      "Las Piedras Municipio",
+      "Loiza Municipio",
+      "Luquillo Municipio",
+      "Manati Municipio",
+      "Maricao Municipio",
+      "Maunabo Municipio",
+      "Mayagueez Municipio",
+      "Moca Municipio",
+      "Morovis Municipio",
+      "Municipio de Isabela",
+      "Municipio de Jayuya",
+      "Municipio de Juncos",
+      "Naguabo Municipio",
+      "Naranjito Municipio",
+      "Orocovis Municipio",
+      "Patillas Municipio",
+      "Penuelas Municipio",
+      "Ponce Municipio",
+      "Quebradillas Municipio",
+      "Rincon Municipio",
+      "Rio Grande Municipio",
+      "Sabana Grande Municipio",
+      "Salinas Municipio",
+      "San German Municipio",
+      "San Juan",
+      "San Lorenzo Municipio",
+      "San Sebastian Municipio",
+      "Santa Isabel Municipio",
+      "Toa Alta Municipio",
+      "Toa Baja Municipio",
+      "Trujillo Alto Municipio",
+      "Utuado Municipio",
+      "Vega Alta Municipio",
+      "Vega Baja Municipio",
+      "Vieques Municipio",
+      "Villalba Municipio",
+      "Yabucoa Municipio",
+      "Yauco Municipio",
+      "Adjuntas",
+      "Aguada",
+      "Aguadilla",
+      "Aibonito",
+      "Anasco",
+      "Arecibo",
+      "Arroyo",
+      "Barceloneta",
+      "Barranquitas"
+    ]
+  },
+  {
+    "name": "Palestine",
+    "states": [
+      "Gaza Strip",
+      "West Bank"
+    ]
+  },
+  {
+    "name": "Portugal",
+    "states": [
+      "Aveiro",
+      "Distrito de Beja",
+      "Distrito de Braga",
+      "Bragança",
+      "Distrito de Castelo Branco",
+      "Distrito de Coimbra",
+      "Distrito de Evora",
+      "Distrito de Faro",
+      "Distrito da Guarda",
+      "Distrito de Leiria",
+      "Lisbon",
+      "Distrito de Portalegre",
+      "Distrito do Porto",
+      "Distrito de Santarem",
+      "Distrito de Setubal",
+      "Distrito de Viana do Castelo",
+      "Distrito de Vila Real",
+      "Distrito de Viseu",
+      "Azores",
+      "Madeira"
+    ]
+  },
+  {
+    "name": "Palau",
+    "states": []
+  },
+  {
+    "name": "Paraguay",
+    "states": [
+      "Departamento del Alto Parana",
+      "Departamento Central",
+      "Departamento de Canindeyu",
+      "Departamento de Presidente Hayes",
+      "Departamento de Alto Paraguay",
+      "Departamento de Boqueron",
+      "Departamento de San Pedro",
+      "Departamento del Guaira",
+      "Departamento de Caaguazu",
+      "Departamento de Caazapa",
+      "Departamento de Itapua",
+      "Departamento de Misiones",
+      "Asuncion"
+    ]
+  },
+  {
+    "name": "Qatar",
+    "states": [
+      "Baladiyat ad Dawhah",
+      "Baladiyat ar Rayyan",
+      "Al Wakrah"
+    ]
+  },
+  {
+    "name": "Réunion",
+    "states": []
+  },
+  {
+    "name": "Romania",
+    "states": [
+      "Judetul Alba",
+      "Judetul Arges",
+      "Arad",
+      "Bucuresti",
+      "Judetul Bacau",
+      "Bihor",
+      "Judetul Bistrita-Nasaud",
+      "Judetul Braila",
+      "Judetul Botosani",
+      "Judetul Brasov",
+      "Judetul Buzau",
+      "Judetul Cluj",
+      "Judetul Calarasi",
+      "Judetul Caras-Severin",
+      "Constanta",
+      "Covasna",
+      "Judetul Dambovita",
+      "Dolj",
+      "Gorj",
+      "Judetul Galati",
+      "Giurgiu",
+      "Hunedoara",
+      "Harghita",
+      "Ilfov",
+      "Judetul Ialomita",
+      "Judetul Iasi",
+      "Judetul Mehedinti",
+      "Maramureş",
+      "Judetul Mures",
+      "Judetul Neamt",
+      "Olt",
+      "Prahova",
+      "Judetul Sibiu",
+      "Judetul Salaj",
+      "Satu Mare",
+      "Suceava",
+      "Tulcea",
+      "Judetul Timis",
+      "Teleorman",
+      "Judetul Valcea",
+      "Vrancea",
+      "Vaslui"
+    ]
+  },
+  {
+    "name": "Serbia",
+    "states": [
+      "Central Serbia",
+      "Autonomna Pokrajina Vojvodina"
+    ]
+  },
+  {
+    "name": "Russia",
+    "states": [
+      "Respublika Adygeya",
+      "Respublika Altay",
+      "Altai Krai",
+      "Amurskaya Oblast'",
+      "Arkhangelskaya",
+      "Astrakhanskaya Oblast'",
+      "Bashkortostan",
+      "Belgorodskaya Oblast'",
+      "Bryanskaya Oblast'",
+      "Respublika Buryatiya",
+      "Chechnya",
+      "Chelyabinsk",
+      "Chukotskiy Avtonomnyy Okrug",
+      "Chuvashia",
+      "Dagestan",
+      "Respublika Ingushetiya",
+      "Irkutskaya Oblast'",
+      "Ivanovskaya Oblast'",
+      "Kamtchatski Kray",
+      "Kabardino-Balkarskaya Respublika",
+      "Karachayevo-Cherkesiya",
+      "Krasnodarskiy Kray",
+      "Kemerovskaya Oblast'",
+      "Kaliningradskaya Oblast'",
+      "Kurganskaya Oblast'",
+      "Khabarovsk Krai",
+      "Khanty-Mansiyskiy Avtonomnyy Okrug-Yugra",
+      "Kirovskaya Oblast'",
+      "Respublika Khakasiya",
+      "Kalmykiya",
+      "Kaluzhskaya Oblast'",
+      "Komi Republic",
+      "Kostromskaya Oblast'",
+      "Republic of Karelia",
+      "Kurskaya Oblast'",
+      "Krasnoyarskiy Kray",
+      "Leningrad",
+      "Lipetskaya Oblast'",
+      "Magadanskaya Oblast'",
+      "Respublika Mariy-El",
+      "Respublika Mordoviya",
+      "Moskovskaya",
+      "Moscow",
+      "Murmansk",
+      "Nenetskiy Avtonomnyy Okrug",
+      "Novgorodskaya Oblast'",
+      "Nizhegorodskaya Oblast'",
+      "Novosibirskaya Oblast'",
+      "Omskaya Oblast'",
+      "Orenburgskaya Oblast'",
+      "Orlovskaya Oblast'",
+      "Perm Krai",
+      "Penzenskaya Oblast'",
+      "Primorskiy Kray",
+      "Pskovskaya Oblast'",
+      "Rostov",
+      "Ryazanskaya Oblast'",
+      "Respublika Sakha (Yakutiya)",
+      "Sakhalinskaya Oblast'",
+      "Samarskaya Oblast'",
+      "Saratovskaya Oblast'",
+      "North Ossetia",
+      "Smolenskaya Oblast'",
+      "St.-Petersburg",
+      "Stavropol'skiy Kray",
+      "Sverdlovskaya Oblast'",
+      "Tatarstan",
+      "Tambovskaya Oblast'",
+      "Tomskaya Oblast'",
+      "Tul'skaya Oblast'",
+      "Tverskaya Oblast'",
+      "Respublika Tyva",
+      "Tyumenskaya Oblast'",
+      "Udmurtskaya Respublika",
+      "Ulyanovsk Oblast",
+      "Volgogradskaya Oblast'",
+      "Vladimirskaya Oblast'",
+      "Vologodskaya Oblast'",
+      "Voronezhskaya Oblast'",
+      "Yamalo-Nenetskiy Avtonomnyy Okrug",
+      "Yaroslavskaya Oblast'",
+      "Jewish Autonomous Oblast",
+      "Transbaikal Territory"
+    ]
+  },
+  {
+    "name": "Rwanda",
+    "states": [
+      "Kigali"
+    ]
+  },
+  {
+    "name": "Saudi Arabia",
+    "states": [
+      "Ar Riyāḑ",
+      "Makkah Province",
+      "Al Madinah al Munawwarah",
+      "Eastern Province",
+      "Al-Qassim",
+      "Mintaqat Ha'il",
+      "Mintaqat Tabuk",
+      "Northern Borders",
+      "Jizan",
+      "Mintaqat Najran",
+      "Mintaqat al Bahah",
+      "Al Jawf",
+      "Mintaqat `Asir"
+    ]
+  },
+  {
+    "name": "Solomon Islands",
+    "states": [
+      "Guadalcanal Province"
+    ]
+  },
+  {
+    "name": "Seychelles",
+    "states": [
+      "English River",
+      "Takamaka"
+    ]
+  },
+  {
+    "name": "Sudan",
+    "states": [
+      "Northern Darfur",
+      "Southern Darfur",
+      "Kassala",
+      "Khartoum",
+      "Southern Kordofan",
+      "River Nile"
+    ]
+  },
+  {
+    "name": "Sweden",
+    "states": [
+      "Stockholm",
+      "Västerbotten",
+      "Norrbotten",
+      "Uppsala",
+      "Södermanland",
+      "Östergötland",
+      "Jönköping",
+      "Kronoberg",
+      "Kalmar",
+      "Gotland",
+      "Blekinge",
+      "Skåne",
+      "Halland",
+      "Västra Götaland",
+      "Värmland",
+      "Örebro",
+      "Västmanland",
+      "Dalarna",
+      "Gävleborg",
+      "Västernorrland",
+      "Jämtland"
+    ]
+  },
+  {
+    "name": "Singapore",
+    "states": []
+  },
+  {
+    "name": "Saint Helena",
+    "states": [
+      "Saint Helena"
+    ]
+  },
+  {
+    "name": "Slovenia",
+    "states": [
+      "Obcina Ajdovscina",
+      "Beltinci",
+      "Obcina Bled",
+      "Bohinj",
+      "Borovnica",
+      "Brda",
+      "Brezovica",
+      "Obcina Brezice",
+      "Obcina Tisina",
+      "Celje",
+      "Cerknica",
+      "Obcina Crensovci",
+      "Obcina Divaca",
+      "Dobrepolje",
+      "Dobrova-Polhov Gradec",
+      "Dol pri Ljubljani",
+      "Obcina Domzale",
+      "Dornava",
+      "Dravograd",
+      "Duplek",
+      "Gorenja Vas-Poljane",
+      "Obcina Gorisnica",
+      "Gornja Radgona",
+      "Grosuplje",
+      "Hrastnik",
+      "Idrija",
+      "Ig",
+      "Ilirska Bistrica",
+      "Obcina Ivancna Gorica",
+      "Izola",
+      "Jesenice",
+      "Kamnik",
+      "Kanal",
+      "Obcina Kidricevo",
+      "Obcina Kobarid",
+      "Obcina Kocevje",
+      "Koper",
+      "Kranj",
+      "Kranjska Gora",
+      "Obcina Krsko",
+      "Obcina Lasko",
+      "Lenart",
+      "Lendava",
+      "Litija",
+      "Ljubljana",
+      "Logatec",
+      "Obcina Loska Dolina",
+      "Maribor",
+      "Medvode",
+      "Obcina Menges",
+      "Obcina Mezica",
+      "Miren-Kostanjevica",
+      "Obcina Moravce",
+      "Mozirje",
+      "Murska Sobota",
+      "Naklo",
+      "Nova Gorica",
+      "Mestna Obcina Novo mesto",
+      "Pesnica",
+      "Piran",
+      "Obcina Podcetrtek",
+      "Postojna",
+      "Ptuj",
+      "Puconci",
+      "Obcina Radece",
+      "Radlje ob Dravi",
+      "Radovljica",
+      "Obcina Ravne na Koroskem",
+      "Obcina Rogaska Slatina",
+      "Obcina Ruse",
+      "Sevnica",
+      "Obcina Sezana",
+      "Slovenj Gradec",
+      "Slovenska Bistrica",
+      "Slovenske Konjice",
+      "Obcina Sencur",
+      "Obcina Sentilj",
+      "Obcina Sentjernej",
+      "Obcina Sentjur",
+      "Škofja Loka",
+      "Obcina Skofljica",
+      "Obcina Smarje pri Jelsah",
+      "Obcina Smartno ob Paki",
+      "Obcina Sostanj",
+      "Obcina Tolmin",
+      "Trbovlje",
+      "Trebnje",
+      "Obcina Trzic",
+      "Velenje",
+      "Vipava",
+      "Vodice",
+      "Vojnik",
+      "Vrhnika",
+      "Zagorje ob Savi",
+      "Obcina Zelezniki",
+      "Obcina Ziri",
+      "Dolenjske Toplice",
+      "Obcina Hoce-Slivnica",
+      "Horjul",
+      "Komenda",
+      "Lovrenc na Pohorju",
+      "Markovci",
+      "Obcina Miklavz na Dravskem Polju",
+      "Polzela",
+      "Prebold",
+      "Prevalje",
+      "Selnica ob Dravi",
+      "Obcina Sempeter-Vrtojba",
+      "Trzin",
+      "Obcina Verzej",
+      "Obcina Zalec",
+      "Obcina Zirovnica",
+      "Obcina Poljcane",
+      "Obcina Sredisce ob Dravi",
+      "Gorje",
+      "Log–Dragomer",
+      "Obcina Starse"
+    ]
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "states": [
+      "Svalbard"
+    ]
+  },
+  {
+    "name": "Slovakia",
+    "states": [
+      "Banskobystricky kraj",
+      "Bratislavsky kraj",
+      "Kosicky kraj",
+      "Nitriansky kraj",
+      "Presovsky kraj",
+      "Trnavsky kraj",
+      "Trenciansky kraj",
+      "Zilinsky kraj"
+    ]
+  },
+  {
+    "name": "Sierra Leone",
+    "states": [
+      "Western Area"
+    ]
+  },
+  {
+    "name": "San Marino",
+    "states": [
+      "Castello di Acquaviva",
+      "Castello di Fiorentino",
+      "Castello di San Marino Citta",
+      "Serravalle"
+    ]
+  },
+  {
+    "name": "Senegal",
+    "states": [
+      "Dakar",
+      "Fatick",
+      "Region de Kaffrine",
+      "Kolda",
+      "Region de Kedougou",
+      "Kaolack",
+      "Louga",
+      "Region de Sedhiou",
+      "Saint-Louis",
+      "Tambacounda"
+    ]
+  },
+  {
+    "name": "Somalia",
+    "states": [
+      "Banaadir",
+      "Woqooyi Galbeed"
+    ]
+  },
+  {
+    "name": "Suriname",
+    "states": [
+      "Distrikt Brokopondo",
+      "Distrikt Commewijne",
+      "Distrikt Coronie",
+      "Distrikt Marowijne",
+      "Distrikt Paramaribo",
+      "Distrikt Para",
+      "Distrikt Saramacca",
+      "Distrikt Sipaliwini"
+    ]
+  },
+  {
+    "name": "South Sudan",
+    "states": [
+      "Central Equatoria"
+    ]
+  },
+  {
+    "name": "São Tomé and Príncipe",
+    "states": [
+      "São Tomé Island"
+    ]
+  },
+  {
+    "name": "El Salvador",
+    "states": [
+      "Departamento de Ahuachapan",
+      "Departamento de La Libertad",
+      "Departamento de Morazan",
+      "Departamento de Santa Ana",
+      "Departamento de San Miguel",
+      "Departamento de Sonsonate",
+      "Departamento de San Salvador",
+      "Departamento de Usulutan"
+    ]
+  },
+  {
+    "name": "Sint Maarten",
+    "states": []
+  },
+  {
+    "name": "Syria",
+    "states": [
+      "Damascus Governorate",
+      "Aleppo Governorate",
+      "Hama Governorate",
+      "Latakia Governorate",
+      "As-Suwayda Governorate"
+    ]
+  },
+  {
+    "name": "Swaziland",
+    "states": [
+      "Hhohho District",
+      "Manzini District"
+    ]
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "states": []
+  },
+  {
+    "name": "Chad",
+    "states": [
+      "Chari-Baguirmi Region",
+      "Hadjer-Lamis",
+      "Logone Occidental Region",
+      "Ouaddai Region"
+    ]
+  },
+  {
+    "name": "French Southern Territories",
+    "states": [
+      "Archipel des Kerguelen"
+    ]
+  },
+  {
+    "name": "Togo",
+    "states": [
+      "Maritime",
+      "Savanes"
+    ]
+  },
+  {
+    "name": "Thailand",
+    "states": [
+      "Bangkok",
+      "Changwat Samut Prakan",
+      "Changwat Nonthaburi",
+      "Changwat Pathum Thani",
+      "Changwat Phra Nakhon Si Ayutthaya",
+      "Changwat Ang Thong",
+      "Changwat Lop Buri",
+      "Changwat Sing Buri",
+      "Changwat Chai Nat",
+      "Changwat Sara Buri",
+      "Changwat Chon Buri",
+      "Changwat Rayong",
+      "Changwat Chanthaburi",
+      "Changwat Trat",
+      "Changwat Chachoengsao",
+      "Changwat Prachin Buri",
+      "Changwat Nakhon Nayok",
+      "Changwat Sa Kaeo",
+      "Changwat Nakhon Ratchasima",
+      "Changwat Buriram",
+      "Changwat Surin",
+      "Changwat Sisaket",
+      "Changwat Ubon Ratchathani",
+      "Changwat Yasothon",
+      "Changwat Chaiyaphum",
+      "Changwat Amnat Charoen",
+      "Changwat Nong Bua Lamphu",
+      "Changwat Khon Kaen",
+      "Changwat Udon Thani",
+      "Changwat Loei",
+      "Changwat Nong Khai",
+      "Changwat Maha Sarakham",
+      "Changwat Roi Et",
+      "Changwat Kalasin",
+      "Changwat Sakon Nakhon",
+      "Changwat Mukdahan",
+      "Chiang Mai Province",
+      "Changwat Lamphun",
+      "Changwat Lampang",
+      "Changwat Uttaradit",
+      "Changwat Phrae",
+      "Changwat Nan",
+      "Changwat Phayao",
+      "Changwat Chiang Rai",
+      "Changwat Mae Hong Son",
+      "Changwat Nakhon Sawan",
+      "Changwat Uthai Thani",
+      "Changwat Kamphaeng Phet",
+      "Changwat Tak",
+      "Changwat Sukhothai",
+      "Changwat Phitsanulok",
+      "Changwat Phichit",
+      "Changwat Phetchabun",
+      "Changwat Ratchaburi",
+      "Changwat Kanchanaburi",
+      "Changwat Suphan Buri",
+      "Changwat Nakhon Pathom",
+      "Changwat Samut Sakhon",
+      "Changwat Samut Songkhram",
+      "Changwat Phetchaburi",
+      "Changwat Prachuap Khiri Khan",
+      "Changwat Nakhon Si Thammarat",
+      "Changwat Krabi",
+      "Changwat Phangnga",
+      "Phuket",
+      "Changwat Surat Thani",
+      "Changwat Ranong",
+      "Changwat Chumphon",
+      "Changwat Songkhla",
+      "Changwat Satun",
+      "Changwat Trang",
+      "Changwat Phatthalung",
+      "Changwat Pattani",
+      "Changwat Yala",
+      "Changwat Narathiwat"
+    ]
+  },
+  {
+    "name": "Tajikistan",
+    "states": [
+      "Gorno-Badakhshan"
+    ]
+  },
+  {
+    "name": "Tokelau",
+    "states": [
+      "Nukunonu"
+    ]
+  },
+  {
+    "name": "East Timor",
+    "states": [
+      "Dili"
+    ]
+  },
+  {
+    "name": "Turkmenistan",
+    "states": [
+      "Ahal"
+    ]
+  },
+  {
+    "name": "Tunisia",
+    "states": [
+      "Gouvernorat de Tunis",
+      "Gouvernorat de l'Ariana",
+      "Manouba",
+      "Gouvernorat de Nabeul",
+      "Gouvernorat de Beja",
+      "Gouvernorat de Sidi Bouzid",
+      "Gouvernorat de Sousse",
+      "Gouvernorat de Monastir",
+      "Gouvernorat de Mahdia",
+      "Gouvernorat de Sfax",
+      "Gafsa"
+    ]
+  },
+  {
+    "name": "Tonga",
+    "states": [
+      "Tongatapu",
+      "Vava`u"
+    ]
+  },
+  {
+    "name": "Turkey",
+    "states": [
+      "Adana",
+      "Adiyaman",
+      "Afyonkarahisar",
+      "Ağrı",
+      "Amasya",
+      "Ankara",
+      "Antalya",
+      "Artvin",
+      "Aydın",
+      "Balıkesir",
+      "Bilecik",
+      "Bingöl",
+      "Bitlis",
+      "Bolu",
+      "Burdur",
+      "Bursa",
+      "Çanakkale",
+      "Çankırı",
+      "Çorum",
+      "Denizli",
+      "Diyarbakir",
+      "Edirne",
+      "Elazığ",
+      "Erzincan",
+      "Erzurum",
+      "Eskişehir",
+      "Gaziantep",
+      "Giresun",
+      "Guemueshane",
+      "Hakkâri",
+      "Hatay",
+      "Isparta",
+      "Mersin",
+      "Istanbul",
+      "Izmir",
+      "Kars",
+      "Kastamonu",
+      "Kayseri",
+      "Kırklareli",
+      "Kırşehir",
+      "Kocaeli",
+      "Konya",
+      "Kütahya",
+      "Malatya",
+      "Manisa",
+      "Kahramanmaraş",
+      "Mardin",
+      "Muğla",
+      "Muş",
+      "Nevsehir",
+      "Nigde",
+      "Ordu",
+      "Rize",
+      "Sakarya",
+      "Samsun",
+      "Siirt",
+      "Sinop",
+      "Sivas",
+      "Tekirdağ",
+      "Tokat",
+      "Trabzon",
+      "Tunceli",
+      "Şanlıurfa",
+      "Uşak",
+      "Van",
+      "Yozgat",
+      "Zonguldak",
+      "Aksaray",
+      "Bayburt",
+      "Karaman",
+      "Kırıkkale",
+      "Batman",
+      "Şırnak",
+      "Bartın",
+      "Ardahan",
+      "Iğdır",
+      "Yalova",
+      "Karabuek",
+      "Kilis",
+      "Osmaniye",
+      "Duezce"
+    ]
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "states": [
+      "Borough of Arima",
+      "Chaguanas",
+      "Couva-Tabaquite-Talparo",
+      "Diego Martin",
+      "Eastern Tobago",
+      "Penal/Debe",
+      "City of Port of Spain",
+      "Princes Town",
+      "Mayaro",
+      "City of San Fernando",
+      "Sangre Grande",
+      "Siparia",
+      "San Juan/Laventille",
+      "Tunapuna/Piarco",
+      "Tobago"
+    ]
+  },
+  {
+    "name": "Tuvalu",
+    "states": [
+      "Funafuti"
+    ]
+  },
+  {
+    "name": "Taiwan",
+    "states": [
+      "Fukien",
+      "Kaohsiung",
+      "Taipei",
+      "Taiwan"
+    ]
+  },
+  {
+    "name": "Tanzania",
+    "states": [
+      "Arusha",
+      "Dar es Salaam Region",
+      "Dodoma",
+      "Kagera",
+      "Pemba North",
+      "Zanzibar Urban/West",
+      "Morogoro",
+      "Mwanza",
+      "Tanga",
+      "Njombe"
+    ]
+  },
+  {
+    "name": "Ukraine",
+    "states": [
+      "Vinnyts'ka Oblast'",
+      "Volyns'ka Oblast'",
+      "Luhans'ka Oblast'",
+      "Dnipropetrovska Oblast'",
+      "Donets'ka Oblast'",
+      "Zhytomyrs'ka Oblast'",
+      "Zakarpattia Oblast",
+      "Zaporizhia",
+      "Ivano-Frankivs'ka Oblast'",
+      "Kyiv City",
+      "Kyiv Oblast",
+      "Kirovohrads'ka Oblast'",
+      "Misto Sevastopol'",
+      "Crimea",
+      "L'vivs'ka Oblast'",
+      "Mykolayivs'ka Oblast'",
+      "Odessa",
+      "Poltavs'ka Oblast'",
+      "Rivnens'ka Oblast'",
+      "Sums'ka Oblast'",
+      "Ternopil's'ka Oblast'",
+      "Kharkivs'ka Oblast'",
+      "Khersons'ka Oblast'",
+      "Khmel'nyts'ka Oblast'",
+      "Cherkas'ka Oblast'",
+      "Chernihiv",
+      "Chernivtsi"
+    ]
+  },
+  {
+    "name": "Uganda",
+    "states": [
+      "Central Region"
+    ]
+  },
+  {
+    "name": "U.S. Minor Outlying Islands",
+    "states": []
+  },
+  {
+    "name": "United States",
+    "states": [
+      "Alaska",
+      "Alabama",
+      "Arkansas",
+      "Arizona",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "District of Columbia",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Iowa",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Massachusetts",
+      "Maryland",
+      "Maine",
+      "Michigan",
+      "Minnesota",
+      "Missouri",
+      "Mississippi",
+      "Montana",
+      "North Carolina",
+      "North Dakota",
+      "Nebraska",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "Nevada",
+      "New York",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Virginia",
+      "Vermont",
+      "Washington",
+      "Wisconsin",
+      "West Virginia",
+      "Wyoming"
+    ]
+  },
+  {
+    "name": "Uruguay",
+    "states": [
+      "Canelones",
+      "Colonia",
+      "Departamento de Durazno",
+      "Florida",
+      "Maldonado",
+      "Departamento de Montevideo",
+      "Departamento de Paysandu",
+      "Departamento de Salto",
+      "Soriano",
+      "Departamento de Tacuarembo"
+    ]
+  },
+  {
+    "name": "Uzbekistan",
+    "states": [
+      "Qashqadaryo",
+      "Samarqand Viloyati",
+      "Surxondaryo Viloyati",
+      "Toshkent Shahri"
+    ]
+  },
+  {
+    "name": "Vatican City",
+    "states": []
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "states": [
+      "Parish of Charlotte",
+      "Parish of Saint George",
+      "Grenadines"
+    ]
+  },
+  {
+    "name": "Venezuela",
+    "states": [
+      "Capital",
+      "Anzoátegui",
+      "Apure",
+      "Aragua",
+      "Barinas",
+      "Bolívar",
+      "Carabobo",
+      "Falcón",
+      "Guárico",
+      "Lara",
+      "Mérida",
+      "Miranda",
+      "Monagas",
+      "Nueva Esparta",
+      "Portuguesa",
+      "Sucre",
+      "Táchira",
+      "Estado Trujillo",
+      "Yaracuy",
+      "Zulia",
+      "Dependencias Federales",
+      "Vargas",
+      "Delta Amacuro",
+      "Amazonas"
+    ]
+  },
+  {
+    "name": "British Virgin Islands",
+    "states": []
+  },
+  {
+    "name": "U.S. Virgin Islands",
+    "states": [
+      "Saint Croix Island",
+      "Saint John Island",
+      "Saint Thomas Island"
+    ]
+  },
+  {
+    "name": "Vietnam",
+    "states": [
+      "Tinh Lai Chau",
+      "Tinh Lao Cai",
+      "Tinh Tuyen Quang",
+      "Tinh Lang Son",
+      "Tinh Quang Ninh",
+      "Tinh Hoa Binh",
+      "Tinh Ninh Binh",
+      "Tinh Thai Binh",
+      "Tinh Thanh Hoa",
+      "Tinh Nghe An",
+      "Tinh Ha Tinh",
+      "Tinh Quang Tri",
+      "Tinh Thua Thien-Hue",
+      "Tinh Quang Nam",
+      "Kon Tum",
+      "Tinh Quang Ngai",
+      "Gia Lai",
+      "Tinh Binh Dinh",
+      "Tinh Dak Lak",
+      "Tinh Khanh Hoa",
+      "Tinh Lam Dong",
+      "Tinh Tay Ninh",
+      "Tinh Dong Nai",
+      "Tinh Binh Thuan",
+      "Tinh Ba Ria-Vung Tau",
+      "An Giang",
+      "Tinh Tien Giang",
+      "Thanh Pho Can Tho",
+      "Tinh Vinh Long",
+      "Tinh Ben Tre",
+      "Tinh Tra Vinh",
+      "Tinh Soc Trang",
+      "Tinh Bac Giang",
+      "Tinh Bac Ninh",
+      "Tinh Binh Duong",
+      "Thanh Pho Da Nang",
+      "Tinh Hai Duong",
+      "Thanh Pho Hai Phong",
+      "Thanh Pho Ha Noi",
+      "Ho Chi Minh City",
+      "Tinh Hung Yen",
+      "Tinh Nam Dinh",
+      "Tinh Phu Tho",
+      "Tinh Thai Nguyen",
+      "Tinh Vinh Phuc",
+      "Huyen Dien Bien",
+      "Hau Giang"
+    ]
+  },
+  {
+    "name": "Vanuatu",
+    "states": [
+      "Penama Province",
+      "Shefa Province"
+    ]
+  },
+  {
+    "name": "Wallis and Futuna",
+    "states": [
+      "Circonscription d'Uvea"
+    ]
+  },
+  {
+    "name": "Samoa",
+    "states": [
+      "Fa`asaleleaga",
+      "Tuamasaga"
+    ]
+  },
+  {
+    "name": "Kosovo",
+    "states": [
+      "Komuna e Ferizajt",
+      "Komuna e Gjilanit",
+      "Komuna e Mitrovices",
+      "Komuna e Prishtines",
+      "Prizren"
+    ]
+  },
+  {
+    "name": "Yemen",
+    "states": [
+      "Aden",
+      "Muhafazat Hadramawt",
+      "Sanaa"
+    ]
+  },
+  {
+    "name": "Mayotte",
+    "states": [
+      "Dzaoudzi",
+      "Koungou",
+      "Mamoudzou",
+      "Pamandzi"
+    ]
+  },
+  {
+    "name": "South Africa",
+    "states": [
+      "Eastern Cape",
+      "Orange Free State",
+      "Gauteng",
+      "Limpopo",
+      "Mpumalanga",
+      "Northern Cape",
+      "Province of North West",
+      "Province of the Western Cape",
+      "KwaZulu-Natal"
+    ]
+  },
+  {
+    "name": "Zambia",
+    "states": [
+      "Western Province",
+      "Central Province",
+      "Luapula Province",
+      "Northern Province",
+      "North-Western Province",
+      "Southern Province",
+      "Copperbelt",
+      "Lusaka Province"
+    ]
+  },
+  {
+    "name": "Zimbabwe",
+    "states": [
+      "Bulawayo",
+      "Harare",
+      "Manicaland",
+      "Mashonaland East Province",
+      "Midlands Province",
+      "Matabeleland North",
+      "Matabeleland South Province",
+      "Mashonaland West"
+    ]
+  }
+]

@@ -62,28 +62,7 @@ sap.ui.controller("cmsfrontend.controller.consultant.Detail", {
 								{"countryName":"Philippines"}
 							]};
 
-		var oCountryData = $.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/countries",
-		       type : "GET",
-		       async: false,
-		       dataType: 'json',
-		       contentType : "application/json",
-		       success : function(data, textStatus, jqXHR) {
-		    	  // console.log("data: ", data);
-		    	  // console.log("textStatus: ", textStatus);
-		    	  // console.log("jqxhr: ", jqXHR);
-		    	  // this._convertDatesISOToObj(data);
-	    	  	return data;
-		       }.bind(this),
-		       error: function(xhr, status) {
-		    	  // console.log("ERROR POSTING REQUEST");
-		          // console.log("xhr: ", xhr);
-		          // console.log("status: ", status);
-		           return status;
-		       },
-		}).responseJSON;
-
-		var oCountriesModel = new sap.ui.model.json.JSONModel(oCountryData);
+		var oCountriesModel = new sap.ui.model.json.JSONModel("/model/coutries.json");
 		oCountriesModel.setSizeLimit(500);
 		this.getView().setModel(oCountriesModel, "countryModel");
 
