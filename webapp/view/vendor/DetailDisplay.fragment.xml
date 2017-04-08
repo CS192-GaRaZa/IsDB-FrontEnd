@@ -46,7 +46,7 @@
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
-			<!-- the id here is called displayProfileSection in other pages (consultant, CF) change it to displayConsultantSection--> 
+			<!-- the id here is called displayProfileSection in other pages (consultant, CF) change it to displayConsultantSection-->
 			<uxap:ObjectPageSection
 				id="displayVendorSection"
 				title="General"
@@ -261,7 +261,7 @@
 											hAlign="Left"
 											width="20%">
 											<Text text="City" />
-										</Column>	
+										</Column>
 									</columns>
 									<items>
 										<ColumnListItem>
@@ -326,6 +326,7 @@
 											hAlign="Left"
 											width="10%">
 											<Text text="To" />
+                                        </Column>
 										<Column
 											minScreenWidth="Tablet"
 											demandPopin="true"
@@ -333,7 +334,6 @@
 											width="20%">
 											<Text text="Contract Value" />
 										</Column>
-										</Column>	
 									</columns>
 									<items>
 										<ColumnListItem>
@@ -418,7 +418,6 @@
 											width="20%">
 											<Text text="Email" />
 										</Column>
-										</Column>	
 									</columns>
 									<items>
 										<ColumnListItem>

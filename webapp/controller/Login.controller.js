@@ -53,7 +53,11 @@ sap.ui.define([
       Cookies.set('isdb', oData);
 
       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.navTo(sAccountType + "_profile");
+      if (sAccount_type === "vendor") {
+        oRouter.navTo("vendorDetail");
+      } else {
+        oRouter.navTo(sAccountType + "_profile");
+      }
     },
 
     onSignUpLinkPress: function () {

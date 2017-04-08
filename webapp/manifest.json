@@ -100,6 +100,11 @@
           "pattern": "consultant/overview",
           "name": "consultant_overview",
           "target": "consultant_overview"
+        },
+        {
+          "pattern": "vendor/detail",
+          "name": "vendorDetail",
+          "target": "vendorDetail"
         }
       ],
       "targets" : {
@@ -126,6 +131,9 @@
         },
         "consultant_overview": {
           "viewName": "consultant.Overview"
+        },
+        "vendorDetail": {
+          "viewName": "vendor.Detail"
         }
       }
     }
