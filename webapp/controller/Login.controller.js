@@ -42,18 +42,31 @@ sap.ui.define([
     },
 
     _onLoginPOSTSuccess: function (oData, sTextStatus, jqXHR) {
-      var sUniqueIDPrefix = oData.unique_id.match(/(\w*)\-\d*/)[1];
-      var sAccountType = {
-        "C": "consultant",
-        "CF": "consulting_firm",
-        "V": "vendor"
-      }[sUniqueIDPrefix];
+      var sRoleKey;
+      var oContext;
+      var oRouter;
+      var oHomeRoute;
 
-      oData.account_type = sAccountType;
+      // FIXME: Storing this data in a cookie does not sound safe. Will look
+      // on storing it in SAP localStorgage, or ask for the server to
+      // do the checking (read something about this, I don't know where).
       Cookies.set('isdb', oData);
 
-      var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.navTo(sAccountType + "_profile");
+      sRoleKey = oData.role.role_name;
+      oContext = {
+        id: oData.id,
+        roleKey: sRoleKey,
+        uniqueId: oData.unique_id
+      };
+
+      oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      $.each(appConstants.role, function (_, oRole) {
+        if (oRole.getKey() === sRoleKey) {
+          oHomeRoute = oRole.getHomeRoute(oContext);
+          oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters);
+          return false;
+        }
+      });
     },
 
     onSignUpLinkPress: function () {
