@@ -75,7 +75,7 @@
                     <Label text="Company Type" />
                     <Input value="{/vendor_type}" />
                     <Label text="Number of Employees" />
-                    <Input value="{/vendor_number_of_employees}" />
+                    <Input value="{/vendor_number_employees}" />
                     <core:Title />
                     <Label text="Owner" />
                     <Input value="{/vendor_owner}" />
@@ -95,7 +95,7 @@
                           }"
                         />
                     <Label text="Membership Number" />
-                    <Input value="{vendor_membership_number}" />
+                    <Input value="{/vendor_membership_number}" />
                   </f:content>
                 </f:SimpleForm>
 
@@ -104,10 +104,6 @@
                   width="100%"
                   growing="true"
                   value="{/description}" />
-
-                <Label />
-                <Label />
-                <Label />
 
                 <f:SimpleForm
                   title="Contact"
@@ -118,30 +114,28 @@
                   labelSpanS="12"
                   adjustLabelSpan="false"
                   emptySpanL="0"
-                  columnsL="3">
+                  columnsL="2">
                   <f:content>
                     <core:Title />
-                    <Input value="Address" />
                     <Label text="Street" />
-                    <Input value="{/perm_street}" />
+                    <Input value="{/perm_street}" width="60%"/>
                     <Label text="City" />
-                    <Input value="{/perm_city}" />
+                    <Input value="{/perm_city}" width="60%"/>
                     <Label text="Zip Code" />
-                    <Input value="{/perm_zipcode}" />
+                    <Input value="{/perm_zipcode}" width="20%"/>
                     <Label text="P.O. Box" />
-                    <Input value="{/vendor_pobox}" />
+                    <Input value="{/vendor_pobox}" width="20%"/>
                     <Label text="Country" />
-                    <Input value="{/perm_country}" />
+                    <Input value="{/perm_country}" width="60%"/>
                     <core:Title />
-                    <Input value="Email and Phone" />
                     <Label text="Email" />
-                    <Input value="{/email}" />
+                    <Input value="{/email}" width="40%"/>
                     <Label text="Phone" />
-                    <Input value="{/phone_number}" />
+                    <Input value="{/phone_number}" width="20%"/>
                     <Label text="Fax" />
-                    <Input value="{/vendor_fax}" />
+                    <Input value="{/vendor_fax}" width="20%"/>
                     <Label text="Skype ID" />
-                    <Input value="{/skype_id}" />
+                    <Input value="{/skype_id}" width="20%"/>
                   </f:content>
                 </f:SimpleForm>
 
@@ -157,7 +151,6 @@
                   columnsL="3">
                   <f:content>
                     <core:Title />
-                    <Input value="Bank Address" />
                     <Label text="Bank Name" />
                     <Input value="{/bank_name}" />
                     <Label text="Street" />
@@ -287,7 +280,7 @@
                   <items>
                     <ColumnListItem>
                       <cells>
-                        <Input value="{name}" />
+                        <Input value="{customer_name}" />
                         <Input value="{country}"/>
                         <Input value="{city}"/>
                       </cells>
@@ -365,7 +358,7 @@
                   <items>
                     <ColumnListItem>
                       <cells>
-                        <Input value="{project_name}" />
+                        <Input value="{name}" />
                         <Input value="{benefiters}"/>
                         <DatePicker
                           valueFormat="MM-dd-yyyy"
@@ -409,7 +402,7 @@
               <VBox>
                 <Table
                   inset="false"
-                  items="{/contact_persons}"
+                  items="{/contacts}"
                   mode="Delete"
                   delete="handleDeletePressContactPersons">
                   <headerToolbar>
@@ -459,10 +452,10 @@
                   <items>
                     <ColumnListItem>
                       <cells>
-                        <Input value="{name}" />
+                        <Input value="{staff_name}" />
                         <Input value="{position}"/>
                         <Input value="{office_phone}"/>
-                        <Input value="{mobile}"/>
+                        <Input value="{mobile_number}"/>
                         <Input value="{email}"/>
                       </cells>
                     </ColumnListItem>

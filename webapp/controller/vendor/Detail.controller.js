@@ -73,7 +73,7 @@ sap.ui.define([
       oUserDataLocal = {
         "vendor_name": "Vendors Anonymous",
         "vendor_type": "Aircon resellers",
-        "vendor_establishment_date": "01/02/1992",
+        "vendor_establishment_date": null,
         "vendor_number_employees": "24",
         "vendor_owner": "Rafael Miguel V. Cantero",
         "vendor_manager": "Lorem Ipsum D. Lorem",
@@ -82,13 +82,7 @@ sap.ui.define([
         "mobile_number": "+1283907420357",
         "phone_number": "+1283907420357",
         "skype_id": "test.skype",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing" +
-          " elit. Ut ut metus in odio finibus lobortis. Pellentesque " +
-          " venenatis velit non metus tristique auctor. Integer et sagittis" +
-          " nunc, non porttitor nisi. Suspendisse sodales efficitur" +
-          " condimentum. Phasellus quis velit posuere, semper nibh vitae," +
-          " aliquet urna. Praesent porta nec est eget fringilla. Donec et" +
-          " diam mi.",
+        "description": "Lorem ipsum",
         "perm_street": "XXXXXXXXXXXX",
         "perm_city": "XXXXXXXXXXXX",
         "perm_zipcode": "XXXXXXXXXXXX",
@@ -111,22 +105,22 @@ sap.ui.define([
             {"activity":"activity 2"}
         ],
         "customers": [{
-            "name":"Rafael Miguel F. Cantero",
+            "customer_name":"Rafael Miguel F. Cantero",
             "country":"Philippines",
             "city":"Pasig"
         }],
         "projects": [{
-            "project_name":"Project 1",
+            "name":"Project 1",
             "benefiters":"Lorem Ipsum",
-            "from":"11/11/1111",
-            "to":"11/11/1111",
+            "from":null,
+            "to":null,
             "contract_value":"999,999 USD"
         }],
-        "contact_persons": [{
-            "name":"John S. Smith",
+        "contacts": [{
+            "staff_name":"John S. Smith",
             "position":"Manager",
             "office_phone":"0912394123",
-            "mobile":"09172231242",
+            "mobile_number":"09172231242",
             "email":"John@yahoo.com"
         }]
       };
@@ -184,7 +178,9 @@ sap.ui.define([
         },
       }).responseJSON;
 
-      oModel = new JSONModel(oUserData);
+      console.log("recieved data:", oUserDataLocal);
+
+      oModel = new JSONModel(oUserDataLocal);
       // remove all the time in the data so that we are only left
       // with yyyy-MM-dd
       // oModel.setData({
@@ -476,30 +472,19 @@ sap.ui.define([
       var oView = this.getView();
       var oModel = oView.getModel();
 
-      // handle changes to the citizenship multicombo box
-      var temp = [];
-      // since each item is an object, we need to get its "name" field
-      for (var i = 0; i < _selectedCitizenship.length; i++) {
-          temp.push(_selectedCitizenship[i].getText());
-      };
-      this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
-
-      // handle changes to the FullName element in the data
-      var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
-      oModel.setData({full_name:sFullName}, true);
-
-      // handle all the changes to the select inputs
+      /** handle all the changes to the select inputs
       oModel.setData({gender:oView.byId("genderSelect").getSelectedItem().getText()}, true);
       oModel.setData({previously_engaged_with_isdb:oView.byId("prevEngagedSelect").getSelectedItem().getText()}, true);
       oModel.setData({former_isdb_employee:oView.byId("formerEmployeeSelect").getSelectedItem().getText()}, true);
       oModel.setData({kind:oView.byId("kindSelect").getSelectedItem().getText()}, true);
 
       oModel.setData({sectors:oModel.getData().sector_list}, true);
-      oModel.setData({expertises:oModel.getData().expertise_list}, true);
+      oModel.setData({expertises:oModel.getData().expertise_list}, true); **/
 
       var oSessionData = Cookies.getJSON("isdb");
       var sUniqueID = oSessionData.unique_id;
 
+      console.log("data: ", oModel.getData());
 
       $.ajax({
           url : "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID,
@@ -588,8 +573,8 @@ sap.ui.define([
       var emptyRow = {
         "project_name": "",
           "benefiters": "",
-          "from": "",
-          "to": "",
+          "from": null,
+          "to": null,
           "contract_value": ""
       };
 

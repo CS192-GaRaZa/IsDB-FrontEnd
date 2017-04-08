@@ -43,6 +43,15 @@
 								}"
 							/>
 				</HBox>
+				<HBox>
+					<Label text="Owner: " />
+					<Text text="{/vendor_owner}" />
+				</HBox>
+				<HBox>
+					<Label text="Manager Name: " />
+					<Text text="{/vendor_manager}" />
+				</HBox>
+
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
@@ -92,16 +101,12 @@
 													}"
 												/>
 										<Label text="Membership Number" />
-										<Text text="{vendor_membership_number}" />
+										<Text text="{/vendor_membership_number}" />
 									</f:content>
 								</f:SimpleForm>
 
 								<Label text="Summary:" />
 								<Text text="{/description}" />
-
-								<Label />
-								<Label />
-								<Label />
 
 								<f:SimpleForm
 									title="Contact"
@@ -112,10 +117,9 @@
 									labelSpanS="12"
 									adjustLabelSpan="false"
 									emptySpanL="0"
-									columnsL="3">
+									columnsL="2">
 									<f:content>
 										<core:Title />
-										<Text text="Address" />
 										<Label text="Street" />
 										<Text text="{/perm_street}" />
 										<Label text="City" />
@@ -127,7 +131,6 @@
 										<Label text="Country" />
 										<Text text="{/perm_country}" />
 										<core:Title />
-										<Text text="Email and Phone" />
 										<Label text="Email" />
 										<Text text="{/email}" />
 										<Label text="Phone" />
@@ -148,10 +151,9 @@
 									labelSpanS="12"
 									adjustLabelSpan="false"
 									emptySpanL="0"
-									columnsL="3">
+									columnsL="2">
 									<f:content>
 										<core:Title />
-										<Text text="Bank Address" />
 										<Label text="Bank Name" />
 										<Text text="{/bank_name}" />
 										<Label text="Street" />
@@ -182,7 +184,7 @@
 		<uxap:sections>
 			<uxap:ObjectPageSection
 				id="displayActivitiesSection"
-				title="Employment"
+				title="Activities"
 				titleUppercase="false">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection
@@ -266,7 +268,7 @@
 									<items>
 										<ColumnListItem>
 											<cells>
-												<ObjectIdentifier title="{name}" />
+												<ObjectIdentifier title="{customer_name}" />
 												<Text text="{country}"/>
 												<Text text="{city}"/>
 											</cells>
@@ -338,7 +340,7 @@
 									<items>
 										<ColumnListItem>
 											<cells>
-												<ObjectIdentifier title="{project_name}" />
+												<ObjectIdentifier title="{name}" />
 												<Text text="{benefiters}"/>
 												<Text text="{
 															path: 'from',
@@ -378,7 +380,7 @@
 							<VBox>
 								<Table
 									inset="false"
-									items="{/contact_persons}">
+									items="{/contacts}">
 									<headerToolbar>
 										<Toolbar>
 											<Title
@@ -422,10 +424,10 @@
 									<items>
 										<ColumnListItem>
 											<cells>
-												<ObjectIdentifier title="{name}" />
+												<ObjectIdentifier title="{staff_name}" />
 												<Text text="{position}"/>
 												<Text text="{office_phone}"/>
-												<Text text="{mobile}"/>
+												<Text text="{mobile_number}"/>
 												<Text text="{email}"/>
 											</cells>
 										</ColumnListItem>
