@@ -21,8 +21,8 @@ sap.ui.define([
       oArgs = oEvent.getParameter("arguments");
       this._sID = oArgs.id;
       this._sSubsection = oArgs.subsection;
-      this._sUniqueID = appUtils.getUniqueID(
-          appConstants.role.Consultant.getKey(), oArgs.id);
+      this._sUniqueID = appUtils.getUniqueID(appConstants.roleKey.CONSULTANT,
+          oArgs.id);
 
       sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
           this._sUniqueID;

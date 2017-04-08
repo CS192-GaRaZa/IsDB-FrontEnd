@@ -79,7 +79,7 @@ sap.ui.define([
 
       oArgs = oEvent.getParameter("arguments");
       this._sID = oArgs.id;
-      sUniqueID = appUtils.getUniqueID(appConstants.role.Consultant.getKey(),
+      sUniqueID = appUtils.getUniqueID(appConstants.roleKey.CONSULTANT,
           oArgs.id);
       sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
           sUniqueID;
