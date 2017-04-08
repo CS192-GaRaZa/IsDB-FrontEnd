@@ -287,6 +287,7 @@ sap.ui.define([
       var iId;
       var oView;
       var oModel;
+      var response = "";
 
       oList = oEvent.getSource();
       oItem = oEvent.getParameter("listItem");
@@ -325,105 +326,138 @@ sap.ui.define([
 
 
     handleDeletePressCustomers : function (oEvent) {
-      var oList = oEvent.getSource();
-      var oItem = oEvent.getParameter("listItem");
-      var sPath = oItem.getBindingContext().getPath();
+      var oList;
+      var oItem;
+      var sPath;
+      var iIndex;
+      var iId;
+      var oView;
+      var oModel;
+      var response = "";
+
+      oList = oEvent.getSource();
+      oItem = oEvent.getParameter("listItem");
+      sPath = oItem.getBindingContext().getPath();
 
       // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+      iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-      var iId = this.getView().getModel().getData().customers[iIndex].id
+      oView = this.getView();
+      iId = oView.getModel().getData().customers[iIndex].id
 
-      this.getView().getModel().getData().customers.splice(iIndex, 1);
-      this.getView().getModel().refresh();
+      oModel = oView.getModel();
+      oModel.getData().customers.splice(iIndex, 1);
+      oModel.refresh();
 
       $.ajax({
-             url : "https://isdb-cms-api.herokuapp.com/api/v1/customers/" + iId,
-             type : "DELETE",
-             headers:{
-                 "Session-Key": Cookies.getJSON("isdb").token
-             },
-             contentType : "application/json",
-             success : function(data, textStatus, jqXHR) {
-                    response = data;
-                    console.log("SUCCESS");
-                    console.log("data: ", data);
-             },
-             error: function(xhr, status)
-             {
-                    console.log("ERROR POSTING REQUEST");
-                    console.log("xhr: ", xhr);
-                    console.log("status: ", status);
-             },
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/customers/" + iId,
+        type : "DELETE",
+        headers:{
+           "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+              response = data;
+              console.log("SUCCESS");
+              console.log("data: ", data);
+        },
+        error: function(xhr, status)
+        {
+              console.log("ERROR POSTING REQUEST");
+              console.log("xhr: ", xhr);
+              console.log("status: ", status);
+        },
       });
     },
 
     handleDeletePressProjects : function (oEvent) {
-      var oList = oEvent.getSource();
-      var oItem = oEvent.getParameter("listItem");
-      var sPath = oItem.getBindingContext().getPath();
+      var oList;
+      var oItem;
+      var sPath;
+      var iIndex;
+      var iId;
+      var oView;
+      var oModel;
+      var response = "";
+
+      oList = oEvent.getSource();
+      oItem = oEvent.getParameter("listItem");
+      sPath = oItem.getBindingContext().getPath();
 
       // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-      var index = sPath.replace ( /[^\d.]/g, '' );
+      iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-      var iId = this.getView().getModel().getData().projects[iIndex].id
+      oView = this.getView();
+      iId = oView.getModel().getData().projects[iIndex].id
 
-      this.getView().getModel().getData().projects.splice(index, 1);
-      this.getView().getModel().refresh();
+      oModel = oView.getModel();
+      oModel.getData().projects.splice(iIndex, 1);
+      oModel.refresh();
 
       $.ajax({
-             url : "https://isdb-cms-api.herokuapp.com/api/v1/projects/" + iId,
-             type : "DELETE",
-             headers:{
-                 "Session-Key": Cookies.getJSON("isdb").token
-             },
-             contentType : "application/json",
-             success : function(data, textStatus, jqXHR) {
-                    response = data;
-                    console.log("SUCCESS");
-                    console.log("data: ", data);
-             },
-             error: function(xhr, status)
-             {
-                    console.log("ERROR POSTING REQUEST");
-                    console.log("xhr: ", xhr);
-                    console.log("status: ", status);
-             },
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/projects/" + iId,
+        type : "DELETE",
+        headers:{
+           "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+              response = data;
+              console.log("SUCCESS");
+              console.log("data: ", data);
+        },
+        error: function(xhr, status)
+        {
+              console.log("ERROR POSTING REQUEST");
+              console.log("xhr: ", xhr);
+              console.log("status: ", status);
+        },
       });
     },
 
 
     handleDeletePressContactPersons : function (oEvent) {
-      var oList = oEvent.getSource();
-      var oItem = oEvent.getParameter("listItem");
-      var sPath = oItem.getBindingContext().getPath();
+      var oList;
+      var oItem;
+      var sPath;
+      var iIndex;
+      var iId;
+      var oView;
+      var oModel;
+      var response = "";
+
+      oList = oEvent.getSource();
+      oItem = oEvent.getParameter("listItem");
+      sPath = oItem.getBindingContext().getPath();
 
       // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-      var index = sPath.replace ( /[^\d.]/g, '' );
+      iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-      var iId = this.getView().getModel().getData().contact_persons[iIndex].id
+      oView = this.getView();
+      iId = oView.getModel().getData().contacts[iIndex].id
 
-      this.getView().getModel().getData().contact_persons.splice(index, 1);
-      this.getView().getModel().refresh();
+      oModel = oView.getModel();
+      oModel.getData().contacts.splice(iIndex, 1);
+      oModel.refresh();
 
       $.ajax({
-             url : "https://isdb-cms-api.herokuapp.com/api/v1/contact_persons/" + iId,
-             type : "DELETE",
-             headers:{
-                 "Session-Key": Cookies.getJSON("isdb").token
-             },
-             contentType : "application/json",
-             success : function(data, textStatus, jqXHR) {
-                    response = data;
-                    console.log("SUCCESS");
-                    console.log("data: ", data);
-             },
-             error: function(xhr, status)
-             {
-                    console.log("ERROR POSTING REQUEST");
-                    console.log("xhr: ", xhr);
-                    console.log("status: ", status);
-             },
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/contacts/" + iId,
+        type : "DELETE",
+        headers:{
+           "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+              response = data;
+              console.log("SUCCESS");
+              console.log("data: ", data);
+        },
+        error: function(xhr, status)
+        {
+              console.log("ERROR POSTING REQUEST");
+              console.log("xhr: ", xhr);
+              console.log("status: ", status);
+        },
       });
     },
 
