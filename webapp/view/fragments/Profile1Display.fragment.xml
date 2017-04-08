@@ -50,6 +50,7 @@
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
+			<!-- change the id here to displayCFSection --> 
 			<uxap:ObjectPageSection
 				id="displayProfileSection1"
 				title="Profile"

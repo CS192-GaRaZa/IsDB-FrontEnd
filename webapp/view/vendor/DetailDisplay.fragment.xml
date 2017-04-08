@@ -1,0 +1,441 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:uxap="sap.uxap"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<uxap:ObjectPageLayout
+		id="objectPageLayoutDisplayVendor"
+		upperCaseAnchorBar="false"
+		alwaysShowContentHeader="false"
+		showAnchorBarPopover="false"
+		useIconTabBar="true"
+		navigate="trackSelectedSection">
+
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader
+				objectTitle="{/vendor_name}"
+				objectSubtitle="{/unique_id}" />
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<Image
+				src="{/image_url}"
+				width="150px"
+				height="150px" />
+			<VBox width="80%">
+				<HBox>
+					<Label text="Company Type: " />
+					<Text text="{/vendor_type}" />
+				</HBox>
+
+				<!-- I'm using these empty labels to add spacing between the entries.
+					Is there a better way? -->
+
+				<HBox>
+					<Label text="Establishment Date: " />
+					<Text text="{
+								path: '/vendor_establishment_date',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: { style: 'long' }
+								}"
+							/>
+				</HBox>
+			</VBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<!-- the id here is called displayProfileSection in other pages (consultant, CF) change it to displayConsultantSection-->
+			<uxap:ObjectPageSection
+				id="displayVendorSection"
+				title="General"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Company Name" />
+										<Text text="{/vendor_name}" />
+										<Label text="Company Type" />
+										<Text text="{/vendor_type}" />
+										<Label text="Number of Employees" />
+										<Text text="{/vendor_number_employees}" />
+										<core:Title />
+										<Label text="Owner" />
+										<Text text="{/vendor_owner}" />
+										<Label text="Manager Name" />
+										<Text text="{/vendor_manager}" />
+										<Label text="Commercial Registration" />
+										<Text text="{/vendor_commercial_registration}" />
+										<core:Title />
+										<Label text="Establishment Date" />
+										<Text text="{
+													path: '/vendor_establishment_date',
+													type: 'sap.ui.model.type.Date',
+													formatOptions: { style: 'long' }
+													}"
+												/>
+										<Label text="Membership Number" />
+										<Text text="{vendor_membership_number}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label text="Summary:" />
+								<Text text="{/description}" />
+
+								<Label />
+								<Label />
+								<Label />
+
+								<f:SimpleForm
+									title="Contact"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Text text="Address" />
+										<Label text="Street" />
+										<Text text="{/perm_street}" />
+										<Label text="City" />
+										<Text text="{/perm_city}" />
+										<Label text="Zip Code" />
+										<Text text="{/perm_zipcode}" />
+										<Label text="P.O. Box" />
+										<Text text="{/vendor_pobox}" />
+										<Label text="Country" />
+										<Text text="{/perm_country}" />
+										<core:Title />
+										<Text text="Email and Phone" />
+										<Label text="Email" />
+										<Text text="{/email}" />
+										<Label text="Phone" />
+										<Text text="{/phone_number}" />
+										<Label text="Fax" />
+										<Text text="{/vendor_fax}" />
+										<Label text="Skype ID" />
+										<Text text="{/skype_id}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<f:SimpleForm
+									title="Financial Information"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Text text="Bank Address" />
+										<Label text="Bank Name" />
+										<Text text="{/bank_name}" />
+										<Label text="Street" />
+										<Text text="{/bank_street}" />
+										<Label text="City" />
+										<Text text="{/bank_city}" />
+										<Label text="Zip Code" />
+										<Text text="{/bank_zipcode}" />
+										<Label text="Country" />
+										<Text text="{/bank_country}" />
+										<core:Title />
+										<Label text="Account Holder Name" />
+										<Text text="{/bank_account_holder}" />
+										<Label text="Bank Account Number" />
+										<Text text="{/bank_account_number}" />
+										<Label text="Swift Number" />
+										<Text text="{/bank_swift_number}" />
+										<Label text="IBAN" />
+										<Text text="{/bank_iban}" />
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayActivitiesSection"
+				title="Employment"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/activities}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Activities"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto" />
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<VBox>
+													<Text text="{activity}" />
+												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayCustomersSection"
+				title="Customers"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/customers}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Most Important Customers"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Customer Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Country" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="City" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{name}" />
+												<Text text="{country}"/>
+												<Text text="{city}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayProjectsSection"
+				title="Projects"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/projects}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Projects and Agreement"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Project Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Benefiters" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="From" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="To" />
+                                        </Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Contract Value" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{project_name}" />
+												<Text text="{benefiters}"/>
+												<Text text="{
+															path: 'from',
+															type: 'sap.ui.model.type.Date',
+															formatOptions: { style: 'medium' }
+															}"
+														/>
+												<Text text="{
+															path: 'to',
+															type: 'sap.ui.model.type.Date',
+															formatOptions: { style: 'medium' }
+															}"
+														/>
+												<Text text="{contract_value}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayContactSection"
+				title="Contact"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/contact_persons}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Contact Persons"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Staff Name" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Position" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Office Phone" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Mobile" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Email" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{name}" />
+												<Text text="{position}"/>
+												<Text text="{office_phone}"/>
+												<Text text="{mobile}"/>
+												<Text text="{email}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</core:FragmentDefinition>

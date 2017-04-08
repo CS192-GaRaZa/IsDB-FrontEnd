@@ -62,6 +62,7 @@
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
+			<!-- change the id here to displayConsultantSection --> 
 			<uxap:ObjectPageSection
 				id="displayProfileSection"
 				title="Profile"

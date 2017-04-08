@@ -302,11 +302,13 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 
 	handleDeletePressEducation : function (oEvent) {
 		var oList = oEvent.getSource();
-		oItem = oEvent.getParameter("listItem");
-		sPath = oItem.getBindingContext().getPath();
+		var oItem = oEvent.getParameter("listItem");
+		var sPath = oItem.getBindingContext().getPath();
 
 		// since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-		index = sPath.replace ( /[^\d.]/g, '' );
+		var index = sPath.replace ( /[^\d.]/g, '' );
+
+		var iId = this.getView().getModel().getData().educations[iIndex].id
 
 		this.getView().getModel().getData().educations.splice(index, 1);
 		this.getView().getModel().refresh();

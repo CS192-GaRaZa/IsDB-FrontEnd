@@ -115,6 +115,11 @@
           "pattern": "vendor/{id}",
           "name": "vendorOverview",
           "target": "vendorOverview"
+        },
+        {
+          "pattern": "vendor/detail",
+          "name": "vendorDetail",
+          "target": "vendorDetail"
         }
       ],
       "targets" : {
@@ -153,6 +158,9 @@
         },
         "vendorOverview": {
           "viewName": "vendor.Overview"
+        },
+        "vendorDetail": {
+          "viewName": "vendor.Detail"
         }
       }
     }
