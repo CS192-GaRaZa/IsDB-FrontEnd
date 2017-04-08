@@ -186,8 +186,6 @@ sap.ui.define([
         },
       }).responseJSON;
 
-      console.log("recieved data:", oUserData);
-
       oModel = new JSONModel(oUserData);
       // remove all the time in the data so that we are only left
       // with yyyy-MM-dd
@@ -515,6 +513,11 @@ sap.ui.define([
         //Restore the old data
         var oModel = this.getView().getModel();
         var oData = oModel.getData();
+
+        console.log("old data: ", this._oOldData);
+
+        // have to turn some strings into date format again
+        this._convertDatesISOToObj(this._oOldData);
 
         oModel.setData(this._oOldData);
         this._toggleButtonsAndView(false);
