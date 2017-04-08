@@ -59,10 +59,11 @@ sap.ui.define([
         uniqueId: oData.unique_id
       };
 
+
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
       $.each(appConstants.role, function (_, oRole) {
         if (oRole.getKey() === sRoleKey) {
-          oHomeRoute = oRole.getHomeRoute(oContext);
+          oHomeRoute = oRole.getHome(oContext);
           oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters);
           return false;
         }
