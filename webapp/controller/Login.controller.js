@@ -42,21 +42,17 @@ sap.ui.define([
     },
 
     _onLoginPOSTSuccess: function (oData, sTextStatus, jqXHR) {
-      var sUniqueIDPrefix = oData.unique_id.match(/(\w*)\-\d*/)[1];
-      var sAccountType = {
-        "C": "consultant",
-        "CF": "consulting_firm",
-        "V": "vendor"
-      }[sUniqueIDPrefix];
+      var sRoleKey;
 
-      oData.account_type = sAccountType;
+      sRoleKey = oData.role.role_name;
+
       Cookies.set('isdb', oData);
 
       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      if (sAccount_type === "vendor") {
+      if (sRoleKey === "vendor") {
         oRouter.navTo("vendorDetail");
       } else {
-        oRouter.navTo(sAccountType + "_profile");
+        oRouter.navTo(sRoleKey + "_profile");
       }
     },
 
