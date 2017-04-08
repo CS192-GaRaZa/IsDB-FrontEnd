@@ -37,6 +37,6 @@
   appConstants.role = {
     Conultant: new Role("consultant", "consultantOverview"),
     ConsultingFirm: new Role("consulting_firm", "consultingFirmOverview"),
-    Vendor: new Role("vendor", "vendorOverview")
+    Vendor: new Role("vendor", "vendorDetail"/*, "vendorOverview"*/)
   };
 })(window);
