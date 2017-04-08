@@ -130,7 +130,7 @@
           "viewName": "NotFound"
         },
         "consultant_profile": {
-          "viewName": "Profile"
+          "viewName": "consultant.Detail"
         },
         "consulting_firm_profile": {
           "viewName": "Profile1"
