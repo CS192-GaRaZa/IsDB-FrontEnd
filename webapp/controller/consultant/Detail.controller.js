@@ -5,7 +5,7 @@ sap.ui.define([
 		'sap/ui/model/json/JSONModel'
 	]);
 
-sap.ui.controller("cmsfrontend.controller.Profile", {
+sap.ui.controller("cmsfrontend.controller.consultant.Detail", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -62,30 +62,7 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 								{"countryName":"Philippines"}
 							]};
 
-		var oCountryData = $.ajax({
-		       url : "https://isdb-cms-api.herokuapp.com/api/v1/countries",
-		       type : "GET",
-		       async: false,
-		       dataType: 'json',
-		       contentType : "application/json",
-		       success : function(data, textStatus, jqXHR) {
-		    	  // console.log("data: ", data);
-		    	  // console.log("textStatus: ", textStatus);
-		    	  // console.log("jqxhr: ", jqXHR);
-		    	  this._convertDatesISOToObj(data);
-	    	  	return data;
-		       }.bind(this),
-		       error: function(xhr, status) {
-		    	  // console.log("ERROR POSTING REQUEST");
-		          // console.log("xhr: ", xhr);
-		          // console.log("status: ", status);
-		           return status;
-		       },
-		}).responseJSON;
-
-		console.log(oCountryList);
-
-		var oCountriesModel = new sap.ui.model.json.JSONModel(oCountryData);
+		var oCountriesModel = new sap.ui.model.json.JSONModel("/model/coutries.json");
 		oCountriesModel.setSizeLimit(500);
 		this.getView().setModel(oCountriesModel, "countryModel");
 
@@ -132,19 +109,21 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		this.getView().setModel(oModel);
 
 		// Set the initial form to be the display one
-		this._showFormFragment("ProfileDisplay");
+		this._showFormFragment("cmsfrontend.view.consultant.DetailDisplay");
 
-		// adds an event delegate to the objectPage that switches it to the tab that was last open in the Edit view
-		this.oObjectPageLayout = this.getView().byId("objectPageLayoutDisplay");
+		// adds an event delegate to the objectPage that switches it to the
+        // tab that was last open in the Edit view
+		this.oObjectPageLayout = this.byId("objectPageLayoutDisplay");
 		this.oObjectPageLayout.addEventDelegate({
 			onAfterRendering: jQuery.proxy(function () {
 				//need to wait for the scrollEnablement to be active
-				jQuery.sap.delayedCall(500, this.oObjectPageLayout, this.oObjectPageLayout.scrollToSection, [this._sSelectedSection[0]]);
+				jQuery.sap.delayedCall(500, this.oObjectPageLayout,
+                    this.oObjectPageLayout.scrollToSection,
+                    [ this._sSelectedSection[0] ]);
 			}, this)
 		});
-
-
 	},
+
 
 	formatSurname: function (sLastName, sSurname, sMiddleName) {
 		return sLastName + ", " + sSurname +
@@ -169,15 +148,6 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 * @memberOf cmsfrontend.profile
 */
 //	onBeforeRendering: function() {
-//
-//	},
-
-/**
-* Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-* This hook is the same one that SAPUI5 controls get after being rendered.
-* @memberOf cmsfrontend.profile
-*/
-//	onAfterRendering: function() {
 //
 //	},
 
@@ -483,13 +453,16 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		oView.byId("cancel").setVisible(bEdit);
 
 		// Set the right form type
-		this._showFormFragment(bEdit ? "ProfileEdit" : "ProfileDisplay");
+		this._showFormFragment(bEdit
+            ? "cmsfrontend.view.consultant.DetailEdit"
+            : "cmsfrontend.view.consultant.DetailDisplay");
 	},
 
 	// array of items currently selected in the Citizenship multicombo box
 	_selectedCitizenship: {},
 
-	// bool that tells us if the Edit page has been initialized already. Used when adding the event delegate
+	// bool that tells us if the Edit page has been initialized already.
+    // Used when adding the event delegate
 	_bHasEditInit: false,
 
 	// Id of the currently selected section and the Id of the page
@@ -504,7 +477,8 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 			return oFormFragment;
 		}
 
-		oFormFragment = sap.ui.xmlfragment(this.getView().getId(), "cmsfrontend.view.fragments." + sFragmentName, this);
+		oFormFragment = sap.ui.xmlfragment(this.getView().getId(),
+            sFragmentName, this);
 
 		return this._formFragments[sFragmentName] = oFormFragment;
 	},
@@ -513,8 +487,8 @@ sap.ui.controller("cmsfrontend.controller.Profile", {
 		var oPage = this.getView().byId("profile");
 
 		oPage.removeAllContent();
-		oPage.insertContent(this._getFormFragment(sFragmentName));
-
+        var oFragment = this._getFormFragment(sFragmentName);
+		oPage.addContent(oFragment);
 	}
 
 });

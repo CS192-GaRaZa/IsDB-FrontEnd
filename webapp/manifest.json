@@ -102,7 +102,22 @@
           "target": "consultant_overview"
         },
         {
-          "pattern": "vendor/detail",
+          "pattern": "consultant/{id}",
+          "name": "consultantOverview",
+          "target": "consultantOverview"
+        },
+        {
+          "pattern": "consultingFirm/{id}",
+          "name": "consultingFirmOverview",
+          "target": "consultingFirmOverview"
+        },
+        {
+          "pattern": "vendor/{id}",
+          "name": "vendorOverview",
+          "target": "vendorOverview"
+        },
+        {
+          "pattern": "vendor_temp/detail",
           "name": "vendorDetail",
           "target": "vendorDetail"
         }
@@ -115,7 +130,7 @@
           "viewName": "NotFound"
         },
         "consultant_profile": {
-          "viewName": "Profile"
+          "viewName": "consultant.Detail"
         },
         "consulting_firm_profile": {
           "viewName": "Profile1"
@@ -131,6 +146,18 @@
         },
         "consultant_overview": {
           "viewName": "consultant.Overview"
+        },
+        "overview": {
+          "viewName": "Overview"
+        },
+        "consultantOverview": {
+          "viewName": "consultant.Overview"
+        },
+        "consultingFirmOverview": {
+          "viewName": "consultingFirm.Overview"
+        },
+        "vendorOverview": {
+          "viewName": "vendor.Overview"
         },
         "vendorDetail": {
           "viewName": "vendor.Detail"
