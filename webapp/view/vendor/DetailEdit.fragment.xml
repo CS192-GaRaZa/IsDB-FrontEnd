@@ -49,7 +49,7 @@
       <!-- the id here is called displayProfileSection in other pages (consultant, CF) change it to displayConsultantSection-->
       <uxap:ObjectPageSection
         id="editVendorSection"
-        title="General"
+        title="Profile"
         titleUppercase="false">
         <uxap:subSections>
           <uxap:ObjectPageSubSection
@@ -182,7 +182,7 @@
                     <Input value="{/bank_account_holder}" />
                     <Label text="Bank Account Number" />
                     <Input value="{/bank_account_number}" />
-                    <Label text="Swift Number" />
+                    <Label text="SWIFT Number" />
                     <Input value="{/bank_swift_number}" />
                     <Label text="IBAN" />
                     <Input value="{/bank_iban}" />
@@ -406,7 +406,7 @@
     <uxap:sections>
       <uxap:ObjectPageSection
         id="editContactSection"
-        title="Contact"
+        title="Contacts"
         titleUppercase="false">
         <uxap:subSections>
           <uxap:ObjectPageSubSection
