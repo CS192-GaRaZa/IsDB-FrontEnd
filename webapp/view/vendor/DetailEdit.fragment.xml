@@ -114,28 +114,36 @@
                   labelSpanS="12"
                   adjustLabelSpan="false"
                   emptySpanL="0"
-                  columnsL="2">
+                  columnsL="3">
                   <f:content>
                     <core:Title />
                     <Label text="Street" />
-                    <Input value="{/perm_street}" width="60%"/>
+                    <Input value="{/perm_street}"/>
                     <Label text="City" />
-                    <Input value="{/perm_city}" width="60%"/>
+                    <Input value="{/perm_city}"/>
                     <Label text="Zip Code" />
-                    <Input value="{/perm_zipcode}" width="20%"/>
+                    <Input value="{/perm_zipcode}"/>
                     <Label text="P.O. Box" />
-                    <Input value="{/vendor_pobox}" width="20%"/>
+                    <Input value="{/vendor_pobox}"/>
                     <Label text="Country" />
-                    <Input value="{/perm_country}" width="60%"/>
+                    <Select
+                      value="{/perm_country}"
+                      change="handlePermCountryChange"
+                      forceSelection="false"
+                      items="{countryModel>/}">
+                      <items>
+                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />                        
+                      </items>
+                    </Select>
                     <core:Title />
                     <Label text="Email" />
-                    <Input value="{/email}" width="40%"/>
+                    <Input value="{/email}"/>
                     <Label text="Phone" />
-                    <Input value="{/phone_number}" width="20%"/>
+                    <Input value="{/phone_number}"/>
                     <Label text="Fax" />
-                    <Input value="{/vendor_fax}" width="20%"/>
+                    <Input value="{/vendor_fax}"/>
                     <Label text="Skype ID" />
-                    <Input value="{/skype_id}" width="20%"/>
+                    <Input value="{/skype_id}"/>
                   </f:content>
                 </f:SimpleForm>
 
@@ -160,7 +168,15 @@
                     <Label text="Zip Code" />
                     <Input value="{/bank_zipcode}" />
                     <Label text="Country" />
-                    <Input value="{/bank_country}" />
+                    <Select
+                      value="{/bank_country}"
+                      change="handleBankCountryChange"
+                      forceSelection="false"
+                      items="{countryModel>/}">
+                      <items>
+                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />                        
+                      </items>
+                    </Select>
                     <core:Title />
                     <Label text="Account Holder Name" />
                     <Input value="{/bank_account_holder}" />

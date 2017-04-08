@@ -260,6 +260,16 @@ sap.ui.define([
 
     handleNavPress : function () {},
 
+    handlePermCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedPermCountry = selectedItem;
+    },
+
+    handleBankCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedBankCountry = selectedItem;
+    },
+
 
     handleDeletePressActivities : function (oEvent) {
       var oList;
@@ -428,6 +438,10 @@ sap.ui.define([
     // Used when adding the event delegate
     _bHasEditInit: false,
 
+    _sSelectedPermCountry:"",
+
+    _sSelectedBankCountry:"",
+
     handleEditPress : function () {
       var oView = this.getView();
 
@@ -477,9 +491,12 @@ sap.ui.define([
       oModel.setData({previously_engaged_with_isdb:oView.byId("prevEngagedSelect").getSelectedItem().getText()}, true);
       oModel.setData({former_isdb_employee:oView.byId("formerEmployeeSelect").getSelectedItem().getText()}, true);
       oModel.setData({kind:oView.byId("kindSelect").getSelectedItem().getText()}, true);
-
+  
       oModel.setData({sectors:oModel.getData().sector_list}, true);
       oModel.setData({expertises:oModel.getData().expertise_list}, true); **/
+
+      oModel.setData({perm_country:this._sSelectedPermCountry.getText()}, true);
+      oModel.setData({bank_country:this._sSelectedBankCountry.getText()}, true);
 
       var oSessionData = Cookies.getJSON("isdb");
       var sUniqueID = oSessionData.unique_id;
@@ -519,35 +536,6 @@ sap.ui.define([
 
       oModel.setData({ image_url: oResponseData.secure_url  }, true);
     },
-
-
-    "activities": [
-      "activity 1",
-      "activity 2"
-    ],
-
-    "customers": [{
-        "name":"Rafael Miguel F. Cantero",
-        "country":"Philippines",
-        "city":"Pasig"
-    }],
-
-    "projects": [{
-        "project_name":"Project 1",
-        "benefiters":"Lorem Ipsum",
-        "from":"11/11/1111",
-        "to":"11/11/1111",
-        "contract_value":"999,999 USD"
-    }],
-
-    "contact_persons": [{
-        "name":"John S. Smith",
-        "position":"Manager",
-        "office_phone":"0912394123",
-        "mobile":"09172231242",
-        "email":"John@yahoo.com"
-    }],
-
 
     addRowActivities : function() {
       var emptyRow = { "activity": "" };
