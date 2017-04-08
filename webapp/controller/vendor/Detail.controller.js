@@ -18,6 +18,14 @@ sap.ui.define([
     _convertDatesISOToObj: function (data) {
       data.date_of_birth = new Date(data.date_of_birth);
       data.date_cleared_consulting = new Date(data.date_cleared_consulting);
+      data.vendor_establishment_date = new Date(vendor_establishment_date);
+
+      var project;
+      for (var i = 0; i < data.projects.length; i++) {
+        project = data.projects[i];
+        project.from = new Date(project.from);
+        project.to = new Date(project.to);
+      }
 
       var employment;
       for (var i = 0; i < data.employments.length; i++) {
@@ -180,7 +188,7 @@ sap.ui.define([
 
       console.log("recieved data:", oUserDataLocal);
 
-      oModel = new JSONModel(oUserDataLocal);
+      oModel = new JSONModel(oUserData);
       // remove all the time in the data so that we are only left
       // with yyyy-MM-dd
       // oModel.setData({
@@ -262,12 +270,12 @@ sap.ui.define([
 
     handlePermCountryChange : function (oEvent){
       var selectedItem = oEvent.getParameter("selectedItem");
-      this._sSelectedPermCountry = selectedItem;
+      this._sSelectedPermCountry = selectedItem.getText();
     },
 
     handleBankCountryChange : function (oEvent){
       var selectedItem = oEvent.getParameter("selectedItem");
-      this._sSelectedBankCountry = selectedItem;
+      this._sSelectedBankCountry = selectedItem.getText();
     },
 
 
@@ -495,13 +503,13 @@ sap.ui.define([
       oModel.setData({sectors:oModel.getData().sector_list}, true);
       oModel.setData({expertises:oModel.getData().expertise_list}, true); **/
 
-      oModel.setData({perm_country:this._sSelectedPermCountry.getText()}, true);
-      oModel.setData({bank_country:this._sSelectedBankCountry.getText()}, true);
+      oModel.setData({perm_country:this._sSelectedPermCountry}, true);
+      oModel.setData({bank_country:this._sSelectedBankCountry}, true);
 
       var oSessionData = Cookies.getJSON("isdb");
       var sUniqueID = oSessionData.unique_id;
 
-      console.log("data: ", oModel.getData());
+      var response=""
 
       $.ajax({
           url : "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID,

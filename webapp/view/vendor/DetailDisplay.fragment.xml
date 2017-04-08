@@ -108,6 +108,8 @@
 								<Label text="Summary:" />
 								<Text text="{/description}" />
 
+								<Label/>
+
 								<f:SimpleForm
 									title="Contact"
 									editable="false"
