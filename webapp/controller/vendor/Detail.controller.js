@@ -536,7 +536,7 @@ sap.ui.define([
       oModel.setData({previously_engaged_with_isdb:oView.byId("prevEngagedSelect").getSelectedItem().getText()}, true);
       oModel.setData({former_isdb_employee:oView.byId("formerEmployeeSelect").getSelectedItem().getText()}, true);
       oModel.setData({kind:oView.byId("kindSelect").getSelectedItem().getText()}, true);
-  
+
       oModel.setData({sectors:oModel.getData().sector_list}, true);
       oModel.setData({expertises:oModel.getData().expertise_list}, true); **/
 
@@ -544,7 +544,7 @@ sap.ui.define([
       oModel.setData({bank_country:this._sSelectedBankCountry}, true);
 
       // change some fields in model to ints
-      if (oModel.getData.vendor_number_of_employees) { 
+      if (oModel.getData.vendor_number_of_employees) {
         oModel.setData({vendor_number_of_employees:oModel.getData.vendor_number_of_of_employees.parseInt()}, true);
       };
 

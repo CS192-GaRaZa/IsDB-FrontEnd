@@ -1,11 +1,13 @@
 <core:FragmentDefinition
-  xmlns:core="sap.ui.core"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:l="sap.ui.layout"
-  xmlns:f="sap.ui.layout.form"
-  xmlns:uxap="sap.uxap"
-  xmlns:html="http://www.w3.org/1999/xhtml">
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:unified="sap.ui.unified"
+    >
 
   <uxap:ObjectPageLayout
     id="objectPageLayoutEditVendor"
@@ -43,6 +45,14 @@
                 }"
               />
         </HBox>
+        <unified:FileUploader
+            uploadUrl="/upload"
+            uploadOnChange="true"
+            name="file"
+            id="idProfileImageUploader"
+            buttonText="Browse"
+            uploadComplete="onProfileImageUploaderComplete"
+            />
       </VBox>
     </uxap:headerContent>
     <uxap:sections>
@@ -132,7 +142,7 @@
                       forceSelection="false"
                       items="{countryModel>/}">
                       <items>
-                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />                        
+                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
                       </items>
                     </Select>
                     <core:Title />
@@ -174,7 +184,7 @@
                       forceSelection="false"
                       items="{countryModel>/}">
                       <items>
-                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />                        
+                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
                       </items>
                     </Select>
                     <core:Title />
