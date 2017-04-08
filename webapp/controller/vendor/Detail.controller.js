@@ -18,7 +18,7 @@ sap.ui.define([
     _convertDatesISOToObj: function (data) {
       data.date_of_birth = new Date(data.date_of_birth);
       data.date_cleared_consulting = new Date(data.date_cleared_consulting);
-      data.vendor_establishment_date = new Date(vendor_establishment_date);
+      data.vendor_establishment_date = new Date(data.vendor_establishment_date);
 
       var project;
       for (var i = 0; i < data.projects.length; i++) {
@@ -82,7 +82,7 @@ sap.ui.define([
         "vendor_name": "Vendors Anonymous",
         "vendor_type": "Aircon resellers",
         "vendor_establishment_date": null,
-        "vendor_number_employees": "24",
+        "vendor_number_of_employees": "24",
         "vendor_owner": "Rafael Miguel V. Cantero",
         "vendor_manager": "Lorem Ipsum D. Lorem",
         "vendor_commercial_registration": "XXXXXXXXXXXXX",
@@ -186,7 +186,7 @@ sap.ui.define([
         },
       }).responseJSON;
 
-      console.log("recieved data:", oUserDataLocal);
+      console.log("recieved data:", oUserData);
 
       oModel = new JSONModel(oUserData);
       // remove all the time in the data so that we are only left
@@ -505,6 +505,11 @@ sap.ui.define([
 
       oModel.setData({perm_country:this._sSelectedPermCountry}, true);
       oModel.setData({bank_country:this._sSelectedBankCountry}, true);
+
+      // change some fields in model to ints
+      if (oModel.getData.vendor_number_of_employees) { 
+        oModel.setData({vendor_number_of_employees:oModel.getData.vendor_number_of_of_employees.parseInt()}, true);
+      };
 
       var oSessionData = Cookies.getJSON("isdb");
       var sUniqueID = oSessionData.unique_id;

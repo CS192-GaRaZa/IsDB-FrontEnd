@@ -84,7 +84,7 @@
 										<Label text="Company Type" />
 										<Text text="{/vendor_type}" />
 										<Label text="Number of Employees" />
-										<Text text="{/vendor_number_employees}" />
+										<Text text="{/vendor_number_of_employees}" />
 										<core:Title />
 										<Label text="Owner" />
 										<Text text="{/vendor_owner}" />

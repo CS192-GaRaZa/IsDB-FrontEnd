@@ -75,7 +75,7 @@
                     <Label text="Company Type" />
                     <Input value="{/vendor_type}" />
                     <Label text="Number of Employees" />
-                    <Input value="{/vendor_number_employees}" />
+                    <Input value="{/vendor_number_of_employees}" />
                     <core:Title />
                     <Label text="Owner" />
                     <Input value="{/vendor_owner}" />
