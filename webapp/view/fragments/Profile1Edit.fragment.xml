@@ -79,13 +79,13 @@
 										<Input value="{/cf_type_of_business}" />
 										<Label text="Website" />
 										<Input value="{/website}" />
-										<Label text="Branches" />
-										<Input value="{/branches}" />
 										<core:Title />
 										<Label text="Acronym" />
 										<Input value="{/cf_acronym}" />
 										<Label text="Number of Employees" />
 										<Input value="{/cf_number_of_employees}" />
+										<Label text="Branches" />
+										<Input value="{/branches}" />
 										<core:Title />
 										<Label text="Country of Incorporation" />
 										<Input value="{/cf_country}" />
@@ -114,17 +114,11 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Sectors (comma separated)" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/sector_list}" />
+										<Label text="Sectors" />
+										<Input value="{/sector_list}" />
 										<core:Title />
-										<Label text="Expertise (comma separated)" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/expertise_list}" />
+										<Label text="Expertise" />
+										<Input value="{/expertise_list}" />
 									</f:content>
 								</f:SimpleForm>
 
@@ -141,7 +135,7 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Text text="Permanent Address" />
+										<Title text="Permanent Address" />
 										<Label text="Street" />
 										<Input value="{/perm_street}" />
 										<Label text="City" />
@@ -153,7 +147,7 @@
 										<Label text="Country" />
 										<Input value="{/perm_country}" />
 										<core:Title />
-										<Text text="Mailing Address" />
+										<Title text="Mailing Address" />
 										<Label text="Street" />
 										<Input value="{/mail_street}" />
 										<Label text="City" />
@@ -165,7 +159,7 @@
 										<Label text="Country" />
 										<Input value="{/mail_country}" />
 										<core:Title />
-										<Input value="Email and Phone" />
+										<Title text="Email and Phone" />
 										<Label text="Email" />
 										<Input value="{/email}" />
 										<Label text="Phone" />

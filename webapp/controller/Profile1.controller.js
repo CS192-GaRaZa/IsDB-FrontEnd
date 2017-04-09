@@ -300,6 +300,15 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
 
   _formFragments: {},
 
+  _convertDatesISOToObj: function (data) {
+      var experience;
+      for (var i = 0; i < data.experiences.length; i++) {
+        experience = data.experiences[i];
+        experience.from = new Date(experience.from);
+        experience.to = new Date(experience.to);
+      }
+    },
+
   _getFormFragment: function (sFragmentName) {
     var oFormFragment = this._formFragments[sFragmentName];
 
