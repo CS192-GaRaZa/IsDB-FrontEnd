@@ -15,8 +15,8 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
       var experience;
       for (var i = 0; i < data.experiences.length; i++) {
         experience = data.experiences[i];
-        experience.from = new Date(experience.from);
-        experience.to = new Date(experience.to);
+        experience.from = experience.from && new Date(experience.from);
+        experience.to = experience.to && new Date(experience.to);
       }
     },
 /**
@@ -66,6 +66,7 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
 
     var sUniqueID = this._getSessionData().unique_id;
     var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
+    var _this = this;
     var oUserData = $.ajax({
            url : sURL,
            type : "GET",
@@ -76,7 +77,7 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
             // console.log("data: ", data);
             // console.log("textStatus: ", textStatus);
             // console.log("jqxhr: ", jqXHR);
-            this._convertDatesISOToObj(data);
+            _this._convertDatesISOToObj(data);
             return data;
 
            },
