@@ -47,21 +47,14 @@ sap.ui.define([
       var oRouter;
       var oHomeRoute;
 
-      // FIXME: Storing this data in a cookie does not sound safe. Will look
-      // on storing it in SAP localStorgage, or ask for the server to
-      // do the checking (read something about this, I don't know where).
+      // TODO: Will be removed in favor of the following function
       Cookies.set('isdb', oData);
+      appUtils.storage.init(oData);
 
-      sRoleKey = oData.role.role_name;
-      oContext = {
-        id: oData.id,
-        roleKey: sRoleKey,
-        uniqueId: oData.unique_id
-      };
-
+      sRoleKey = appUtils.storage.get(appConstants.storageKey.ROLE_KEY);
 
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      $.each(appConstants.role, function (_, oRole) {
+      _.each(appConstants.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
           oHomeRoute = oRole.getHome(oContext);
           oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters);

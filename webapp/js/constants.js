@@ -3,6 +3,15 @@
 ;(function Constants(window) {
   "use strict";
 
+  window.appConstants = {};
+
+  appConstants.storageKey = {
+      TOKEN: "token",
+      ID: "id",
+      UNIQUE_ID: "unique_id",
+      ROLE_KEY: "role_key"
+      };
+
   /** Role Class definition
    *
    *  This class is used to create the objects in the globally accessible
@@ -19,8 +28,13 @@
     this._sKey = oConfig.key;
     this._sUniqueIDPrefix = oConfig.uniqueIDPrefix;
     this._sHomeRoute = oConfig.homeRoute;
-    this._fnParamGetter = oConfig.paramGetter || function (oContext) {
-      return oContext;
+    this._fnParamGetter = oConfig.paramGetter || function () {
+      var oStorageKey = appConstants.storageKey;
+      return {
+        id: appUtils.storage.get(oStorageKey.ID),
+        roleKey: appUtils.storage.get(oStorageKey.ROLE_KEY),
+        uniqueID: appUtils.storage.get(oStorageKey.UNIQUE_ID)
+      };
     };
   }
 
@@ -30,18 +44,16 @@
     return this._sUniqueIDPrefix;
   };
 
-  Role.prototype.getHome = function (oContext) {
+  Role.prototype.getHome = function () {
     return {
       route: this._sHomeRoute,
-      parameters: this._fnParamGetter(oContext)
+      parameters: this._fnParamGetter()
     };
   };
 
   Role.prototype.toString = function () { return this._sKey;  };
   /* --End of Role Class definition -- */
 
-
-  window.appConstants = {};
 
   appConstants.roleKey = {
       CONSULTANT: "consultant",
