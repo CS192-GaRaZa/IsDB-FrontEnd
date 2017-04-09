@@ -14,6 +14,18 @@ sap.ui.define([
   "use strict";
   return Controller.extend("cmsfrontend.controller.consultant.Detail", {
 
+    _onTitleChanged: function (oEvent) {
+      var sTitle = oEvent.getParameter("title");
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
+
+      document.title = sTitle;
+      this.getView().getModel("config").setData({
+        navTitle: sTitle,
+        showBackButton: sPreviousHash !== undefined
+      }, true);
+    },
+
     _onRouteMatched: function (oEvent) {
       var oArgs;
       var sURL;
@@ -108,10 +120,15 @@ sap.ui.define([
       oRouter.getRoute("consultantDetail")
           .attachMatched(this._onRouteMatched, this);
 
+      var oConfigModel = new JSONModel();
+      var oView = this.getView();
+      oView.setModel(oConfigModel, "config");
+      oRouter.attachTitleChanged(this._onTitleChanged, this);
+
       var oCountriesModel = new JSONModel();
       oCountriesModel.loadData("model/countries.json");
       oCountriesModel.setSizeLimit(500);
-      this.getView().setModel(oCountriesModel, "countryModel");
+      oView.setModel(oCountriesModel, "countryModel");
 
 
       // Set the initial form to be the display one
@@ -578,8 +595,13 @@ sap.ui.define([
     },
 
     onLogOutPress: function (oEvent) {
+      var oRouter;
+      var sPattern;
+
       appUtils.storage.clear();
-      UIComponent.getRouterFor(this).navTo("login");
+      oRouter = UIComponent.getRouterFor(this);
+      sPattern = oRouter.getRoute("login").getPattern();
+      window.location.replace(sPattern);
     }
   });
 });

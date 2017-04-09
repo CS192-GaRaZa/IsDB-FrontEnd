@@ -75,12 +75,13 @@ sap.ui.define([
 
     _onTitleChanged: function (oEvent) {
       var sTitle = oEvent.getParameter("title");
-      var oHistory = oEvent.getParameter("history");
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
 
       document.title = sTitle;
       this.getView().getModel("config").setData({
         navTitle: sTitle,
-        showBackButton: oHistory.length > 0
+        showBackButton: sPreviousHash !== undefined
       }, true);
     },
 
@@ -127,7 +128,6 @@ sap.ui.define([
           .attachMatched(this._onRouteMatched, this);
 
       oConfigModel = new JSONModel({
-        title: "Consultant Management System",
         size_limit: this._iTableSizeLimit
       });
       oView = this.getView();
@@ -166,8 +166,13 @@ sap.ui.define([
     },
 
     onLogOutPress: function (oEvent) {
+      var oRouter;
+      var sPattern;
+
       appUtils.storage.clear();
-      UIComponent.getRouterFor(this).navTo("login");
+      oRouter = UIComponent.getRouterFor(this);
+      sPattern = oRouter.getRoute("login").getPattern();
+      window.location.replace(sPattern);
     }
   });
 });

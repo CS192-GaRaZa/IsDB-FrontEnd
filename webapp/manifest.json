@@ -130,7 +130,8 @@
       ],
       "targets" : {
         "login" : {
-          "viewName" : "Login"
+          "viewName" : "Login",
+          "viewLevel": 1
         },
         "notFound": {
           "viewName": "NotFound"
@@ -158,7 +159,8 @@
         },
         "consultantOverview": {
           "title": "{{ConsultantManagementSystem}}",
-          "viewName": "consultant.Overview"
+          "viewName": "consultant.Overview",
+          "viewLevel": 2
         },
         "consultingFirmOverview": {
           "viewName": "consultingFirm.Overview"
@@ -170,7 +172,9 @@
           "viewName": "vendor.Detail"
         },
         "consultantDetail": {
-          "viewName": "consultant.Detail"
+          "title": "{{ConsultantManagementSystem}}",
+          "viewName": "consultant.Detail",
+          "viewLevel": 3
         }
       }
     }
