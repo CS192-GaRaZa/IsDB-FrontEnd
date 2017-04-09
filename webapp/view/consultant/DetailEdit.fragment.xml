@@ -180,11 +180,8 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Sectors (comma separated)" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/sector_list}" />
+										<Label text="Sector" />
+										<Input value="{/sector_list}" />
 										<Label text="Previously Engaged by IsDB" />
 										<Select
 											id="prevEngagedSelect"
@@ -200,11 +197,8 @@
 											</layoutData>
 										</Select>
 										<core:Title />
-										<Label text="Expertise (comma separated)" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/expertise_list}" />
+										<Label text="Expertise" />
+										<Input value="{/expertise_list}" />
 										<Label text="Countries of Work Experience" />
 										<MultiComboBox
 											id="CountriesWorkExperienceComboBox"
