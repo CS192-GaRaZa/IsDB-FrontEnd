@@ -637,7 +637,7 @@ sap.ui.define([
         "email":""
       };
 
-      this.getView().getModel().getData().contact_persons.push(emptyRow);
+      this.getView().getModel().getData().contacts.push(emptyRow);
       this.getView().getModel().refresh();
     },
 
