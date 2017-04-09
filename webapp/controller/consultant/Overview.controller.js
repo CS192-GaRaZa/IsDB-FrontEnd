@@ -96,7 +96,14 @@ sap.ui.define([
         nieos: this._getDummyIEOs(),
         ieos: this._getDummyIEOs()
       });
-      oModel.loadData(sEndPoint, {}, true, 'GET', true);
+      $.get(sEndPoint)
+        .done(function (oData) {
+          if (!oData.image_url) {
+            oData.image_url = "/img/testIMG.jpg";
+          }
+
+          oModel.setData(oData, true);
+        });
       oModel.setSizeLimit(this._iTableSizeLimit);
       this.getView().setModel(oModel);
     },
