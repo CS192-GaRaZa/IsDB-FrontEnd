@@ -43,7 +43,7 @@ sap.ui.define([
 
         _this._convertDatesISOToObj(oData);
         if (!oData.image_url) {
-          data.image_url = "/img/testIMG.jpg";
+          oData.image_url = "/img/testIMG.jpg";
         }
 
         oView.setModel(new JSONModel(oData));
@@ -401,7 +401,7 @@ sap.ui.define([
       if (temp.length > 0){
         this.getView().getModel().setData({countries_of_work_experience:temp.join(', ')}, true);
       };
-      
+
       // handle changes to the FullName element in the data
       var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
       oModel.setData({full_name:sFullName}, true);
