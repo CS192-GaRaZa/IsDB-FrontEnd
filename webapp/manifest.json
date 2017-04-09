@@ -140,7 +140,7 @@
           "viewName": "consultant.Detail"
         },
         "consulting_firm_profile": {
-          "viewName": "Profile1"
+          "viewName": "consultingfirm.Detail"
         },
         "consultant_signup": {
           "viewName": "consultant.SignUp"
