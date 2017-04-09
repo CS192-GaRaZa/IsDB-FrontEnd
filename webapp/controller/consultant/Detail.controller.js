@@ -332,6 +332,17 @@ sap.ui.define([
         oView.byId("MailCountrySelectConsultant").setSelectedKey(this._sSelectedMailCountry);
       };
 
+      /**
+      console.log("SC", this._selectedCitizenship)
+
+      if (this._selectedCitizenship == {}) {
+        oView.byId("CitizenshipComboBox").setSelectedKeys(this.getView().getModel().getData().citizenship);
+        this._sSelectedMailCountry = this.getView().getModel().getData().citizenship;
+      } else {
+        oView.byId("MailCountrySelectConsultant").setSelectedKey(this._sSelectedMailCountry);
+      }; **/
+
+
       if (this._bHasEditInit == false){
         this._bHasEditInit = true;
 
@@ -373,7 +384,10 @@ sap.ui.define([
       for (var i = 0; i < this._selectedCitizenship.length; i++) {
         temp.push(this._selectedCitizenship[i].getText());
       };
-      this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
+
+      if (temp.length > 0){
+        this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
+      }
 
       // handle changes to the countries of work experience multicombo box
       var temp = [];
@@ -381,8 +395,11 @@ sap.ui.define([
       for (var i = 0; i < this._selectedWorkExperience.length; i++) {
         temp.push(this._selectedWorkExperience[i].getText());
       };
-      this.getView().getModel().setData({countries_of_work_experience:temp.join(', ')}, true);
 
+      if (temp.length > 0){
+        this.getView().getModel().setData({countries_of_work_experience:temp.join(', ')}, true);
+      };
+      
       // handle changes to the FullName element in the data
       var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
       oModel.setData({full_name:sFullName}, true);

@@ -148,6 +148,7 @@
 										<Input value="{/middle_name}" />
 										<Label text="Citizenship" />
 										<MultiComboBox
+											id="CitizenshipComboBox"
 											selectionFinish="handleSelectionFinishCitizenship"
 											width="auto"
 											items="{
@@ -206,6 +207,7 @@
 											value="{/expertise_list}" />
 										<Label text="Countries of Work Experience" />
 										<MultiComboBox
+											id="CountriesWorkExperienceComboBox"
 											selectionFinish="handleSelectionFinishWorkExperience"
 											width="auto"
 											items="{
