@@ -7,28 +7,10 @@
     >
   <Page class="sapUiResponsiveContentPadding" >
     <customHeader>
-      <Bar design="Header" >
-        <contentLeft>
-          <HBox>
-            <Button
-                icon="sap-icon://nav-back"
-                press="onNavBackPress"
-                visible="{config>/showBackButton}"
-                />
-          </HBox>
-        </contentLeft>
-        <contentMiddle>
-          <Title text="{config>/navTitle}" />
-        </contentMiddle>
-        <contentRight>
-          <HBox>
-            <Button
-                icon="sap-icon://log"
-                press="onLogOutPress"
-                />
-          </HBox>
-        </contentRight>
-      </Bar>
+      <core:Fragment
+          fragmentName="cmsfrontend.view.fragments.NavBar"
+          type="XML"
+          />
     </customHeader>
     <content>
       <l:Grid
