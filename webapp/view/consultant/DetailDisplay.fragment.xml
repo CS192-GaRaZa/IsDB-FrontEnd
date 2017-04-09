@@ -92,8 +92,6 @@
 										<Text text="{/kind}" />
 										<Label text="Gender" />
 										<Text text="{/gender}" />
-										<Label text="LinkedIn Profile" />
-										<Text text="{/linkedin}" />
 										<core:Title />
 										<Label text="Given Name" />
 										<Text text="{/given_name}" />
@@ -104,6 +102,8 @@
 													formatOptions: { style: 'long' }
 													}"
 												/>
+										<Label text="LinkedIn Profile" />
+										<Text text="{/linkedin}" />
 										<core:Title />
 										<Label text="Middle Name" />
 										<Text text="{/middle_name}" />
@@ -136,11 +136,11 @@
 										<core:Title />
 										<Label text="Expertise" />
 										<Text text="{/expertise_list}" />
-										<Label text="Details on previous IsDB Engagement" />
-										<Text text="{/previous_isdb_project_details}" />
-										<core:Title />
 										<Label text="Countries of Work Experience" />
 										<Text text="{/countries_of_work_experience}" />
+										<core:Title />
+										<Label text="Details on previous IsDB Engagement" />
+										<Text text="{/previous_isdb_project_details}" />
 									</f:content>
 								</f:SimpleForm>
 

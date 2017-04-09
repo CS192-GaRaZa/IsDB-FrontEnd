@@ -184,15 +184,28 @@ sap.ui.define([
     },
 
 
-    handleSelectionFinish: function(oEvent) {
+    handleSelectionFinishCitizenship: function(oEvent) {
       var selectedItems = oEvent.getParameter("selectedItems");
       this._selectedCitizenship = selectedItems;
     },
 
+    handleSelectionFinishWorkExperience: function(oEvent) {
+      var selectedItems = oEvent.getParameter("selectedItems");
+      this._selectedWorkExperience = selectedItems;
+    },
 
     handleNavPress : function () {
     },
 
+    handlePermCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedPermCountry = selectedItem.getText();
+    },
+
+    handleMailCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedMailCountry = selectedItem.getText();
+    },
 
     handleDeletePressEmployment : function (oEvent) {
       var oList = oEvent.getSource();
@@ -323,6 +336,9 @@ sap.ui.define([
       var oModel = this.getView().getModel();
       var oData = oModel.getData();
 
+      // have to turn some strings into date format again
+      this._convertDatesISOToObj(this._oOldData);
+
       oModel.setData(this._oOldData);
       this._toggleButtonsAndView(false);
     },
@@ -342,6 +358,14 @@ sap.ui.define([
       };
       this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
 
+      // handle changes to the countries of work experience multicombo box
+      var temp = [];
+      // since each item is an object, we need to get its "name" field
+      for (var i = 0; i < this._selectedWorkExperience.length; i++) {
+        temp.push(this._selectedWorkExperience[i].getText());
+      };
+      this.getView().getModel().setData({countries_of_work_experience:temp.join(', ')}, true);
+
       // handle changes to the FullName element in the data
       var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
       oModel.setData({full_name:sFullName}, true);
@@ -359,7 +383,9 @@ sap.ui.define([
             .getSelectedItem()
             .getText(),
         sectors: oModel.getData().sector_list,
-        expertises: oModel.getData().expertise_list
+        expertises: oModel.getData().expertise_list,
+        perm_country:this._sSelectedPermCountry,
+        mail_country:this._sSelectedMailCountry
       }, true);
 
       var oSessionData = Cookies.getJSON("isdb");
@@ -456,12 +482,19 @@ sap.ui.define([
     // array of items currently selected in the Citizenship multicombo box
     _selectedCitizenship: {},
 
+    // array of items currently selected in the Countries of work experience multicombo box
+    _selectedWorkExperience: {},
+
     // bool that tells us if the Edit page has been initialized already.
       // Used when adding the event delegate
     _bHasEditInit: false,
 
     // Id of the currently selected section and the Id of the page
     _sSelectedSection: ["displayProfileSection", "objectPageLayoutDisplay"],
+
+    _sSelectedPermCountry:"",
+
+    _sSelectedMailCountry:"",
 
     _formFragments: {},
 

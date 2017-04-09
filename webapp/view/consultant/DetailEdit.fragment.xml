@@ -102,17 +102,14 @@
 										<Label text="Type" />
 										<Select
 											id="kindSelect"
-											width="auto"
+											width="100%"
 											value="{/kind}"
 											path="{/kind}">
 											<items>
-												<core:Item text="Self-Employed" />
-												<core:Item text="Employed" />
-												<core:Item text="Unemployed" />
+												<core:Item text="Consultant Type 1" />
+												<core:Item text="Consultant Type 2" />
+												<core:Item text="Consultant Type 3" />
 											</items>
-											<layoutData>
-												<l:GridData span="L8 M8 S8" />
-											</layoutData>
 										</Select>
 										<Label text="Gender" />
 										<Select
@@ -128,8 +125,6 @@
 												<l:GridData span="L4 M4 S4" />
 											</layoutData>
 										</Select>
-										<Label text="LinkedIn Profile" />
-										<Input value="{/linkedin}" />
 										<core:Title />
 										<Label text="Given Name" />
 										<Input value="{/given_name}" />
@@ -142,12 +137,14 @@
 													type: 'sap.ui.model.type.Date',
 													formatOptions: { style: 'long' }
 													}" />
+										<Label text="LinkedIn Profile" />
+										<Input value="{/linkedin}" />										
 										<core:Title />
 										<Label text="Middle Name" />
 										<Input value="{/middle_name}" />
 										<Label text="Citizenship" />
 										<MultiComboBox
-											selectionFinish="handleSelectionFinish"
+											selectionFinish="handleSelectionFinishCitizenship"
 											width="auto"
 											items="{
 												path:'countryModel>/',
@@ -203,17 +200,23 @@
 											width="100%"
 											growing="true"
 											value="{/expertise_list}" />
+										<Label text="Countries of Work Experience" />
+										<MultiComboBox
+											selectionFinish="handleSelectionFinishWorkExperience"
+											width="auto"
+											items="{
+												path:'countryModel>/',
+												sorter:{path:'name'}
+											}">
+											<core:Item key="{countryModel>name}" text="{countryModel>name}" />
+										</MultiComboBox>
+										<core:Title />
+										<Label text="Countries of Work Experience" />
 										<Label text="Details on previous IsDB Engagement" />
 										<TextArea
 											width="100%"
 											growing="true"
 											value="{/previous_isdb_project_details}" />
-										<core:Title />
-										<Label text="Countries of Work Experience" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/countries_of_work_experience}" />
 									</f:content>
 								</f:SimpleForm>
 
@@ -342,7 +345,15 @@
 										<Label text="State/Province" />
 										<Input value="{/perm_state}" />
 										<Label text="Country" />
-										<Input value="{/perm_country}" />
+										<Select
+					                      value="{/perm_country}"
+					                      change="handlePermCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
 										<Title text="Mailing Address" />
 										<Label text="Street" />
@@ -354,7 +365,15 @@
 										<Label text="State/Province" />
 										<Input value="{/mail_state}" />
 										<Label text="Country" />
-										<Input value="{/mail_country}" />
+										<Select
+					                      value="{/mail_country}"
+					                      change="handleMailCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
 										<Title text="Email and Phone" />
 										<Label text="Email" />
