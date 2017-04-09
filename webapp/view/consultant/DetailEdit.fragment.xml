@@ -39,6 +39,7 @@
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/kind}" />
 				</HBox>
 
@@ -47,6 +48,7 @@
 
 				<HBox>
 					<Label text="Date of Birth: " />
+					<ToolbarSpacer width="3px"/>
 					<Text
 						text="{
 								path: '/date_of_birth',
@@ -56,10 +58,12 @@
 				</HBox>
 				<HBox>
 					<Label text="Citizenship: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/citizenship}" />
 				</HBox>
 				<HBox wrap="Wrap">
 					<Label text="Summary: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/description}" />
 				</HBox>
 				<unified:FileUploader
@@ -144,6 +148,7 @@
 										<Input value="{/middle_name}" />
 										<Label text="Citizenship" />
 										<MultiComboBox
+											id="CitizenshipComboBox"
 											selectionFinish="handleSelectionFinishCitizenship"
 											width="auto"
 											items="{
@@ -175,11 +180,8 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Sectors (comma separated)" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/sector_list}" />
+										<Label text="Sector" />
+										<Input value="{/sector_list}" />
 										<Label text="Previously Engaged by IsDB" />
 										<Select
 											id="prevEngagedSelect"
@@ -195,13 +197,11 @@
 											</layoutData>
 										</Select>
 										<core:Title />
-										<Label text="Expertise (comma separated)" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/expertise_list}" />
+										<Label text="Expertise" />
+										<Input value="{/expertise_list}" />
 										<Label text="Countries of Work Experience" />
 										<MultiComboBox
+											id="CountriesWorkExperienceComboBox"
 											selectionFinish="handleSelectionFinishWorkExperience"
 											width="auto"
 											items="{
@@ -346,6 +346,7 @@
 										<Input value="{/perm_state}" />
 										<Label text="Country" />
 										<Select
+										  id="PermCountrySelectConsultant"
 					                      value="{/perm_country}"
 					                      change="handlePermCountryChange"
 					                      forceSelection="false"
@@ -366,6 +367,7 @@
 										<Input value="{/mail_state}" />
 										<Label text="Country" />
 										<Select
+										  id="MailCountrySelectConsultant"
 					                      value="{/mail_country}"
 					                      change="handleMailCountryChange"
 					                      forceSelection="false"
