@@ -70,7 +70,7 @@
   appConstants.role[appConstants.roleKey.CONSULTING_FIRM] = new Role({
       key: appConstants.roleKey.CONSULTING_FIRM,
       uniqueIDPrefix: "CF",
-      homeRoute: "consultingFirmOverview",
+      homeRoute: "consulting_firm_profile",
       });
   appConstants.role[appConstants.roleKey.VENDOR] = new Role({
       key: appConstants.roleKey.VENDOR,
