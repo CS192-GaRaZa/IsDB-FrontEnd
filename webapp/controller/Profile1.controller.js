@@ -10,6 +10,15 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
     _getSessionData: function () {
       return Cookies.getJSON("isdb");
     },
+
+    _convertDatesISOToObj: function (data) {
+      var experience;
+      for (var i = 0; i < data.experiences.length; i++) {
+        experience = data.experiences[i];
+        experience.from = new Date(experience.from);
+        experience.to = new Date(experience.to);
+      }
+    },
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
@@ -67,7 +76,8 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
             // console.log("data: ", data);
             // console.log("textStatus: ", textStatus);
             // console.log("jqxhr: ", jqXHR);
-             return data;
+            this._convertDatesISOToObj(data);
+            return data;
 
            },
            error: function(xhr, status)
@@ -299,15 +309,6 @@ sap.ui.controller("cmsfrontend.controller.Profile1", {
   _sSelectedSection: ["displayProfileSection1", "objectPageLayoutDisplay1"],
 
   _formFragments: {},
-
-  _convertDatesISOToObj: function (data) {
-      var experience;
-      for (var i = 0; i < data.experiences.length; i++) {
-        experience = data.experiences[i];
-        experience.from = new Date(experience.from);
-        experience.to = new Date(experience.to);
-      }
-    },
 
   _getFormFragment: function (sFragmentName) {
     var oFormFragment = this._formFragments[sFragmentName];
