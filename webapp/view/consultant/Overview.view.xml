@@ -5,19 +5,15 @@
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
     >
-  <Page
-      class="sapUiResponsiveContentPadding"
-
-      >
+  <Page class="sapUiResponsiveContentPadding" >
     <customHeader>
-      <Bar
-          design="Header"
-          >
+      <Bar design="Header" >
         <contentLeft>
           <HBox>
             <Button
                 icon="sap-icon://nav-back"
                 press="onNavBackPress"
+                visible="{config>/showBackButton}"
                 />
           </HBox>
         </contentLeft>

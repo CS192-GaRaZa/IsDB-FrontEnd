@@ -75,8 +75,13 @@ sap.ui.define([
 
     _onTitleChanged: function (oEvent) {
       var sTitle = oEvent.getParameter("title");
+      var oHistory = oEvent.getParameter("history");
+
       document.title = sTitle;
-      this.getView().getModel("config").setData({ navTitle: sTitle  }, true);
+      this.getView().getModel("config").setData({
+        navTitle: sTitle,
+        showBackButton: oHistory.length > 0
+      }, true);
     },
 
     _onRouteMatched: function (oEvent) {
@@ -96,14 +101,17 @@ sap.ui.define([
         nieos: this._getDummyIEOs(),
         ieos: this._getDummyIEOs()
       });
-      $.get(sEndPoint)
-        .done(function (oData) {
-          if (!oData.image_url) {
-            oData.image_url = "/img/testIMG.jpg";
-          }
 
-          oModel.setData(oData, true);
-        });
+      $.ajax({
+        url: sEndPoint,
+        method: 'GET',
+      }).done(function (oData) {
+        if (!oData.image_url) {
+          oData.image_url = "/img/testIMG.jpg";
+        }
+        oModel.setData(oData, true);
+      });
+
       oModel.setSizeLimit(this._iTableSizeLimit);
       this.getView().setModel(oModel);
     },
@@ -132,7 +140,7 @@ sap.ui.define([
       oRouter.navTo("consultantDetail", {
         id: this._sID,
         subsection: "profile"
-      });
+      }, false);
     },
 
     onNavBackPress: function (oEvent) {
