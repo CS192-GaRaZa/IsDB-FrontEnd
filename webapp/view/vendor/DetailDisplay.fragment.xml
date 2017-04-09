@@ -28,6 +28,7 @@
 			<VBox width="80%">
 				<HBox>
 					<Label text="Company Type: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/vendor_type}" />
 				</HBox>
 
@@ -36,6 +37,7 @@
 
 				<HBox>
 					<Label text="Establishment Date: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{
 								path: '/vendor_establishment_date',
 								type: 'sap.ui.model.type.Date',
@@ -45,10 +47,12 @@
 				</HBox>
 				<HBox>
 					<Label text="Owner: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/vendor_owner}" />
 				</HBox>
 				<HBox>
 					<Label text="Manager Name: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/vendor_manager}" />
 				</HBox>
 

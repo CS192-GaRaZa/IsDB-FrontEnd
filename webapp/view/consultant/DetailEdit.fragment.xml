@@ -39,6 +39,7 @@
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/kind}" />
 				</HBox>
 
@@ -47,6 +48,7 @@
 
 				<HBox>
 					<Label text="Date of Birth: " />
+					<ToolbarSpacer width="3px"/>
 					<Text
 						text="{
 								path: '/date_of_birth',
@@ -56,10 +58,12 @@
 				</HBox>
 				<HBox>
 					<Label text="Citizenship: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/citizenship}" />
 				</HBox>
 				<HBox wrap="Wrap">
 					<Label text="Summary: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/description}" />
 				</HBox>
 				<unified:FileUploader
@@ -346,6 +350,7 @@
 										<Input value="{/perm_state}" />
 										<Label text="Country" />
 										<Select
+										  id="PermCountrySelectConsultant"
 					                      value="{/perm_country}"
 					                      change="handlePermCountryChange"
 					                      forceSelection="false"
@@ -366,6 +371,7 @@
 										<Input value="{/mail_state}" />
 										<Label text="Country" />
 										<Select
+										  id="MailCountrySelectConsultant"
 					                      value="{/mail_country}"
 					                      change="handleMailCountryChange"
 					                      forceSelection="false"

@@ -311,9 +311,26 @@ sap.ui.define([
 
 
     handleEditPress : function () {
+      var oView = this.getView();
+
       //Clone the data
       this._oOldData = JSON.parse(JSON.stringify(this.getView().getModel().getData()));
       this._toggleButtonsAndView(true);
+
+      // sets the selectedItem of the country select boxes
+      if (this._sSelectedPermCountry == "") {
+        oView.byId("PermCountrySelectConsultant").setSelectedKey(this.getView().getModel().getData().perm_country);
+        this._sSelectedPermCountry = this.getView().getModel().getData().perm_country;
+      } else {
+        oView.byId("PermCountrySelectConsultant").setSelectedKey(this._sSelectedPermCountry);
+      };
+
+      if (this._sSelectedMailCountry == "") {
+        oView.byId("MailCountrySelectConsultant").setSelectedKey(this.getView().getModel().getData().mail_country);
+        this._sSelectedMailCountry = this.getView().getModel().getData().mail_country;
+      } else {
+        oView.byId("MailCountrySelectConsultant").setSelectedKey(this._sSelectedMailCountry);
+      };
 
       if (this._bHasEditInit == false){
         this._bHasEditInit = true;

@@ -38,6 +38,9 @@ sap.ui.define([
 
     _formFragments: {},
 
+    _sSelectedPermCountry:"",
+
+    _sSelectedBankCountry:"",
 
     _getFormFragment: function (sFragmentName) {
       var oFormFragment = this._formFragments[sFragmentName];
@@ -197,6 +200,10 @@ sap.ui.define([
 
       // Set the initial form to be the display one
       this._showFormFragment("DetailDisplay");
+
+      // sets intital values for selected countries
+      this._sSelectedPermCountry = oModel.getData().perm_country;
+      this._sSelectedBankCountry = oModel.getData().bank_country;
 
       // adds an event delegate to the objectPage that switches it to the tab
       // that was last open in the Edit view
@@ -478,16 +485,16 @@ sap.ui.define([
     // Used when adding the event delegate
     _bHasEditInit: false,
 
-    _sSelectedPermCountry:"",
-
-    _sSelectedBankCountry:"",
-
     handleEditPress : function () {
       var oView = this.getView();
 
       //Clone the data
       this._oOldData = JSON.parse(JSON.stringify(oView.getModel().getData()));
       this._toggleButtonsAndView(true);
+
+      // sets the selectedItem of the country select boxes
+      oView.byId("PermCountrySelectVendor").setSelectedKey(this._sSelectedPermCountry);
+      oView.byId("BankCountrySelectVendor").setSelectedKey(this._sSelectedBankCountry);
 
       if (this._bHasEditInit == false) {
           this._bHasEditInit = true;
