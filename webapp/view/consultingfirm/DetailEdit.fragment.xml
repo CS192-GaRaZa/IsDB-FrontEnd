@@ -5,6 +5,7 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:uxap="sap.uxap"
+	xmlns:unified="sap.ui.unified"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<uxap:ObjectPageLayout
@@ -21,10 +22,7 @@
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-				src="images/bluebiz.png"
-				width="auto"
-				height="auto" />
+			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
 				<VBox>
 					<Label text="Country: " />
@@ -46,6 +44,14 @@
 					<Label text="Summary:" />
 					<Text text="{/summary}" />
 				</VBox>
+				<unified:FileUploader
+						uploadUrl="/upload"
+                        uploadOnChange="true"
+						name="file"
+						id="idProfileImageUploader"
+						buttonText="Browse"
+                        uploadComplete="onProfileImageUploaderComplete"
+						/>
 
 			</VBox>
 		</uxap:headerContent>

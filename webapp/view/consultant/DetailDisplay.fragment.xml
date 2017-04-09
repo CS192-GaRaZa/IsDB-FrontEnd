@@ -28,10 +28,7 @@
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-				src="{/image_url}"
-				width="150px"
-				height="150px" />
+			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />
@@ -66,7 +63,7 @@
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
-			<!-- change the id here to displayConsultantSection --> 
+			<!-- change the id here to displayConsultantSection -->
 			<uxap:ObjectPageSection
 				id="displayProfileSection"
 				title="Profile"

@@ -63,12 +63,15 @@ sap.ui.define([
              async: false,
              dataType: 'json',
              contentType : "application/json",
-             success : function(data, textStatus, jqXHR) {
+             success : function(oData, textStatus, jqXHR) {
               // console.log("data: ", data);
               // console.log("textStatus: ", textStatus);
               // console.log("jqxhr: ", jqXHR);
-               return data;
+              if (!oData.image_url) {
+                oData.image_url = "/img/testIMG.jpg";
+              }
 
+               return oData;
              },
              error: function(xhr, status)
              {
@@ -175,12 +178,10 @@ sap.ui.define([
              },
              contentType : "application/json",
              success : function(data, textStatus, jqXHR) {
-                    response = data;
                     console.log("SUCCESS");
                     console.log("data: ", data);
              },
-             error: function(xhr, status)
-             {
+             error: function(xhr, status) {
                     console.log("ERROR POSTING REQUEST");
                     console.log("xhr: ", xhr);
                     console.log("status: ", status);
@@ -250,7 +251,6 @@ sap.ui.define([
                data : JSON.stringify(oSendData),
                contentType : "application/json",
                success : function(data, textStatus, jqXHR) {
-                      response = data;
                       console.log("SUCCESS");
                       console.log("data: ", data);
                },
@@ -320,7 +320,20 @@ sap.ui.define([
 
       oPage.removeAllContent();
       oPage.insertContent(this._getFormFragment(sFragmentName));
-    }
+    },
 
+    // TODO: Refactor this, since it seems kind of hacked
+    // The ideal scenrio is to push the uploaded image as a
+    // temporary file while the user hasn't pressed save.
+    // The danger with this is that when multiple users
+    // change their profile pictures, the number of profile
+    // images in the cloud double in size. Also, adding
+    // a progress icon would be nice for responsiveness.
+    onProfileImageUploaderComplete: function (oEvent) {
+      var oModel = oEvent.getSource().getModel();
+      var oResponseData = JSON.parse(oEvent.getParameters().response);
+
+      oModel.setData({ image_url: oResponseData.secure_url  }, true);
+    }
   });
 });

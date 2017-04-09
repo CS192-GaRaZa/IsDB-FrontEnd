@@ -21,10 +21,7 @@
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-				src="img/bluebiz.png"
-				width="auto"
-				height="auto" />
+			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
 				<HBox>
 					<Label text="Country: " />
@@ -50,7 +47,7 @@
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
-			<!-- change the id here to displayCFSection --> 
+			<!-- change the id here to displayCFSection -->
 			<uxap:ObjectPageSection
 				id="displayProfileSection1"
 				title="Profile"

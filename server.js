@@ -37,9 +37,11 @@ app.post('/upload', upload.single('file'), (req, res) => {
     public_id: public_id,
     folder: 'isdb/' + cookies.unique_id,
     overwrite: true,
-    eager: [
-      { format: 'jpg' }
-    ]
+    format: 'jpg',
+    width: 500,
+    height: 500,
+    crop: 'pad',
+    background: 'white'
   };
 
   cloudinary.uploader.upload(req.file.path, function(result) {
