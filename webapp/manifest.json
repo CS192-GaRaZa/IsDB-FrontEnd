@@ -157,6 +157,7 @@
           "viewName": "Overview"
         },
         "consultantOverview": {
+          "title": "{{ConsultantManagementSystem}}",
           "viewName": "consultant.Overview"
         },
         "consultingFirmOverview": {

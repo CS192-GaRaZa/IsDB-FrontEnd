@@ -3,11 +3,13 @@ sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
   'sap/ui/core/UIComponent',
+  'sap/ui/core/routing/History'
 ], function (
   jQuery,
   Controller,
   JSONModel,
-  UIComponent
+  UIComponent,
+  History
 ) {
   "use strict";
   return Controller.extend("cmsfrontend.controller.consultant.Detail", {
@@ -517,6 +519,33 @@ sap.ui.define([
       oPage.removeAllContent();
           var oFragment = this._getFormFragment(sFragmentName);
       oPage.addContent(oFragment);
+    },
+
+    onNavBackPress: function (oEvent) {
+      var oHistory;
+      var sPreviousHash;
+      var oHomeRoute;
+      var oRouter;
+      var sRoleKey;
+      var oRole;
+
+      oHistory = History.getInstance();
+      sPreviousHash = oHistory.getPreviousHash();
+
+      if (sPreviousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        sRoleKey = appUtils.storage.get(appConstants.storageKey.ROLE_KEY);
+        oRole = appConstants.role[sRoleKey];
+        oHomeRoute = oRole.getHome();
+        oRouter = UIComponent.getRouterFor(this);
+        oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
+      }
+    },
+
+    onLogOutPress: function (oEvent) {
+      appUtils.storage.clear();
+      UIComponent.getRouterFor(this).navTo("login");
     }
   });
 });

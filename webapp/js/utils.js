@@ -29,7 +29,7 @@
     return Cookies.get(sKey);
   };
 
-  appUtils.storage.clean = function () {
+  appUtils.storage.clear = function () {
     _.each(aKeys, function (sKey) {
       Cookies.remove(sKey);
     });

@@ -1,11 +1,13 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/model/json/JSONModel",
-  "sap/ui/core/UIComponent"
+  'sap/ui/core/UIComponent',
+  'sap/ui/core/routing/History'
 ], function OverviewController(
   Controller,
   JSONModel,
-  UIComponent
+  UIComponent,
+  History
 ) {
   "use strict";
   return Controller.extend("cmsfrontend.controller.consultant.Overview", {
@@ -71,6 +73,12 @@ sap.ui.define([
 
     _iTableSizeLimit: 3,
 
+    _onTitleChanged: function (oEvent) {
+      var sTitle = oEvent.getParameter("title");
+      document.title = sTitle;
+      this.getView().getModel("config").setData({ navTitle: sTitle  }, true);
+    },
+
     _onRouteMatched: function (oEvent) {
       var oArgs;
       var sUniqueID;
@@ -103,9 +111,13 @@ sap.ui.define([
       oRouter.getRoute("consultantOverview")
           .attachMatched(this._onRouteMatched, this);
 
-      oConfigModel = new JSONModel({ size_limit: this._iTableSizeLimit });
+      oConfigModel = new JSONModel({
+        title: "Consultant Management System",
+        size_limit: this._iTableSizeLimit
+      });
       oView = this.getView();
       oView.setModel(oConfigModel, "config");
+      oRouter.attachTitleChanged(this._onTitleChanged, this);
     },
 
     onNameLinkPress: function (oEvent) {
@@ -114,6 +126,33 @@ sap.ui.define([
         id: this._sID,
         subsection: "profile"
       });
+    },
+
+    onNavBackPress: function (oEvent) {
+      var oHistory;
+      var sPreviousHash;
+      var oHomeRoute;
+      var oRouter;
+      var sRoleKey;
+      var oRole;
+
+      oHistory = History.getInstance();
+      sPreviousHash = oHistory.getPreviousHash();
+
+      if (sPreviousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        sRoleKey = appUtils.storage.get(appConstants.storageKey.ROLE_KEY);
+        oRole = appConstants.role[sRoleKey];
+        oHomeRoute = oRole.getHome();
+        oRouter = UIComponent.getRouterFor(this);
+        oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
+      }
+    },
+
+    onLogOutPress: function (oEvent) {
+      appUtils.storage.clear();
+      UIComponent.getRouterFor(this).navTo("login");
     }
   });
 });

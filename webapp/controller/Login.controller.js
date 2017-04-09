@@ -8,13 +8,17 @@ sap.ui.define([
   'use strict';
   return Controller.extend('cmsfrontend.controller.Login', {
 
-    onInit: function onInit() {
-      var oLoginModel = new JSONModel({
+    _getDefaultModelState: function () {
+      return {
         user: {
           email: '',
           password: ''
         }
-      });
+      }
+    },
+
+    onInit: function onInit() {
+      var oLoginModel = new JSONModel(this._getDefaultModelState());
       this.getView().setModel(oLoginModel);
 
       var oAccountTypesModel = new JSONModel("./model/account_types.json")
@@ -47,6 +51,8 @@ sap.ui.define([
       var oRouter;
       var oHomeRoute;
 
+      this.getView().getModel().setData(this._getDefaultModelState());
+
       // TODO: Will be removed in favor of the following function
       Cookies.set('isdb', oData);
       appUtils.storage.init(oData);
@@ -56,7 +62,7 @@ sap.ui.define([
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
       _.each(appConstants.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
-          oHomeRoute = oRole.getHome(oContext);
+          oHomeRoute = oRole.getHome();
           oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters);
           return false;
         }

@@ -8,9 +8,31 @@
 		id="profile"
 		showHeader="true"
 		showNavButton="true" >
-		<headerContent>
-
-		</headerContent>
+        <customHeader>
+          <Bar
+              design="Header"
+              >
+            <contentLeft>
+              <HBox>
+                <Button
+                    icon="sap-icon://nav-back"
+                    press="onNavBackPress"
+                    />
+              </HBox>
+            </contentLeft>
+            <contentMiddle>
+              <Title text="{config>/navTitle}" />
+            </contentMiddle>
+            <contentRight>
+              <HBox>
+                <Button
+                    icon="sap-icon://log"
+                    press="onLogOutPress"
+                    />
+              </HBox>
+            </contentRight>
+          </Bar>
+        </customHeader>
 		<content>
 			<!-- core:Fragment fragmentName="cmsfrontend.fragments.profileDisplay" type="XML"> </core:Fragment-->
 		</content>
