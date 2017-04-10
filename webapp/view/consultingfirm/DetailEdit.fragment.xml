@@ -26,18 +26,22 @@
 			<VBox width="80%">
 				<HBox>
 					<Label text="Country: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_country}" />
 				</HBox>
 				<HBox>
 					<Label text="Website: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/website}" />
 				</HBox>
 				<HBox>
 					<Label text="Acronym: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_acronym}" />
 				</HBox>
 				<HBox wrap="Wrap">
 					<Label text="Summary:" />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/summary}" />
 				</HBox>
 				<unified:FileUploader
