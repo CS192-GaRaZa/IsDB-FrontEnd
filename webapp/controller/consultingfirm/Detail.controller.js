@@ -18,6 +18,7 @@ sap.ui.define([
 * @memberOf cmsfrontend.profile
 */
     onInit: function(oEvent) {
+      /**
       var oUserDataLocal = {
             "email": "bluebiz@email.com",
             "mobile_number": "+10183979233837",
@@ -53,7 +54,7 @@ sap.ui.define([
             "employments": [],
             "sectors": [],
             "expertises": []
-          };
+          }; **/
 
       var sUniqueID = this._getSessionData().unique_id;
       var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
@@ -70,7 +71,7 @@ sap.ui.define([
               if (!oData.image_url) {
                 oData.image_url = "/img/testIMG.jpg";
               }
-
+              this._convertDatesISOToObj(oData);
                return oData;
              },
              error: function(xhr, status)
@@ -85,6 +86,11 @@ sap.ui.define([
       var oModel = new JSONModel(oUserData);
 
       this.getView().setModel(oModel);
+
+      var oCountriesModel = new JSONModel();
+      oCountriesModel.loadData("model/countries.json");
+      oCountriesModel.setSizeLimit(500);
+      this.getView().setModel(oCountriesModel, "countryModel");
 
       // Set the initial form to be the display one
       this._showFormFragment("cmsfrontend.view.consultingfirm.DetailDisplay");
@@ -153,6 +159,21 @@ sap.ui.define([
     handleNavPress : function () {
     },
 
+    handlePermCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedPermCountry = selectedItem.getText();
+    },
+
+    handleMailCountryChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedMailCountry = selectedItem.getText();
+    },
+
+    handleCountryIncorporationChange : function (oEvent){
+      var selectedItem = oEvent.getParameter("selectedItem");
+      this._sSelectedIncorporationCountry = selectedItem.getText();
+    },
+
     formatDate : function(v) {
          jQuery.sap.require("sap.ui.core.format.DateFormat");
          var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "dd-MM-YYYY"});
@@ -161,39 +182,66 @@ sap.ui.define([
 
     handleDeletePressExperience : function (oEvent) {
       var oList = oEvent.getSource();
-      oItem = oEvent.getParameter("listItem");
-      sPath = oItem.getBindingContext().getPath();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
 
       // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
-      index = sPath.replace ( /[^\d.]/g, '' );
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
 
-      this.getView().getModel().getData().experiences.splice(index, 1);
+      var iId = this.getView().getModel().getData().experiences[iIndex].id
+
+      this.getView().getModel().getData().experiences.splice(iIndex, 1);
       this.getView().getModel().refresh();
 
       $.ajax({
-             url : "https://isdb-cms-api.herokuapp.com/api/v1/experiences/" + iId,
-             type : "DELETE",
-             headers:{
-               "Session-Key": this._getSessionData().token
-             },
-             contentType : "application/json",
-             success : function(data, textStatus, jqXHR) {
-                    console.log("SUCCESS");
-                    console.log("data: ", data);
-             },
-             error: function(xhr, status) {
-                    console.log("ERROR POSTING REQUEST");
-                    console.log("xhr: ", xhr);
-                    console.log("status: ", status);
-             }
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/experiences/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
       });
     },
 
     handleEditPress : function () {
 
+      var oView = this.getView();
+
       //Clone the data
       this._oOldData = JSON.parse(JSON.stringify(this.getView().getModel().getData()));
       this._toggleButtonsAndView(true);
+
+      // sets the selectedItem of the country select boxes
+      if (this._sSelectedPermCountry == "") {
+        oView.byId("PermCountrySelectFirm").setSelectedKey(this.getView().getModel().getData().perm_country);
+        this._sSelectedPermCountry = this.getView().getModel().getData().perm_country;
+      } else {
+        oView.byId("PermCountrySelectFirm").setSelectedKey(this._sSelectedPermCountry);
+      };
+
+      if (this._sSelectedMailCountry == "") {
+        oView.byId("MailCountrySelectFirm").setSelectedKey(this.getView().getModel().getData().mail_country);
+        this._sSelectedMailCountry = this.getView().getModel().getData().mail_country;
+      } else {
+        oView.byId("MailCountrySelectFirm").setSelectedKey(this._sSelectedMailCountry);
+      };
+
+      if (this._sSelectedIncorporationCountry == "") {
+        oView.byId("CountryIncorporationSelectFirm").setSelectedKey(this.getView().getModel().getData().cf_country);
+        this._sSelectedIncorporationCountry = this.getView().getModel().getData().cf_country;
+      } else {
+        oView.byId("CountryIncorporationSelectFirm").setSelectedKey(this._sSelectedIncorporationCountry);
+      };
 
       if (this._bHasEditInit == false){
         this._bHasEditInit = true;
@@ -229,12 +277,18 @@ sap.ui.define([
 
       this._toggleButtonsAndView(false);
 
+      var oView = this.getView();
+      var oModel = oView.getModel();
+
       this.getView().getModel().setData({sectors:this.getView().getModel().getData().sector_list}, true);
       this.getView().getModel().setData({expertises:this.getView().getModel().getData().expertise_list}, true);
 
-      var oSendData = {
-          "user":this.getView().getModel().getData()
-        };
+      // handle all the changes to the select inputs
+      oModel.setData({
+        cf_country:this._sSelectedIncorporationCountry,
+        perm_country:this._sSelectedPermCountry,
+        mail_country:this._sSelectedMailCountry
+      }, true);
 
         var oSessionData = this._getSessionData();
         var sUniqueID = oSessionData.unique_id;
@@ -248,7 +302,7 @@ sap.ui.define([
                headers:{
                  "Session-Key": sToken
                },
-               data : JSON.stringify(oSendData),
+               data : JSON.stringify({ user: oModel.getData() }),
                contentType : "application/json",
                success : function(data, textStatus, jqXHR) {
                       console.log("SUCCESS");
@@ -300,7 +354,25 @@ sap.ui.define([
     // Id of the currently selected section and the Id of the page
     _sSelectedSection: ["displayProfileSection1", "objectPageLayoutDisplay1"],
 
+    _sSelectedPermCountry:"",
+
+    _sSelectedMailCountry:"",
+
+    _sSelectedIncorporationCountry:"",
+
     _formFragments: {},
+
+     _convertDatesISOToObj: function (data) {
+      data.date_of_birth = new Date(data.date_of_birth);
+      data.date_cleared_consulting = new Date(data.date_cleared_consulting);
+
+      var experience;
+      for (var i = 0; i < data.experiences.length; i++) {
+        experience = data.experiences[i];
+        experience.from = new Date(experience.from);
+        experience.to = new Date(experience.to);
+      }
+    },
 
     _getFormFragment: function (sFragmentName) {
       var oFormFragment = this._formFragments[sFragmentName];

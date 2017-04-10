@@ -76,14 +76,14 @@
 										<Label text="Type" />
 										<Text text="{/cf_type_of_business}" />
 										<Label text="Website" />
-										<Text text="{/website}" />
-										<Label text="Branches" />
-										<Text text="{/branches}" />
+										<Text text="{/website}" />										
 										<core:Title />
 										<Label text="Acronym" />
 										<Text text="{/cf_acronym}" />
 										<Label text="Number of Employees" />
 										<Text text="{/cf_number_of_employees}" />
+										<Label text="Branches" />
+										<Text text="{/branches}" />
 										<core:Title />
 										<Label text="Country of Incorporation" />
 										<Text text="{/cf_country}" />
@@ -132,7 +132,7 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Text text="Permanent Address" />
+										<Title text="Permanent Address" />
 										<Label text="Street" />
 										<Text text="{/perm_street}" />
 										<Label text="City" />
@@ -144,7 +144,7 @@
 										<Label text="Country" />
 										<Text text="{/perm_country}" />
 										<core:Title />
-										<Text text="Mailing Address" />
+										<Title text="Mailing Address" />
 										<Label text="Street" />
 										<Text text="{/mail_street}" />
 										<Label text="City" />
@@ -156,7 +156,7 @@
 										<Label text="Country" />
 										<Text text="{/mail_country}" />
 										<core:Title />
-										<Text text="Email and Phone" />
+										<Title text="Email and Phone" />
 										<Label text="Email" />
 										<Text text="{/email}" />
 										<Label text="Phone" />

@@ -24,26 +24,22 @@
 		<uxap:headerContent>
 			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
-				<VBox>
+				<HBox>
 					<Label text="Country: " />
 					<Text text="{/cf_country}" />
-				</VBox>
-
-				<!-- I'm using these empty labels to add spacing between the entries.
-					Is there a better way? -->
-
-				<VBox>
+				</HBox>
+				<HBox>
 					<Label text="Website: " />
 					<Text text="{/website}" />
-				</VBox>
-				<VBox>
+				</HBox>
+				<HBox>
 					<Label text="Acronym: " />
 					<Text text="{/cf_acronym}" />
-				</VBox>
-				<VBox wrap="Wrap">
+				</HBox>
+				<HBox wrap="Wrap">
 					<Label text="Summary:" />
 					<Text text="{/summary}" />
-				</VBox>
+				</HBox>
 				<unified:FileUploader
 						uploadUrl="/upload"
                         uploadOnChange="true"
@@ -52,7 +48,6 @@
 						buttonText="Browse"
                         uploadComplete="onProfileImageUploaderComplete"
 						/>
-
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
@@ -85,16 +80,25 @@
 										<Input value="{/cf_type_of_business}" />
 										<Label text="Website" />
 										<Input value="{/website}" />
-										<Label text="Branches" />
-										<Input value="{/branches}" />
 										<core:Title />
 										<Label text="Acronym" />
 										<Input value="{/cf_acronym}" />
 										<Label text="Number of Employees" />
 										<Input value="{/cf_number_of_employees}" />
+										<Label text="Branches" />
+										<Input text="{/branches}" />
 										<core:Title />
 										<Label text="Country of Incorporation" />
-										<Input value="{/cf_country}" />
+										<Select
+										  id="CountryIncorporationSelectFirm"
+					                      value="{/cf_country}"
+					                      change="handleCountryIncorporationChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<Label text="Average Annual Turnover" />
 										<Input value="{/cf_avg_annual_turnover}" />
 									</f:content>
@@ -120,20 +124,13 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Sectors (comma separated)" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/sector_list}" />
+										<Label text="Sectors" />
+										<Input value="{/sector_list}" />
 										<core:Title />
-										<Label text="Expertise (comma separated)" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/expertise_list}" />
+										<Label text="Expertise" />
+										<Input value="{/expertise_list}" />
 									</f:content>
 								</f:SimpleForm>
-
 
 								<f:SimpleForm
 									title="Contact"
@@ -147,7 +144,7 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Text text="Permanent Address" />
+										<Title text="Permanent Address" />
 										<Label text="Street" />
 										<Input value="{/perm_street}" />
 										<Label text="City" />
@@ -157,9 +154,18 @@
 										<Label text="State/Province" />
 										<Input value="{/perm_state}" />
 										<Label text="Country" />
-										<Input value="{/perm_country}" />
+										<Select
+										  id="PermCountrySelectFirm"
+					                      value="{/perm_country}"
+					                      change="handlePermCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
-										<Text text="Mailing Address" />
+										<Title text="Mailing Address" />
 										<Label text="Street" />
 										<Input value="{/mail_street}" />
 										<Label text="City" />
@@ -169,9 +175,18 @@
 										<Label text="State/Province" />
 										<Input value="{/mail_state}" />
 										<Label text="Country" />
-										<Input value="{/mail_country}" />
+										<Select
+										  id="MailCountrySelectFirm"
+					                      value="{/mail_country}"
+					                      change="handleMailCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
-										<Input value="Email and Phone" />
+										<Title text="Email and Phone" />
 										<Label text="Email" />
 										<Input value="{/email}" />
 										<Label text="Phone" />
