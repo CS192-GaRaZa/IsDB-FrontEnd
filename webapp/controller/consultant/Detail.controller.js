@@ -18,6 +18,13 @@ sap.ui.define([
 
   return Controller.extend("cmsfrontend.controller.consultant.Detail", {
 
+    formatter: _.merge({
+      fullname: function (sLastName, sSurname, sMiddleName) {
+        return sLastName + ", " + sSurname +
+            (sMiddleName ? " " + sMiddleName : "");
+      }
+    }, formatter),
+
     _onTitleChanged: function (oEvent) {
       var sTitle = oEvent.getParameter("title");
       var oHistory = History.getInstance();
@@ -144,12 +151,6 @@ sap.ui.define([
                       [ this._sSelectedSection[0] ]);
         }, this)
       });
-    },
-
-
-    formatSurname: function (sLastName, sSurname, sMiddleName) {
-      return sLastName + ", " + sSurname +
-          (sMiddleName ? " " + sMiddleName : "");
     },
 
 
