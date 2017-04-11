@@ -317,14 +317,16 @@
 												<Input value="{project}" />
 												<Input value="{country}" />
 												<Input value="{role}" />
-													<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{from}" />
-												<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{to}" />
+												<DatePicker value="{
+														path: 'from',
+														type: 'cmsfrontend.model.type.CustomDate'
+														}"
+														/>
+												<DatePicker value="{
+														path: 'to',
+														type: 'cmsfrontend.model.type.CustomDate'
+														}"
+														/>
 												<Input value="{contract_value}" />
 											</cells>
 										</ColumnListItem>

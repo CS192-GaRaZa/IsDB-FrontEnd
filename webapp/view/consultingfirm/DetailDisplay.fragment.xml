@@ -80,7 +80,7 @@
 										<Label text="Type" />
 										<Text text="{/cf_type_of_business}" />
 										<Label text="Website" />
-										<Text text="{/website}" />										
+										<Text text="{/website}" />
 										<core:Title />
 										<Label text="Acronym" />
 										<Text text="{/cf_acronym}" />
@@ -273,8 +273,16 @@
 												<Text text="{project}" />
 												<Text text="{country}" />
 												<Text text="{role}" />
-												<Text text="{from}" formatter=".formatDate"/>
-												<Text text="{to}" />
+												<Text text="{
+														path: 'from',
+														type: 'cmsfrontend.model.type.CustomDate'
+														}"
+														/>
+												<Text text="{
+														path: 'to',
+														type: 'cmsfrontend.model.type.CustomDate'
+														}"
+														/>
 												<Text text="{contract_value}" />
 											</cells>
 										</ColumnListItem>

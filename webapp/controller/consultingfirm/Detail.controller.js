@@ -1,7 +1,8 @@
 sap.ui.define([
   'jquery.sap.global',
   'sap/ui/core/mvc/Controller',
-  'sap/ui/model/json/JSONModel'
+  'sap/ui/model/json/JSONModel',
+  'cmsfrontend/model/type/CustomDate'
 ], function (
   jQuery,
   Controller,
@@ -71,8 +72,7 @@ sap.ui.define([
               if (!oData.image_url) {
                 oData.image_url = "/img/testIMG.jpg";
               }
-              this._convertDatesISOToObj(oData);
-               return oData;
+              return oData;
              },
              error: function(xhr, status)
              {
@@ -361,18 +361,6 @@ sap.ui.define([
     _sSelectedIncorporationCountry:"",
 
     _formFragments: {},
-
-     _convertDatesISOToObj: function (data) {
-      data.date_of_birth = new Date(data.date_of_birth);
-      data.date_cleared_consulting = new Date(data.date_cleared_consulting);
-
-      var experience;
-      for (var i = 0; i < data.experiences.length; i++) {
-        experience = data.experiences[i];
-        experience.from = new Date(experience.from);
-        experience.to = new Date(experience.to);
-      }
-    },
 
     _getFormFragment: function (sFragmentName) {
       var oFormFragment = this._formFragments[sFragmentName];
