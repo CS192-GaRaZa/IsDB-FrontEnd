@@ -8,7 +8,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<uxap:ObjectPageLayout
-		id="objectPageLayoutEdit1"
+		id="objectPageLayoutDisplay1"
 		upperCaseAnchorBar="false"
 		alwaysShowContentHeader="false"
 		showAnchorBarPopover="false"
@@ -21,37 +21,39 @@
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-				src="images/bluebiz.png"
-				width="auto"
-				height="auto" />
+			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
-				<VBox>
+				<HBox>
 					<Label text="Country: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_country}" />
-				</VBox>
+				</HBox>
 
 				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
-				<VBox>
+				<HBox>
 					<Label text="Website: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/website}" />
-				</VBox>
-				<VBox>
+				</HBox>
+				<HBox>
 					<Label text="Acronym: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_acronym}" />
-				</VBox>
-				<VBox wrap="Wrap">
+				</HBox>
+				<HBox wrap="Wrap">
 					<Label text="Summary:" />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/summary}" />
-				</VBox>
+				</HBox>
 
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
+			<!-- change the id here to displayCFSection -->
 			<uxap:ObjectPageSection
-				id="editProfileSection1"
+				id="displayProfileSection1"
 				title="Profile"
 				titleUppercase="false">
 				<uxap:subSections>
@@ -74,32 +76,31 @@
 									<f:content>
 										<core:Title />
 										<Label text="Name" />
-										<Input value="{/cf_name}" />
+										<Text text="{/cf_name}" />
 										<Label text="Type" />
-										<Input value="{/cf_type_of_business}" />
+										<Text text="{/cf_type_of_business}" />
 										<Label text="Website" />
-										<Input value="{/website}" />
+										<Text text="{/website}" />										
 										<core:Title />
 										<Label text="Acronym" />
-										<Input value="{/cf_acronym}" />
+										<Text text="{/cf_acronym}" />
 										<Label text="Number of Employees" />
-										<Input value="{/cf_number_of_employees}" />
+										<Text text="{/cf_number_of_employees}" />
 										<Label text="Branches" />
-										<Input value="{/branches}" />
+										<Text text="{/branches}" />
 										<core:Title />
 										<Label text="Country of Incorporation" />
-										<Input value="{/cf_country}" />
+										<Text text="{/cf_country}" />
 										<Label text="Average Annual Turnover" />
-										<Input value="{/cf_avg_annual_turnover}" />
+										<Text text="{/cf_avg_annual_turnover}" />
 									</f:content>
 								</f:SimpleForm>
 
 								<Label text="Summary:" />
-								<TextArea
-									growing="true"
-									width="100%"
-									value="{/summary}" />
+								<Text text="{/summary}" />
 
+								<Label />
+								<Label />
 								<Label />
 
 								<f:SimpleForm
@@ -115,10 +116,10 @@
 									<f:content>
 										<core:Title />
 										<Label text="Sectors" />
-										<Input value="{/sector_list}" />
+										<Text text="{/sector_list}" />
 										<core:Title />
 										<Label text="Expertise" />
-										<Input value="{/expertise_list}" />
+										<Text text="{/expertise_list}" />
 									</f:content>
 								</f:SimpleForm>
 
@@ -137,37 +138,37 @@
 										<core:Title />
 										<Title text="Permanent Address" />
 										<Label text="Street" />
-										<Input value="{/perm_street}" />
+										<Text text="{/perm_street}" />
 										<Label text="City" />
-										<Input value="{/perm_city}" />
+										<Text text="{/perm_city}" />
 										<Label text="Zip Code" />
-										<Input value="{/perm_zipcode}" />
+										<Text text="{/perm_zipcode}" />
 										<Label text="State/Province" />
-										<Input value="{/perm_state}" />
+										<Text text="{/perm_state}" />
 										<Label text="Country" />
-										<Input value="{/perm_country}" />
+										<Text text="{/perm_country}" />
 										<core:Title />
 										<Title text="Mailing Address" />
 										<Label text="Street" />
-										<Input value="{/mail_street}" />
+										<Text text="{/mail_street}" />
 										<Label text="City" />
-										<Input value="{/mail_city}" />
+										<Text text="{/mail_city}" />
 										<Label text="Zip Code" />
-										<Input value="{/mail_zipcode}" />
+										<Text text="{/mail_zipcode}" />
 										<Label text="State/Province" />
-										<Input value="{/mail_state}" />
+										<Text text="{/mail_state}" />
 										<Label text="Country" />
-										<Input value="{/mail_country}" />
+										<Text text="{/mail_country}" />
 										<core:Title />
 										<Title text="Email and Phone" />
 										<Label text="Email" />
-										<Input value="{/email}" />
+										<Text text="{/email}" />
 										<Label text="Phone" />
-										<Input value="{/phone_number}" />
+										<Text text="{/phone_number}" />
 										<Label text="Mobile" />
-										<Input value="{/mobile_number}" />
+										<Text text="{/mobile_number}" />
 										<Label text="Skype ID" />
-										<Input value="{/skype_id}" />
+										<Text text="{/skype_id}" />
 									</f:content>
 								</f:SimpleForm>
 							</VBox>
@@ -178,7 +179,7 @@
 		</uxap:sections>
 		<uxap:sections>
 			<uxap:ObjectPageSection
-				id="editPersonnelSection1"
+				id="displayPersonnelSection1"
 				title="Personnel"
 				titleUppercase="false">
 				<uxap:subSections>
@@ -202,20 +203,13 @@
 									<f:content>
 										<core:Title />
 										<Label text="Board Of Directors" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/cf_board_of_directors}" />
+										<Text text="{/cf_board_of_directors}" />
+
 										<Label text="Senior Managment" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/cf_senior_management}" />
+										<Text text="{/cf_senior_management}" />
+
 										<Label text="Key Professional Personnel" />
-										<TextArea
-											growing="true"
-											width="100%"
-											value="{/cf_professional_personnel}" />
+										<Text text="{/cf_professional_personnel}" />
 									</f:content>
 								</f:SimpleForm>
 
@@ -227,12 +221,11 @@
 		</uxap:sections>
 		<uxap:sections>
 			<uxap:ObjectPageSection
-				id="editExperieceSection1"
+				id="displayExperienceSection1"
 				title="Experience"
 				titleUppercase="false">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection
-						id="editExperienceSection1"
 						titleUppercase="false"
 						mode="Expanded"
 						class="editableForm"
@@ -242,59 +235,47 @@
 								<Table
 									inset="false"
 									fixedLayout="false"
-									items="{/experiences}"
-									mode="Delete"
-									delete="handleDeletePressExperience">
+									items="{/experiences}">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Experience in the Past 10 Years"
 												level="H2" />
-											<ToolbarSpacer />
-											<Button
-												text="Add Entry"
-												press="addRowExperience" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column width="15%">
+										<Column width="auto">
 											<Text text="Client" />
 										</Column>
 										<Column width="auto">
 											<Text text="Project" />
 										</Column>
-										<Column width="15%">
+										<Column width="auto">
 											<Text text="Country" />
 										</Column>
-										<Column width="10%">
+										<Column width="auto">
 											<Text text="Role" />
 										</Column>
-										<Column width="10%">
+										<Column width="auto">
 											<Text text="From" />
 										</Column>
-										<Column width="10%">
+										<Column width="auto">
 											<Text text="To" />
 										</Column>
-										<Column width="15%">
+										<Column width="auto">
 											<Text text="Contract Value" />
 										</Column>
 									</columns>
 									<items>
 										<ColumnListItem>
 											<cells>
-												<Input value="{client}" />
-												<Input value="{project}" />
-												<Input value="{country}" />
-												<Input value="{role}" />
-													<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{from}" />
-												<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{to}" />
-												<Input value="{contract_value}" />
+												<ObjectIdentifier title="{client}" />
+												<Text text="{project}" />
+												<Text text="{country}" />
+												<Text text="{role}" />
+												<Text text="{from}" formatter=".formatDate"/>
+												<Text text="{to}" />
+												<Text text="{contract_value}" />
 											</cells>
 										</ColumnListItem>
 									</items>

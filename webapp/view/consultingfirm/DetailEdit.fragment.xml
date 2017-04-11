@@ -5,10 +5,11 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:uxap="sap.uxap"
+	xmlns:unified="sap.ui.unified"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<uxap:ObjectPageLayout
-		id="objectPageLayoutDisplay1"
+		id="objectPageLayoutEdit1"
 		upperCaseAnchorBar="false"
 		alwaysShowContentHeader="false"
 		showAnchorBarPopover="false"
@@ -21,38 +22,41 @@
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-				src="img/bluebiz.png"
-				width="auto"
-				height="auto" />
+			<Image width="150px" height="150px" src="{/image_url}" />
 			<VBox width="80%">
 				<HBox>
 					<Label text="Country: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_country}" />
 				</HBox>
-
-				<!-- I'm using these empty labels to add spacing between the entries.
-					Is there a better way? -->
-
 				<HBox>
 					<Label text="Website: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/website}" />
 				</HBox>
 				<HBox>
 					<Label text="Acronym: " />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/cf_acronym}" />
 				</HBox>
 				<HBox wrap="Wrap">
 					<Label text="Summary:" />
+					<ToolbarSpacer width="3px"/>
 					<Text text="{/summary}" />
 				</HBox>
-
+				<unified:FileUploader
+						uploadUrl="/upload"
+                        uploadOnChange="true"
+						name="file"
+						id="idProfileImageUploader"
+						buttonText="Browse"
+                        uploadComplete="onProfileImageUploaderComplete"
+						/>
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
-			<!-- change the id here to displayCFSection --> 
 			<uxap:ObjectPageSection
-				id="displayProfileSection1"
+				id="editProfileSection1"
 				title="Profile"
 				titleUppercase="false">
 				<uxap:subSections>
@@ -75,31 +79,41 @@
 									<f:content>
 										<core:Title />
 										<Label text="Name" />
-										<Text text="{/cf_name}" />
+										<Input value="{/cf_name}" />
 										<Label text="Type" />
-										<Text text="{/cf_type_of_business}" />
+										<Input value="{/cf_type_of_business}" />
 										<Label text="Website" />
-										<Text text="{/website}" />									
+										<Input value="{/website}" />
 										<core:Title />
 										<Label text="Acronym" />
-										<Text text="{/cf_acronym}" />
+										<Input value="{/cf_acronym}" />
 										<Label text="Number of Employees" />
-										<Text text="{/cf_number_of_employees}" />
+										<Input value="{/cf_number_of_employees}" />
 										<Label text="Branches" />
-										<Text text="{/branches}" />
+										<Input text="{/branches}" />
 										<core:Title />
 										<Label text="Country of Incorporation" />
-										<Text text="{/cf_country}" />
+										<Select
+										  id="CountryIncorporationSelectFirm"
+					                      value="{/cf_country}"
+					                      change="handleCountryIncorporationChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<Label text="Average Annual Turnover" />
-										<Text text="{/cf_avg_annual_turnover}" />
+										<Input value="{/cf_avg_annual_turnover}" />
 									</f:content>
 								</f:SimpleForm>
 
 								<Label text="Summary:" />
-								<Text text="{/summary}" />
+								<TextArea
+									growing="true"
+									width="100%"
+									value="{/summary}" />
 
-								<Label />
-								<Label />
 								<Label />
 
 								<f:SimpleForm
@@ -115,13 +129,12 @@
 									<f:content>
 										<core:Title />
 										<Label text="Sectors" />
-										<Text text="{/sector_list}" />
+										<Input value="{/sector_list}" />
 										<core:Title />
 										<Label text="Expertise" />
-										<Text text="{/expertise_list}" />
+										<Input value="{/expertise_list}" />
 									</f:content>
 								</f:SimpleForm>
-
 
 								<f:SimpleForm
 									title="Contact"
@@ -137,37 +150,55 @@
 										<core:Title />
 										<Title text="Permanent Address" />
 										<Label text="Street" />
-										<Text text="{/perm_street}" />
+										<Input value="{/perm_street}" />
 										<Label text="City" />
-										<Text text="{/perm_city}" />
+										<Input value="{/perm_city}" />
 										<Label text="Zip Code" />
-										<Text text="{/perm_zipcode}" />
+										<Input value="{/perm_zipcode}" />
 										<Label text="State/Province" />
-										<Text text="{/perm_state}" />
+										<Input value="{/perm_state}" />
 										<Label text="Country" />
-										<Text text="{/perm_country}" />
+										<Select
+										  id="PermCountrySelectFirm"
+					                      value="{/perm_country}"
+					                      change="handlePermCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
 										<Title text="Mailing Address" />
 										<Label text="Street" />
-										<Text text="{/mail_street}" />
+										<Input value="{/mail_street}" />
 										<Label text="City" />
-										<Text text="{/mail_city}" />
+										<Input value="{/mail_city}" />
 										<Label text="Zip Code" />
-										<Text text="{/mail_zipcode}" />
+										<Input value="{/mail_zipcode}" />
 										<Label text="State/Province" />
-										<Text text="{/mail_state}" />
+										<Input value="{/mail_state}" />
 										<Label text="Country" />
-										<Text text="{/mail_country}" />
+										<Select
+										  id="MailCountrySelectFirm"
+					                      value="{/mail_country}"
+					                      change="handleMailCountryChange"
+					                      forceSelection="false"
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
 										<Title text="Email and Phone" />
 										<Label text="Email" />
-										<Text text="{/email}" />
+										<Input value="{/email}" />
 										<Label text="Phone" />
-										<Text text="{/phone_number}" />
+										<Input value="{/phone_number}" />
 										<Label text="Mobile" />
-										<Text text="{/mobile_number}" />
+										<Input value="{/mobile_number}" />
 										<Label text="Skype ID" />
-										<Text text="{/skype_id}" />
+										<Input value="{/skype_id}" />
 									</f:content>
 								</f:SimpleForm>
 							</VBox>
@@ -178,7 +209,7 @@
 		</uxap:sections>
 		<uxap:sections>
 			<uxap:ObjectPageSection
-				id="displayPersonnelSection1"
+				id="editPersonnelSection1"
 				title="Personnel"
 				titleUppercase="false">
 				<uxap:subSections>
@@ -202,13 +233,20 @@
 									<f:content>
 										<core:Title />
 										<Label text="Board Of Directors" />
-										<Text text="{/cf_board_of_directors}" />
-
+										<TextArea
+											growing="true"
+											width="100%"
+											value="{/cf_board_of_directors}" />
 										<Label text="Senior Managment" />
-										<Text text="{/cf_senior_management}" />
-
+										<TextArea
+											growing="true"
+											width="100%"
+											value="{/cf_senior_management}" />
 										<Label text="Key Professional Personnel" />
-										<Text text="{/cf_professional_personnel}" />
+										<TextArea
+											growing="true"
+											width="100%"
+											value="{/cf_professional_personnel}" />
 									</f:content>
 								</f:SimpleForm>
 
@@ -220,11 +258,12 @@
 		</uxap:sections>
 		<uxap:sections>
 			<uxap:ObjectPageSection
-				id="displayExperienceSection1"
+				id="editExperieceSection1"
 				title="Experience"
 				titleUppercase="false">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection
+						id="editExperienceSection1"
 						titleUppercase="false"
 						mode="Expanded"
 						class="editableForm"
@@ -234,47 +273,59 @@
 								<Table
 									inset="false"
 									fixedLayout="false"
-									items="{/experiences}">
+									items="{/experiences}"
+									mode="Delete"
+									delete="handleDeletePressExperience">
 									<headerToolbar>
 										<Toolbar>
 											<Title
 												text="Experience in the Past 10 Years"
 												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowExperience" />
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column width="auto">
+										<Column width="15%">
 											<Text text="Client" />
 										</Column>
 										<Column width="auto">
 											<Text text="Project" />
 										</Column>
-										<Column width="auto">
+										<Column width="15%">
 											<Text text="Country" />
 										</Column>
-										<Column width="auto">
+										<Column width="10%">
 											<Text text="Role" />
 										</Column>
-										<Column width="auto">
+										<Column width="10%">
 											<Text text="From" />
 										</Column>
-										<Column width="auto">
+										<Column width="10%">
 											<Text text="To" />
 										</Column>
-										<Column width="auto">
+										<Column width="15%">
 											<Text text="Contract Value" />
 										</Column>
 									</columns>
 									<items>
 										<ColumnListItem>
 											<cells>
-												<ObjectIdentifier title="{client}" />
-												<Text text="{project}" />
-												<Text text="{country}" />
-												<Text text="{role}" />
-												<Text text="{from}" formatter=".formatDate"/>
-												<Text text="{to}" />
-												<Text text="{contract_value}" />
+												<Input value="{client}" />
+												<Input value="{project}" />
+												<Input value="{country}" />
+												<Input value="{role}" />
+													<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{from}" />
+												<DatePicker
+													valueFormat="MM-dd-yyyy"
+													displayFormat="MM-dd-yyyy"
+													value="{to}" />
+												<Input value="{contract_value}" />
 											</cells>
 										</ColumnListItem>
 									</items>
