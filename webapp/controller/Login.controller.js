@@ -1,9 +1,11 @@
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
-  'sap/ui/model/json/JSONModel'
+  'sap/ui/model/json/JSONModel',
+  'cmsfrontend/model/constants'
 ], function LoginController(
   Controller,
-  JSONModel
+  JSONModel,
+  constants
 ) {
   'use strict';
   return Controller.extend('cmsfrontend.controller.Login', {
@@ -57,7 +59,7 @@ sap.ui.define([
       Cookies.set('isdb', oData);
       appUtils.storage.init(oData);
 
-      sRoleKey = appUtils.storage.get(appConstants.storageKey.ROLE_KEY);
+      sRoleKey = appUtils.storage.get(constants.storageKey.ROLE_KEY);
 
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
       _.each(appConstants.role, function (oRole) {

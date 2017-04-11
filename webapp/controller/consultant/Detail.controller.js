@@ -4,14 +4,16 @@ sap.ui.define([
   'sap/ui/model/json/JSONModel',
   'sap/ui/core/UIComponent',
   'sap/ui/core/routing/History',
-  'cmsfrontend/model/formatter'
+  'cmsfrontend/model/formatter',
+  'cmsfrontend/model/constants'
 ], function (
   jQuery,
   Controller,
   JSONModel,
   UIComponent,
   History,
-  formatter
+  formatter,
+  constants
 ) {
   "use strict";
 
@@ -46,7 +48,7 @@ sap.ui.define([
       oArgs = oEvent.getParameter("arguments");
       this._sID = oArgs.id;
       this._sSubsection = oArgs.subsection;
-      this._sUniqueID = appUtils.getUniqueID(appConstants.roleKey.CONSULTANT,
+      this._sUniqueID = appUtils.getUniqueID(constants.roleKey.CONSULTANT,
           oArgs.id);
 
       sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
@@ -586,8 +588,8 @@ sap.ui.define([
       if (sPreviousHash !== undefined) {
         window.history.go(-1);
       } else {
-        sRoleKey = appUtils.storage.get(appConstants.storageKey.ROLE_KEY);
-        oRole = appConstants.role[sRoleKey];
+        sRoleKey = appUtils.storage.get(constants.storageKey.ROLE_KEY);
+        oRole = constants.role[sRoleKey];
         oHomeRoute = oRole.getHome();
         oRouter = UIComponent.getRouterFor(this);
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
