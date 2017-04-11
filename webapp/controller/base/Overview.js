@@ -2,12 +2,14 @@ sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/core/routing/History',
   'sap/ui/core/UIComponent',
-  "sap/ui/model/json/JSONModel"
+  'sap/ui/model/json/JSONModel',
+  'cmsfrontend/model/formatter'
 ], function (
   Controller,
   History,
   UIComponent,
-  JSONModel
+  JSONModel,
+  formatter
 ) {
   "use strict";
   return Controller.extend('cmsfrontend.controller.base.Overview', {
@@ -103,9 +105,9 @@ sap.ui.define([
         url: sEndPoint,
         method: 'GET'
       }).done(function (oData) {
-        if (!oData.image_url) {
-          oData['image_url'] = "/img/testIMG.jpg";
-        }
+        // if (!oData.image_url) {
+        //   oData['image_url'] = "/img/testIMG.jpg";
+        // }
         oModel.setData(oData, true);
       });
 
@@ -117,6 +119,8 @@ sap.ui.define([
       this._sOverviewRoute = sOverviewRoute;
       this._sDetailRoute = sDetailRoute;
     },
+
+    formatter: formatter,
 
     onInit: function () {
       var oRouter;

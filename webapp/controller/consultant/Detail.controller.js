@@ -3,15 +3,19 @@ sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
   'sap/ui/core/UIComponent',
-  'sap/ui/core/routing/History'
+  'sap/ui/core/routing/History',
+  'cmsfrontend/model/formatter'
 ], function (
   jQuery,
   Controller,
   JSONModel,
   UIComponent,
-  History
+  History,
+  formatter
 ) {
   "use strict";
+
+
   return Controller.extend("cmsfrontend.controller.consultant.Detail", {
 
     _onTitleChanged: function (oEvent) {
@@ -52,12 +56,7 @@ sap.ui.define([
         var sFullName = oData.surname + ", " + oData.given_name + " " +
             oData.middle_name;
         oData.full_name = sFullName;
-
         _this._convertDatesISOToObj(oData);
-        if (!oData.image_url) {
-          oData.image_url = "/img/testIMG.jpg";
-        }
-
         oView.setModel(new JSONModel(oData));
       });
 

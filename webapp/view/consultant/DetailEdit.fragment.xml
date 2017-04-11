@@ -27,15 +27,19 @@
 						{ path: '/given_name' },
 						{ path: '/middle_name' }
 					],
-					formatter: '.formatSurname'
+					formatter: '.formatter.fullname'
 					}"
 				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
 			<Image
-				src="{/image_url}"
-				width="150px"
-				height="150px" />
+					width="150px"
+					height="150px"
+					src="{
+						path: '/image_url',
+						formatter: '.formatter.profileImageURL'
+						}"
+					/>
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />

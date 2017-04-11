@@ -78,4 +78,6 @@
       homeRoute: "vendorDetail"/*, "vendorOverview"*/,
       });
 
+  appConstants.DEFAULT_PROFILE_IMAGE_URL = '/img/defaultProfileImage.jpg';
+
 })(window);

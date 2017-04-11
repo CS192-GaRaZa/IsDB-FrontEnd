@@ -48,7 +48,10 @@
               press="onNameLinkPress"
               />
           <Image
-              src="{/image_url}"
+              src="{
+                path: '/image_url',
+                formatter: '.formatter.profileImageURL'
+                }"
               width="100%"
           />
         </l:content>
