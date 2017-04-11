@@ -136,27 +136,7 @@ sap.ui.define([
         }]
       };
 
-      oCountryData = $.ajax({
-        url : "https://isdb-cms-api.herokuapp.com/api/v1/countries",
-        type : "GET",
-        async: false,
-        dataType: 'json',
-        contentType : "application/json",
-        success : function(data, textStatus, jqXHR) {
-          // console.log("data: ", data);
-          // console.log("textStatus: ", textStatus);
-          // console.log("jqxhr: ", jqXHR);
-          return data;
-        }.bind(this),
-        error: function(xhr, status) {
-          // console.log("ERROR POSTING REQUEST");
-          // console.log("xhr: ", xhr);
-          // console.log("status: ", status);
-           return status;
-        },
-      }).responseJSON;
-
-      oCountriesModel = new JSONModel(oCountryData);
+      oCountriesModel = new JSONModel("model/countries.json");
       oCountriesModel.setSizeLimit(500);
 
       oView = this.getView();
@@ -637,7 +617,7 @@ sap.ui.define([
         "email":""
       };
 
-      this.getView().getModel().getData().contact_persons.push(emptyRow);
+      this.getView().getModel().getData().contacts.push(emptyRow);
       this.getView().getModel().refresh();
     },
 

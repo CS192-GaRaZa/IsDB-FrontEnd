@@ -63,7 +63,7 @@ sap.ui.define([
       _.each(appConstants.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
           oHomeRoute = oRole.getHome();
-          oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters);
+          oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
           return false;
         }
       });

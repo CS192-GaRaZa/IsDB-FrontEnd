@@ -1,4 +1,4 @@
-<!-- Format: width of input and select boxes links (like the linked in or 
+<!-- Format: width of input and select boxes links (like the linked in or
 	email) -->
 
 <core:FragmentDefinition
@@ -43,7 +43,7 @@
 					<Text text="{/kind}" />
 				</HBox>
 
-				<!-- I'm using these empty labels to add spacing between the entries. 
+				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
 				<HBox>
@@ -142,7 +142,7 @@
 													formatOptions: { style: 'long' }
 													}" />
 										<Label text="LinkedIn Profile" />
-										<Input value="{/linkedin}" />										
+										<Input value="{/linkedin}" />
 										<core:Title />
 										<Label text="Middle Name" />
 										<Input value="{/middle_name}" />

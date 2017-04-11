@@ -11,9 +11,7 @@
 
   appUtils.storage = {};
 
-  var aKeys = [];
   appUtils.storage.set = function (sKey, anyValue) {
-    _.union(aKeys, [ sKey ]);
     Cookies.set(sKey, anyValue);
   };
 
@@ -30,12 +28,13 @@
   };
 
   appUtils.storage.clear = function () {
-    _.each(aKeys, function (sKey) {
+    var oCookies = Cookies.get();
+    _.each(oCookies, function (_, sKey) {
       Cookies.remove(sKey);
     });
   };
 
-  appUtils.getUniqueID = _.memoize(function (sRoleKey, sID) {
+  appUtils.getUniqueID = function (sRoleKey, sID) {
     var sPrefix;
     _.each(appConstants.role, function (oRole) {
       if (oRole.getKey() === sRoleKey) {
@@ -44,6 +43,6 @@
       }
     })
     return sPrefix + "-" + sID;
-  });
+  };
 
 })(window);
