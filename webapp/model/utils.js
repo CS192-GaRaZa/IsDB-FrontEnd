@@ -36,10 +36,10 @@ sap.ui.define([
 
   /** Role Class definition
    *
-   *  This class is used to create the objects in the globally accessible
-   *  appConstants.role object. Objects created by this class are used to
-   *  conveniently access properties that are specific to roles. The
-   *  configuration object passed to the constructor accepts 4 arguments:
+   *  This class is used to create the objects in the oUtils.role object.
+   *  Objects created by this class are used to conveniently access properties
+   *  that are specific to roles. The configuration object passed to the
+   *  constructor accepts 4 arguments:
    *  -.  key -- Key used by the server to identify the role.
    *  -.  uniqueIDPrefix -- Prefix used in unique IDs,
    *                        e.g. C for consultant 12 C-12.
@@ -100,7 +100,7 @@ sap.ui.define([
 
   oUtils.getUniqueID = function (sRoleKey, sID) {
     var sPrefix;
-    _.each(constants.role, function (oRole) {
+    _.each(oUtils.role, function (oRole) {
       if (oRole.getKey() === sRoleKey) {
         sPrefix = oRole.getUniqueIDPrefix();
         return false;

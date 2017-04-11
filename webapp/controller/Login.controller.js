@@ -1,11 +1,13 @@
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
-  'cmsfrontend/model/constants'
+  'cmsfrontend/model/constants',
+  'cmsfrontend/model/utils'
 ], function LoginController(
   Controller,
   JSONModel,
-  constants
+  constants,
+  utils
 ) {
   'use strict';
   return Controller.extend('cmsfrontend.controller.Login', {
@@ -57,12 +59,12 @@ sap.ui.define([
 
       // TODO: Will be removed in favor of the following function
       Cookies.set('isdb', oData);
-      appUtils.storage.init(oData);
+      utils.storage.init(oData);
 
-      sRoleKey = appUtils.storage.get(constants.storageKey.ROLE_KEY);
+      sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
 
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      _.each(appConstants.role, function (oRole) {
+      _.each(utils.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
           oHomeRoute = oRole.getHome();
           oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
