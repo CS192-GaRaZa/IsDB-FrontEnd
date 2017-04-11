@@ -120,7 +120,12 @@ sap.ui.define([
       this._sDetailRoute = sDetailRoute;
     },
 
-    formatter: formatter,
+    formatter: _.merge({
+      tableFooter: function (oList, iSizeLimit) {
+        var oBundle = this.getView().getModel('i18n').getResourceBundle();
+        return oBundle.getText('TableFooter', [ iSizeLimit, oList.length ]);
+      }
+    }, formatter),
 
     onInit: function () {
       var oRouter;
@@ -177,10 +182,6 @@ sap.ui.define([
         oRouter = UIComponent.getRouterFor(this);
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
       }
-    },
-
-    formatTableFooterText: function (oList, iSizeLimit) {
-      return "Showing " + iSizeLimit + " of " + oList.length;
     }
 
   });

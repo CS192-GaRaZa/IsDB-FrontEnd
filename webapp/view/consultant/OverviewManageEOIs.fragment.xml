@@ -14,7 +14,7 @@
           { path: '/ieos' },
           { path: 'config>/size_limit' }
         ] ,
-        formatter: '.formatTableFooterText'
+        formatter: '.formatter.tableFooter'
         }"
       >
     <layoutData>
