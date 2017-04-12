@@ -49,10 +49,10 @@
 				<HBox>
 					<Label text="Date of Birth: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{
+					<Text
+							text="{
 								path: '/date_of_birth',
-								type: 'sap.ui.model.type.Date',
-								formatOptions: { style: 'long' }
+								type: '.type.Date'
 								}"
 							/>
 				</HBox>
@@ -104,10 +104,10 @@
 										<Label text="Given Name" />
 										<Text text="{/given_name}" />
 										<Label text="Date of Birth" />
-										<Text text="{
+										<Text
+												text="{
 													path: '/date_of_birth',
-													type: 'sap.ui.model.type.Date',
-													formatOptions: { style: 'long' }
+													type: '.type.Date'
 													}"
 												/>
 										<Label text="LinkedIn Profile" />
@@ -313,10 +313,10 @@
 										<Text text="{/employee_id}" />
 										<core:Title />
 										<Label text="Date Cleared for Consulting" />
-										<Text text="{
+										<Text
+												text="{
 													path: '/date_cleared_consulting',
-													type: 'sap.ui.model.type.Date',
-													formatOptions: { style: 'long' }
+													type: '.type.Date'
 													}"
 												/>
 									</f:content>
@@ -366,16 +366,16 @@
 										<ColumnListItem>
 											<cells>
 												<ObjectIdentifier title="{employer}" />
-												<Text text="{
+												<Text
+														text="{
 															path: 'from',
-															type: 'sap.ui.model.type.Date',
-															formatOptions: { style: 'medium' }
+															type: '.type.Date'
 															}"
 														/>
-												<Text text="{
+												<Text
+														text="{
 															path: 'to',
-															type: 'sap.ui.model.type.Date',
-															formatOptions: { style: 'medium' }
+															type: '.type.Date'
 															}"
 														/>
 												<Text text="{position_held}" />

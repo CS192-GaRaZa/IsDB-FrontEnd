@@ -4,6 +4,7 @@ sap.ui.define([
   'sap/ui/model/json/JSONModel',
   'sap/ui/core/UIComponent',
   'sap/ui/core/routing/History',
+  'cmsfrontend/model/type/CustomDate',
   'cmsfrontend/model/formatter',
   'cmsfrontend/model/constants',
   'cmsfrontend/model/utils'
@@ -13,14 +14,20 @@ sap.ui.define([
   JSONModel,
   UIComponent,
   History,
+  CustomDate,
   formatter,
   constants,
   utils
 ) {
   "use strict";
 
+  var oType = {
+    Date: CustomDate
+  };
 
   return Controller.extend("cmsfrontend.controller.consultant.Detail", {
+
+    type: oType,
 
     formatter: _.merge({
       fullname: function (sLastName, sSurname, sMiddleName) {
@@ -67,7 +74,6 @@ sap.ui.define([
         var sFullName = oData.surname + ", " + oData.given_name + " " +
             oData.middle_name;
         oData.full_name = sFullName;
-        _this._convertDatesISOToObj(oData);
         oView.setModel(new JSONModel(oData));
       });
 
@@ -156,20 +162,6 @@ sap.ui.define([
         }, this)
       });
     },
-
-
-    _convertDatesISOToObj: function (data) {
-      data.date_of_birth = new Date(data.date_of_birth);
-      data.date_cleared_consulting = new Date(data.date_cleared_consulting);
-
-      var employment;
-      for (var i = 0; i < data.employments.length; i++) {
-        employment = data.employments[i];
-        employment.from = new Date(employment.from);
-        employment.to = new Date(employment.to);
-      }
-    },
-
 
     onExit: function() {
       for(var sPropertyName in this._formFragments) {
@@ -386,9 +378,6 @@ sap.ui.define([
       //Restore the old data
       var oModel = this.getView().getModel();
       var oData = oModel.getData();
-
-      // have to turn some strings into date format again
-      this._convertDatesISOToObj(this._oOldData);
 
       oModel.setData(this._oOldData);
       this._toggleButtonsAndView(false);

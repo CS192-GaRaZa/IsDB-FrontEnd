@@ -54,11 +54,11 @@
 					<Label text="Date of Birth: " />
 					<ToolbarSpacer width="3px"/>
 					<Text
-						text="{
+							text="{
 								path: '/date_of_birth',
-								type: 'sap.ui.model.type.Date',
-								formatOptions: { style: 'long' }
-								}" />
+								type: '.type.Date'
+								}"
+							/>
 				</HBox>
 				<HBox>
 					<Label text="Citizenship: " />
@@ -138,13 +138,11 @@
 										<Input value="{/given_name}" />
 										<Label text="Date of Birth" />
 										<DatePicker
-											valueFormat="MM-dd-yyyy"
-											displayFormat="MM-dd-yyyy"
-											value="{
+												value="{
 													path: '/date_of_birth',
-													type: 'sap.ui.model.type.Date',
-													formatOptions: { style: 'long' }
-													}" />
+													type: '.type.Date'
+													}"
+												/>
 										<Label text="LinkedIn Profile" />
 										<Input value="{/linkedin}" />
 										<core:Title />
@@ -446,13 +444,11 @@
 										<core:Title />
 										<Label text="Date Cleared for Consulting" />
 										<DatePicker
-											valueFormat="MM-dd-yyyy"
-											displayFormat="MM-dd-yyyy"
-											value="{
-														path: '/date_cleared_consulting',
-														type: 'sap.ui.type.model.Date',
-														formatOptions: { style: 'long' }
-														}">
+												value="{
+													path: '/date_cleared_consulting',
+													type: '.type.Date'
+													}
+												">
 											<layoutData>
 												<l:GridData span="L4 M4 S4" />
 											</layoutData>
@@ -509,21 +505,17 @@
 											<cells>
 												<Input value="{employer}" />
 												<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{
-														path: 'from',
-														type: 'sap.ui.model.type.Date',
-														formatOptions: { style: 'medium' }
-														}" />
+														value="{
+															path: 'from',
+															type: '.type.Date'
+															}"
+														/>
 												<DatePicker
-													valueFormat="MM-dd-yyyy"
-													displayFormat="MM-dd-yyyy"
-													value="{
-														path: 'to',
-														type: 'sap.ui.model.type.Date',
-														formatOptions: { style: 'medium' }
-														}" />
+														value="{
+															path: 'to',
+															type: '.type.Date'
+															}"
+														/>
 												<Input value="{position_held}" />
 												<Input value="{main_responsibilities}" />
 											</cells>
