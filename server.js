@@ -21,12 +21,22 @@ cloudinary.config({
 });
 
 app.set('port', process.env.PORT || 12121);
+app.set('views', './views');
+app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/webapp'));
 app.use(cookieParser());
 app.use(logger('dev'));
 
+if (app.get('env') === 'development') {
+  app.locals.pretty = true;
+}
+
 app.get('/', (_, res) => {
-  res.sendFile('webapp/index.html');
+  const openUI5CDN = (app.get('env') === 'development')
+      ? 'resources/sap-ui-core.js'
+      : 'https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
+
+  res.render('index', { openUI5CDN });
 });
 
 app.post('/upload', upload.single('file'), (req, res) => {

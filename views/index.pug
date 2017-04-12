@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(charset='UTF-8')
+
+    title IsDB Consultant Management System
+
+    script(
+        id='sap-ui-bootstrap'
+        src=openUI5CDN
+        data-sap-ui-libs='sap.m, sap.ui.core, sap.ui.layout'
+        data-sap-ui-theme='sap_bluecrystal'
+        data-sap-ui-compatVersion='edge'
+        data-sap-ui-resourceroots='{"cmsfrontend": "./"}'
+        )
+    script(src='bower_components/js-cookie/src/js.cookie.js')
+    script(src='bower_components/lodash/dist/lodash.min.js')
+
+    link(
+        rel='stylesheet'
+        type='text/css'
+        href='css/style.css'
+        )
+
+    script(type='text/javascript').
+      ;(function () {
+        sap.ui.getCore().attachInit(function() {
+          new sap.m.Shell({
+            app: new sap.ui.core.ComponentContainer({
+              height : "100%",
+              name : "cmsfrontend"
+            }),
+            appWidthLimited : false,
+          }).placeAt("content");
+        });
+      })();
+
+  body(class="sapUiBody" id="content")
