@@ -269,17 +269,12 @@ sap.ui.define([
     },
 
     handleCancelPress : function () {
-
       //Restore the old data
       var oModel = this.getView().getModel();
       var oData = oModel.getData();
 
-      // have to turn some strings into date format again
-      this._convertDatesISOToObj(this._oOldData);
-
       oModel.setData(this._oOldData);
       this._toggleButtonsAndView(false);
-
     },
 
     handleSavePress : function () {
