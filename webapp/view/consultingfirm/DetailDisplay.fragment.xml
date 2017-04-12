@@ -275,12 +275,12 @@
 												<Text text="{role}" />
 												<Text text="{
 														path: 'from',
-														type: 'cmsfrontend.model.type.CustomDate'
+														type: '.type.Date'
 														}"
 														/>
 												<Text text="{
 														path: 'to',
-														type: 'cmsfrontend.model.type.CustomDate'
+														type: '.type.Date'
 														}"
 														/>
 												<Text text="{contract_value}" />

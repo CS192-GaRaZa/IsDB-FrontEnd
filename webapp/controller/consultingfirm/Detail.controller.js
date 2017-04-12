@@ -6,10 +6,19 @@ sap.ui.define([
 ], function (
   jQuery,
   Controller,
-  JSONModel
+  JSONModel,
+  CustomDate
 ) {
   "use strict";
+
+  var oType = {
+    Date: CustomDate
+  };
+
   return Controller.extend("cmsfrontend.controller.consultingfirm.Detail", {
+
+    type: oType,
+
       _getSessionData: function () {
         return Cookies.getJSON("isdb");
       },

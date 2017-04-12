@@ -319,12 +319,12 @@
 												<Input value="{role}" />
 												<DatePicker value="{
 														path: 'from',
-														type: 'cmsfrontend.model.type.CustomDate'
+														type: '.type.Date'
 														}"
 														/>
 												<DatePicker value="{
 														path: 'to',
-														type: 'cmsfrontend.model.type.CustomDate'
+														type: '.type.Date'
 														}"
 														/>
 												<Input value="{contract_value}" />
