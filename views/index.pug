@@ -23,17 +23,6 @@ html
         href='css/style.css'
         )
 
-    script(type='text/javascript').
-      ;(function () {
-        sap.ui.getCore().attachInit(function() {
-          new sap.m.Shell({
-            app: new sap.ui.core.ComponentContainer({
-              height : "100%",
-              name : "cmsfrontend"
-            }),
-            appWidthLimited : false,
-          }).placeAt("content");
-        });
-      })();
+    script(src='init.js')
 
   body(class="sapUiBody" id="content")
