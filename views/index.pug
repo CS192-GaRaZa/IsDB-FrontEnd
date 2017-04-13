@@ -9,19 +9,14 @@ html
     script(
         id='sap-ui-bootstrap'
         src=openUI5CDN
-        data-sap-ui-libs='sap.m, sap.ui.core, sap.ui.layout'
+        data-sap-ui-libs='sap.m, sap.ui.core, sap.ui.layout, sap.uxap'
         data-sap-ui-theme='sap_bluecrystal'
         data-sap-ui-compatVersion='edge'
+        data-sap-ui-preload='async'
         data-sap-ui-resourceroots='{"cmsfrontend": "./"}'
         )
     script(src='bower_components/js-cookie/src/js.cookie.js')
     script(src='bower_components/lodash/dist/lodash.min.js')
-
-    link(
-        rel='stylesheet'
-        type='text/css'
-        href='css/style.css'
-        )
 
     script(src='init.js')
 
