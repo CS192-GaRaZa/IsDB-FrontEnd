@@ -34,7 +34,7 @@ if (app.get('env') === 'development') {
 app.get('/', (_, res) => {
   const openUI5CDN = (app.get('env') === 'development')
       ? 'resources/sap-ui-core.js'
-      : 'https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
+      : 'https://sapui5.hana.ondemand.com/1.44.9/resources/sap-ui-core.js';
 
   res.render('index', { openUI5CDN });
 });
