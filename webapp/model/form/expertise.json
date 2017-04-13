@@ -1,1119 +1,1117 @@
-{
-  "expertise": [
-    {
-      "id": 0,
-      "name": "Financial Accounting",
-      "sectorID": 0
-    },
-    {
-      "id": 1,
-      "name": "Financial Auditing",
-      "sectorID": 0
-    },
-    {
-      "id": 2,
-      "name": "Benefits and Compensation",
-      "sectorID": 1
-    },
-    {
-      "id": 3,
-      "name": "Employee Wellness",
-      "sectorID": 1
-    },
-    {
-      "id": 4,
-      "name": "Human Resource Administration",
-      "sectorID": 1
-    },
-    {
-      "id": 5,
-      "name": "Audio/Video Production",
-      "sectorID": 2
-    },
-    {
-      "id": 6,
-      "name": "Communication Services",
-      "sectorID": 2
-    },
-    {
-      "id": 7,
-      "name": "Communication Systems Technical Support",
-      "sectorID": 2
-    },
-    {
-      "id": 8,
-      "name": "Computers Systems Technical Support",
-      "sectorID": 2
-    },
-    {
-      "id": 9,
-      "name": "Copy editing",
-      "sectorID": 2
-    },
-    {
-      "id": 10,
-      "name": "Database Management",
-      "sectorID": 2
-    },
-    {
-      "id": 11,
-      "name": "Documentation and Records Management",
-      "sectorID": 2
-    },
-    {
-      "id": 12,
-      "name": "Library Services",
-      "sectorID": 2
-    },
-    {
-      "id": 13,
-      "name": "Publication Services",
-      "sectorID": 2
-    },
-    {
-      "id": 14,
-      "name": "Translation",
-      "sectorID": 2
-    },
-    {
-      "id": 15,
-      "name": "Web maintenance/homepage design",
-      "sectorID": 2
-    },
-    {
-      "id": 16,
-      "name": "e-Learning Flash Animation",
-      "sectorID": 2
-    },
-    {
-      "id": 17,
-      "name": "e-Learning Network",
-      "sectorID": 2
-    },
-    {
-      "id": 18,
-      "name": "e-Learning Programmer",
-      "sectorID": 2
-    },
-    {
-      "id": 19,
-      "name": "Catering Services Management",
-      "sectorID": 3
-    },
-    {
-      "id": 20,
-      "name": "Contract/Purchase Order Administration",
-      "sectorID": 3
-    },
-    {
-      "id": 21,
-      "name": "Event Management",
-      "sectorID": 3
-    },
-    {
-      "id": 22,
-      "name": "Graphic Design Services",
-      "sectorID": 3
-    },
-    {
-      "id": 23,
-      "name": "Inventory Management",
-      "sectorID": 3
-    },
-    {
-      "id": 24,
-      "name": "Printing Services Management",
-      "sectorID": 3
-    },
-    {
-      "id": 25,
-      "name": "Property and Facilities Management",
-      "sectorID": 3
-    },
-    {
-      "id": 26,
-      "name": "Public Relations",
-      "sectorID": 3
-    },
-    {
-      "id": 27,
-      "name": "Travel Services Management",
-      "sectorID": 3
-    },
-    {
-      "id": 28,
-      "name": "Accounting Information Systems",
-      "sectorID": 4
-    },
-    {
-      "id": 29,
-      "name": "External Audit",
-      "sectorID": 4
-    },
-    {
-      "id": 30,
-      "name": "Integrated Audit",
-      "sectorID": 4
-    },
-    {
-      "id": 31,
-      "name": "Management Accounting",
-      "sectorID": 4
-    },
-    {
-      "id": 32,
-      "name": "Management Auditing",
-      "sectorID": 4
-    },
-    {
-      "id": 33,
-      "name": "Risk Management",
-      "sectorID": 4
-    },
-    {
-      "id": 34,
-      "name": "Risk-based audit",
-      "sectorID": 4
-    },
-    {
-      "id": 35,
-      "name": "Agribusiness",
-      "sectorID": 5
-    },
-    {
-      "id": 36,
-      "name": "Agricultural extensions",
-      "sectorID": 5
-    },
-    {
-      "id": 37,
-      "name": "Agriculture finance",
-      "sectorID": 5
-    },
-    {
-      "id": 38,
-      "name": "Agriculture machinery",
-      "sectorID": 5
-    },
-    {
-      "id": 39,
-      "name": "Agriculture policy",
-      "sectorID": 5
-    },
-    {
-      "id": 40,
-      "name": "Agro industry",
-      "sectorID": 5
-    },
-    {
-      "id": 41,
-      "name": "Dairy production",
-      "sectorID": 5
-    },
-    {
-      "id": 42,
-      "name": "Farm management",
-      "sectorID": 5
-    },
-    {
-      "id": 43,
-      "name": "Fishery",
-      "sectorID": 5
-    },
-    {
-      "id": 44,
-      "name": "Irrigation",
-      "sectorID": 5
-    },
-    {
-      "id": 45,
-      "name": "Livestock",
-      "sectorID": 5
-    },
-    {
-      "id": 46,
-      "name": "Tea plantation",
-      "sectorID": 5
-    },
-    {
-      "id": 47,
-      "name": "Tree crops",
-      "sectorID": 5
-    },
-    {
-      "id": 48,
-      "name": "Country Development",
-      "sectorID": 6
-    },
-    {
-      "id": 49,
-      "name": "Development Strategy",
-      "sectorID": 6
-    },
-    {
-      "id": 50,
-      "name": "Operational Strategy",
-      "sectorID": 6
-    },
-    {
-      "id": 51,
-      "name": "Operations Business Planning",
-      "sectorID": 6
-    },
-    {
-      "id": 52,
-      "name": "Regional Cooperation",
-      "sectorID": 6
-    },
-    {
-      "id": 53,
-      "name": "Agriculture economics",
-      "sectorID": 7
-    },
-    {
-      "id": 54,
-      "name": "Behavioral economics",
-      "sectorID": 7
-    },
-    {
-      "id": 55,
-      "name": "Construction economics",
-      "sectorID": 7
-    },
-    {
-      "id": 56,
-      "name": "Development economics",
-      "sectorID": 7
-    },
-    {
-      "id": 57,
-      "name": "Econometrics/modeling",
-      "sectorID": 7
-    },
-    {
-      "id": 58,
-      "name": "Environmental economics",
-      "sectorID": 7
-    },
-    {
-      "id": 59,
-      "name": "Experimental economics",
-      "sectorID": 7
-    },
-    {
-      "id": 60,
-      "name": "International economics",
-      "sectorID": 7
-    },
-    {
-      "id": 61,
-      "name": "Labor economics",
-      "sectorID": 7
-    },
-    {
-      "id": 62,
-      "name": "Macro economics",
-      "sectorID": 7
-    },
-    {
-      "id": 63,
-      "name": "Micro economics",
-      "sectorID": 7
-    },
-    {
-      "id": 64,
-      "name": "Rural economics",
-      "sectorID": 7
-    },
-    {
-      "id": 65,
-      "name": "Curriculum Development",
-      "sectorID": 8
-    },
-    {
-      "id": 66,
-      "name": "Early Education",
-      "sectorID": 8
-    },
-    {
-      "id": 67,
-      "name": "Elementary Education",
-      "sectorID": 8
-    },
-    {
-      "id": 68,
-      "name": "Higher Education",
-      "sectorID": 8
-    },
-    {
-      "id": 69,
-      "name": "Postgraduate Education",
-      "sectorID": 8
-    },
-    {
-      "id": 70,
-      "name": "Secondary Education",
-      "sectorID": 8
-    },
-    {
-      "id": 71,
-      "name": "Technical and Vocational Education Training (TVET)",
-      "sectorID": 8
-    },
-    {
-      "id": 72,
-      "name": "Biological Engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 73,
-      "name": "Chemistry Engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 74,
-      "name": "Civil engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 75,
-      "name": "Electrical engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 76,
-      "name": "Electronic engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 77,
-      "name": "Front-End Engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 78,
-      "name": "Mechanical engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 79,
-      "name": "Systems engineering",
-      "sectorID": 9
-    },
-    {
-      "id": 80,
-      "name": "Air Pollution",
-      "sectorID": 10
-    },
-    {
-      "id": 81,
-      "name": "Biodiversity",
-      "sectorID": 10
-    },
-    {
-      "id": 82,
-      "name": "Carbon Emission Trade",
-      "sectorID": 10
-    },
-    {
-      "id": 83,
-      "name": "Climate Change/Global Warming",
-      "sectorID": 10
-    },
-    {
-      "id": 84,
-      "name": "Environment Impact Assessment",
-      "sectorID": 10
-    },
-    {
-      "id": 85,
-      "name": "Environment Protection",
-      "sectorID": 10
-    },
-    {
-      "id": 86,
-      "name": "Forestry",
-      "sectorID": 10
-    },
-    {
-      "id": 87,
-      "name": "Marine Resources",
-      "sectorID": 10
-    },
-    {
-      "id": 88,
-      "name": "Mineral Resources",
-      "sectorID": 10
-    },
-    {
-      "id": 89,
-      "name": "Mining/Geology",
-      "sectorID": 10
-    },
-    {
-      "id": 90,
-      "name": "Natural Resources",
-      "sectorID": 10
-    },
-    {
-      "id": 91,
-      "name": "Sanitation",
-      "sectorID": 10
-    },
-    {
-      "id": 92,
-      "name": "Soil Science",
-      "sectorID": 10
-    },
-    {
-      "id": 93,
-      "name": "Waste Treatment",
-      "sectorID": 10
-    },
-    {
-      "id": 94,
-      "name": "Water Resources",
-      "sectorID": 10
-    },
-    {
-      "id": 95,
-      "name": "Water Supply",
-      "sectorID": 10
-    },
-    {
-      "id": 96,
-      "name": "Wetlands",
-      "sectorID": 10
-    },
-    {
-      "id": 97,
-      "name": "Wildlife",
-      "sectorID": 10
-    },
-    {
-      "id": 98,
-      "name": "Anticorruption",
-      "sectorID": 11
-    },
-    {
-      "id": 99,
-      "name": "Governance",
-      "sectorID": 11
-    },
-    {
-      "id": 100,
-      "name": "Integrity",
-      "sectorID": 11
-    },
-    {
-      "id": 101,
-      "name": "e-Governance",
-      "sectorID": 11
-    },
-    {
-      "id": 102,
-      "name": "Disease Control",
-      "sectorID": 12
-    },
-    {
-      "id": 103,
-      "name": "Global Health",
-      "sectorID": 12
-    },
-    {
-      "id": 104,
-      "name": "HIV/AIDs Prevention",
-      "sectorID": 12
-    },
-    {
-      "id": 105,
-      "name": "Health Policy",
-      "sectorID": 12
-    },
-    {
-      "id": 106,
-      "name": "Hospital Management",
-      "sectorID": 12
-    },
-    {
-      "id": 107,
-      "name": "Medical Services",
-      "sectorID": 12
-    },
-    {
-      "id": 108,
-      "name": "Medicine",
-      "sectorID": 12
-    },
-    {
-      "id": 109,
-      "name": "Nursing",
-      "sectorID": 12
-    },
-    {
-      "id": 110,
-      "name": "Nutrition",
-      "sectorID": 12
-    },
-    {
-      "id": 111,
-      "name": "Occupational Health",
-      "sectorID": 12
-    },
-    {
-      "id": 112,
-      "name": "Rural Health Services",
-      "sectorID": 12
-    },
-    {
-      "id": 113,
-      "name": "Career Development",
-      "sectorID": 13
-    },
-    {
-      "id": 114,
-      "name": "Knowledge Management",
-      "sectorID": 13
-    },
-    {
-      "id": 115,
-      "name": "Knowledge Sharing",
-      "sectorID": 13
-    },
-    {
-      "id": 116,
-      "name": "e-Learning Content Development",
-      "sectorID": 13
-    },
-    {
-      "id": 117,
-      "name": "Information System Analysis",
-      "sectorID": 14
-    },
-    {
-      "id": 118,
-      "name": "Information System Design",
-      "sectorID": 14
-    },
-    {
-      "id": 119,
-      "name": "Information Systems Infrastructure Design",
-      "sectorID": 14
-    },
-    {
-      "id": 120,
-      "name": "System Software Design and Implementation",
-      "sectorID": 14
-    },
-    {
-      "id": 121,
-      "name": "Arbitration",
-      "sectorID": 15
-    },
-    {
-      "id": 122,
-      "name": "Contract Management Legal Services",
-      "sectorID": 15
-    },
-    {
-      "id": 123,
-      "name": "Dispute Resolution",
-      "sectorID": 15
-    },
-    {
-      "id": 124,
-      "name": "General Legal Services",
-      "sectorID": 15
-    },
-    {
-      "id": 125,
-      "name": "Loan Administration Legal Service",
-      "sectorID": 15
-    },
-    {
-      "id": 126,
-      "name": "Procurement Document Review",
-      "sectorID": 15
-    },
-    {
-      "id": 127,
-      "name": "Construction Supervision",
-      "sectorID": 16
-    },
-    {
-      "id": 128,
-      "name": "Contract Management",
-      "sectorID": 16
-    },
-    {
-      "id": 129,
-      "name": "Country Operations Management",
-      "sectorID": 16
-    },
-    {
-      "id": 130,
-      "name": "Electronic Government Procurement (e-GP)",
-      "sectorID": 16
-    },
-    {
-      "id": 131,
-      "name": "Feasibility Studies",
-      "sectorID": 16
-    },
-    {
-      "id": 132,
-      "name": "Inventory Management",
-      "sectorID": 16
-    },
-    {
-      "id": 133,
-      "name": "Procurement",
-      "sectorID": 16
-    },
-    {
-      "id": 134,
-      "name": "Project Management",
-      "sectorID": 16
-    },
-    {
-      "id": 135,
-      "name": "Project Monitoring and Evaluation",
-      "sectorID": 16
-    },
-    {
-      "id": 136,
-      "name": "Supply Chain Management",
-      "sectorID": 16
-    },
-    {
-      "id": 137,
-      "name": "Development Policy",
-      "sectorID": 17
-    },
-    {
-      "id": 138,
-      "name": "Impact Evaluation",
-      "sectorID": 17
-    },
-    {
-      "id": 139,
-      "name": "Policy Analysis",
-      "sectorID": 17
-    },
-    {
-      "id": 140,
-      "name": "Sector Studies",
-      "sectorID": 17
-    },
-    {
-      "id": 141,
-      "name": "Anthropology",
-      "sectorID": 18
-    },
-    {
-      "id": 142,
-      "name": "Employment",
-      "sectorID": 18
-    },
-    {
-      "id": 143,
-      "name": "Gender",
-      "sectorID": 18
-    },
-    {
-      "id": 144,
-      "name": "Housing Policy",
-      "sectorID": 18
-    },
-    {
-      "id": 145,
-      "name": "Indigenous People",
-      "sectorID": 18
-    },
-    {
-      "id": 146,
-      "name": "Labor Market",
-      "sectorID": 18
-    },
-    {
-      "id": 147,
-      "name": "Political Science",
-      "sectorID": 18
-    },
-    {
-      "id": 148,
-      "name": "Population",
-      "sectorID": 18
-    },
-    {
-      "id": 149,
-      "name": "Poverty Reduction",
-      "sectorID": 18
-    },
-    {
-      "id": 150,
-      "name": "Resettlement",
-      "sectorID": 18
-    },
-    {
-      "id": 151,
-      "name": "Rural Development",
-      "sectorID": 18
-    },
-    {
-      "id": 152,
-      "name": "Social Impact Assessment",
-      "sectorID": 18
-    },
-    {
-      "id": 153,
-      "name": "Sociology",
-      "sectorID": 18
-    },
-    {
-      "id": 154,
-      "name": "Urban Development",
-      "sectorID": 18
-    },
-    {
-      "id": 155,
-      "name": "Urban Planning",
-      "sectorID": 18
-    },
-    {
-      "id": 156,
-      "name": "Women Development",
-      "sectorID": 18
-    },
-    {
-      "id": 157,
-      "name": "Cross-Border Trade",
-      "sectorID": 19
-    },
-    {
-      "id": 158,
-      "name": "International Trade",
-      "sectorID": 19
-    },
-    {
-      "id": 159,
-      "name": "e-Commerce",
-      "sectorID": 19
-    },
-    {
-      "id": 160,
-      "name": "BOT Preparation",
-      "sectorID": 20
-    },
-    {
-      "id": 161,
-      "name": "Banking",
-      "sectorID": 20
-    },
-    {
-      "id": 162,
-      "name": "Capital Market",
-      "sectorID": 20
-    },
-    {
-      "id": 163,
-      "name": "Finance/Fund Management",
-      "sectorID": 20
-    },
-    {
-      "id": 164,
-      "name": "Financial Market",
-      "sectorID": 20
-    },
-    {
-      "id": 165,
-      "name": "Guarantee",
-      "sectorID": 20
-    },
-    {
-      "id": 166,
-      "name": "Insurance",
-      "sectorID": 20
-    },
-    {
-      "id": 167,
-      "name": "International Trade",
-      "sectorID": 20
-    },
-    {
-      "id": 168,
-      "name": "Investment",
-      "sectorID": 20
-    },
-    {
-      "id": 169,
-      "name": "Pension Management",
-      "sectorID": 20
-    },
-    {
-      "id": 170,
-      "name": "Private Sector Development",
-      "sectorID": 20
-    },
-    {
-      "id": 171,
-      "name": "Private Sector Restructuring",
-      "sectorID": 20
-    },
-    {
-      "id": 172,
-      "name": "Privatization",
-      "sectorID": 20
-    },
-    {
-      "id": 173,
-      "name": "Public-Private-Partnership (PPP)",
-      "sectorID": 20
-    },
-    {
-      "id": 174,
-      "name": "Sector Pricing/Tariffs",
-      "sectorID": 20
-    },
-    {
-      "id": 175,
-      "name": "Social Security",
-      "sectorID": 20
-    },
-    {
-      "id": 176,
-      "name": "Deregulation",
-      "sectorID": 21
-    },
-    {
-      "id": 177,
-      "name": "Judicial Systems",
-      "sectorID": 21
-    },
-    {
-      "id": 178,
-      "name": "Legal Policy",
-      "sectorID": 21
-    },
-    {
-      "id": 179,
-      "name": "Legal Reform",
-      "sectorID": 21
-    },
-    {
-      "id": 180,
-      "name": "Regulation",
-      "sectorID": 21
-    },
-    {
-      "id": 181,
-      "name": "Institutional Development",
-      "sectorID": 22
-    },
-    {
-      "id": 182,
-      "name": "Organizational Change",
-      "sectorID": 22
-    },
-    {
-      "id": 183,
-      "name": "Organizational Strategic Planning",
-      "sectorID": 22
-    },
-    {
-      "id": 184,
-      "name": "Air Traffic Control",
-      "sectorID": 23
-    },
-    {
-      "id": 185,
-      "name": "Airport",
-      "sectorID": 23
-    },
-    {
-      "id": 186,
-      "name": "Airport Management",
-      "sectorID": 23
-    },
-    {
-      "id": 187,
-      "name": "Airport Management",
-      "sectorID": 23
-    },
-    {
-      "id": 188,
-      "name": "Aviation Management",
-      "sectorID": 23
-    },
-    {
-      "id": 189,
-      "name": "Express Way",
-      "sectorID": 23
-    },
-    {
-      "id": 190,
-      "name": "High Speed Railway",
-      "sectorID": 23
-    },
-    {
-      "id": 191,
-      "name": "High Way",
-      "sectorID": 23
-    },
-    {
-      "id": 192,
-      "name": "Highway Management",
-      "sectorID": 23
-    },
-    {
-      "id": 193,
-      "name": "Highway Safety",
-      "sectorID": 23
-    },
-    {
-      "id": 194,
-      "name": "Land Transport",
-      "sectorID": 23
-    },
-    {
-      "id": 195,
-      "name": "Light Rail",
-      "sectorID": 23
-    },
-    {
-      "id": 196,
-      "name": "Marine Transport",
-      "sectorID": 23
-    },
-    {
-      "id": 197,
-      "name": "Port Management",
-      "sectorID": 23
-    },
-    {
-      "id": 198,
-      "name": "Railway",
-      "sectorID": 23
-    },
-    {
-      "id": 199,
-      "name": "Railway Communications",
-      "sectorID": 23
-    },
-    {
-      "id": 200,
-      "name": "Railway Management",
-      "sectorID": 23
-    },
-    {
-      "id": 201,
-      "name": "Railway Safety",
-      "sectorID": 23
-    },
-    {
-      "id": 202,
-      "name": "Railway Signal Systems",
-      "sectorID": 23
-    },
-    {
-      "id": 203,
-      "name": "Rural Road",
-      "sectorID": 23
-    },
-    {
-      "id": 204,
-      "name": "Sea Port",
-      "sectorID": 23
-    },
-    {
-      "id": 205,
-      "name": "Traffic Control",
-      "sectorID": 23
-    },
-    {
-      "id": 206,
-      "name": "Transport Policy",
-      "sectorID": 23
-    },
-    {
-      "id": 207,
-      "name": "Urban Railway",
-      "sectorID": 23
-    },
-    {
-      "id": 208,
-      "name": "Urban Transportation",
-      "sectorID": 23
-    },
-    {
-      "id": 209,
-      "name": "Biomass",
-      "sectorID": 24
-    },
-    {
-      "id": 210,
-      "name": "Electric Transmission",
-      "sectorID": 24
-    },
-    {
-      "id": 211,
-      "name": "Geothermal Power",
-      "sectorID": 24
-    },
-    {
-      "id": 212,
-      "name": "Hydroelectric Energy",
-      "sectorID": 24
-    },
-    {
-      "id": 213,
-      "name": "Hydrogen and Fuel Cells",
-      "sectorID": 24
-    },
-    {
-      "id": 214,
-      "name": "Off Grid Systems",
-      "sectorID": 24
-    },
-    {
-      "id": 215,
-      "name": "Oil and Gas Exploration",
-      "sectorID": 24
-    },
-    {
-      "id": 216,
-      "name": "Oil and Gas Pipeline",
-      "sectorID": 24
-    },
-    {
-      "id": 217,
-      "name": "Petroleum refinery",
-      "sectorID": 24
-    },
-    {
-      "id": 218,
-      "name": "Power Grid",
-      "sectorID": 24
-    },
-    {
-      "id": 219,
-      "name": "Renewable Energy",
-      "sectorID": 24
-    },
-    {
-      "id": 220,
-      "name": "Solar",
-      "sectorID": 24
-    },
-    {
-      "id": 221,
-      "name": "Thermal Power",
-      "sectorID": 24
-    },
-    {
-      "id": 222,
-      "name": "Wind Power",
-      "sectorID": 24
-    }
-  ]
-}
+[
+  {
+    "id": 0,
+    "name": "Financial Accounting",
+    "sectorID": 0
+  },
+  {
+    "id": 1,
+    "name": "Financial Auditing",
+    "sectorID": 0
+  },
+  {
+    "id": 2,
+    "name": "Benefits and Compensation",
+    "sectorID": 1
+  },
+  {
+    "id": 3,
+    "name": "Employee Wellness",
+    "sectorID": 1
+  },
+  {
+    "id": 4,
+    "name": "Human Resource Administration",
+    "sectorID": 1
+  },
+  {
+    "id": 5,
+    "name": "Audio/Video Production",
+    "sectorID": 2
+  },
+  {
+    "id": 6,
+    "name": "Communication Services",
+    "sectorID": 2
+  },
+  {
+    "id": 7,
+    "name": "Communication Systems Technical Support",
+    "sectorID": 2
+  },
+  {
+    "id": 8,
+    "name": "Computers Systems Technical Support",
+    "sectorID": 2
+  },
+  {
+    "id": 9,
+    "name": "Copy editing",
+    "sectorID": 2
+  },
+  {
+    "id": 10,
+    "name": "Database Management",
+    "sectorID": 2
+  },
+  {
+    "id": 11,
+    "name": "Documentation and Records Management",
+    "sectorID": 2
+  },
+  {
+    "id": 12,
+    "name": "Library Services",
+    "sectorID": 2
+  },
+  {
+    "id": 13,
+    "name": "Publication Services",
+    "sectorID": 2
+  },
+  {
+    "id": 14,
+    "name": "Translation",
+    "sectorID": 2
+  },
+  {
+    "id": 15,
+    "name": "Web maintenance/homepage design",
+    "sectorID": 2
+  },
+  {
+    "id": 16,
+    "name": "e-Learning Flash Animation",
+    "sectorID": 2
+  },
+  {
+    "id": 17,
+    "name": "e-Learning Network",
+    "sectorID": 2
+  },
+  {
+    "id": 18,
+    "name": "e-Learning Programmer",
+    "sectorID": 2
+  },
+  {
+    "id": 19,
+    "name": "Catering Services Management",
+    "sectorID": 3
+  },
+  {
+    "id": 20,
+    "name": "Contract/Purchase Order Administration",
+    "sectorID": 3
+  },
+  {
+    "id": 21,
+    "name": "Event Management",
+    "sectorID": 3
+  },
+  {
+    "id": 22,
+    "name": "Graphic Design Services",
+    "sectorID": 3
+  },
+  {
+    "id": 23,
+    "name": "Inventory Management",
+    "sectorID": 3
+  },
+  {
+    "id": 24,
+    "name": "Printing Services Management",
+    "sectorID": 3
+  },
+  {
+    "id": 25,
+    "name": "Property and Facilities Management",
+    "sectorID": 3
+  },
+  {
+    "id": 26,
+    "name": "Public Relations",
+    "sectorID": 3
+  },
+  {
+    "id": 27,
+    "name": "Travel Services Management",
+    "sectorID": 3
+  },
+  {
+    "id": 28,
+    "name": "Accounting Information Systems",
+    "sectorID": 4
+  },
+  {
+    "id": 29,
+    "name": "External Audit",
+    "sectorID": 4
+  },
+  {
+    "id": 30,
+    "name": "Integrated Audit",
+    "sectorID": 4
+  },
+  {
+    "id": 31,
+    "name": "Management Accounting",
+    "sectorID": 4
+  },
+  {
+    "id": 32,
+    "name": "Management Auditing",
+    "sectorID": 4
+  },
+  {
+    "id": 33,
+    "name": "Risk Management",
+    "sectorID": 4
+  },
+  {
+    "id": 34,
+    "name": "Risk-based audit",
+    "sectorID": 4
+  },
+  {
+    "id": 35,
+    "name": "Agribusiness",
+    "sectorID": 5
+  },
+  {
+    "id": 36,
+    "name": "Agricultural extensions",
+    "sectorID": 5
+  },
+  {
+    "id": 37,
+    "name": "Agriculture finance",
+    "sectorID": 5
+  },
+  {
+    "id": 38,
+    "name": "Agriculture machinery",
+    "sectorID": 5
+  },
+  {
+    "id": 39,
+    "name": "Agriculture policy",
+    "sectorID": 5
+  },
+  {
+    "id": 40,
+    "name": "Agro industry",
+    "sectorID": 5
+  },
+  {
+    "id": 41,
+    "name": "Dairy production",
+    "sectorID": 5
+  },
+  {
+    "id": 42,
+    "name": "Farm management",
+    "sectorID": 5
+  },
+  {
+    "id": 43,
+    "name": "Fishery",
+    "sectorID": 5
+  },
+  {
+    "id": 44,
+    "name": "Irrigation",
+    "sectorID": 5
+  },
+  {
+    "id": 45,
+    "name": "Livestock",
+    "sectorID": 5
+  },
+  {
+    "id": 46,
+    "name": "Tea plantation",
+    "sectorID": 5
+  },
+  {
+    "id": 47,
+    "name": "Tree crops",
+    "sectorID": 5
+  },
+  {
+    "id": 48,
+    "name": "Country Development",
+    "sectorID": 6
+  },
+  {
+    "id": 49,
+    "name": "Development Strategy",
+    "sectorID": 6
+  },
+  {
+    "id": 50,
+    "name": "Operational Strategy",
+    "sectorID": 6
+  },
+  {
+    "id": 51,
+    "name": "Operations Business Planning",
+    "sectorID": 6
+  },
+  {
+    "id": 52,
+    "name": "Regional Cooperation",
+    "sectorID": 6
+  },
+  {
+    "id": 53,
+    "name": "Agriculture economics",
+    "sectorID": 7
+  },
+  {
+    "id": 54,
+    "name": "Behavioral economics",
+    "sectorID": 7
+  },
+  {
+    "id": 55,
+    "name": "Construction economics",
+    "sectorID": 7
+  },
+  {
+    "id": 56,
+    "name": "Development economics",
+    "sectorID": 7
+  },
+  {
+    "id": 57,
+    "name": "Econometrics/modeling",
+    "sectorID": 7
+  },
+  {
+    "id": 58,
+    "name": "Environmental economics",
+    "sectorID": 7
+  },
+  {
+    "id": 59,
+    "name": "Experimental economics",
+    "sectorID": 7
+  },
+  {
+    "id": 60,
+    "name": "International economics",
+    "sectorID": 7
+  },
+  {
+    "id": 61,
+    "name": "Labor economics",
+    "sectorID": 7
+  },
+  {
+    "id": 62,
+    "name": "Macro economics",
+    "sectorID": 7
+  },
+  {
+    "id": 63,
+    "name": "Micro economics",
+    "sectorID": 7
+  },
+  {
+    "id": 64,
+    "name": "Rural economics",
+    "sectorID": 7
+  },
+  {
+    "id": 65,
+    "name": "Curriculum Development",
+    "sectorID": 8
+  },
+  {
+    "id": 66,
+    "name": "Early Education",
+    "sectorID": 8
+  },
+  {
+    "id": 67,
+    "name": "Elementary Education",
+    "sectorID": 8
+  },
+  {
+    "id": 68,
+    "name": "Higher Education",
+    "sectorID": 8
+  },
+  {
+    "id": 69,
+    "name": "Postgraduate Education",
+    "sectorID": 8
+  },
+  {
+    "id": 70,
+    "name": "Secondary Education",
+    "sectorID": 8
+  },
+  {
+    "id": 71,
+    "name": "Technical and Vocational Education Training (TVET)",
+    "sectorID": 8
+  },
+  {
+    "id": 72,
+    "name": "Biological Engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 73,
+    "name": "Chemistry Engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 74,
+    "name": "Civil engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 75,
+    "name": "Electrical engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 76,
+    "name": "Electronic engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 77,
+    "name": "Front-End Engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 78,
+    "name": "Mechanical engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 79,
+    "name": "Systems engineering",
+    "sectorID": 9
+  },
+  {
+    "id": 80,
+    "name": "Air Pollution",
+    "sectorID": 10
+  },
+  {
+    "id": 81,
+    "name": "Biodiversity",
+    "sectorID": 10
+  },
+  {
+    "id": 82,
+    "name": "Carbon Emission Trade",
+    "sectorID": 10
+  },
+  {
+    "id": 83,
+    "name": "Climate Change/Global Warming",
+    "sectorID": 10
+  },
+  {
+    "id": 84,
+    "name": "Environment Impact Assessment",
+    "sectorID": 10
+  },
+  {
+    "id": 85,
+    "name": "Environment Protection",
+    "sectorID": 10
+  },
+  {
+    "id": 86,
+    "name": "Forestry",
+    "sectorID": 10
+  },
+  {
+    "id": 87,
+    "name": "Marine Resources",
+    "sectorID": 10
+  },
+  {
+    "id": 88,
+    "name": "Mineral Resources",
+    "sectorID": 10
+  },
+  {
+    "id": 89,
+    "name": "Mining/Geology",
+    "sectorID": 10
+  },
+  {
+    "id": 90,
+    "name": "Natural Resources",
+    "sectorID": 10
+  },
+  {
+    "id": 91,
+    "name": "Sanitation",
+    "sectorID": 10
+  },
+  {
+    "id": 92,
+    "name": "Soil Science",
+    "sectorID": 10
+  },
+  {
+    "id": 93,
+    "name": "Waste Treatment",
+    "sectorID": 10
+  },
+  {
+    "id": 94,
+    "name": "Water Resources",
+    "sectorID": 10
+  },
+  {
+    "id": 95,
+    "name": "Water Supply",
+    "sectorID": 10
+  },
+  {
+    "id": 96,
+    "name": "Wetlands",
+    "sectorID": 10
+  },
+  {
+    "id": 97,
+    "name": "Wildlife",
+    "sectorID": 10
+  },
+  {
+    "id": 98,
+    "name": "Anticorruption",
+    "sectorID": 11
+  },
+  {
+    "id": 99,
+    "name": "Governance",
+    "sectorID": 11
+  },
+  {
+    "id": 100,
+    "name": "Integrity",
+    "sectorID": 11
+  },
+  {
+    "id": 101,
+    "name": "e-Governance",
+    "sectorID": 11
+  },
+  {
+    "id": 102,
+    "name": "Disease Control",
+    "sectorID": 12
+  },
+  {
+    "id": 103,
+    "name": "Global Health",
+    "sectorID": 12
+  },
+  {
+    "id": 104,
+    "name": "HIV/AIDs Prevention",
+    "sectorID": 12
+  },
+  {
+    "id": 105,
+    "name": "Health Policy",
+    "sectorID": 12
+  },
+  {
+    "id": 106,
+    "name": "Hospital Management",
+    "sectorID": 12
+  },
+  {
+    "id": 107,
+    "name": "Medical Services",
+    "sectorID": 12
+  },
+  {
+    "id": 108,
+    "name": "Medicine",
+    "sectorID": 12
+  },
+  {
+    "id": 109,
+    "name": "Nursing",
+    "sectorID": 12
+  },
+  {
+    "id": 110,
+    "name": "Nutrition",
+    "sectorID": 12
+  },
+  {
+    "id": 111,
+    "name": "Occupational Health",
+    "sectorID": 12
+  },
+  {
+    "id": 112,
+    "name": "Rural Health Services",
+    "sectorID": 12
+  },
+  {
+    "id": 113,
+    "name": "Career Development",
+    "sectorID": 13
+  },
+  {
+    "id": 114,
+    "name": "Knowledge Management",
+    "sectorID": 13
+  },
+  {
+    "id": 115,
+    "name": "Knowledge Sharing",
+    "sectorID": 13
+  },
+  {
+    "id": 116,
+    "name": "e-Learning Content Development",
+    "sectorID": 13
+  },
+  {
+    "id": 117,
+    "name": "Information System Analysis",
+    "sectorID": 14
+  },
+  {
+    "id": 118,
+    "name": "Information System Design",
+    "sectorID": 14
+  },
+  {
+    "id": 119,
+    "name": "Information Systems Infrastructure Design",
+    "sectorID": 14
+  },
+  {
+    "id": 120,
+    "name": "System Software Design and Implementation",
+    "sectorID": 14
+  },
+  {
+    "id": 121,
+    "name": "Arbitration",
+    "sectorID": 15
+  },
+  {
+    "id": 122,
+    "name": "Contract Management Legal Services",
+    "sectorID": 15
+  },
+  {
+    "id": 123,
+    "name": "Dispute Resolution",
+    "sectorID": 15
+  },
+  {
+    "id": 124,
+    "name": "General Legal Services",
+    "sectorID": 15
+  },
+  {
+    "id": 125,
+    "name": "Loan Administration Legal Service",
+    "sectorID": 15
+  },
+  {
+    "id": 126,
+    "name": "Procurement Document Review",
+    "sectorID": 15
+  },
+  {
+    "id": 127,
+    "name": "Construction Supervision",
+    "sectorID": 16
+  },
+  {
+    "id": 128,
+    "name": "Contract Management",
+    "sectorID": 16
+  },
+  {
+    "id": 129,
+    "name": "Country Operations Management",
+    "sectorID": 16
+  },
+  {
+    "id": 130,
+    "name": "Electronic Government Procurement (e-GP)",
+    "sectorID": 16
+  },
+  {
+    "id": 131,
+    "name": "Feasibility Studies",
+    "sectorID": 16
+  },
+  {
+    "id": 132,
+    "name": "Inventory Management",
+    "sectorID": 16
+  },
+  {
+    "id": 133,
+    "name": "Procurement",
+    "sectorID": 16
+  },
+  {
+    "id": 134,
+    "name": "Project Management",
+    "sectorID": 16
+  },
+  {
+    "id": 135,
+    "name": "Project Monitoring and Evaluation",
+    "sectorID": 16
+  },
+  {
+    "id": 136,
+    "name": "Supply Chain Management",
+    "sectorID": 16
+  },
+  {
+    "id": 137,
+    "name": "Development Policy",
+    "sectorID": 17
+  },
+  {
+    "id": 138,
+    "name": "Impact Evaluation",
+    "sectorID": 17
+  },
+  {
+    "id": 139,
+    "name": "Policy Analysis",
+    "sectorID": 17
+  },
+  {
+    "id": 140,
+    "name": "Sector Studies",
+    "sectorID": 17
+  },
+  {
+    "id": 141,
+    "name": "Anthropology",
+    "sectorID": 18
+  },
+  {
+    "id": 142,
+    "name": "Employment",
+    "sectorID": 18
+  },
+  {
+    "id": 143,
+    "name": "Gender",
+    "sectorID": 18
+  },
+  {
+    "id": 144,
+    "name": "Housing Policy",
+    "sectorID": 18
+  },
+  {
+    "id": 145,
+    "name": "Indigenous People",
+    "sectorID": 18
+  },
+  {
+    "id": 146,
+    "name": "Labor Market",
+    "sectorID": 18
+  },
+  {
+    "id": 147,
+    "name": "Political Science",
+    "sectorID": 18
+  },
+  {
+    "id": 148,
+    "name": "Population",
+    "sectorID": 18
+  },
+  {
+    "id": 149,
+    "name": "Poverty Reduction",
+    "sectorID": 18
+  },
+  {
+    "id": 150,
+    "name": "Resettlement",
+    "sectorID": 18
+  },
+  {
+    "id": 151,
+    "name": "Rural Development",
+    "sectorID": 18
+  },
+  {
+    "id": 152,
+    "name": "Social Impact Assessment",
+    "sectorID": 18
+  },
+  {
+    "id": 153,
+    "name": "Sociology",
+    "sectorID": 18
+  },
+  {
+    "id": 154,
+    "name": "Urban Development",
+    "sectorID": 18
+  },
+  {
+    "id": 155,
+    "name": "Urban Planning",
+    "sectorID": 18
+  },
+  {
+    "id": 156,
+    "name": "Women Development",
+    "sectorID": 18
+  },
+  {
+    "id": 157,
+    "name": "Cross-Border Trade",
+    "sectorID": 19
+  },
+  {
+    "id": 158,
+    "name": "International Trade",
+    "sectorID": 19
+  },
+  {
+    "id": 159,
+    "name": "e-Commerce",
+    "sectorID": 19
+  },
+  {
+    "id": 160,
+    "name": "BOT Preparation",
+    "sectorID": 20
+  },
+  {
+    "id": 161,
+    "name": "Banking",
+    "sectorID": 20
+  },
+  {
+    "id": 162,
+    "name": "Capital Market",
+    "sectorID": 20
+  },
+  {
+    "id": 163,
+    "name": "Finance/Fund Management",
+    "sectorID": 20
+  },
+  {
+    "id": 164,
+    "name": "Financial Market",
+    "sectorID": 20
+  },
+  {
+    "id": 165,
+    "name": "Guarantee",
+    "sectorID": 20
+  },
+  {
+    "id": 166,
+    "name": "Insurance",
+    "sectorID": 20
+  },
+  {
+    "id": 167,
+    "name": "International Trade",
+    "sectorID": 20
+  },
+  {
+    "id": 168,
+    "name": "Investment",
+    "sectorID": 20
+  },
+  {
+    "id": 169,
+    "name": "Pension Management",
+    "sectorID": 20
+  },
+  {
+    "id": 170,
+    "name": "Private Sector Development",
+    "sectorID": 20
+  },
+  {
+    "id": 171,
+    "name": "Private Sector Restructuring",
+    "sectorID": 20
+  },
+  {
+    "id": 172,
+    "name": "Privatization",
+    "sectorID": 20
+  },
+  {
+    "id": 173,
+    "name": "Public-Private-Partnership (PPP)",
+    "sectorID": 20
+  },
+  {
+    "id": 174,
+    "name": "Sector Pricing/Tariffs",
+    "sectorID": 20
+  },
+  {
+    "id": 175,
+    "name": "Social Security",
+    "sectorID": 20
+  },
+  {
+    "id": 176,
+    "name": "Deregulation",
+    "sectorID": 21
+  },
+  {
+    "id": 177,
+    "name": "Judicial Systems",
+    "sectorID": 21
+  },
+  {
+    "id": 178,
+    "name": "Legal Policy",
+    "sectorID": 21
+  },
+  {
+    "id": 179,
+    "name": "Legal Reform",
+    "sectorID": 21
+  },
+  {
+    "id": 180,
+    "name": "Regulation",
+    "sectorID": 21
+  },
+  {
+    "id": 181,
+    "name": "Institutional Development",
+    "sectorID": 22
+  },
+  {
+    "id": 182,
+    "name": "Organizational Change",
+    "sectorID": 22
+  },
+  {
+    "id": 183,
+    "name": "Organizational Strategic Planning",
+    "sectorID": 22
+  },
+  {
+    "id": 184,
+    "name": "Air Traffic Control",
+    "sectorID": 23
+  },
+  {
+    "id": 185,
+    "name": "Airport",
+    "sectorID": 23
+  },
+  {
+    "id": 186,
+    "name": "Airport Management",
+    "sectorID": 23
+  },
+  {
+    "id": 187,
+    "name": "Airport Management",
+    "sectorID": 23
+  },
+  {
+    "id": 188,
+    "name": "Aviation Management",
+    "sectorID": 23
+  },
+  {
+    "id": 189,
+    "name": "Express Way",
+    "sectorID": 23
+  },
+  {
+    "id": 190,
+    "name": "High Speed Railway",
+    "sectorID": 23
+  },
+  {
+    "id": 191,
+    "name": "High Way",
+    "sectorID": 23
+  },
+  {
+    "id": 192,
+    "name": "Highway Management",
+    "sectorID": 23
+  },
+  {
+    "id": 193,
+    "name": "Highway Safety",
+    "sectorID": 23
+  },
+  {
+    "id": 194,
+    "name": "Land Transport",
+    "sectorID": 23
+  },
+  {
+    "id": 195,
+    "name": "Light Rail",
+    "sectorID": 23
+  },
+  {
+    "id": 196,
+    "name": "Marine Transport",
+    "sectorID": 23
+  },
+  {
+    "id": 197,
+    "name": "Port Management",
+    "sectorID": 23
+  },
+  {
+    "id": 198,
+    "name": "Railway",
+    "sectorID": 23
+  },
+  {
+    "id": 199,
+    "name": "Railway Communications",
+    "sectorID": 23
+  },
+  {
+    "id": 200,
+    "name": "Railway Management",
+    "sectorID": 23
+  },
+  {
+    "id": 201,
+    "name": "Railway Safety",
+    "sectorID": 23
+  },
+  {
+    "id": 202,
+    "name": "Railway Signal Systems",
+    "sectorID": 23
+  },
+  {
+    "id": 203,
+    "name": "Rural Road",
+    "sectorID": 23
+  },
+  {
+    "id": 204,
+    "name": "Sea Port",
+    "sectorID": 23
+  },
+  {
+    "id": 205,
+    "name": "Traffic Control",
+    "sectorID": 23
+  },
+  {
+    "id": 206,
+    "name": "Transport Policy",
+    "sectorID": 23
+  },
+  {
+    "id": 207,
+    "name": "Urban Railway",
+    "sectorID": 23
+  },
+  {
+    "id": 208,
+    "name": "Urban Transportation",
+    "sectorID": 23
+  },
+  {
+    "id": 209,
+    "name": "Biomass",
+    "sectorID": 24
+  },
+  {
+    "id": 210,
+    "name": "Electric Transmission",
+    "sectorID": 24
+  },
+  {
+    "id": 211,
+    "name": "Geothermal Power",
+    "sectorID": 24
+  },
+  {
+    "id": 212,
+    "name": "Hydroelectric Energy",
+    "sectorID": 24
+  },
+  {
+    "id": 213,
+    "name": "Hydrogen and Fuel Cells",
+    "sectorID": 24
+  },
+  {
+    "id": 214,
+    "name": "Off Grid Systems",
+    "sectorID": 24
+  },
+  {
+    "id": 215,
+    "name": "Oil and Gas Exploration",
+    "sectorID": 24
+  },
+  {
+    "id": 216,
+    "name": "Oil and Gas Pipeline",
+    "sectorID": 24
+  },
+  {
+    "id": 217,
+    "name": "Petroleum refinery",
+    "sectorID": 24
+  },
+  {
+    "id": 218,
+    "name": "Power Grid",
+    "sectorID": 24
+  },
+  {
+    "id": 219,
+    "name": "Renewable Energy",
+    "sectorID": 24
+  },
+  {
+    "id": 220,
+    "name": "Solar",
+    "sectorID": 24
+  },
+  {
+    "id": 221,
+    "name": "Thermal Power",
+    "sectorID": 24
+  },
+  {
+    "id": 222,
+    "name": "Wind Power",
+    "sectorID": 24
+  }
+]
