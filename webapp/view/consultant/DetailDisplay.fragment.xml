@@ -178,22 +178,27 @@
 												<Column width="auto">
 													<Text text="Program" />
 												</Column>
-												<Column
-													minScreenWidth="Tablet"
-													demandPopin="true"
-													width="20%">
+												<Column>
 													<Text text="Degree" />
 												</Column>
 												<Column>
-													<Text text="School" />
+													<Text text="Institution" />
+												</Column>
+												<Column>
+													<Text text="Country" />
+												</Column>
+												<Column>
+													<Text text="Date of Completion" />
 												</Column>
 											</columns>
 											<items>
 												<ColumnListItem>
 													<cells>
+														<Text text="{program}" />
 														<Text text="{degree}" />
-														<Text text="{level}" />
-														<Text text="{school}" />
+														<Text text="{institution}" />
+														<Text text="{country}" />
+														<Text text="{date_of_completion}" />
 													</cells>
 												</ColumnListItem>
 											</items>
@@ -308,6 +313,8 @@
 										<core:Title />
 										<Label text="Former IsDB Employee" />
 										<Text text="{/former_isdb_employee}" />
+										<Label text="Years of Work Experience" />
+										<Text text="{/years_of_work_experience}" />
 										<core:Title />
 										<Label text="Employee ID" />
 										<Text text="{/employee_id}" />
@@ -428,6 +435,122 @@
 													<Label text="Role:" />
 													<Text text="{role}" />
 												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayReferencesSection"
+				title="References"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/references}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="References"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="10%">
+											<Text text="First Name" />
+										</Column>
+										<Column width="10%">
+											<Text text="Last Name" />
+										</Column>
+										<Column width="auto">
+											<Text text="Organization" />
+										</Column>
+										<Column width="20%">
+											<Text text="Position" />
+										</Column>
+										<Column width="10%">
+											<Text text="Email" />
+										</Column>
+										<Column width="10%">
+											<Text text="Telephone" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{first_name}" />
+												<Text text="{last_name}" />
+												<Text text="{organization}" />
+												<Text text="{position}" />
+												<Text text="{email}" />
+												<Text text="{telephone}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="displayPublicationsSection"
+				title="Publications"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/publications}">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Publications"
+												level="H2" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="10%">
+											<Text text="Title" />
+										</Column>
+										<Column width="10%">
+											<Text text="Publisher" />
+										</Column>
+										<Column width="auto">
+											<Text text="Description" />
+										</Column>
+										<Column width="20%">
+											<Text text="Year Published" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{title}" />
+												<Text text="{publisher}" />
+												<Text text="{description}" />
+												<Text text="{year_published}" />
 											</cells>
 										</ColumnListItem>
 									</items>
