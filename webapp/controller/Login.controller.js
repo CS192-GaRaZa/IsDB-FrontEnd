@@ -2,12 +2,14 @@ sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
   'cmsfrontend/model/constants',
-  'cmsfrontend/model/utils'
+  'cmsfrontend/model/utils',
+  'sap/m/MessageToast'
 ], function LoginController(
   Controller,
   JSONModel,
   constants,
-  utils
+  utils,
+  MessageToast
 ) {
   'use strict';
   return Controller.extend('cmsfrontend.controller.Login', {
@@ -45,6 +47,7 @@ sap.ui.define([
           console.log('xhr: ', xhr);
           console.log('status: ', status);
           console.log('errorThrown: ', errorThrown);
+          MessageToast.show("Login Failed");
         }
       });
     },
@@ -54,6 +57,8 @@ sap.ui.define([
       var oContext;
       var oRouter;
       var oHomeRoute;
+
+      MessageToast.show("Login Succesful");
 
       this.getView().getModel().setData(this._getDefaultModelState());
 

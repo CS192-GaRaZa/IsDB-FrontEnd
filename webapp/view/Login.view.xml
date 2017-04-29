@@ -20,16 +20,16 @@
                   defaultIndent="XL4 L4 M2 S0"
                   >
                 <l:content>
+                  <Label text="Email"/>
                   <Input
                       type="Text"
                       value="{/user/email}"
-                      placeholder="{i18n>Email}"
                       submit="onSubmit"
                       />
+                  <Label text="Password"/>
                   <Input
                       type="Password"
                       value="{/user/password}"
-                      placeholder="{i18n>Password}"
                       submit="onSubmit"
                       />
                   <Button

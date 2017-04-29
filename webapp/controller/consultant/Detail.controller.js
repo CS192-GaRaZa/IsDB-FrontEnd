@@ -324,6 +324,74 @@ sap.ui.define([
       });
     },
 
+    handleDeletePressReferences : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().references[iIndex].id
+
+      this.getView().getModel().getData().references.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/references/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+
+    },
+
+    handleDeletePressPublications : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().publications[iIndex].id
+
+      this.getView().getModel().getData().publications.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/publications/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+
+    },
+
 
     handleEditPress : function () {
       var oView = this.getView();
@@ -455,19 +523,6 @@ sap.ui.define([
       });
     },
 
-
-    // adds an empty row to the education table
-    addRowEducation : function() {
-      var emptyRow = {
-        degree: "",
-        level: "",
-        school: ""
-      };
-
-      this.getView().getModel().getData().educations.push(emptyRow);
-      this.getView().getModel().refresh();
-    },
-
     // TODO: Refactor this, since it seems kind of hacked
     // The ideal scenrio is to push the uploaded image as a
     // temporary file while the user hasn't pressed save.
@@ -482,6 +537,17 @@ sap.ui.define([
       oModel.setData({ image_url: oResponseData.secure_url  }, true);
     },
 
+    // adds an empty row to the education table
+    addRowEducation : function() {
+      var emptyRow = {
+        degree: "",
+        level: "",
+        school: ""
+      };
+
+      this.getView().getModel().getData().educations.push(emptyRow);
+      this.getView().getModel().refresh();
+    },
 
     // adds an empty row to the employment table
     addRowEmployment : function() {
@@ -509,6 +575,35 @@ sap.ui.define([
       this.getView().getModel().refresh();
     },
 
+    // adds an empty row to the references table
+    addRowReferences : function() {
+      var emptyRow = {
+        first_name: "",
+        last_name: "",
+        organization: "",
+        position: "",
+        email: "",
+        telephone: ""
+      };
+
+      this.getView().getModel().getData().references.push(emptyRow);
+      this.getView().getModel().refresh();
+    },
+
+    // adds an empty row to the publications table
+    addRowPublications : function() {
+      var emptyRow = {
+        first_name: "",
+        last_name: "",
+        organization: "",
+        position: "",
+        email: "",
+        telephone: ""
+      };
+
+      this.getView().getModel().getData().publications.push(emptyRow);
+      this.getView().getModel().refresh();
+    },
 
     //Function to change the button from Edit to Cancel/Save as well as to change the view from display to edit
     _toggleButtonsAndView : function (bEdit) {
