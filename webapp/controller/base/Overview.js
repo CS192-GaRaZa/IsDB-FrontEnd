@@ -88,35 +88,20 @@ sap.ui.define([
     },
 
     _onRouteMatched: function (oEvent) {
-      var oArgs;
-      var sUniqueID;
-      var sEndPoint;
-      var oModel;
-
-      oArgs = oEvent.getParameter("arguments");
-      this._sID = oArgs.id;
-      sUniqueID = utils.getUniqueID(constants.roleKey.CONSULTANT,
-          oArgs.id);
-      sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+      var sUniqueID = utils.getUniqueID(constants.roleKey.CONSULTANT,
+          utils.storage.get('id'));
+      var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
           sUniqueID;
 
-      oModel = new JSONModel({
+      var oModel = new JSONModel({
         nieos: this._getDummyIEOs(),
         ieos: this._getDummyIEOs()
       });
-
-      $.ajax({
-        url: sEndPoint,
-        method: 'GET'
-      }).done(function (oData) {
-        // if (!oData.image_url) {
-        //   oData['image_url'] = "/img/testIMG.jpg";
-        // }
-        oModel.setData(oData, true);
-      });
+      oModel.loadData(sEndPoint, {}, true, 'GET', true);
 
       oModel.setSizeLimit(this._iTableSizeLimit);
-      this.getView().setModel(oModel);
+      var oView = this.getView();
+      oView.setModel(oModel);
     },
 
     constructor: function (sOverviewRoute, sDetailRoute) {
@@ -126,32 +111,27 @@ sap.ui.define([
 
     formatter: _.merge({
       tableFooter: function (oList, iSizeLimit) {
-        var oBundle = this.getView().getModel('i18n').getResourceBundle();
+        var oI18NModel = this.getView().getModel('i18n');
+        var oBundle = oI18NModel.getResourceBundle();
         return oBundle.getText('TableFooter', [ iSizeLimit, oList.length ]);
       }
     }, formatter),
 
     onInit: function () {
-      var oRouter;
-      var oConfigModel;
-      var oView;
-
-      oRouter = UIComponent.getRouterFor(this);
+      var oRouter = UIComponent.getRouterFor(this);
       oRouter.getRoute(this._sOverviewRoute)
           .attachMatched(this._onRouteMatched, this);
 
-      oConfigModel = new JSONModel({
+      var oConfigModel = new JSONModel({
         size_limit: this._iTableSizeLimit
       });
-      oView = this.getView();
-      oView.setModel(oConfigModel, "config");
+      this.getView().setModel(oConfigModel, "config");
       oRouter.attachTitleChanged(this._onTitleChanged, this);
     },
 
     onNameLinkPress: function (oEvent) {
       var oRouter = UIComponent.getRouterFor(this);
       oRouter.navTo(this._sDetailRoute, {
-        id: this._sID,
         subsection: "profile"
       }, false);
     },
@@ -187,6 +167,5 @@ sap.ui.define([
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
       }
     }
-
   });
 });

@@ -72,16 +72,6 @@
           "targetControl": "idAppControl"
         },
         {
-          "pattern": "consultant/profile",
-          "name": "consultant_profile",
-          "target": "consultant_profile"
-        },
-        {
-          "pattern": "consulting_firm/profile",
-          "name": "consulting_firm_profile",
-          "target": "consulting_firm_profile"
-        },
-        {
           "pattern": "consultant/signup",
           "name": "consultant_signup",
           "target": "consultant_signup"
@@ -97,35 +87,24 @@
           "target": "vendor_signup"
         },
         {
-          "pattern": "consultant/overview",
-          "name": "consultant_overview",
-          "target": "consultant_overview"
-        },
-        {
-          "pattern": "consultant/{id}",
+          "pattern": "consultant",
           "name": "consultantOverview",
           "target": "consultantOverview"
         },
         {
-          "pattern": "consultingFirm/{id}",
-          "name": "consultingFirmOverview",
-          "target": "consultingFirmOverview"
+          "pattern": "consultant/:subsection:",
+          "name": "consultantDetail",
+          "target": "consultantDetail"
         },
         {
-          "pattern": "vendor/{id}",
-          "name": "vendorOverview",
-          "target": "vendorOverview"
+          "pattern": "consulting_firm/profile",
+          "name": "consulting_firm_profile",
+          "target": "consulting_firm_profile"
         },
         {
-          "pattern": "vendor_temp/detail",
+          "pattern": "vendor/detail",
           "name": "vendorDetail",
           "target": "vendorDetail"
-        },
-        {
-          "pattern": "detail/:subsection:",
-          "name": "consultantDetail",
-          "parent": "consultantOverview",
-          "target": "consultantDetail"
         }
       ],
       "targets" : {
@@ -136,12 +115,6 @@
         "notFound": {
           "viewName": "NotFound"
         },
-        "consultant_profile": {
-          "viewName": "consultant.Detail"
-        },
-        "consulting_firm_profile": {
-          "viewName": "consultingfirm.Detail"
-        },
         "consultant_signup": {
           "viewName": "consultant.SignUp"
         },
@@ -150,12 +123,6 @@
         },
         "vendor_signup": {
           "viewName": "vendor.SignUp"
-        },
-        "consultant_overview": {
-          "viewName": "consultant.Overview"
-        },
-        "overview": {
-          "viewName": "Overview"
         },
         "consultantOverview": {
           "title": "{{ConsultantManagementSystem}}",
@@ -168,13 +135,16 @@
         "vendorOverview": {
           "viewName": "vendor.Overview"
         },
-        "vendorDetail": {
-          "viewName": "vendor.Detail"
-        },
         "consultantDetail": {
           "title": "{{ConsultantManagementSystem}}",
           "viewName": "consultant.Detail",
           "viewLevel": 3
+        },
+        "consulting_firm_profile": {
+          "viewName": "consultingfirm.Detail"
+        },
+        "vendorDetail": {
+          "viewName": "vendor.Detail"
         }
       }
     }
