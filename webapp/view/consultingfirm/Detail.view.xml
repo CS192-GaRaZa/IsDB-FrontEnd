@@ -8,12 +8,16 @@
 		id="profile1"
 		showHeader="true"
 		showNavButton="true"
-		navButtonPress="handleNavPress" >
-		<headerContent>
-
-		</headerContent>
-		<content>
-		</content>
+  >
+    <customHeader>
+      <core:Fragment
+          fragmentName="cmsfrontend.view.fragments.NavBar"
+          type="XML"
+          />
+      </customHeader>
+    <content>
+      <!-- core:Fragment fragmentName="cmsfrontend.fragments.profileDisplay" type="XML"> </core:Fragment-->
+    </content>
 		<footer>
 			<Bar>
 				<contentRight>

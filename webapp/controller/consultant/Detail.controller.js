@@ -635,23 +635,16 @@ sap.ui.define([
     },
 
     onNavBackPress: function (oEvent) {
-      var oHistory;
-      var sPreviousHash;
-      var oHomeRoute;
-      var oRouter;
-      var sRoleKey;
-      var oRole;
-
-      oHistory = History.getInstance();
-      sPreviousHash = oHistory.getPreviousHash();
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
 
       if (sPreviousHash !== undefined) {
         window.history.go(-1);
       } else {
-        sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
-        oRole = constants.role[sRoleKey];
-        oHomeRoute = oRole.getHome();
-        oRouter = UIComponent.getRouterFor(this);
+        var sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
+        var oRole = constants.role[sRoleKey];
+        var oHomeRoute = oRole.getHome();
+        var oRouter = UIComponent.getRouterFor(this);
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
       }
     },

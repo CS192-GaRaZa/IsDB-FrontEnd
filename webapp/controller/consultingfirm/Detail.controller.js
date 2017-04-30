@@ -2,12 +2,20 @@ sap.ui.define([
   'jquery.sap.global',
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
-  'cmsfrontend/model/type/CustomDate'
+  'sap/ui/core/UIComponent',
+  'sap/ui/core/routing/History',
+  'cmsfrontend/model/type/CustomDate',
+  'cmsfrontend/model/constants',
+  'cmsfrontend/model/utils'
 ], function (
   jQuery,
   Controller,
   JSONModel,
-  CustomDate
+  UIComponent,
+  History,
+  CustomDate,
+  constants,
+  utils
 ) {
   "use strict";
 
@@ -19,9 +27,47 @@ sap.ui.define([
 
     type: oType,
 
-      _getSessionData: function () {
-        return Cookies.getJSON("isdb");
-      },
+    _getSessionData: function () {
+      return Cookies.getJSON("isdb");
+    },
+
+    _onTitleChanged: function (oEvent) {
+      var sTitle = oEvent.getParameter("title");
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
+
+      document.title = sTitle;
+      this.getView().getModel("config").setData({
+        navTitle: sTitle,
+        showBackButton: sPreviousHash !== undefined
+      }, true);
+    },
+
+    onNavBackPress: function (oEvent) {
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
+
+      if (sPreviousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        var sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
+        var oRole = constants.role[sRoleKey];
+        var oHomeRoute = oRole.getHome();
+        var oRouter = UIComponent.getRouterFor(this);
+        oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
+      }
+    },
+
+    onLogOutPress: function (oEvent) {
+      var oRouter;
+      var sPattern;
+
+      utils.storage.clear();
+      oRouter = UIComponent.getRouterFor(this);
+      sPattern = oRouter.getRoute("login").getPattern();
+      window.location.replace(sPattern);
+    },
+
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
@@ -95,6 +141,10 @@ sap.ui.define([
       var oModel = new JSONModel(oUserData);
 
       this.getView().setModel(oModel);
+      this.getView().setModel(new JSONModel(), 'config');
+
+      UIComponent.getRouterFor(this)
+        .attachTitleChanged(this._onTitleChanged, this);
 
       var oCountriesModel = new JSONModel();
       oCountriesModel.loadData("model/countries.json");
@@ -112,6 +162,7 @@ sap.ui.define([
           jQuery.sap.delayedCall(500, this.oObjectPageLayout, this.oObjectPageLayout.scrollToSection, [this._sSelectedSection[0]]);
         }, this)
       });
+
     },
 
   /**

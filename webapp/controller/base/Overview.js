@@ -88,10 +88,8 @@ sap.ui.define([
     },
 
     _onRouteMatched: function (oEvent) {
-      var sUniqueID = utils.getUniqueID(constants.roleKey.CONSULTANT,
-          utils.storage.get('id'));
       var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
-          sUniqueID;
+          utils.storage.get('uniqueId');
 
       var oModel = new JSONModel({
         nieos: this._getDummyIEOs(),

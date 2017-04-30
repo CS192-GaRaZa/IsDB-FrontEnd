@@ -88,7 +88,7 @@ sap.ui.define([
   oUtils.role[constants.roleKey.CONSULTING_FIRM] = new Role({
       key: constants.roleKey.CONSULTING_FIRM,
       uniqueIDPrefix: "CF",
-      homeRoute: "consulting_firm_profile"
+      homeRoute: "consultingFirmOverview"
       });
 
   oUtils.role[constants.roleKey.VENDOR] = new Role({
