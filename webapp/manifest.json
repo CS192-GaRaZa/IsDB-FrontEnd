@@ -92,6 +92,11 @@
           "target": "consultantOverview"
         },
         {
+          "pattern": "consultant/:subsection:",
+          "name": "consultantDetail",
+          "target": "consultantDetail"
+        },
+        {
           "pattern": "consulting_firm/profile",
           "name": "consulting_firm_profile",
           "target": "consulting_firm_profile"

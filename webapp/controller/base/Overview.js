@@ -132,7 +132,6 @@ sap.ui.define([
     onNameLinkPress: function (oEvent) {
       var oRouter = UIComponent.getRouterFor(this);
       oRouter.navTo(this._sDetailRoute, {
-        id: utils.storage.get('id'),
         subsection: "profile"
       }, false);
     },

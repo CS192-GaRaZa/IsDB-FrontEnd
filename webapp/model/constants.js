@@ -9,8 +9,8 @@ sap.ui.define([
   oConstants.storageKey = {
       TOKEN: "token",
       ID: "id",
-      UNIQUE_ID: "unique_id",
-      ROLE_KEY: "role_key"
+      UNIQUE_ID: "uniqueId",
+      ROLE_KEY: "roleKey"
       };
 
   oConstants.roleKey = {

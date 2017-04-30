@@ -49,40 +49,14 @@ sap.ui.define([
     },
 
     _onRouteMatched: function (oEvent) {
-      var oArgs;
-      var sURL;
-      var oView;
-      var _this;
-
-      oArgs = oEvent.getParameter("arguments");
-      this._sID = oArgs.id;
+      var oArgs = oEvent.getParameter("arguments");
       this._sSubsection = oArgs.subsection;
-      this._sUniqueID = utils.getUniqueID(constants.roleKey.CONSULTANT,
-          oArgs.id);
+      this._sUniqueID = utils.storage.get('uniqueId');
 
-      sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
           this._sUniqueID;
 
-      oView = this.getView();
-      _this = this;
-      $.ajax({
-        url: sURL,
-        type: "GET",
-        dataType: 'json',
-        contentType : "application/json",
-      }).done(function (oData) {
-        var sFullName = oData.surname + ", " + oData.given_name + " " +
-            oData.middle_name;
-        oData.full_name = sFullName;
-        oView.setModel(new JSONModel(oData));
-      });
-
-      /**
-      // remove all the time in the data so that we are only left with yyyy-MM-dd
-      oModel.setData({
-        date_of_birth:oModel.getData().date_of_birth.slice(0,10)
-      }, true); **/
-
+      this.getView().setModel(new JSONModel(sURL));
     },
 
   /**
@@ -693,4 +667,3 @@ sap.ui.define([
     }
   });
 });
-
