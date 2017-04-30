@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="cmsfrontend.controller.vendor.Overview"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    >
+  <Page class="sapUiResponsiveContentPadding" >
+    <customHeader>
+      <core:Fragment
+          fragmentName="cmsfrontend.view.fragments.NavBar"
+          type="XML"
+          />
+    </customHeader>
+    <content>
+      <l:Grid
+          vSpacing="0.5"
+          hSpacing="0.5"
+          position="Center"
+          >
+        <l:content>
+          <!--
+            TODO: Find a way to get rid of the VBox and sapUiTinyMargin below
+              the Quick Links panel. Making use of a hacked strategy to place
+              Quick Links below DACON Registration panel.
+          -->
+          <VBox>
+           <layoutData>
+              <l:GridData
+                  span="XL3 L3 M8 S12"
+                  indent="XL0 L1 M2 S0"
+                  />
+            </layoutData>
+            <items>
+              <core:Fragment fragmentName="cmsfrontend.view.vendor.OverviewDACONRegistration" type="XML" />
+              <core:Fragment fragmentName="cmsfrontend.view.vendor.OverviewQuickLinks" type="XML" />
+            </items>
+          </VBox>
+          <core:Fragment fragmentName="cmsfrontend.view.vendor.OverviewNewIEOIs" type="XML" />
+          <core:Fragment fragmentName="cmsfrontend.view.vendor.OverviewManageEOIs" type="XML" />
+        </l:content>
+      </l:Grid>
+    </content>
+  </Page>
+</mvc:View>

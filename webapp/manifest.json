@@ -107,7 +107,12 @@
           "target": "consultingFirmDetail"
         },
         {
-          "pattern": "vendor/detail",
+          "pattern": "vendor",
+          "name": "vendorOverview",
+          "target": "vendorOverview"
+        },
+        {
+          "pattern": "vendor/:subsection:",
           "name": "vendorDetail",
           "target": "vendorDetail"
         }
@@ -139,9 +144,6 @@
           "viewName": "consultingFirm.Overview",
           "viewLevel": 2
         },
-        "vendorOverview": {
-          "viewName": "vendor.Overview"
-        },
         "consultantDetail": {
           "title": "{{ConsultantManagementSystem}}",
           "viewName": "consultant.Detail",
@@ -152,8 +154,15 @@
           "viewName": "consultingfirm.Detail",
           "viewLevel": 3
         },
+        "vendorOverview": {
+          "title": "{{ConsultantManagementSystem}}",
+          "viewName": "vendor.Overview",
+          "viewLevel": 2
+        },
         "vendorDetail": {
-          "viewName": "vendor.Detail"
+          "title": "{{ConsultantManagementSystem}}",
+          "viewName": "vendor.Detail",
+          "viewLevel": 3
         }
       }
     }

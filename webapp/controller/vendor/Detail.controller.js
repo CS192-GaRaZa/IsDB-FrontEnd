@@ -3,17 +3,67 @@ sap.ui.define([
   'sap/ui/core/Fragment',
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
-  'sap/ui/core/format/DateFormat'
+  'sap/ui/core/UIComponent',
+  'sap/ui/core/routing/History',
+  'cmsfrontend/model/type/CustomDate',
+  'sap/ui/core/format/DateFormat',
+  'cmsfrontend/model/constants',
+  'cmsfrontend/model/utils'
 ], function VendorDetailController(
   jQuery,
   Fragment,
   Controller,
   JSONModel,
-  DateFormat
+  UIComponent,
+  History,
+  CustomDate,
+  DateFormat,
+  constants,
+  utils
 ) {
   "use strict";
   return Controller.extend("cmsfrontend.controller.vendor.Detail", {
 
+    type: {
+      Date: CustomDate
+    },
+
+    _onTitleChanged: function (oEvent) {
+      var sTitle = oEvent.getParameter("title");
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
+
+      document.title = sTitle;
+      this.getView().getModel("config").setData({
+        navTitle: sTitle,
+        showBackButton: sPreviousHash !== undefined
+      }, true);
+    },
+
+    onNavBackPress: function (oEvent) {
+      var oHistory = History.getInstance();
+      var sPreviousHash = oHistory.getPreviousHash();
+
+      if (sPreviousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        var sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
+        var oRole = constants.role[sRoleKey];
+        var oHomeRoute = oRole.getHome();
+        var oRouter = UIComponent.getRouterFor(this);
+        oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
+      }
+    },
+
+    onLogOutPress: function (oEvent) {
+      var oRouter;
+      var sPattern;
+
+      utils.storage.clear();
+      oRouter = UIComponent.getRouterFor(this);
+      sPattern = oRouter.getRoute("login").getPattern();
+      window.location.replace(sPattern);
+    },
 
     _convertDatesISOToObj: function (data) {
       data.date_of_birth = new Date(data.date_of_birth);
@@ -177,6 +227,10 @@ sap.ui.define([
       // }, true);
 
       oView.setModel(oModel);
+      oView.setModel(new JSONModel(), 'config');
+
+      UIComponent.getRouterFor(this)
+        .attachTitleChanged(this._onTitleChanged, this);
 
       // Set the initial form to be the display one
       this._showFormFragment("DetailDisplay");
@@ -624,4 +678,3 @@ sap.ui.define([
     // end
   });
 });
-

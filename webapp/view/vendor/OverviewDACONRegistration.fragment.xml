@@ -1,0 +1,61 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    >
+  <Panel
+      class="sapUiNoContentPadding sapUiTinyMarginBottom"
+      >
+    <headerToolbar>
+      <OverflowToolbar
+          design="Solid"
+          height="5rem"
+          >
+        <content>
+          <HBox
+              alignItems="Center"
+              height="100%"
+              >
+            <items>
+              <l:VerticalLayout>
+                <l:content>
+                  <Title
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>DACONRegistration}"
+                      textAlign="Begin"
+                      level="H2"
+                      titleStyle="H3"
+                      />
+                  <Text
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>Individual}"
+                      />
+                </l:content>
+              </l:VerticalLayout>
+            </items>
+          </HBox>
+        </content>
+      </OverflowToolbar>
+    </headerToolbar>
+    <content>
+      <l:VerticalLayout
+          class="sapUiSmallMarginBottom"
+          >
+        <l:content>
+          <Link
+              class="sapUiSmallMargin overviewNameLink"
+              text="{/vendor_name}"
+              press="onNameLinkPress"
+              />
+          <Image
+              src="{
+                path: '/image_url',
+                formatter: '.formatter.profileImageURL'
+                }"
+              width="100%"
+          />
+        </l:content>
+      </l:VerticalLayout>
+    </content>
+  </Panel>
+</core:FragmentDefinition>

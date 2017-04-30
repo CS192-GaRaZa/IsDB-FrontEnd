@@ -94,7 +94,7 @@ sap.ui.define([
   oUtils.role[constants.roleKey.VENDOR] = new Role({
       key: constants.roleKey.VENDOR,
       uniqueIDPrefix: "V",
-      homeRoute: "vendorDetail"/*, "vendorOverview"*/
+      homeRoute: "vendorOverview"
       });
 
 

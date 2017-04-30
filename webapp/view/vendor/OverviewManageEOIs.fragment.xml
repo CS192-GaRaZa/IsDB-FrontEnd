@@ -1,0 +1,106 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    >
+  <Table
+      class="sapUiNoContentPadding"
+      inset="true"
+      items="{
+        path: '/nieos'
+        }"
+      footerText="{
+        parts: [
+          { path: '/ieos' },
+          { path: 'config>/size_limit' }
+        ] ,
+        formatter: '.formatter.tableFooter'
+        }"
+      >
+    <layoutData>
+      <l:GridData
+          span="XL7 L7 M8 S12"
+          indent="XL0 L0 M2 S0"
+          />
+    </layoutData>
+    <headerToolbar>
+      <OverflowToolbar
+          design="Solid"
+          height="5rem"
+          >
+        <content>
+          <HBox
+              alignItems="Center"
+              height="100%"
+              >
+            <items>
+              <l:VerticalLayout>
+                <l:content>
+                  <Title
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>ManageEOIs}"
+                      textAlign="Begin"
+                      level="H2"
+                      titleStyle="H3"
+                      />
+                  <Text
+                      class="sapUiSmallMarginBeginEnd"
+                      text="{i18n>ExpressionOfInterest}"
+                      />
+                </l:content>
+              </l:VerticalLayout>
+            </items>
+          </HBox>
+        </content>
+      </OverflowToolbar>
+    </headerToolbar>
+    <columns>
+      <Column width="16rem">
+        <Label text="{i18n>Project}" />
+      </Column>
+      <Column>
+        <Label text="{i18n>Deadline}" />
+      </Column>
+      <Column
+          minScreenWidth="Large"
+          demandPopin="true"
+          >
+        <Label text="{i18n>Submitted}" />
+      </Column>
+      <Column
+          minScreenWidth="Large"
+          demandPopin="true"
+          >
+        <Label text="{i18n>Status}" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem
+          class="sapUiContentPadding"
+          >
+        <cells>
+          <ObjectIdentifier
+              title="{project}"
+              />
+          <Text
+              text="{
+                path: 'deadline',
+                type: 'sap.ui.model.type.Date',
+                formatOptions: { style: 'medium' }
+                }"
+              />
+          <Text
+              text="{
+                path: 'submitted',
+                type: 'sap.ui.model.type.Date',
+                formatOptions: { style: 'medium' }
+                }"
+              />
+          <Text
+              text="{status}"
+              />
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+</core:FragmentDefinition>
