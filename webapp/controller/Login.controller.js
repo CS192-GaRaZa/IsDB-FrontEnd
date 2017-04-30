@@ -72,7 +72,8 @@ sap.ui.define([
       _.each(utils.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
           oHomeRoute = oRole.getHome();
-          oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
+          window.location.replace('#/' + oRouter.getURL(oHomeRoute.route,
+              oHomeRoute.parameters));
           return false;
         }
       });

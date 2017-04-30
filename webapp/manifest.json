@@ -87,7 +87,7 @@
           "target": "vendor_signup"
         },
         {
-          "pattern": "consultant/{id}",
+          "pattern": "consultant",
           "name": "consultantOverview",
           "target": "consultantOverview"
         },
