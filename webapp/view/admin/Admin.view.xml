@@ -4,8 +4,8 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Panel class="sapUiDemoFlexBoxSizeAdjustments">
 		<FlexBox
 			class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems"
@@ -136,21 +136,25 @@
 			<Column
 				minScreenWidth="Tablet"
 				demandPopin="true"
+				width="8em"
 				>
 				<Text text="Consultant Type" />
 			</Column>
 			
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
+			<Column width="8em"> <!-- not using "Begin" because the content is left-to-right text -->
 				<Text text="Team Leader" />
 			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Consultant Name" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Consultant Email" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
+			<Column width="8em"> <!-- not using "Begin" because the content is left-to-right text -->
 				<Text text="Budget" />
+			</Column>
+			<Column width="8em"> <!-- not using "Begin" because the content is left-to-right text -->
+				<Text text="Consultants" />
+			</Column>
+			<Column>
+				<Text text="See Other EOI"></Text>
+			</Column>
+			<Column>
+				<Text text="Actions"></Text>
 			</Column>
 		</columns>
 		<items>
@@ -158,20 +162,33 @@
 				<cells>
 					<Link
 						text="{project_name}"
-						href="{ProductPicUrl}" />
+						href="{ProductPicUrl}" 
+						width="20em" />
 					<Text
-						text="{location}" />
+						text="{location}" 
+						width="8em"/>
 					<Text
-						text="{consultant_type}" />
+						text="{consultant_type}" 
+						width="8em"/>
 					<Text
-						text="{team_leader}" />
+						text="{team_leader}" 
+						width="8em"/>
 					<Text
-						text="Consultant Name" />
-					<Text
-						text="Consultant Email" />
-					<Text
-						text="{budget}" />
-
+						text="{budget}" 
+						width="8em"/>
+					<Link
+						text="See Consultants"
+						href="/#/accepted-project/{id}" 
+						width="8em"/>
+					<Link
+						text="See EOI"
+						href="/#/project-eoi/{id}" 
+						width="8em"/>
+					<HBox> 
+						<items>
+							<Button text="Done" app:id="{id}" type="Accept" class="sapUiTinyMarginBeginEnd" />
+						</items>
+					</HBox>
 				</cells>
 			</ColumnListItem>
 		</items>

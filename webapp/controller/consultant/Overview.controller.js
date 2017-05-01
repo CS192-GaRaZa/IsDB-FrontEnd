@@ -9,6 +9,5 @@ sap.ui.define([
     constructor: function () {
       Overview.apply(this, [ 'consultantOverview', 'consultantDetail' ]);
     }
-
   });
 });

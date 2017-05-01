@@ -142,6 +142,11 @@
           "pattern": "project-eoi/:id:",
           "name": "projectEOI",
           "target": "projectEOI"
+        },
+        {
+          "pattern": "accepted-project/:id:",
+          "name": "acceptedProject",
+          "target": "acceptedProject"
         }
       ],
       "targets" : {
@@ -204,6 +209,9 @@
         },
         "projectEOI": {
           "viewName": "admin.ProjectEOI"
+        },
+        "acceptedProject": {
+          "viewName": "admin.AcceptedProject"
         }
       }
     }

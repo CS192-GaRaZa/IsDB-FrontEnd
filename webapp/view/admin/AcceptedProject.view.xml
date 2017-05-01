@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="cmsfrontend.controller.admin.ProjectEOI"
+	controllerName="cmsfrontend.controller.admin.AcceptedProject"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
@@ -28,7 +28,7 @@
 			}">
 			<headerToolbar>
 				<Toolbar>
-					<Title text="User Sent EOIs" level="H2"/>
+					<Title text="Accepted EOIs" level="H2"/>
 				</Toolbar>
 			</headerToolbar>
 			<columns>
@@ -69,9 +69,6 @@
 				<Column width="8em"> 
 					<Text text="Mobile Number" />
 				</Column>
-				<Column> 
-					<Text text="Action" />
-				</Column>
 			</columns>
 			<items>
 				<ColumnListItem>
@@ -101,12 +98,6 @@
 						<Text
 							text="{user/mobile_number}" 
 							class="sapUiSmallMarginTopBottom"/>
-						<HBox> 
-							<items>
-								<Button text="Accept" app:id="{id}" type="Accept" press="acceptEoi" class="sapUiTinyMarginBeginEnd" />
-								<Button text="Reject" app:id="{id}" type="Reject" press="rejectEoi" class="sapUiTinyMarginBegindEnd" />
-							</items>
-						</HBox>
 					</cells>
 				</ColumnListItem>
 			</items>

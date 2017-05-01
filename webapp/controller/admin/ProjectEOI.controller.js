@@ -19,7 +19,7 @@ sap.ui.define([
 				method: 'GET',
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'euXHdeZRL9UFqkbUpr4yQQ6i'
+					"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
 				},
 				success: function(data) {
 					console.log('Success');
@@ -44,6 +44,7 @@ sap.ui.define([
 			  id: eoiId,
 			  status: 'Accepted' 
 		  };
+
 		  console.log(JSON.stringify(data))
 		  $.ajax({
 				url: 'https://isdb-cms-api.herokuapp.com/api/v1/eois/' + eoiId,
@@ -51,11 +52,72 @@ sap.ui.define([
 				data: JSON.stringify(data),
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'euXHdeZRL9UFqkbUpr4yQQ6i'
+					"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
 				},
 				success: function(data) {
 					console.log('Success');
-					console.log(data);
+					return data;
+				},
+				error: function(xhr, status, errorThrown) {
+					console.log('ERROR POSTING REQUEST');
+					console.log('xhr: ', xhr);
+					console.log('status: ', status);
+					console.log('errorThrown: ', errorThrown);
+				}
+			})
+			.then(function setProjectToOngoing(data) {
+				console.log('Now in setProjectToOngoing');
+				console.log(data);
+				var bankProjectId = data.bank_project.id;
+				console.log(bankProjectId);
+
+				var data = {
+					id: bankProjectId,
+					status: 'ongoing'
+				}
+
+				$.ajax({
+					url: 'https://isdb-cms-api.herokuapp.com/api/v1/bank_projects/' + bankProjectId,
+					method: 'PUT',
+					data: JSON.stringify(data),
+					contentType: 'application/json',
+					headers: {
+						"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
+					},
+					success: function(data) {
+						console.log('Success');
+						window.location.replace('/#/admin');
+					},
+					error: function(xhr, status, errorThrown) {
+						console.log('ERROR POSTING REQUEST');
+						console.log('xhr: ', xhr);
+						console.log('status: ', status);
+						console.log('errorThrown: ', errorThrown);
+					}
+				});
+			});
+	  },
+	  rejectEoi: function (oEvent) {
+		  var oButton = oEvent.getSource();
+		  var eoiId = oButton.data().id
+		  console.log(eoiId)
+		  var data = {
+			  id: eoiId,
+			  status: 'Rejected' 
+		  };
+
+		  console.log(JSON.stringify(data))
+		  $.ajax({
+				url: 'https://isdb-cms-api.herokuapp.com/api/v1/eois/' + eoiId,
+				method: 'PUT',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				headers: {
+					"Session-Key": 'yw9dqi7VExWqjmfEuaFaFsPj'
+				},
+				success: function(data) {
+					console.log('Successfully rejected');
+					window.location.replace('/#/admin');
 				},
 				error: function(xhr, status, errorThrown) {
 					console.log('ERROR POSTING REQUEST');

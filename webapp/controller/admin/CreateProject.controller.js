@@ -35,7 +35,7 @@ sap.ui.define([
 			  publication_date: '',
 			  deadline_for_submission: '',
 			  status: 'open',
-			  estimated_cost: 0
+			  estimated_cost: ''
 		  });
 		  this.getView().setModel(oModel);
 	  },
@@ -49,7 +49,7 @@ sap.ui.define([
 				data: json,
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'euXHdeZRL9UFqkbUpr4yQQ6i'
+					"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
 				},
 				success: function() {
 					console.log('Success');
