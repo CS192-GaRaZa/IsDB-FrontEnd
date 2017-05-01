@@ -107,7 +107,7 @@
 						text="{deadline_for_submission}" />
 					<Link
 						text="See EOI"
-						href="{ProductPicUrl}" />
+						href="/#/project-eoi/{id}" />
 				</cells>
 			</ColumnListItem>
 		</items>

@@ -137,6 +137,11 @@
           "pattern": "create-project",
           "name": "createProject",
           "target": "createProject"
+        },
+        {
+          "pattern": "project-eoi/:id:",
+          "name": "projectEOI",
+          "target": "projectEOI"
         }
       ],
       "targets" : {
@@ -196,6 +201,9 @@
         },
         "createProject": {
           "viewName": "admin.createProject"
+        },
+        "projectEOI": {
+          "viewName": "admin.ProjectEOI"
         }
       }
     }
