@@ -142,6 +142,11 @@
           "pattern": "users",
           "name": "userList",
           "target": "userList"
+        },
+        {
+          "pattern": "project-eoi/:id:",
+          "name": "projectEOI",
+          "target": "projectEOI"
         }
       ],
       "targets" : {
@@ -204,6 +209,9 @@
         },
         "userList": {
           "viewName": "users.UserList"
+        },
+        "projectEOI": {
+          "viewName": "admin.ProjectEOI"
         }
       }
     }
