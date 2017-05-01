@@ -71,11 +71,11 @@
 				<Select
 					forceSelection="false"
 					selectedKey="{/department}">
-					<core:Item key="0" text="Accounting" />
-					<core:Item key="1" text="Business" />
-					<core:Item key="2" text="Engineering" />
-					<core:Item key="3" text="HR" />
-					<core:Item key="4" text="Public Relations" />
+					<core:Item key="Accounting" text="Accounting" />
+					<core:Item key="Business" text="Business" />
+					<core:Item key="Engineering" text="Engineering" />
+					<core:Item key="HR" text="HR" />
+					<core:Item key="Public Relations" text="Public Relations" />
 				</Select>
 
 				<Label text="Division" labelFor="" design="Bold" />
@@ -125,6 +125,9 @@
 						path: '/deadline_for_submission',
 						type: '.type.Date'
 						}" />
+
+				<Label text="Budget" labelFor="a"/>
+				<Input value="{/budget}" />
 
 				<Label text="Estimated Project Cost" labelFor="a"/>
 				<Input value="{/estimated_cost}" />

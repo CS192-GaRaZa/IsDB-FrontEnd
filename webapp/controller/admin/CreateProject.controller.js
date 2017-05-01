@@ -35,7 +35,7 @@ sap.ui.define([
 			  publication_date: '',
 			  deadline_for_submission: '',
 			  status: 'open',
-			  estimated_cost: 0
+			  estimated_cost: ''
 		  });
 		  this.getView().setModel(oModel);
 	  },

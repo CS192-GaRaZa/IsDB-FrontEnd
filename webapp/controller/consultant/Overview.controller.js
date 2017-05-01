@@ -15,6 +15,5 @@ sap.ui.define([
         'consultantDetail'
       ]);
     }
-
   });
 });
