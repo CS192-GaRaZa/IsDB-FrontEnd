@@ -184,6 +184,11 @@ sap.ui.define([
         oRouter = UIComponent.getRouterFor(this);
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
       }
+    },
+
+    onProjectsLinkPress: function () {
+      var oRouter = UIComponent.getRouterFor(this);
+      oRouter.navTo('projectList');
     }
   });
 });

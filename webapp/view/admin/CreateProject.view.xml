@@ -5,8 +5,10 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page>	
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  >
+	<Page>
 		<f:SimpleForm
 			editable="false"
 			layout="ResponsiveGridLayout"
@@ -20,15 +22,15 @@
 				<core:Title />
 				<Label text="Project Name" labelFor="a"/>
 				<Input value="{/project_name}" />
-				
+
 				<Label text="Location" labelFor="b" design="Bold" />
 				<Select
-					forceSelection="false" 
+					forceSelection="false"
 					selectedKey="{/location}">
 					<core:Item key="Philippines" text="Philippines" />
 					<core:Item key="America" text="America" />
 				</Select>
-				
+
 				<Label text="Selection Method" labelFor="c"/>
 				<Select
 					selectedKey="{/selection_method}"
@@ -37,7 +39,7 @@
 					<core:Item key="Panel Interview" text="Panel Interview" />
 					<core:Item key="Interview" text="Interview" />
 				</Select>
-				
+
 				<Label text="Consultant Type" labelFor="b" design="Bold" />
 				<Select
 					forceSelection="false"
@@ -63,7 +65,7 @@
 				<Label text="Estimated Inputs" labelFor="" design="Bold" />
 				<Input value="{/estimated_inputs}"/>
 
-					
+
 
 				<Label text="Department" labelFor="" design="Bold" />
 				<Select
@@ -116,7 +118,7 @@
 						path: '/publication_date',
 						type: '.type.Date'
 						}" />
-				
+
 				<Label text="Deadline for Submission" labelFor="a"/>
 				<DatePicker
 					value="{

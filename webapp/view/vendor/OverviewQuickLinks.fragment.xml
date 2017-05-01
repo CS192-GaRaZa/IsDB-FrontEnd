@@ -37,6 +37,13 @@
       <List>
         <items>
           <StandardListItem
+            type="Active"
+            icon="sap-icon://contacts"
+            title="Projects"
+            description="Search and filter projects"
+            press="onProjectsLinkPress"
+          />
+          <!-- <StandardListItem
               icon="sap-icon://contacts"
               title="{i18n>UpdateRegistration}"
               description="Optional subtitle"
@@ -50,7 +57,7 @@
               icon="sap-icon://sales-quote"
               title="{i18n>CreateInvoice}"
               description="Optional subtitle"
-              />
+              /> -->
         </items>
       </List>
     </content>

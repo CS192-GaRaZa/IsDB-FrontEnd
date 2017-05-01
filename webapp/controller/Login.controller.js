@@ -68,6 +68,11 @@ sap.ui.define([
 
       sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
 
+      if (sRoleKey === 'admin') {
+        window.location.replace('#/admin');
+        return;
+      }
+
       oRouter = sap.ui.core.UIComponent.getRouterFor(this);
       _.each(utils.role, function (oRole) {
         if (oRole.getKey() === sRoleKey) {
