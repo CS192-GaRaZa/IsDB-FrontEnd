@@ -147,6 +147,10 @@
 										<core:Title />
 										<Label text="IEOI Status" />
 										<Text text="{/status}" />
+										<Label text="" />
+										<Button text="Send EOI"
+											width="50%"
+											press="handleEOIPress"/>
 									</f:content>
 								</f:SimpleForm>
 							</VBox>

@@ -53,7 +53,7 @@ sap.ui.define([
       this._sSubsection = oArgs.subsection;
       this._sUniqueID = utils.storage.get('uniqueId');
 
-      var sURL = "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8"
+      var sURL = "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8" // THIS URL IS HARDCODED ///////////////////////////
 
       this.getView().setModel(new JSONModel(sURL));
     },
@@ -250,16 +250,45 @@ sap.ui.define([
       var oView = this.getView();
       var oModel = oView.getModel();
 
-      console.log(oModel.getData());
-
       var oSessionData = Cookies.getJSON("isdb");
       var response=""
 
       $.ajax({
         url : "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8",
         type : "PUT",
-        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" },
+        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED//////////////////////
         data : JSON.stringify(oModel.getData()),
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+    },
+
+    handleEOIPress : function () {
+      
+      var oView = this.getView();
+      var oModel = oView.getModel();
+
+
+
+      var oSessionData = Cookies.getJSON("isdb");
+      var send = {
+        "bank_project_id": oModel.getData().id,
+        "status": "Pending"
+      };
+
+      $.ajax({
+        url : "http://isdb-cms-api.herokuapp.com/api/v1/eois",
+        type : "POST",
+        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED/////////////////////////////
+        data : JSON.stringify(send),
         contentType : "application/json",
         success : function(data, textStatus, jqXHR) {
           console.log("SUCCESS");
