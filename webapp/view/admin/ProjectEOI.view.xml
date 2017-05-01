@@ -1,0 +1,117 @@
+<mvc:View
+	controllerName="cmsfrontend.controller.admin.ProjectEOI"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page>
+		<Panel class="sapUiDemoFlexBoxSizeAdjustments">
+			<FlexBox
+				class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems"
+				alignItems="Start">
+				<items>
+					<Text text="{/eoi_requests/0/bank_project/project_name}"  width="100%" type="Reject" class="sapUiSmallMarginEnd">
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+					</Text>
+				</items>
+			</FlexBox>
+		</Panel>
+
+		<Table id="idUserEoisForProject"
+			inset="false"
+			items="{
+				path: '/eoi_requests'
+			}">
+			<headerToolbar>
+				<Toolbar>
+					<Title text="User Sent EOIs" level="H2"/>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column
+					width="15em">
+					<Text text="Name" />
+				</Column>
+				<Column
+					width="8em"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="Role" />
+				</Column>
+				<Column
+					width="8em"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					>
+					<Text text="Type" />
+				</Column>
+				<Column
+					width="8em"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					>
+					<Text text="Sector" />
+				</Column>
+				<Column width="8em"> 
+					<Text text="Expertise" />
+				</Column>
+				<Column
+					width="15em"> 
+					<Text text="Email" />
+				</Column>
+				<Column width="8em"> 
+					<Text text="Linkedin" />
+				</Column>
+				<Column width="8em"> 
+					<Text text="Mobile Number" />
+				</Column>
+				<Column> 
+					<Text text="Action" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Link
+							text="{user/display_name}"
+							href="{user/kind/id}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/kind}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/type}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/sector}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/expertise}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/email}"
+							class="sapUiSmallMarginTopBottom" />
+						<Text
+							text="{user/linkedin}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<Text
+							text="{user/mobile_number}" 
+							class="sapUiSmallMarginTopBottom"/>
+						<HBox> 
+							<items>
+								<Button text="Accept" app:id="{id}" type="Accept" press="acceptEoi" class="sapUiTinyMarginBeginEnd" />
+								<Button text="Reject" type="Reject" press="rejectEoi" class="sapUiTinyMarginBegindEnd" />
+							</items>
+						</HBox>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+	
+</mvc:View>
+
