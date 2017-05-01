@@ -3,178 +3,179 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	
-	<Panel class="sapUiDemoFlexBoxSizeAdjustments">
-		<FlexBox
-			class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems"
-			alignItems="Start">
-			<items>
-				
-				<Text text="Admin Panel"  width="100%" type="Reject" class="sapUiSmallMarginEnd">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Text>
-				<Button text="Create Project" press="goToCreateProject" width="50%" type="Emphasized" >
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button>
-			</items>
-		</FlexBox>
-	</Panel>
+
 	
-	<Table id="idOpenProjects"
-		inset="false"
-		items="{
-			path: '/open_projects'
-		}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="Open Projects" level="H2"/>
-			</Toolbar>
-		</headerToolbar>
-		<columns>
-			<Column
-				width="20em">
-				<Text text="Project Name" />
-			</Column>
-			<Column
-				width="8em"
-				minScreenWidth="Tablet"
-				demandPopin="true">
-				<Text text="Location" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true"
-				>
-				<Text text="Estimated Inputs" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true"
-				>
-				<Text text="Selection Method" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Consultant Type" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Assignment Type" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Department" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Division" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Budget" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Deadline" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="EOI" />
-			</Column>
-		</columns>
-		<items>
-			<ColumnListItem>
-				<cells>
-					<Link
-						text="{project_name}"
-						href="{ProductPicUrl}" />
-					<Text
-						text="{location}" />
-					<Text
-						text="{estimated_inputs}" />
-					<Text
-						text="{selection_method}" />
-					<Text
-						text="{consultant_type}" />
-					<Text
-						text="{assignment_type}" />
-					<Text
-						text="{department}" />
-					<Text
-						text="{division}" />
-					<Text
-						text="{budget}" />
-					<Text
-						text="{deadline_for_submission}" />
-					<Link
-						text="See EOI"
-						href="/#/project-eoi/{id}" />
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
+	<f:SimpleForm
+		title="Admin Panel"
+		editable="false"
+		layout="ResponsiveGridLayout"
+		labelSpanL="12"
+		labelSpanM="12"
+		labelSpanS="12"
+		adjustLabelSpan="false"
+		emptySpanL="0"
+		columnsL="1"
+		singleContainerFullSize="false">
+		<f:content>
+			<Table id="idOpenProjects"
+				inset="false"
+				items="{
+					path: '/open_projects'
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Open Projects" level="H2"/>
+						<ToolbarSpacer />
+						<Button text="Create Project" press="goToCreateProject" type="Emphasized"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column
+						width="20em">
+						<Text text="Project Name" />
+					</Column>
+					<Column
+						width="8em"
+						minScreenWidth="Tablet"
+						demandPopin="true">
+						<Text text="Location" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						>
+						<Text text="Estimated Inputs" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						>
+						<Text text="Selection Method" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Consultant Type" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Assignment Type" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Department" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Division" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Budget" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Deadline" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="EOI" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link
+								text="{project_name}"
+								href="{ProductPicUrl}" />
+							<Text
+								text="{location}" />
+							<Text
+								text="{estimated_inputs}" />
+							<Text
+								text="{selection_method}" />
+							<Text
+								text="{consultant_type}" />
+							<Text
+								text="{assignment_type}" />
+							<Text
+								text="{department}" />
+							<Text
+								text="{division}" />
+							<Text
+								text="{budget}" />
+							<Text
+								text="{deadline_for_submission}" />
+							<Link
+								text="See EOI"
+								href="/#/project-eoi/{id}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Label/>
+			<Table id="idOngoingProjects"
+				inset="false"
+				items="{
+					path: '/ongoing_projects'
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Ongoing Projects" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column
+						width="20em">
+						<Text text="Project Name" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true">
+						<Text text="Location" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						>
+						<Text text="Consultant Type" />
+					</Column>
+					
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Team Leader" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Consultant Name" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Consultant Email" />
+					</Column>
+					<Column> <!-- not using "Begin" because the content is left-to-right text -->
+						<Text text="Budget" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link
+								text="{project_name}"
+								href="{ProductPicUrl}" />
+							<Text
+								text="{location}" />
+							<Text
+								text="{consultant_type}" />
+							<Text
+								text="{team_leader}" />
+							<Text
+								text="Consultant Name" />
+							<Text
+								text="Consultant Email" />
+							<Text
+								text="{budget}" />
 
-	<Table id="idOngoingProjects"
-		inset="false"
-		items="{
-			path: '/ongoing_projects'
-		}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="Ongoing Projects" level="H2"/>
-			</Toolbar>
-		</headerToolbar>
-		<columns>
-			<Column
-				width="20em">
-				<Text text="Project Name" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true">
-				<Text text="Location" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true"
-				>
-				<Text text="Consultant Type" />
-			</Column>
-			
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Team Leader" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Consultant Name" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Consultant Email" />
-			</Column>
-			<Column> <!-- not using "Begin" because the content is left-to-right text -->
-				<Text text="Budget" />
-			</Column>
-		</columns>
-		<items>
-			<ColumnListItem>
-				<cells>
-					<Link
-						text="{project_name}"
-						href="{ProductPicUrl}" />
-					<Text
-						text="{location}" />
-					<Text
-						text="{consultant_type}" />
-					<Text
-						text="{team_leader}" />
-					<Text
-						text="Consultant Name" />
-					<Text
-						text="Consultant Email" />
-					<Text
-						text="{budget}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
+				</f:content>
+	</f:SimpleForm>
+		
 </mvc:View>
 
