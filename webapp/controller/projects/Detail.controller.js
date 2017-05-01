@@ -19,13 +19,13 @@ sap.ui.define([
   constants,
   utils
 ) {
-  "use strict";
+  'use strict';
 
   var oType = {
     Date: CustomDate
   };
 
-  return Controller.extend("cmsfrontend.controller.project.Detail", {
+  return Controller.extend('cmsfrontend.controller.projects.Detail', {
 
     type: oType,
 
@@ -42,21 +42,18 @@ sap.ui.define([
       var sPreviousHash = oHistory.getPreviousHash();
 
       document.title = sTitle;
-      this.getView().getModel("config").setData({
+      this.getView().getModel('config').setData({
         navTitle: sTitle,
         showBackButton: sPreviousHash !== undefined
       }, true);
     },
 
     _onRouteMatched: function (oEvent) {
-      var oArgs = oEvent.getParameter("arguments");
-      this._sSubsection = oArgs.subsection;
+      var oArgs = oEvent.getParameter('arguments');
       this._sId = oArgs.id;
-      this._sRole = constants.roleKey.CONSULTANT;
-      this._sUniqueId = utils.getUniqueID(this._sRole, this._sId);
 
-      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
-          this._sUniqueId;
+      var sURL = 'http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/' +
+          this._sId;
 
       this.getView().setModel(new JSONModel(sURL));
     },
@@ -67,68 +64,27 @@ sap.ui.define([
   * @memberOf cmsfrontend.profile
   */
     onInit: function(oEvent) {
-      // var oUserDataLocal = {
-      //     "surname": "Patron",
-      //     "middle_name": "V.",
-      //     "given_name": "Gabriel",
-      //     "date_of_birth": "01/14/1997",
-      //     "citizenship": "USA",
-      //     "gender": "Male",
-      //     "linkedin": "http://www.linkedin.com/in/yarimiralao",
-      //     "email": "gchase.patron@gmail.com",
-      //     "mobile_number": "+1283907420357",
-      //     "phone_number": "+1283907420357",
-      //     "skype_id": "test.skype",
-      //     "description": "Yari is Vice President for Business Development of Aboitiz Power and is responsible for the company’s international expansion strategy. Prior to joining Aboitiz Power, Yari spent the last twelve years working in various roles at the AES Corporation (NYSE: AES). One of those roles included the acquisition, turnaround, and operation of the US$930 million 600-MW Masinloc coal-fired thermal power plant (largest Foreign Direct Investment in the Philippines in 2008).",
-      //     "countries_of_work_experience": "USA",
-      //     "website": null,
-      //     "summary": null,
-      //     "branches": null,
-      //     "sector_list": null,
-      //     "expertise_list": null,
-      //     "image_url": null,
-      //     "perm_street": null,
-      //     "perm_city": null,
-      //     "perm_zipcode": null,
-      //     "perm_state": null,
-      //     "perm_country": null,
-      //     "mail_street": null,
-      //     "mail_city": null,
-      //     "mail_zipcode": null,
-      //     "mail_state": null,
-      //     "mail_country": null,
-      //     "previously_engaged_with_isdb": null,
-      //     "previous_isdb_project_details": null,
-      //     "membership_license": null,
-      //     "trainings": null,
-      //     "languages": null,
-      //     "educations": [],
-      //     "employments": [],
-      //     "sectors": [],
-      //     "expertises": []
-      //     };
-
       var oRouter = UIComponent.getRouterFor(this);
-      oRouter.getRoute("consultantDetail")
+      oRouter.getRoute('projectDetail')
           .attachMatched(this._onRouteMatched, this);
 
       var oConfigModel = new JSONModel();
       var oView = this.getView();
-      oView.setModel(oConfigModel, "config");
+      oView.setModel(oConfigModel, 'config');
       oRouter.attachTitleChanged(this._onTitleChanged, this);
 
       var oCountriesModel = new JSONModel();
-      oCountriesModel.loadData("model/countries.json");
+      oCountriesModel.loadData('model/countries.json');
       oCountriesModel.setSizeLimit(500);
-      oView.setModel(oCountriesModel, "countryModel");
+      oView.setModel(oCountriesModel, 'countryModel');
 
 
       // Set the initial form to be the display one
-      this._showFormFragment("cmsfrontend.view.consultant.DetailDisplay");
+      this._showFormFragment('cmsfrontend.view.projects.DetailDisplay');
 
       // adds an event delegate to the objectPage that switches it to the
           // tab that was last open in the Edit view
-      this.oObjectPageLayout = this.byId("projectDisplay");
+      this.oObjectPageLayout = this.byId('projectDisplay');
       this.oObjectPageLayout.addEventDelegate({
         onAfterRendering: jQuery.proxy(function () {
           //need to wait for the scrollEnablement to be active
@@ -257,9 +213,10 @@ sap.ui.define([
       var response=""
 
       $.ajax({
-        url : "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8",
+        url : "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/" +
+          this._sId,
         type : "PUT",
-        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED//////////////////////
+        headers: { "Session-Key": utils.storage.get('token') }, // THIS SESSION KEY IS HARDCODED//////////////////////
         data : JSON.stringify(oModel.getData()),
         contentType : "application/json",
         success : function(data, textStatus, jqXHR) {
@@ -290,7 +247,7 @@ sap.ui.define([
       $.ajax({
         url : "http://isdb-cms-api.herokuapp.com/api/v1/eois",
         type : "POST",
-        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED/////////////////////////////
+        headers: { "Session-Key": utils.storage.get('token') }, // THIS SESSION KEY IS HARDCODED/////////////////////////////
         data : JSON.stringify(send),
         contentType : "application/json",
         success : function(data, textStatus, jqXHR) {
@@ -398,8 +355,8 @@ sap.ui.define([
 
       // Set the right form type
       this._showFormFragment(bEdit
-              ? "cmsfrontend.view.consultant.DetailEdit"
-              : "cmsfrontend.view.consultant.DetailDisplay");
+              ? "cmsfrontend.view.projects.DetailEdit"
+              : "cmsfrontend.view.projects.DetailDisplay");
     },
 
     // array of items currently selected in the Citizenship multicombo box

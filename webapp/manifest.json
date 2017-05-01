@@ -132,6 +132,12 @@
           "target": "projectList"
         },
         {
+          "pattern": "{id}",
+          "parent": "projectList",
+          "name": "projectDetail",
+          "target": "projectDetail"
+        },
+        {
           "pattern": "admin",
           "name": "admin",
           "target": "admin"
@@ -215,6 +221,9 @@
         },
         "projectEOI": {
           "viewName": "admin.ProjectEOI"
+        },
+        "projectDetail": {
+          "viewName": "projects.Detail"
         }
       }
     }

@@ -2,11 +2,13 @@ sap.ui.define([
   'jquery.sap.global',
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
+  'sap/ui/core/UIComponent',
   'cmsfrontend/model/utils'
 ], function (
   jQuery,
   Controller,
   JSONModel,
+  UIComponent,
   utils
 ) {
   'use strict';
@@ -46,6 +48,9 @@ sap.ui.define([
     onProjectTableItemPress: function (oEvent) {
       var oParams = oEvent.getParameters();
       var oProject = oParams.listItem.getBindingContext().getProperty();
+
+      var oRouter = UIComponent.getRouterFor(this);
+      oRouter.navTo('projectDetail', { id: oProject.id });
     },
 
     onQuerySubmit: function() {
