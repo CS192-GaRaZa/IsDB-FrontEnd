@@ -1,3 +1,6 @@
+<!-- Format: width of input and select boxes links (like the linked in or
+	email) -->
+
 <core:FragmentDefinition
 	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc"
@@ -5,10 +8,11 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:uxap="sap.uxap"
+	xmlns:unified="sap.ui.unified"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<uxap:ObjectPageLayout
-		id="projectEdit"
+		id="objectPageLayoutEdit"
 		upperCaseAnchorBar="false"
 		alwaysShowContentHeader="false"
 		showAnchorBarPopover="false"
@@ -17,35 +21,64 @@
 
 		<uxap:headerTitle>
 			<uxap:ObjectPageHeader
-				objectTitle="{/project_name}"
-				objectSubtitle="{/id}" />
+				objectTitle="{
+					parts: [
+						{ path: '/surname' },
+						{ path: '/given_name' },
+						{ path: '/middle_name' }
+					],
+					formatter: '.formatter.fullname'
+					}"
+				objectSubtitle="{/unique_id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
+			<Image
+					width="150px"
+					height="150px"
+					src="{
+						path: '/image_url',
+						formatter: '.formatter.profileImageURL'
+						}"
+					/>
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/consultant_type}" />
+					<Text text="{/kind}" />
 				</HBox>
 
 				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
 				<HBox>
-					<Label text="Assignment Type: " />
+					<Label text="Date of Birth: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/assignment_type}"/>
+					<Text
+							text="{
+								path: '/date_of_birth',
+								type: '.type.Date'
+								}"
+							/>
 				</HBox>
 				<HBox>
-					<Label text="Estimated Inputs: " />
+					<Label text="Citizenship: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/estimated_inputs}" />
+					<Text text="{/citizenship}" />
 				</HBox>
 				<HBox wrap="Wrap">
-					<Label text="Location:" />
+					<Label text="Summary: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/location}" />
+					<Text text="{/description}" />
 				</HBox>
+				<unified:FileUploader
+						uploadUrl="/upload"
+                        uploadOnChange="true"
+						name="file"
+						id="idProfileImageUploader"
+						buttonText="Upload Photo"
+                        uploadComplete="onProfileImageUploaderComplete"
+                        buttonOnly="true"
+						/>
 
 			</VBox>
 		</uxap:headerContent>
@@ -73,35 +106,70 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Project Name" />
-										<Input value="{/project_name}" />
-										<Label text="Consultant Type" />
-										<Input value="{/consultant_type}" />
-										<Label text="Complex" />
-										<Input value="{/complex}" />
-										<Label text="Budget" />
-										<Input value="{/budget}" />
+										<Label text="Surname" />
+										<Input value="{/surname}" />
+										<Label text="Type" />
+										<Select
+											id="kindSelect"
+											width="100%"
+											selectedKey="{/kind}">
+											<items>
+												<core:Item key="Self-Employed" text="Self-Employed" />
+												<core:Item key="Employee of a Firm" text="Employee of a Firm" />
+											</items>
+										</Select>
+										<Label text="Gender" />
+										<Select
+											id="genderSelect"
+											width="auto"
+											selectedKey="{/gender}">
+
+											<core:Item key="Male" text="Male" />
+											<core:Item key="Female" text="Female" />
+
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
 										<core:Title />
-										<Label text="Location" />
-										<Input value="{/location}" />
-										<Label text="Assignment Type" />
-										<Input value="{/assignment_type}"/>
-										<Label text="Department" />
-										<Input value="{/department}" />
+										<Label text="Given Name" />
+										<Input value="{/given_name}" />
+										<Label text="Date of Birth" />
+										<DatePicker
+												value="{
+													path: '/date_of_birth',
+													type: '.type.Date'
+													}"
+												/>
+										<Label text="LinkedIn Profile" />
+										<Input value="{/linkedin}" />
 										<core:Title />
-										<Label text="Selection Method" />
-										<Input value="{/selection_method}" />
-										<Label text="Estimated Inputs" />
-										<Input value="{/estimated_inputs}" />
-										<Label text="Division" />
-										<Input value="{/division}" />
+										<Label text="Middle Name" />
+										<Input value="{/middle_name}" />
+										<Label text="Citizenship" />
+										<MultiComboBox
+											id="CitizenshipComboBox"
+											selectionFinish="handleSelectionFinishCitizenship"
+											width="auto"
+											items="{
+												path:'countryModel>/',
+												sorter:{path:'name'}
+											}">
+											<core:Item key="{countryModel>name}" text="{countryModel>name}" />
+										</MultiComboBox>
 									</f:content>
 								</f:SimpleForm>
+
+								<Label text="Summary:" />
+								<TextArea
+									width="100%"
+									growing="true"
+									value="{/description}" />
 
 								<Label />
 
 								<f:SimpleForm
-									title="Project Team"
+									title="Consulting Background"
 									editable="false"
 									layout="ResponsiveGridLayout"
 									labelSpanL="12"
@@ -112,21 +180,176 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Team Leader" />
-										<Input value="{/team_leader}" />
+										<Label text="Sector" />
+										<Input value="{/sector_list}" />
+										<Label text="Previously Engaged by IsDB" />
+										<Select
+											id="prevEngagedSelect"
+											width="auto"
+											selectedKey="{/previously_engaged_with_isdb}">
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
 										<core:Title />
-										<Label text="Team Members" />
-										<Input value="{/team_members}" />
+										<Label text="Expertise" />
+										<Input value="{/expertise_list}" />
+										<Label text="Countries of Work Experience" />
+										<MultiComboBox
+											id="CountriesWorkExperienceComboBox"
+											selectionFinish="handleSelectionFinishWorkExperience"
+											width="auto"
+											items="{
+												path:'countryModel>/',
+												sorter:{path:'name'}
+											}">
+											<core:Item key="{countryModel>name}" text="{countryModel>name}" />
+										</MultiComboBox>
 										<core:Title />
-										<Label text="Selection Committee Members" />
-										<Input value="{/selection_committee_members}" />
+										<Label text="Countries of Work Experience" />
+										<Label text="Details on previous IsDB Engagement" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/previous_isdb_project_details}" />
 									</f:content>
 								</f:SimpleForm>
 
 								<Label />
 
 								<f:SimpleForm
-									title="EOI Information"
+									title="Education"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="1"
+									singleContainerFullSize="false">
+									<f:content>
+										<Table
+											inset="false"
+											items="{/educations}"
+											mode="Delete"
+											delete="handleDeletePressEducation">
+											<headerToolbar>
+												<Toolbar>
+													<ToolbarSpacer />
+													<Button
+														text="Add Entry"
+														press="addRowEducation" />
+												</Toolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="auto">
+													<Text text="Program" />
+												</Column>
+												<Column>
+													<Text text="Degree" />
+												</Column>
+												<Column>
+													<Text text="Institution" />
+												</Column>
+												<Column>
+													<Text text="Country" />
+												</Column>
+												<Column>
+													<Text text="Date of Completion" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Input value="{program}" />
+														<Select
+															id="degreeSelect"
+															value="{degree}"
+															path="{degree}"
+															selectedKey="{degree}">
+															<items>
+																<core:Item key="Certificate" text="Certificate" />
+																<core:Item key="Diploma" text="Diploma" />
+																<core:Item key="Associate Degree" text="Associate Degree" />
+																<core:Item key="Bachelor" text="Bachelor" />
+																<core:Item key="Master" text="Master" />
+																<core:Item key="Doctorate" text="Doctorate" />
+															</items>
+														</Select>
+														<Input value="{institution}" />
+														<Select
+														  id="educationCountrySelect"
+									                      value="{country}"
+									                      change="handleEducationCountryChange"
+									                      selectedKey="{country}"
+									                      items="{countryModel>/}">
+									                      <items>
+									                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+									                      </items>
+									                    </Select>
+									                    <Input value="{date_of_completion}" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</f:content>
+								</f:SimpleForm>
+
+								<Label />
+
+								<f:SimpleForm
+									title="Professional"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="2">
+									<f:content>
+										<core:Title />
+										<Label text="Membership/License" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/membership_license}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+										<Label text="Trainings" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/trainings}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+										<core:Title />
+										<Label text="Languages" />
+										<TextArea
+											width="100%"
+											growing="true"
+											value="{/languages}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</TextArea>
+									</f:content>
+								</f:SimpleForm>
+
+
+								<Label />
+
+								<f:SimpleForm
+									title="Contact"
 									editable="false"
 									layout="ResponsiveGridLayout"
 									labelSpanL="12"
@@ -137,16 +360,501 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Publication Date" />
-										<Input value="{/publication_date}" />
-										<Label text="Estimated Project Cost" />
-										<Input value="{/estimated_cost}" />
+										<Title text="Permanent Address" />
+										<Label text="Street" />
+										<Input value="{/perm_street}" />
+										<Label text="City" />
+										<Input value="{/perm_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/perm_zipcode}" />
+										<Label text="State/Province" />
+										<Input value="{/perm_state}" />
+										<Label text="Country" />
+										<Select
+										  id="PermCountrySelectConsultant"
+					                      value="{/perm_country}"
+					                      change="handlePermCountryChange"
+					                      
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
-										<Label text="Deadline for Submission" />
-										<Input value="{/deadline_for_submission}" />
+										<Title text="Mailing Address" />
+										<Label text="Street" />
+										<Input value="{/mail_street}" />
+										<Label text="City" />
+										<Input value="{/mail_city}" />
+										<Label text="Zip Code" />
+										<Input value="{/mail_zipcode}" />
+										<Label text="State/Province" />
+										<Input value="{/mail_state}" />
+										<Label text="Country" />
+										<Select
+										  id="MailCountrySelectConsultant"
+					                      value="{/mail_country}"
+					                      change="handleMailCountryChange"
+					                      
+					                      items="{countryModel>/}">
+					                      <items>
+					                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+					                      </items>
+					                    </Select>
 										<core:Title />
-										<Label text="IEOI Status" />
-										<Input value="{/status}" />
+										<Title text="Email and Phone" />
+										<Label text="Email" />
+										<Input value="{/email}" />
+										<Label text="Phone" />
+										<Input value="{/phone_number}" />
+										<Label text="Mobile" />
+										<Input value="{/mobile_number}" />
+										<Label text="Skype ID" />
+										<Input value="{/skype_id}" />
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editEmploymentSection"
+				title="Employment"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="6">
+									<f:content>
+										<core:Title />
+										<Label text="Former IsDB Employee" />
+										<Select
+											id="formerEmployeeSelect"
+											width="auto"
+											selectedKey="{/former_isdb_employee}">
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</Select>
+										<Label text="Years of Work Experience" />
+										<Input text="{/years_of_work_experience}"> 
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</Input>
+										<core:Title />
+										<Label text="Employee ID" />
+										<Input value="{/employee_id}">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</Input>
+										<core:Title />
+										<Label text="Date Cleared for Consulting" />
+										<DatePicker
+												value="{
+													path: '/date_cleared_consulting',
+													type: '.type.Date'
+													}
+												">
+											<layoutData>
+												<l:GridData span="L8 M8 S8" />
+											</layoutData>
+										</DatePicker>
+									</f:content>
+								</f:SimpleForm>
+								<Table
+									inset="false"
+									items="{/employments}"
+									mode="Delete"
+									delete="handleDeletePressEmployment">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Employment"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowEmployment" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto">
+											<Text text="Employer" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="From" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="10%">
+											<Text text="To" />
+										</Column>
+										<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Left"
+											width="20%">
+											<Text text="Position Held" />
+										</Column>
+										<Column hAlign="Left">
+											<Text text="Main Responsibilities" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{employer}" />
+												<DatePicker
+														value="{
+															path: 'from',
+															type: '.type.Date'
+															}"
+														/>
+												<DatePicker
+														value="{
+															path: 'to',
+															type: '.type.Date'
+															}"
+														/>
+												<Input value="{position_held}" />
+												<Input value="{main_responsibilities}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editAssignmentsSection"
+				title="Assignments"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/assignments}"
+									mode="Delete"
+									delete="handleDeletePressAssignment">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Assignments"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowAssignment" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto" />
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<VBox>
+													<Label text="Title:" />
+													<Input value="{title}" />
+													<Label />
+													<Label text="Description:" />
+													<TextArea
+														width="100%"
+														growing="true"
+														value="{description}" />
+													<Label />
+													<Label text="Role:" />
+													<TextArea
+														width="100%"
+														growing="true"
+														value="{role}" />
+												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editReferencesSection"
+				title="References"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/references}"
+									mode="Delete"
+									delete="handleDeletePressReferences">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="References"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowReferences" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="12%">
+											<Text text="First Name" />
+										</Column>
+										<Column width="12%">
+											<Text text="Last Name" />
+										</Column>
+										<Column width="auto">
+											<Text text="Organization" />
+										</Column>
+										<Column width="20%">
+											<Text text="Position" />
+										</Column>
+										<Column width="20%">
+											<Text text="Email" />
+										</Column>
+										<Column width="20%">
+											<Text text="Telephone" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{first_name}" />
+												<Input value="{last_name}" />
+												<Input value="{organization}" />
+												<Input value="{position}" />
+												<Input value="{email}" />
+												<Input value="{telephone}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editPublicationsSection"
+				title="Publications"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<Table
+									inset="false"
+									items="{/publications}"
+									mode="Delete"
+									delete="handleDeletePressPublications">
+									<headerToolbar>
+										<Toolbar>
+											<Title
+												text="Publications"
+												level="H2" />
+											<ToolbarSpacer />
+											<Button
+												text="Add Entry"
+												press="addRowPublications" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="10%">
+											<Text text="Title" />
+										</Column>
+										<Column width="10%">
+											<Text text="Publisher" />
+										</Column>
+										<Column width="auto">
+											<Text text="Description" />
+										</Column>
+										<Column width="20%">
+											<Text text="Year Published" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Input value="{title}" />
+												<Input value="{publisher}" />
+												<Input value="{description}" />
+												<Input value="{year_published}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:sections>
+			<uxap:ObjectPageSection
+				id="editAdditionalInfoSection"
+				title="Additional Information"
+				titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection
+						titleUppercase="false"
+						mode="Expanded"
+						class="editableForm"
+						editable="true">
+						<uxap:blocks>
+							<VBox>
+								<f:SimpleForm
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="3">
+									<f:content>
+										<core:Title />
+										<Label text="Do you have any relatives in IsDB?" />
+										<Select
+											id="relativesSelect"
+											width="auto"
+											selectedKey="{/relatives_in_isdb}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<Label text="Are there any limitations on your ability to travel?" />
+										<Select
+											id="travelSelect"
+											width="auto"
+											selectedKey="{/travel_limitations}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<core:Title />
+										<Label text="Would you have a contract for less than six months?" />
+										<Select
+											id="contractSelect"
+											width="auto"
+											selectedKey="{/less_than_six_month_contract}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<Label text="Are you currently a government employee?" />
+										<Select
+											id="governmentSelect"
+											width="auto"
+											selectedKey="{/government_employee}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<core:Title />
+										<Label text="Do you have any objections in IsDB making inquires of your employer?" />
+										<Select
+											id="inquireSelect"
+											width="auto"
+											selectedKey="{/inquire_employer}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
+										<Label text="Were you ever convicted for any violation of any law?" />
+										<Select
+											id="convictedSelect"
+											width="auto"
+											selectedKey="{/previously_convicted}"
+											>
+											<items>
+												<core:Item key="Yes" text="Yes" />
+												<core:Item key="No" text="No" />
+											</items>
+											<layoutData>
+												<l:GridData span="L4 M4 S4" />
+											</layoutData>
+										</Select>
 									</f:content>
 								</f:SimpleForm>
 							</VBox>

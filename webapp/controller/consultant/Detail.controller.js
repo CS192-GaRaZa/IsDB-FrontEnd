@@ -49,16 +49,40 @@ sap.ui.define([
     },
 
     _onRouteMatched: function (oEvent) {
-      var oArgs = oEvent.getParameter("arguments");
+      var oArgs;
+      var sURL;
+      var oView;
+      var _this;
+
+      oArgs = oEvent.getParameter("arguments");
+      this._sID = oArgs.id;
       this._sSubsection = oArgs.subsection;
-      this._sId = oArgs.id;
-      this._sRole = constants.roleKey.CONSULTANT;
-      this._sUniqueId = utils.getUniqueID(this._sRole, this._sId);
+      this._sUniqueID = utils.getUniqueID(constants.roleKey.CONSULTANT,
+          oArgs.id);
 
-      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
-          this._sUniqueId;
+      sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+          this._sUniqueID;
 
-      this.getView().setModel(new JSONModel(sURL));
+      oView = this.getView();
+      _this = this;
+      $.ajax({
+        url: sURL,
+        type: "GET",
+        dataType: 'json',
+        contentType : "application/json",
+      }).done(function (oData) {
+        var sFullName = oData.surname + ", " + oData.given_name + " " +
+            oData.middle_name;
+        oData.full_name = sFullName;
+        oView.setModel(new JSONModel(oData));
+      });
+
+      /**
+      // remove all the time in the data so that we are only left with yyyy-MM-dd
+      oModel.setData({
+        date_of_birth:oModel.getData().date_of_birth.slice(0,10)
+      }, true); **/
+
     },
 
   /**
@@ -128,7 +152,7 @@ sap.ui.define([
 
       // adds an event delegate to the objectPage that switches it to the
           // tab that was last open in the Edit view
-      this.oObjectPageLayout = this.byId("projectDisplay");
+      this.oObjectPageLayout = this.byId("objectPageLayoutDisplay");
       this.oObjectPageLayout.addEventDelegate({
         onAfterRendering: jQuery.proxy(function () {
           //need to wait for the scrollEnablement to be active
@@ -158,7 +182,7 @@ sap.ui.define([
 
       // of course we don't want to save the Id of the current section
       // what we need is the Id of the corresponding section on the other page (edit or display).
-      if (oEvent.getSource().getId() == "projectDisplay") {
+      if (oEvent.getSource().getId() == "objectPageLayoutDisplay") {
         sSectionId = "edit" + sSectionId.substring(sSectionId.indexOf("display")+7);
       } else {
         sSectionId = "display" + sSectionId.substring(sSectionId.indexOf("edit")+4);
@@ -198,39 +222,209 @@ sap.ui.define([
       this._sSelectedMailCountry = selectedItem.getText();
     },
 
+    handleDeletePressEmployment : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().employments[iIndex].id
+
+      this.getView().getModel().getData().employments.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/employments/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+    },
+
+
+    handleDeletePressAssignment : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().assignments[iIndex].id
+
+      this.getView().getModel().getData().assignments.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/assignments/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+
+    },
+
+
+    handleDeletePressEducation : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().educations[iIndex].id
+
+      this.getView().getModel().getData().educations.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/educations/" + iId,
+        type : "DELETE",
+        headers:{
+          "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+    },
+
+    handleDeletePressReferences : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().references[iIndex].id
+
+      this.getView().getModel().getData().references.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/references/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+
+    },
+
+    handleDeletePressPublications : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().publications[iIndex].id
+
+      this.getView().getModel().getData().publications.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/publications/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+
+    },
+
+
     handleEditPress : function () {
-
       var oView = this.getView();
-      var oModel = oView.getModel();
-
-      console.log(oModel.getData());
 
       //Clone the data
       this._oOldData = JSON.parse(JSON.stringify(this.getView().getModel().getData()));
       this._toggleButtonsAndView(true);
 
+      // sets the selectedItem of the country select boxes
+      if (this._sSelectedPermCountry == "") {
+        oView.byId("PermCountrySelectConsultant").setSelectedKey(this.getView().getModel().getData().perm_country);
+        this._sSelectedPermCountry = this.getView().getModel().getData().perm_country;
+      } else {
+        oView.byId("PermCountrySelectConsultant").setSelectedKey(this._sSelectedPermCountry);
+      };
 
-      /**
-      console.log("SC", this._selectedCitizenship)
-
-      if (this._selectedCitizenship == {}) {
-        oView.byId("CitizenshipComboBox").setSelectedKeys(this.getView().getModel().getData().citizenship);
-        this._sSelectedMailCountry = this.getView().getModel().getData().citizenship;
+      if (this._sSelectedMailCountry == "") {
+        oView.byId("MailCountrySelectConsultant").setSelectedKey(this.getView().getModel().getData().mail_country);
+        this._sSelectedMailCountry = this.getView().getModel().getData().mail_country;
       } else {
         oView.byId("MailCountrySelectConsultant").setSelectedKey(this._sSelectedMailCountry);
-      }; **/
-
+      };
 
       if (this._bHasEditInit == false){
         this._bHasEditInit = true;
 
         // adds an event delegate to the objectPage that switches it to the tab that was last open in the Display view
-        this.oprojectEdit = this.getView().byId("projectEdit");
+        this.oObjectPageLayoutEdit = this.getView().byId("objectPageLayoutEdit");
 
-        this.oprojectEdit.addEventDelegate({
+        this.oObjectPageLayoutEdit.addEventDelegate({
           onAfterRendering: jQuery.proxy(function () {
             //need to wait for the scrollEnablement to be active
-            jQuery.sap.delayedCall(500, this.oprojectEdit, this.oprojectEdit.scrollToSection, [this._sSelectedSection[0]]);
+            jQuery.sap.delayedCall(500, this.oObjectPageLayoutEdit, this.oObjectPageLayoutEdit.scrollToSection, [this._sSelectedSection[0]]);
           }, this)
         });
       };
@@ -253,45 +447,48 @@ sap.ui.define([
       var oView = this.getView();
       var oModel = oView.getModel();
 
-      var oSessionData = Cookies.getJSON("isdb");
-      var response=""
-
-      $.ajax({
-        url : "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8",
-        type : "PUT",
-        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED//////////////////////
-        data : JSON.stringify(oModel.getData()),
-        contentType : "application/json",
-        success : function(data, textStatus, jqXHR) {
-          console.log("SUCCESS");
-          console.log("data: ", data);
-        },
-        error: function(xhr, status) {
-          console.log("ERROR POSTING REQUEST");
-          console.log("xhr: ", xhr);
-          console.log("status: ", status);
-        },
-      });
-    },
-
-    handleEOIPress : function () {
-
-      var oView = this.getView();
-      var oModel = oView.getModel();
-
-
-
-      var oSessionData = Cookies.getJSON("isdb");
-      var send = {
-        "bank_project_id": oModel.getData().id,
-        "status": "Pending"
+      // handle changes to the citizenship multicombo box
+      var temp = [];
+      // since each item is an object, we need to get its "name" field
+      for (var i = 0; i < this._selectedCitizenship.length; i++) {
+        temp.push(this._selectedCitizenship[i].getText());
       };
 
+      if (temp.length > 0){
+        this.getView().getModel().setData({citizenship:temp.join(', ')}, true);
+      }
+
+      // handle changes to the countries of work experience multicombo box
+      var temp = [];
+      // since each item is an object, we need to get its "name" field
+      for (var i = 0; i < this._selectedWorkExperience.length; i++) {
+        temp.push(this._selectedWorkExperience[i].getText());
+      };
+
+      if (temp.length > 0){
+        this.getView().getModel().setData({countries_of_work_experience:temp.join(', ')}, true);
+      };
+
+      // handle changes to the FullName element in the data
+      var sFullName = oModel.getData().surname + ", " + oModel.getData().given_name + " " + oModel.getData().middle_name;
+      oModel.setData({full_name:sFullName}, true);
+
+      // handle all the changes to the select inputs
+      oModel.setData({
+        sectors: oModel.getData().sector_list,
+        expertises: oModel.getData().expertise_list,
+        perm_country:this._sSelectedPermCountry,
+        mail_country:this._sSelectedMailCountry
+      }, true);
+
+      var oSessionData = Cookies.getJSON("isdb");
+
       $.ajax({
-        url : "http://isdb-cms-api.herokuapp.com/api/v1/eois",
-        type : "POST",
-        headers: { "Session-Key": "cj1w9HErWvhwquUCqrNayahX" }, // THIS SESSION KEY IS HARDCODED/////////////////////////////
-        data : JSON.stringify(send),
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+            this._sUniqueID,
+        type : "PUT",
+        headers: { "Session-Key": oSessionData.token },
+        data : JSON.stringify({ user: oModel.getData() }),
         contentType : "application/json",
         success : function(data, textStatus, jqXHR) {
           console.log("SUCCESS");
@@ -413,7 +610,7 @@ sap.ui.define([
     _bHasEditInit: false,
 
     // Id of the currently selected section and the Id of the page
-    _sSelectedSection: ["displayProfileSection", "projectDisplay"],
+    _sSelectedSection: ["displayProfileSection", "objectPageLayoutDisplay"],
 
     _sSelectedPermCountry:"",
 
@@ -443,16 +640,23 @@ sap.ui.define([
     },
 
     onNavBackPress: function (oEvent) {
-      var oHistory = History.getInstance();
-      var sPreviousHash = oHistory.getPreviousHash();
+      var oHistory;
+      var sPreviousHash;
+      var oHomeRoute;
+      var oRouter;
+      var sRoleKey;
+      var oRole;
+
+      oHistory = History.getInstance();
+      sPreviousHash = oHistory.getPreviousHash();
 
       if (sPreviousHash !== undefined) {
         window.history.go(-1);
       } else {
-        var sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
-        var oRole = constants.role[sRoleKey];
-        var oHomeRoute = oRole.getHome();
-        var oRouter = UIComponent.getRouterFor(this);
+        sRoleKey = utils.storage.get(constants.storageKey.ROLE_KEY);
+        oRole = constants.role[sRoleKey];
+        oHomeRoute = oRole.getHome();
+        oRouter = UIComponent.getRouterFor(this);
         oRouter.navTo(oHomeRoute.route, oHomeRoute.parameters, true);
       }
     },
@@ -468,3 +672,4 @@ sap.ui.define([
     }
   });
 });
+

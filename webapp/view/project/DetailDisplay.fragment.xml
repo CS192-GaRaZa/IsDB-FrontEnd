@@ -8,7 +8,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<uxap:ObjectPageLayout
-		id="objectPageLayoutDisplay"
+		id="projectDisplay"
 		upperCaseAnchorBar="false"
 		alwaysShowContentHeader="false"
 		showAnchorBarPopover="false"
@@ -17,60 +17,39 @@
 
 		<uxap:headerTitle>
 			<uxap:ObjectPageHeader
-				objectTitle="{
-					parts: [
-						{ path: '/surname' },
-						{ path: '/given_name' },
-						{ path: '/middle_name' }
-					],
-					formatter: '.formatter.fullname'
-					}"
-				objectSubtitle="{/unique_id}" />
+				objectTitle="{/project_name}"
+				objectSubtitle="{/id}" />
 		</uxap:headerTitle>
 		<uxap:headerContent>
-			<Image
-					width="150px"
-					height="150px"
-					src="{
-						path: '/image_url',
-						formatter: '.formatter.profileImageURL'
-						}"
-					/>
 			<VBox width="80%">
 				<HBox>
 					<Label text="Type: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/kind}" />
+					<Text text="{/consultant_type}" />
 				</HBox>
 
 				<!-- I'm using these empty labels to add spacing between the entries.
 					Is there a better way? -->
 
 				<HBox>
-					<Label text="Date of Birth: " />
+					<Label text="Assignment Type: " />
 					<ToolbarSpacer width="3px"/>
-					<Text
-							text="{
-								path: '/date_of_birth',
-								type: '.type.Date'
-								}"
-							/>
+					<Text text="{/assignment_type}"/>
 				</HBox>
 				<HBox>
-					<Label text="Citizenship: " />
+					<Label text="Estimated Inputs: " />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/citizenship}" />
+					<Text text="{/estimated_inputs}" />
 				</HBox>
 				<HBox wrap="Wrap">
-					<Label text="Summary:" />
+					<Label text="Location:" />
 					<ToolbarSpacer width="3px"/>
-					<Text text="{/description}" />
+					<Text text="{/location}" />
 				</HBox>
 
 			</VBox>
 		</uxap:headerContent>
 		<uxap:sections>
-			<!-- change the id here to displayConsultantSection -->
 			<uxap:ObjectPageSection
 				id="displayProfileSection"
 				title="Profile"
@@ -94,39 +73,35 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Surname" />
-										<Text text="{/surname}" />
-										<Label text="Type" />
-										<Text text="{/kind}" />
-										<Label text="Gender" />
-										<Text text="{/gender}" />
+										<Label text="Project Name" />
+										<Text text="{/project_name}" />
+										<Label text="Consultant Type" />
+										<Text text="{/consultant_type}" />
+										<Label text="Complex" />
+										<Text text="{/complex}" />
+										<Label text="Budget" />
+										<Text text="{/budget}" />
 										<core:Title />
-										<Label text="Given Name" />
-										<Text text="{/given_name}" />
-										<Label text="Date of Birth" />
-										<Text
-												text="{
-													path: '/date_of_birth',
-													type: '.type.Date'
-													}"
-												/>
-										<Label text="LinkedIn Profile" />
-										<Text text="{/linkedin}" />
+										<Label text="Location" />
+										<Text text="{/location}" />
+										<Label text="Assignment Type" />
+										<Text text="{/assignment_type}"/>
+										<Label text="Department" />
+										<Text text="{/department}" />
 										<core:Title />
-										<Label text="Middle Name" />
-										<Text text="{/middle_name}" />
-										<Label text="Citizenship" />
-										<Text text="{/citizenship}" />
+										<Label text="Selection Method" />
+										<Text text="{/selection_method}" />
+										<Label text="Estimated Inputs" />
+										<Text text="{/estimated_inputs}" />
+										<Label text="Division" />
+										<Text text="{/division}" />
 									</f:content>
 								</f:SimpleForm>
-
-								<Label text="Summary:" />
-								<Text text="{/description}" />
 
 								<Label />
 
 								<f:SimpleForm
-									title="Consulting Background"
+									title="Project Team"
 									editable="false"
 									layout="ResponsiveGridLayout"
 									labelSpanL="12"
@@ -137,105 +112,21 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Label text="Sectors" />
-										<Text text="{/sector_list}" />
-										<Label text="Previously Engaged by IsDB" />
-										<Text text="{/previously_engaged_with_isdb}" />
+										<Label text="Team Leader" />
+										<Text text="{/team_leader}" />
 										<core:Title />
-										<Label text="Expertise" />
-										<Text text="{/expertise_list}" />
-										<Label text="Countries of Work Experience" />
-										<Text text="{/countries_of_work_experience}" />
+										<Label text="Team Members" />
+										<Text text="{/team_members}" />
 										<core:Title />
-										<Label text="Details on previous IsDB Engagement" />
-										<Text text="{/previous_isdb_project_details}" />
+										<Label text="Selection Committee Members" />
+										<Text text="{/selection_committee_members}" />
 									</f:content>
 								</f:SimpleForm>
 
 								<Label />
 
 								<f:SimpleForm
-									title="Education"
-									editable="false"
-									layout="ResponsiveGridLayout"
-									labelSpanL="12"
-									labelSpanM="12"
-									labelSpanS="12"
-									adjustLabelSpan="false"
-									emptySpanL="0"
-									columnsL="1"
-									singleContainerFullSize="false">
-									<f:content>
-										<Table
-											inset="false"
-											items="{/educations}">
-											<headerToolbar>
-												<Toolbar>
-													<ToolbarSpacer />
-												</Toolbar>
-											</headerToolbar>
-											<columns>
-												<Column width="auto">
-													<Text text="Program" />
-												</Column>
-												<Column>
-													<Text text="Degree" />
-												</Column>
-												<Column>
-													<Text text="Institution" />
-												</Column>
-												<Column>
-													<Text text="Country" />
-												</Column>
-												<Column>
-													<Text text="Date of Completion" />
-												</Column>
-											</columns>
-											<items>
-												<ColumnListItem>
-													<cells>
-														<Text text="{program}" />
-														<Text text="{degree}" />
-														<Text text="{institution}" />
-														<Text text="{country}" />
-														<Text text="{date_of_completion}" />
-													</cells>
-												</ColumnListItem>
-											</items>
-										</Table>
-									</f:content>
-								</f:SimpleForm>
-
-								<Label />
-
-								<f:SimpleForm
-									title="Professional"
-									editable="false"
-									layout="ResponsiveGridLayout"
-									labelSpanL="12"
-									labelSpanM="12"
-									labelSpanS="12"
-									adjustLabelSpan="false"
-									emptySpanL="0"
-									columnsL="2">
-									<f:content>
-										<core:Title />
-										<Label text="Membership/License" />
-										<Text text="{/membership_license}" />
-										<Label text="Trainings" />
-										<Text text="{/trainings}" />
-										<core:Title />
-										<Label text="Languages" />
-										<Text text="{/languages}" />
-									</f:content>
-								</f:SimpleForm>
-
-
-
-								<Label />
-
-								<f:SimpleForm
-									title="Contact"
+									title="EOI Information"
 									editable="false"
 									layout="ResponsiveGridLayout"
 									labelSpanL="12"
@@ -246,359 +137,20 @@
 									columnsL="3">
 									<f:content>
 										<core:Title />
-										<Title text="Permanent Address" />
-										<Label text="Street" />
-										<Text text="{/perm_street}" />
-										<Label text="City" />
-										<Text text="{/perm_city}" />
-										<Label text="Zip Code" />
-										<Text text="{/perm_zipcode}" />
-										<Label text="State/Province" />
-										<Text text="{/perm_state}" />
-										<Label text="Country" />
-										<Text text="{/perm_country}" />
+										<Label text="Publication Date" />
+										<Text text="{/publication_date}" />
+										<Label text="Estimated Project Cost" />
+										<Text text="{/estimated_cost}" />
 										<core:Title />
-										<Title text="Mailing Address" />
-										<Label text="Street" />
-										<Text text="{/mail_street}" />
-										<Label text="City" />
-										<Text text="{/mail_city}" />
-										<Label text="Zip Code" />
-										<Text text="{/mail_zipcode}" />
-										<Label text="State/Province" />
-										<Text text="{/mail_state}" />
-										<Label text="Country" />
-										<Text text="{/mail_country}" />
+										<Label text="Deadline for Submission" />
+										<Text text="{/deadline_for_submission}" />
 										<core:Title />
-										<Title text="Email and Phone" />
-										<Label text="Email" />
-										<Text text="{/email}" />
-										<Label text="Phone" />
-										<Text text="{/phone_number}" />
-										<Label text="Mobile" />
-										<Text text="{/mobile_number}" />
-										<Label text="Skype ID" />
-										<Text text="{/skype_id}" />
-									</f:content>
-								</f:SimpleForm>
-							</VBox>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-		</uxap:sections>
-		<uxap:sections>
-			<uxap:ObjectPageSection
-				id="displayEmploymentSection"
-				title="Employment"
-				titleUppercase="false">
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection
-						titleUppercase="false"
-						mode="Expanded"
-						class="editableForm"
-						editable="true">
-						<uxap:blocks>
-							<VBox>
-								<f:SimpleForm
-									editable="false"
-									layout="ResponsiveGridLayout"
-									labelSpanL="12"
-									labelSpanM="12"
-									labelSpanS="12"
-									adjustLabelSpan="false"
-									emptySpanL="0"
-									columnsL="3">
-									<f:content>
-										<core:Title />
-										<Label text="Former IsDB Employee" />
-										<Text text="{/former_isdb_employee}" />
-										<Label text="Years of Work Experience" />
-										<Text text="{/years_of_work_experience}" />
-										<core:Title />
-										<Label text="Employee ID" />
-										<Text text="{/employee_id}" />
-										<core:Title />
-										<Label text="Date Cleared for Consulting" />
-										<Text
-												text="{
-													path: '/date_cleared_consulting',
-													type: '.type.Date'
-													}"
-												/>
-									</f:content>
-								</f:SimpleForm>
-								<Table
-									inset="false"
-									items="{/employments}">
-									<headerToolbar>
-										<Toolbar>
-											<Title
-												text="Employment"
-												level="H2" />
-										</Toolbar>
-									</headerToolbar>
-									<columns>
-										<Column width="auto">
-											<Text text="Employer" />
-										</Column>
-										<Column
-											minScreenWidth="Tablet"
-											demandPopin="true"
-											hAlign="Left"
-											width="10%">
-											<Text text="From" />
-										</Column>
-										<Column
-											minScreenWidth="Tablet"
-											demandPopin="true"
-											hAlign="Left"
-											width="10%">
-											<Text text="To" />
-										</Column>
-										<Column
-											minScreenWidth="Tablet"
-											demandPopin="true"
-											hAlign="Left"
-											width="20%">
-											<Text text="Position Held" />
-										</Column>
-										<Column
-											hAlign="Left"
-											width="auto">
-											<Text text="Main Responsibilities" />
-										</Column>
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<ObjectIdentifier title="{employer}" />
-												<Text
-														text="{
-															path: 'from',
-															type: '.type.Date'
-															}"
-														/>
-												<Text
-														text="{
-															path: 'to',
-															type: '.type.Date'
-															}"
-														/>
-												<Text text="{position_held}" />
-												<Text text="{main_responsibilities}" />
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
-							</VBox>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-		</uxap:sections>
-		<uxap:sections>
-			<uxap:ObjectPageSection
-				id="displayAssignmentsSection"
-				title="Assignments"
-				titleUppercase="false">
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection
-						titleUppercase="false"
-						mode="Expanded"
-						class="editableForm"
-						editable="true">
-						<uxap:blocks>
-							<VBox>
-								<Table
-									inset="false"
-									items="{/assignments}">
-									<headerToolbar>
-										<Toolbar>
-											<Title
-												text="Assignments"
-												level="H2" />
-										</Toolbar>
-									</headerToolbar>
-									<columns>
-										<Column width="auto" />
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<VBox>
-													<ObjectIdentifier title="{title}" />
-													<Label />
-													<Label text="Description:" />
-													<Text text="{description}" />
-													<Label />
-													<Label text="Role:" />
-													<Text text="{role}" />
-												</VBox>
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
-							</VBox>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-		</uxap:sections>
-		<uxap:sections>
-			<uxap:ObjectPageSection
-				id="displayReferencesSection"
-				title="References"
-				titleUppercase="false">
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection
-						titleUppercase="false"
-						mode="Expanded"
-						class="editableForm"
-						editable="true">
-						<uxap:blocks>
-							<VBox>
-								<Table
-									inset="false"
-									items="{/references}">
-									<headerToolbar>
-										<Toolbar>
-											<Title
-												text="References"
-												level="H2" />
-										</Toolbar>
-									</headerToolbar>
-									<columns>
-										<Column width="12%">
-											<Text text="First Name" />
-										</Column>
-										<Column width="12%">
-											<Text text="Last Name" />
-										</Column>
-										<Column width="auto">
-											<Text text="Organization" />
-										</Column>
-										<Column width="20%">
-											<Text text="Position" />
-										</Column>
-										<Column width="20%">
-											<Text text="Email" />
-										</Column>
-										<Column width="20%">
-											<Text text="Telephone" />
-										</Column>
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<Text text="{first_name}" />
-												<Text text="{last_name}" />
-												<Text text="{organization}" />
-												<Text text="{position}" />
-												<Text text="{email}" />
-												<Text text="{telephone}" />
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
-							</VBox>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-		</uxap:sections>
-		<uxap:sections>
-			<uxap:ObjectPageSection
-				id="displayPublicationsSection"
-				title="Publications"
-				titleUppercase="false">
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection
-						titleUppercase="false"
-						mode="Expanded"
-						class="editableForm"
-						editable="true">
-						<uxap:blocks>
-							<VBox>
-								<Table
-									inset="false"
-									items="{/publications}">
-									<headerToolbar>
-										<Toolbar>
-											<Title
-												text="Publications"
-												level="H2" />
-										</Toolbar>
-									</headerToolbar>
-									<columns>
-										<Column width="10%">
-											<Text text="Title" />
-										</Column>
-										<Column width="10%">
-											<Text text="Publisher" />
-										</Column>
-										<Column width="auto">
-											<Text text="Description" />
-										</Column>
-										<Column width="20%">
-											<Text text="Year Published" />
-										</Column>
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<Text text="{title}" />
-												<Text text="{publisher}" />
-												<Text text="{description}" />
-												<Text text="{year_published}" />
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
-							</VBox>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-		</uxap:sections>
-		<uxap:sections>
-			<uxap:ObjectPageSection
-				id="displayAdditionalInfoSection"
-				title="Additional Information"
-				titleUppercase="false">
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection
-						titleUppercase="false"
-						mode="Expanded"
-						class="editableForm"
-						editable="true">
-						<uxap:blocks>
-							<VBox>
-								<f:SimpleForm
-									editable="false"
-									layout="ResponsiveGridLayout"
-									labelSpanL="12"
-									labelSpanM="12"
-									labelSpanS="12"
-									adjustLabelSpan="false"
-									emptySpanL="0"
-									columnsL="3">
-									<f:content>
-										<core:Title />
-										<Label text="Do you have any relatives in IsDB?" />
-										<Text text="{/relatives_in_isdb}" />
-										<Label text="Are there any limitations on your ability to travel?" />
-										<Text text="{/travel_limitations}" />
-										<core:Title />
-										<Label text="Would you have a contract for less than six months?" />
-										<Text text="{/less_than_six_month_contract}" />
-										<Label text="Are you currently a government employee?" />
-										<Text text="{/government_employee}"/>
-										<core:Title />
-										<Label text="Do you have any objections in IsDB making inquires of your employer?" />
-										<Text text="{/inquire_employer}"/>
-										<Label text="Were you ever convicted for any violation of any law?" />
-										<Text text="{/previously_convicted}"/>
+										<Label text="IEOI Status" />
+										<Text text="{/status}" />
+										<Label text="" />
+										<Button text="Send EOI"
+											width="50%"
+											press="handleEOIPress"/>
 									</f:content>
 								</f:SimpleForm>
 							</VBox>

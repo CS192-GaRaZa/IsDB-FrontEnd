@@ -112,7 +112,6 @@ sap.ui.define([
         },
         contentType : "application/json"
       }).done(function (oData) {
-        console.log(oData);
         oModel.setData({ eois: oData }, true);
       });
 

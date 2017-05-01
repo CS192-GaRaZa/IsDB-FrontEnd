@@ -2,11 +2,13 @@ sap.ui.define([
   'jquery.sap.global',
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
+  'sap/ui/core/UIComponent',
   'cmsfrontend/model/utils'
 ], function (
   jQuery,
   Controller,
   JSONModel,
+  UIComponent,
   utils
 ) {
   'use strict';
@@ -40,15 +42,26 @@ sap.ui.define([
       this.updateUsersTable();
     },
 
-    onProjectTableItemPress: function (oEvent) {
+    onUsersTableItemPress: function (oEvent) {
       var oParams = oEvent.getParameters();
-      var oProject = oParams.listItem.getBindingContext().getProperty();
+      var oUser = oParams.listItem.getBindingContext().getProperty();
+
+      var oRouter = UIComponent.getRouterFor(this);
+      var sRoute;
+      if (oUser.role.role_name === 'consultant') {
+        sRoute = 'consultantDetail';
+      } else if (oUser.role.role_name === 'consulting_firm') {
+        sRoute = 'consultingFirmDetail';
+      } else if (oUser.role.role_name === 'vendor') {
+        sRoute = 'vendorDetail';
+      }
+
+      oRouter.navTo(sRoute, { id: oUser.id, subsection: 'profile' });
     },
 
     onQuerySubmit: function() {
       var oModel = this.getView().getModel();
       var oQueryData = oModel.getProperty('/query');
-      console.log(oQueryData);
 
       this.updateUsersTable(oQueryData);
     },
