@@ -36,7 +36,7 @@
               <core:Fragment fragmentName="cmsfrontend.view.consultingfirm.OverviewQuickLinks" type="XML" />
             </items>
           </VBox>
-          <core:Fragment fragmentName="cmsfrontend.view.consultingfirm.OverviewNewIEOIs" type="XML" />
+          <!-- <core:Fragment fragmentName="cmsfrontend.view.consultingfirm.OverviewNewIEOIs" type="XML" /> -->
           <core:Fragment fragmentName="cmsfrontend.view.consultingfirm.OverviewManageEOIs" type="XML" />
         </l:content>
       </l:Grid>

@@ -3,6 +3,7 @@ sap.ui.define([
   'sap/ui/core/routing/History',
   'sap/ui/core/UIComponent',
   'sap/ui/model/json/JSONModel',
+  'cmsfrontend/model/type/CustomDate',
   'cmsfrontend/model/formatter',
   'cmsfrontend/model/constants',
   'cmsfrontend/model/utils'
@@ -11,12 +12,17 @@ sap.ui.define([
   History,
   UIComponent,
   JSONModel,
+  CustomDate,
   formatter,
   constants,
   utils
 ) {
   "use strict";
   return Controller.extend('cmsfrontend.controller.base.Overview', {
+
+    type: {
+      Date: CustomDate
+    },
 
     _getDummyIEOs: function () {
       return [
@@ -96,6 +102,18 @@ sap.ui.define([
         ieos: this._getDummyIEOs()
       });
       oModel.loadData(sEndPoint, {}, true, 'GET', true);
+
+      $.ajax({
+        url : 'https://isdb-cms-api.herokuapp.com/api/v1/eois',
+        type : 'GET',
+        headers: {
+         "Session-Key": utils.storage.get('token')
+        },
+        contentType : "application/json"
+      }).done(function (oData) {
+        console.log(oData);
+        oModel.setData({ eois: oData }, true);
+      });
 
       oModel.setSizeLimit(this._iTableSizeLimit);
       var oView = this.getView();
