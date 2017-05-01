@@ -1,0 +1,32 @@
+<mvc:View
+    height="100%"
+    controllerName="cmsfrontend.controller.project.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    >
+  <Page
+      id="profile"
+      showHeader="true"
+      showNavButton="true"
+      >
+    <customHeader>
+      <core:Fragment
+          fragmentName="cmsfrontend.view.fragments.NavBar"
+          type="XML"
+          />
+      </customHeader>
+    <content>
+      <!-- core:Fragment fragmentName="cmsfrontend.fragments.profileDisplay" type="XML"> </core:Fragment-->
+    </content>
+    <footer>
+      <Bar>
+        <contentRight>
+          <Button id="edit" text="Edit" press="handleEditPress" />
+          <Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+          <Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
+        </contentRight>
+      </Bar>
+    </footer>
+  </Page>
+</mvc:View>
