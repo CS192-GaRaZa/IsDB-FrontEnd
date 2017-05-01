@@ -2,3 +2,5 @@ node_modules
 webapp/bower_components
 webapp/resources
 npm-debug.log
+.DS_Store
+.vscode

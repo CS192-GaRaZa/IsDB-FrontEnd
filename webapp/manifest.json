@@ -53,6 +53,13 @@
         }
       }
     },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
     "routing": {
       "config" : {
         "routerClass": "sap.m.routing.Router",
@@ -115,6 +122,16 @@
           "pattern": "vendor/:subsection:",
           "name": "vendorDetail",
           "target": "vendorDetail"
+        },
+        {
+          "pattern": "admin",
+          "name": "admin",
+          "target": "admin"
+        },
+        {
+          "pattern": "create-project",
+          "name": "createProject",
+          "target": "createProject"
         }
       ],
       "targets" : {
@@ -163,6 +180,12 @@
           "title": "{{ConsultantManagementSystem}}",
           "viewName": "vendor.Detail",
           "viewLevel": 3
+        },
+        "admin": {
+          "viewName": "admin.Admin"
+        },
+        "createProject": {
+          "viewName": "admin.createProject"
         }
       }
     }
