@@ -104,7 +104,7 @@
 						<HBox> 
 							<items>
 								<Button text="Accept" app:id="{id}" type="Accept" press="acceptEoi" class="sapUiTinyMarginBeginEnd" />
-								<Button text="Reject" app:id="{id}" type="Reject" press="rejectEoi" class="sapUiTinyMarginBegindEnd" />
+								<Button text="Reject" type="Reject" press="rejectEoi" class="sapUiTinyMarginBegindEnd" />
 							</items>
 						</HBox>
 					</cells>

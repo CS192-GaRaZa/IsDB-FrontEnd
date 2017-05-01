@@ -139,10 +139,14 @@
           "target": "createProject"
         },
         {
+          "pattern": "users",
+          "name": "userList",
+          "target": "userList"
+        },
+        {
           "pattern": "project-eoi/:id:",
           "name": "projectEOI",
           "target": "projectEOI"
-        },
         {
           "pattern": "accepted-project/:id:",
           "name": "acceptedProject",
@@ -206,6 +210,9 @@
         },
         "createProject": {
           "viewName": "admin.createProject"
+        },
+        "userList": {
+          "viewName": "users.UserList"
         },
         "projectEOI": {
           "viewName": "admin.ProjectEOI"

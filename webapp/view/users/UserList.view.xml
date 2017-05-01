@@ -1,0 +1,155 @@
+<mvc:View
+  xmlns="sap.uxap"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  controllerName="cmsfrontend.controller.users.UserList"
+>
+  <ObjectPageLayout>
+
+    <headerTitle>
+      <ObjectPageHeader
+        objectTitle="Standard"
+        showTitleSelector="true"
+      >
+        <actions>
+          <m:Link
+            class="sapUiSmallMargin"
+            text="Global Actions"
+          />
+          <ObjectPageHeaderActionButton
+            icon="sap-icon://action"
+            text="action"
+            importance="Low"
+          />
+        </actions>
+      </ObjectPageHeader>
+    </headerTitle>
+
+    <headerContent>
+      <layout:Grid
+        position="Center"
+        hSpacing="0.5"
+        class="sapUiSmallMarginEnd"
+        defaultSpan="XL2 L2 M6 S12"
+        width="90%"
+      >
+
+        <!--
+        name
+        sector
+        expertise
+        education_course
+        education_degree
+        -->
+
+        <m:VBox>
+          <m:Label text="Name" labelFor="displayName" />
+          <m:Input id="displayName" value="{/query/display_name}" />
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Sector" labelFor="sector" />
+          <m:Input id="sector" value="{/query/sector}"/>
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Expertise" labelFor="expertise" />
+          <m:Input id="expertise" value="{/query/expertise}"/>
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Course" labelFor="educationCourse" />
+          <m:Input id="educationCourse" value="{/query/education_course}"/>
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Degree" labelFor="degree" />
+          <m:Input id="degree" value="{/query/education_degree}"/>
+        </m:VBox>
+
+        <m:HBox
+          width="100%"
+          alignItems="Center"
+          justifyContent="End"
+        >
+          <m:layoutData>
+            <layout:GridData
+              span="XL12 L12 M12 S12"
+            />
+          </m:layoutData>
+          <m:items>
+            <m:Button
+              text="Search"
+              press="onQuerySubmit"
+            />
+          </m:items>
+        </m:HBox>
+
+      </layout:Grid>
+
+    </headerContent>
+
+
+    <!-- Location, Estimated Inputs, Selection Method, Consultant Type, Assignment Type, Department, Division, Budget, Deadline, EOI -->
+    <sections>
+      <ObjectPageSection title="Users">
+        <ObjectPageSubSection>
+          <m:Table
+            items="{
+              path: '/users'
+            }"
+            itemPress="onUsersTableItemPress"
+          >
+            <m:columns>
+              <m:Column>
+                <m:Text text="Name" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Role" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Type" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Sector" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Expertise" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Email" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Linkedin" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Mobile Number" />
+              </m:Column>
+            </m:columns>
+
+            <m:items>
+              <m:ColumnListItem class="sapUiContentPadding" type="Active">
+                <m:cells>
+                  <m:Text text="{display_name}" />
+                  <m:Text text="{role/role_name}" />
+                  <m:Text text="{kind}" />
+                  <m:Text text="{sector}" />
+                  <m:Text text="{expertise}" />
+                  <m:Text text="{email}" />
+                  <m:Text text="{linkedin}" />
+                  <m:Text text="{mobile_number}" />
+                </m:cells>
+              </m:ColumnListItem>
+            </m:items>
+
+          </m:Table>
+        </ObjectPageSubSection>
+      </ObjectPageSection>
+    </sections>
+
+
+  </ObjectPageLayout>
+</mvc:View>

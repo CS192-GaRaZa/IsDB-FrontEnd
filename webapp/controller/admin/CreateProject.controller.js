@@ -49,7 +49,7 @@ sap.ui.define([
 				data: json,
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
+					"Session-Key": 'euXHdeZRL9UFqkbUpr4yQQ6i'
 				},
 				success: function() {
 					console.log('Success');

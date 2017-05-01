@@ -3,14 +3,21 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
-	xmlns:form="sap.ui.layout.form"
+	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page>	
-		<l:VerticalLayout
-			class="sapUiContentPadding"
-			width="100%">
-			<l:content>
+		<f:SimpleForm
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanL="12"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			columnsL="3">
+			<f:content>
+				<core:Title />
 				<Label text="Project Name" labelFor="a"/>
 				<Input value="{/project_name}" />
 				
@@ -50,28 +57,13 @@
 					<core:Item key="Remote" text="Remote" />
 				</Select>
 
-				<Label text="Assignment Type" labelFor="b" design="Bold" />
-				<Select
-					forceSelection="false"
-					selectedKey="{/assignment_type}"
-					>
-					<core:Item key="Full-Time" text="Full-Time" />
-					<core:Item key="Part-Time" text="Part-Time" />
-					<core:Item key="Contractual" text="Contractual" />
-					<core:Item key="Intermittent" text="Intermittent" />
-				</Select>
-				
+				<Label text="Complex" labelFor="" design="Bold" />
+				<TextArea value="{/complex}" rows="8" />
+				<core:Title />
 				<Label text="Estimated Inputs" labelFor="" design="Bold" />
 				<Input value="{/estimated_inputs}"/>
-				
-				<Label text="Complex" labelFor="" design="Bold" />
-				<l:VerticalLayout
-					class="sapUiContentPadding"
-					width="100%">
-					<l:content>
-						<TextArea value="{/complex}" rows="8" />
-					</l:content>
-				</l:VerticalLayout>
+
+					
 
 				<Label text="Department" labelFor="" design="Bold" />
 				<Select
@@ -95,26 +87,28 @@
 					<core:Item key="5" text="5" />
 				</Select>
 
+				<Label text="Assignment Type" labelFor="b" design="Bold" />
+				<Select
+					forceSelection="false"
+					>
+					<core:Item key="Full-Time" text="Full-Time" />
+					<core:Item key="Part-Time" text="Part-Time" />
+					<core:Item key="Contractual" text="Contractual" />
+					<core:Item key="Intermittent" text="Intermittent" />
+				</Select>
+
 				<Label text="Team Leader" labelFor="a"/>
 				<Input value="{/team_leader}"/>
 
-				<Label text="Team Members" labelFor="" design="Bold" />
-				<l:VerticalLayout
-					class="sapUiContentPadding"
-					width="100%">
-					<l:content>
-						<TextArea value="{/team_members}" rows="8" />
-					</l:content>
-				</l:VerticalLayout>
 
-				<Label text="Selection Committee Members" labelFor="" design="Bold" />
-				<l:VerticalLayout
-					class="sapUiContentPadding"
-					width="100%">
-					<l:content>
-						<TextArea value="{/selection_committee_members}" rows="8" />
-					</l:content>
-				</l:VerticalLayout>
+
+				<Label text="Team Members" labelFor="" design="Bold" />
+				<TextArea value="{/team_members}" rows="8" />
+
+				<Label text=""/>
+				<Button text="Submit Project"
+						press="onPress"/>
+				<core:Title />
 
 				<Label text="Publication Date" labelFor="a"/>
 				<DatePicker
@@ -136,14 +130,14 @@
 				<Label text="Estimated Project Cost" labelFor="a"/>
 				<Input value="{/estimated_cost}" />
 
-				<Button text="Default"
-						press="onPress"
-					>
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button>
-			</l:content>
-		</l:VerticalLayout>
+				<Label text="Budget" labelFor="a"/>
+				<Input value="{/budget}" />
+
+
+				<Label text="Selection Committee Members" labelFor="" design="Bold" />
+				<TextArea value="{/selection_committee_members}" rows="8" />
+			</f:content>
+		</f:SimpleForm>
+
 	</Page>
 </mvc:View>
