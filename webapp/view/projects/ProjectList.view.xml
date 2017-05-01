@@ -1,0 +1,180 @@
+<mvc:View
+  xmlns="sap.uxap"
+  xmlns:m="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  controllerName="cmsfrontend.controller.projects.ProjectList"
+>
+  <ObjectPageLayout>
+
+    <headerTitle>
+      <ObjectPageHeader
+        objectTitle="Standard"
+        showTitleSelector="true"
+      >
+        <actions>
+          <m:Link
+            class="sapUiSmallMargin"
+            text="Global Actions"
+          />
+          <ObjectPageHeaderActionButton
+            icon="sap-icon://action"
+            text="action"
+            importance="Low"
+          />
+        </actions>
+      </ObjectPageHeader>
+    </headerTitle>
+
+    <headerContent>
+      <layout:Grid
+        position="Center"
+        hSpacing="0.5"
+        class="sapUiSmallMarginEnd"
+        defaultSpan="XL3 L3 M6 S12"
+      >
+
+        <!--
+        project_name
+        location,
+        selection_method: QCPS | Draft | Panel,
+        work_from: Remove | On-site,
+        assignment_type: Full time | Part time | Intermittent | Contractual,
+        department: HR | Accounting | IT | Industry | Public Relations | Business,
+        division
+        -->
+
+        <m:VBox>
+          <m:Label text="Project Name" labelFor="projectName" />
+          <m:Input id="projectName" value="{/query/project_name}"/>
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Location" labelFor="location" />
+          <m:Input id="location" value="{/query/location}"/>
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Selection Method" labelFor="selectionMethod" />
+          <m:Input id="selectionMethod" value="{/query/selection_method}"/>
+        </m:VBox>
+
+
+        <m:VBox>
+          <m:Label text="Work From" labelFor="workFrom" />
+          <m:Input id="workFrom" value="{/query/work_from}" />
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Assignment Type" labelFor="assignmentType" />
+          <m:Input id="assignmentType" value="{/query/assignment_type}" />
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Consultant Type" labelFor="consultantType" />
+          <m:Input id="consultantType" value="{/query/consultant_type}" />
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Department" labelFor="department" />
+          <m:Input id="department" value="{/query/department}" />
+        </m:VBox>
+
+        <m:VBox>
+          <m:Label text="Division" labelFor="division" />
+          <m:Input id="division" value="{/query/division}" />
+        </m:VBox>
+
+        <m:HBox
+          width="100%"
+          alignItems="Center"
+          justifyContent="End"
+        >
+          <m:layoutData>
+            <layout:GridData
+              span="XL12 L12 M12 S12"
+            />
+          </m:layoutData>
+          <m:items>
+            <m:Button
+              text="Search"
+              press="onQuerySubmit"
+            />
+          </m:items>
+        </m:HBox>
+
+      </layout:Grid>
+
+    </headerContent>
+
+
+    <!-- Location, Estimated Inputs, Selection Method, Consultant Type, Assignment Type, Department, Division, Budget, Deadline, EOI -->
+    <sections>
+      <ObjectPageSection title="Projects">
+        <ObjectPageSubSection>
+          <m:Table
+            items="{
+              path: '/projects'
+            }"
+            itemPress="onProjectTableItemPress"
+          >
+            <m:columns>
+              <m:Column>
+                <m:Text text="Project Name" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Location" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Estimated Inputs" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Selection Method" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Consultant Type" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Assignment Type" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Department" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Division" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Budget" />
+              </m:Column>
+              <m:Column>
+                <m:Text text="Deadline" />
+              </m:Column>
+            </m:columns>
+
+            <m:items>
+              <m:ColumnListItem class="sapUiContentPadding" type="Active">
+                <m:cells>
+                  <m:Text text="{project_name}" />
+                  <m:Text text="{location}" />
+                  <m:Text text="{estimated_inputs}" />
+                  <m:Text text="{selection_method}" />
+                  <m:Text text="{consultant_type}" />
+                  <m:Text text="{assignment_type}" />
+                  <m:Text text="{department}" />
+                  <m:Text text="{division}" />
+                  <m:Text text="{budget}" />
+                  <m:Text text="{deadline_for_submission}" />
+                </m:cells>
+              </m:ColumnListItem>
+            </m:items>
+
+          </m:Table>
+        </ObjectPageSubSection>
+      </ObjectPageSection>
+    </sections>
+
+
+  </ObjectPageLayout>
+</mvc:View>

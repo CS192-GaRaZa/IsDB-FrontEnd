@@ -115,6 +115,11 @@
           "pattern": "vendor/:subsection:",
           "name": "vendorDetail",
           "target": "vendorDetail"
+        },
+        {
+          "pattern": "projects",
+          "name": "projectList",
+          "target": "projectList"
         }
       ],
       "targets" : {
@@ -163,6 +168,11 @@
           "title": "{{ConsultantManagementSystem}}",
           "viewName": "vendor.Detail",
           "viewLevel": 3
+        },
+        "projectList": {
+          "title": "Projects",
+          "viewName": "projects.ProjectList",
+          "viewLevel": 2
         }
       }
     }
