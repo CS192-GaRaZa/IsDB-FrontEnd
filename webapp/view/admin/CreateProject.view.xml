@@ -1,0 +1,145 @@
+<mvc:View
+	controllerName="cmsfrontend.controller.admin.CreateProject"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>	
+		<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+			<l:content>
+				<Label text="Project Name" labelFor="a"/>
+				<Input value="{/project_name}" />
+				
+				<Label text="Location" labelFor="b" design="Bold" />
+				<Select
+					forceSelection="false" 
+					selectedKey="{/location}">
+					<core:Item key="Philippines" text="Philippines" />
+					<core:Item key="America" text="America" />
+				</Select>
+				
+				<Label text="Selection Method" labelFor="c"/>
+				<Select
+					selectedKey="{/selection_method}"
+					forceSelection="false">
+					<core:Item key="QCPS" text="QCPS" />
+					<core:Item key="Panel Interview" text="Panel Interview" />
+					<core:Item key="Interview" text="Interview" />
+				</Select>
+				
+				<Label text="Consultant Type" labelFor="b" design="Bold" />
+				<Select
+					forceSelection="false"
+					selectedKey="{/consultant_type}"
+					>
+					<core:Item key="Individual" text="Individual" />
+					<core:Item key="Consulting Firm" text="Consulting Firm" />
+					<core:Item key="Vendor" text="Vendor" />
+				</Select>
+
+				<Label text="Work From" labelFor="b" design="Bold" />
+				<Select
+					forceSelection="false"
+					selectedKey="{/work_from}"
+					>
+					<core:Item key="On-Site" text="On-Site" />
+					<core:Item key="Remote" text="Remote" />
+				</Select>
+
+				<Label text="Assignment Type" labelFor="b" design="Bold" />
+				<Select
+					forceSelection="false"
+					>
+					<core:Item key="Full-Time" text="Full-Time" />
+					<core:Item key="Part-Time" text="Part-Time" />
+					<core:Item key="Contractual" text="Contractual" />
+					<core:Item key="Intermittent" text="Intermittent" />
+				</Select>
+				
+				<Label text="Estimated Inputs" labelFor="" design="Bold" />
+				<Input value="{/estimated_inputs}"/>
+				
+				<Label text="Complex" labelFor="" design="Bold" />
+				<l:VerticalLayout
+					class="sapUiContentPadding"
+					width="100%">
+					<l:content>
+						<TextArea value="{/complex}" rows="8" />
+					</l:content>
+				</l:VerticalLayout>
+
+				<Label text="Department" labelFor="" design="Bold" />
+				<Select
+					forceSelection="false"
+					selectedKey="{/department}">
+					<core:Item key="0" text="Accounting" />
+					<core:Item key="1" text="Business" />
+					<core:Item key="2" text="Engineering" />
+					<core:Item key="3" text="HR" />
+					<core:Item key="4" text="Public Relations" />
+				</Select>
+
+				<Label text="Division" labelFor="" design="Bold" />
+				<Select
+					forceSelection="false"
+					selectedKey="{/division}">
+					<core:Item key="1" text="1" />
+					<core:Item key="2" text="2" />
+					<core:Item key="3" text="3" />
+					<core:Item key="4" text="4" />
+					<core:Item key="5" text="5" />
+				</Select>
+
+				<Label text="Team Leader" labelFor="a"/>
+				<Input value="{/team_leader}"/>
+
+				<Label text="Team Members" labelFor="" design="Bold" />
+				<l:VerticalLayout
+					class="sapUiContentPadding"
+					width="100%">
+					<l:content>
+						<TextArea value="{/team_members}" rows="8" />
+					</l:content>
+				</l:VerticalLayout>
+
+				<Label text="Selection Committee Members" labelFor="" design="Bold" />
+				<l:VerticalLayout
+					class="sapUiContentPadding"
+					width="100%">
+					<l:content>
+						<TextArea value="{/selection_committee_members}" rows="8" />
+					</l:content>
+				</l:VerticalLayout>
+
+				<Label text="Publication Date" labelFor="a"/>
+				<DatePicker
+					value="{
+						path: '/publication_date',
+						type: '.type.Date'
+						}" />
+				
+				<Label text="Deadline for Submission" labelFor="a"/>
+				<DatePicker
+					value="{
+						path: '/deadline_for_submission',
+						type: '.type.Date'
+						}" />
+
+				<Label text="Estimated Project Cost" labelFor="a"/>
+				<Input value="{/estimated_cost}" />
+
+				<Button text="Default"
+						press="onPress"
+					>
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+			</l:content>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>

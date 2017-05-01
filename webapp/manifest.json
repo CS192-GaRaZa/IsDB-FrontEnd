@@ -53,6 +53,13 @@
         }
       }
     },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
     "routing": {
       "config" : {
         "routerClass": "sap.m.routing.Router",
@@ -120,6 +127,16 @@
           "pattern": "projects",
           "name": "projectList",
           "target": "projectList"
+        },
+        {
+          "pattern": "admin",
+          "name": "admin",
+          "target": "admin"
+        },
+        {
+          "pattern": "create-project",
+          "name": "createProject",
+          "target": "createProject"
         }
       ],
       "targets" : {
@@ -173,6 +190,12 @@
           "title": "Projects",
           "viewName": "projects.ProjectList",
           "viewLevel": 2
+        },
+        "admin": {
+          "viewName": "admin.Admin"
+        },
+        "createProject": {
+          "viewName": "admin.createProject"
         }
       }
     }
