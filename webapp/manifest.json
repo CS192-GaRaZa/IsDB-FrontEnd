@@ -137,6 +137,11 @@
           "pattern": "create-project",
           "name": "createProject",
           "target": "createProject"
+        },
+        {
+          "pattern": "users",
+          "name": "userList",
+          "target": "userList"
         }
       ],
       "targets" : {
@@ -196,6 +201,9 @@
         },
         "createProject": {
           "viewName": "admin.createProject"
+        },
+        "userList": {
+          "viewName": "users.UserList"
         }
       }
     }
