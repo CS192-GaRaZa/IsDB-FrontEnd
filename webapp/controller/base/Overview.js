@@ -94,13 +94,14 @@ sap.ui.define([
     },
 
     _onRouteMatched: function (oEvent) {
-      var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
-          utils.storage.get('uniqueId');
+      var oArgs = oEvent.getParameter('arguments');
+      this._sId = oArgs.id;
 
-      var oModel = new JSONModel({
-        nieos: this._getDummyIEOs(),
-        ieos: this._getDummyIEOs()
-      });
+      var sUniqueId = utils.getUniqueID(this._sRole, this._sId);
+      var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+        sUniqueId;
+
+      var oModel = new JSONModel();
       oModel.loadData(sEndPoint, {}, true, 'GET', true);
 
       $.ajax({
@@ -120,9 +121,10 @@ sap.ui.define([
       oView.setModel(oModel);
     },
 
-    constructor: function (sOverviewRoute, sDetailRoute) {
+    constructor: function (sRole, sOverviewRoute, sDetailRoute) {
       this._sOverviewRoute = sOverviewRoute;
       this._sDetailRoute = sDetailRoute;
+      this._sRole = sRole;
     },
 
     formatter: _.merge({
@@ -148,6 +150,7 @@ sap.ui.define([
     onNameLinkPress: function (oEvent) {
       var oRouter = UIComponent.getRouterFor(this);
       oRouter.navTo(this._sDetailRoute, {
+        id: this._sId,
         subsection: "profile"
       }, false);
     },

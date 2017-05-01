@@ -85,6 +85,23 @@ sap.ui.define([
       }
     },
 
+    _onRouteMatched: function (oEvent) {
+      var oArgs = oEvent.getParameter('arguments');
+      this._sId = oArgs.id;
+
+      var sUniqueId = utils.getUniqueID(constants.roleKey.VENDOR,
+        this._sId);
+      var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+        sUniqueId;
+
+      var oModel = new JSONModel();
+      oModel.loadData(sEndPoint, {}, true, 'GET', true);
+
+      oModel.setSizeLimit(this._iTableSizeLimit);
+      var oView = this.getView();
+      oView.setModel(oModel);
+    },
+
 
     _formFragments: {},
 
@@ -122,111 +139,16 @@ sap.ui.define([
 
 
     onInit: function (oEvent) {
-      var oUserDataLocal;
-      var oCountryData;
-      var oCountriesModel;
-      var oView;
-      var sUniqueID;
-      var sURL;
-      var oUserData;
-      var oModel;
+      var oRouter = UIComponent.getRouterFor(this);
+      oRouter.getRoute('vendorDetail')
+          .attachMatched(this._onRouteMatched, this);
 
-      oUserDataLocal = {
-        "vendor_name": "Vendors Anonymous",
-        "vendor_type": "Aircon resellers",
-        "vendor_establishment_date": null,
-        "vendor_number_of_employees": "24",
-        "vendor_owner": "Rafael Miguel V. Cantero",
-        "vendor_manager": "Lorem Ipsum D. Lorem",
-        "vendor_commercial_registration": "XXXXXXXXXXXXX",
-        "email": "gchase.patron@gmail.com",
-        "mobile_number": "+1283907420357",
-        "phone_number": "+1283907420357",
-        "skype_id": "test.skype",
-        "description": "Lorem ipsum",
-        "perm_street": "XXXXXXXXXXXX",
-        "perm_city": "XXXXXXXXXXXX",
-        "perm_zipcode": "XXXXXXXXXXXX",
-        "perm_state": "XXXXXXXXXXXX",
-        "perm_country": "XXXXXXXXXXXX",
-        "vendor_membership_number": "000123",
-        "vendor_fax": "001230412",
-        "vendor_pobox": "4432",
-        "bank_name": "XXXXXXXXXXXX",
-        "bank_street": "XXXXXXXXXXXX",
-        "bank_city": "XXXXXXXXXXXX",
-        "bank_zipcode": "XXXXXXXXXXXX",
-        "bank_country": "XXXXXXXXXXXX",
-        "bank_account_holder": "Bob D. Ong",
-        "bank_account_number": "11111111",
-        "bank_swift_number": "1111111",
-        "bank_iban": "ASD1234X23ASD",
-        "activities": [
-            {"activity":"activity 1"},
-            {"activity":"activity 2"}
-        ],
-        "customers": [{
-            "customer_name":"Rafael Miguel F. Cantero",
-            "country":"Philippines",
-            "city":"Pasig"
-        }],
-        "projects": [{
-            "name":"Project 1",
-            "benefiters":"Lorem Ipsum",
-            "from":null,
-            "to":null,
-            "contract_value":"999,999 USD"
-        }],
-        "contacts": [{
-            "staff_name":"John S. Smith",
-            "position":"Manager",
-            "office_phone":"0912394123",
-            "mobile_number":"09172231242",
-            "email":"John@yahoo.com"
-        }]
-      };
-
-      oCountriesModel = new JSONModel("model/countries.json");
+      var oCountriesModel = new JSONModel("model/countries.json");
       oCountriesModel.setSizeLimit(500);
 
-      oView = this.getView();
+      var oView = this.getView();
       oView.setModel(oCountriesModel, "countryModel");
 
-      sUniqueID = Cookies.getJSON("isdb").unique_id;
-      sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
-
-      oUserData = $.ajax({
-        url : sURL,
-        type : "GET",
-        async: false,
-        dataType: 'json',
-        contentType : "application/json",
-        success : function(data, textStatus, jqXHR) {
-          // console.log("data: ", data);
-          // console.log("textStatus: ", textStatus);
-          // console.log("jqxhr: ", jqXHR);
-          this._convertDatesISOToObj(data);
-          if (!data.image_url) {
-              data.image_url = "/img/testIMG.jpg";
-          }
-        return data;
-        }.bind(this),
-        error: function(xhr, status) {
-          // console.log("ERROR POSTING REQUEST");
-          // console.log("xhr: ", xhr);
-          // console.log("status: ", status);
-           return status;
-        },
-      }).responseJSON;
-
-      oModel = new JSONModel(oUserData);
-      // remove all the time in the data so that we are only left
-      // with yyyy-MM-dd
-      // oModel.setData({
-      //     date_of_birth: oModel.getData().date_of_birth.slice(0, 10)
-      // }, true);
-
-      oView.setModel(oModel);
       oView.setModel(new JSONModel(), 'config');
 
       UIComponent.getRouterFor(this)
@@ -236,8 +158,8 @@ sap.ui.define([
       this._showFormFragment("DetailDisplay");
 
       // sets intital values for selected countries
-      this._sSelectedPermCountry = oModel.getData().perm_country;
-      this._sSelectedBankCountry = oModel.getData().bank_country;
+      // this._sSelectedPermCountry = oModel.getData().perm_country;
+      // this._sSelectedBankCountry = oModel.getData().bank_country;
 
       // adds an event delegate to the objectPage that switches it to the tab
       // that was last open in the Edit view

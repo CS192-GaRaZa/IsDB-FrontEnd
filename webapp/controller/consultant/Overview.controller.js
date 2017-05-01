@@ -1,13 +1,19 @@
 sap.ui.define([
-  'cmsfrontend/controller/base/Overview'
+  'cmsfrontend/controller/base/Overview',
+  'cmsfrontend/model/constants'
 ], function OverviewController(
-  Overview
+  Overview,
+  constants
 ) {
   "use strict";
   return Overview.extend("cmsfrontend.controller.consultant.Overview", {
 
     constructor: function () {
-      Overview.apply(this, [ 'consultantOverview', 'consultantDetail' ]);
+      Overview.apply(this, [
+        constants.roleKey.CONSULTANT,
+        'consultantOverview',
+        'consultantDetail'
+      ]);
     }
 
   });

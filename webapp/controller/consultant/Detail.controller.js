@@ -51,9 +51,12 @@ sap.ui.define([
     _onRouteMatched: function (oEvent) {
       var oArgs = oEvent.getParameter("arguments");
       this._sSubsection = oArgs.subsection;
-      this._sUniqueID = utils.storage.get('uniqueId');
+      this._sId = oArgs.id;
+      this._sRole = constants.roleKey.CONSULTANT;
+      this._sUniqueId = utils.getUniqueID(this._sRole, this._sId);
 
-      var sURL = "http://isdb-cms-api.herokuapp.com/api/v1/bank_projects/8" // THIS URL IS HARDCODED ///////////////////////////
+      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+          this._sUniqueId;
 
       this.getView().setModel(new JSONModel(sURL));
     },
@@ -272,7 +275,7 @@ sap.ui.define([
     },
 
     handleEOIPress : function () {
-      
+
       var oView = this.getView();
       var oModel = oView.getModel();
 

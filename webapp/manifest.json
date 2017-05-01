@@ -94,32 +94,35 @@
           "target": "vendor_signup"
         },
         {
-          "pattern": "consultant",
+          "pattern": "consultant/{id}",
           "name": "consultantOverview",
           "target": "consultantOverview"
         },
         {
-          "pattern": "consultant/:subsection:",
+          "pattern": ":subsection:",
+          "parent": "consultantOverview",
           "name": "consultantDetail",
           "target": "consultantDetail"
         },
         {
-          "pattern": "consulting-firm",
+          "pattern": "consulting-firm/{id}",
           "name": "consultingFirmOverview",
           "target": "consultingFirmOverview"
         },
         {
-          "pattern": "consulting-firm/:subsection:",
+          "pattern": ":subsection:",
+          "parent": "consultingFirmOverview",
           "name": "consultingFirmDetail",
           "target": "consultingFirmDetail"
         },
         {
-          "pattern": "vendor",
+          "pattern": "vendor/{id}",
           "name": "vendorOverview",
           "target": "vendorOverview"
         },
         {
-          "pattern": "vendor/:subsection:",
+          "pattern": ":subsection:",
+          "parent": "vendorOverview",
           "name": "vendorDetail",
           "target": "vendorDetail"
         },

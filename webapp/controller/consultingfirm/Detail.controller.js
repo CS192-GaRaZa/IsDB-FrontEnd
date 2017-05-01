@@ -68,81 +68,64 @@ sap.ui.define([
       window.location.replace(sPattern);
     },
 
+    _onRouteMatched: function (oEvent) {
+      var oArgs = oEvent.getParameter('arguments');
+      this._sId = oArgs.id;
+
+      var sUniqueId = utils.getUniqueID(constants.roleKey.CONSULTING_FIRM,
+        this._sId);
+      var sEndPoint = "https://isdb-cms-api.herokuapp.com/api/v1/users/" +
+        sUniqueId;
+
+      var oModel = new JSONModel();
+      oModel.loadData(sEndPoint, {}, true, 'GET', true);
+
+      oModel.setSizeLimit(this._iTableSizeLimit);
+      var oView = this.getView();
+      oView.setModel(oModel);
+    },
+
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf cmsfrontend.profile
 */
     onInit: function(oEvent) {
-      /**
-      var oUserDataLocal = {
-            "email": "bluebiz@email.com",
-            "mobile_number": "+10183979233837",
-            "phone_number": "+1283907420357",
-            "skype_id": "bluebiz.info",
-            "description": null,
-            "countries_of_work_experience": "USA",
-            "vendor_name": null,
-            "vendor_country": null,
-            "vendor_constitution_year": null,
-            "vendor_avg_annual_turnover": null,
-            "vendor_number_of_employees": null,
-            "vendor_representative": null,
-            "vendor_scope_of_business": null,
-            "vendor_main_clients": null,
-            "rating": null,
-            "status": null,
-            "cf_name": "BlueBiz Consulting Ltd.",
-            "cf_acronym": "BCL",
-            "cf_country": "USA",
-            "cf_type_of_business": "Development Consulting",
-            "cf_number_of_employees": "24",
-            "cf_avg_annual_turnover": "999,999 USD",
-            "website": "www.bluebiz.com",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut metus in odio finibus lobortis. Pellentesque venenatis velit non metus tristique auctor. Integer et sagittis nunc, non porttitor nisi. Suspendisse sodales efficitur condimentum. Phasellus quis velit posuere, semper nibh vitae, aliquet urna. Praesent porta nec est eget fringilla. Donec et diam mi.",
-            "branches": "Philippines, Canada",
-            "sector_list": "XXXXXXXX XXXXXXXX\nXXXXXXXX XXXXXXXX\nXXXXX",
-            "expertise_list": "XXXXXXXXX XXXXXXXXXX XXXXXXXXX\nXXXXXXXXX XXXXXXXXXX XXXXXXXXX",
-            "sector_ids": [],
-            "expertise_ids": [],
-            "addresses": [],
-            "educations": [],
-            "employments": [],
-            "sectors": [],
-            "expertises": []
-          }; **/
+      // var sUniqueID = this._getSessionData().unique_id;
+      // var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
+      // var oUserData = $.ajax({
+      //        url : sURL,
+      //        type : "GET",
+      //        async: false,
+      //        dataType: 'json',
+      //        contentType : "application/json",
+      //        success : function(oData, textStatus, jqXHR) {
+      //         // console.log("data: ", data);
+      //         // console.log("textStatus: ", textStatus);
+      //         // console.log("jqxhr: ", jqXHR);
+      //         if (!oData.image_url) {
+      //           oData.image_url = "/img/testIMG.jpg";
+      //         }
+      //         return oData;
+      //        },
+      //        error: function(xhr, status)
+      //        {
+      //         // console.log("ERROR POSTING REQUEST");
+      //           // console.log("xhr: ", xhr);
+      //           // console.log("status: ", status);
+      //            return status;
+      //        },
+      // }).responseJSON;
+      //
+      // var oModel = new JSONModel(oUserData);
+      //
+      // this.getView().setModel(oModel);
 
-      var sUniqueID = this._getSessionData().unique_id;
-      var sURL = "https://isdb-cms-api.herokuapp.com/api/v1/users/" + sUniqueID;
-      var oUserData = $.ajax({
-             url : sURL,
-             type : "GET",
-             async: false,
-             dataType: 'json',
-             contentType : "application/json",
-             success : function(oData, textStatus, jqXHR) {
-              // console.log("data: ", data);
-              // console.log("textStatus: ", textStatus);
-              // console.log("jqxhr: ", jqXHR);
-              if (!oData.image_url) {
-                oData.image_url = "/img/testIMG.jpg";
-              }
-              return oData;
-             },
-             error: function(xhr, status)
-             {
-              // console.log("ERROR POSTING REQUEST");
-                // console.log("xhr: ", xhr);
-                // console.log("status: ", status);
-                 return status;
-             },
-      }).responseJSON;
+      var oRouter = UIComponent.getRouterFor(this);
+      oRouter.getRoute('consultingFirmDetail')
+          .attachMatched(this._onRouteMatched, this);
 
-      var oModel = new JSONModel(oUserData);
-
-      this.getView().setModel(oModel);
       this.getView().setModel(new JSONModel(), 'config');
-
       UIComponent.getRouterFor(this)
         .attachTitleChanged(this._onTitleChanged, this);
 
