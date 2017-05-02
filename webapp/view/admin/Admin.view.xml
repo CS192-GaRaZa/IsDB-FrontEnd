@@ -9,262 +9,265 @@
 	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
   >
 
-  <f:SimpleForm
-    title="Admin Panel"
-    editable="false"
-    layout="ResponsiveGridLayout"
-    labelSpanL="12"
-    labelSpanM="12"
-    labelSpanS="12"
-    adjustLabelSpan="false"
-    emptySpanL="0"
-    columnsL="1">
-    <f:content>
-    <Table id="idOpenProjects"
-      inset="false"
-      items="{
-        path: '/open_projects'
-      }">
-      <headerToolbar>
-        <Toolbar>
-          <Title text="Open Projects" level="H2"/>
-          <ToolbarSpacer/>
-          <Button text="Create Project" press="goToCreateProject" type="Emphasized" />
-          <Button text="See all users" press="handleSeeAllUsers" type="Emphasized" />
-        </Toolbar>
-      </headerToolbar>
-      <columns>
-        <Column
-          width="20em">
-          <Text text="Project Name" />
-        </Column>
-        <Column
-          width="8em"
-          minScreenWidth="Tablet"
-          demandPopin="true">
-          <Text text="Location" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true"
-          >
-          <Text text="Estimated Inputs" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true"
-          >
-          <Text text="Selection Method" />
-        </Column>
-        <Column>
-          <Text text="Consultant Type" />
-        </Column>
-        <Column>
-          <Text text="Assignment Type" />
-        </Column>
-        <Column>
-          <Text text="Department" />
-        </Column>
-        <Column>
-          <Text text="Division" />
-        </Column>
-        <Column>
-          <Text text="Budget" />
-        </Column>
-        <Column>
-          <Text text="Deadline" />
-        </Column>
-        <Column>
-          <Text text="EOI" />
-        </Column>
-      </columns>
-      <items>
-        <ColumnListItem>
-          <cells>
-            <Link
-              text="{project_name}"
-              href="{ProductPicUrl}" />
-            <Text
-              text="{location}" />
-            <Text
-              text="{estimated_inputs}" />
-            <Text
-              text="{selection_method}" />
-            <Text
-              text="{consultant_type}" />
-            <Text
-              text="{assignment_type}" />
-            <Text
-              text="{department}" />
-            <Text
-              text="{division}" />
-            <Text
-              text="{budget}" />
-            <Text
-              text="{deadline_for_submission}" />
-            <Link
-              text="See EOI"
-              href="/#/project-eoi/{id}" />
-          </cells>
-        </ColumnListItem>
-      </items>
-    </Table>
-    <Label/>
-    <Table id="idOngoingProjects"
-      inset="false"
-      items="{
-        path: '/ongoing_projects'
-      }">
-      <headerToolbar>
-        <Toolbar>
-          <Title text="Ongoing Projects" level="H2"/>
-        </Toolbar>
-      </headerToolbar>
-      <columns>
-        <Column
-          width="20em">
-          <Text text="Project Name" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true">
-          <Text text="Location" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true"
-          width="8em"
-          >
-          <Text text="Consultant Type" />
-        </Column>
+  <Page>
+    <f:SimpleForm
+      title="Admin Panel"
+      editable="false"
+      layout="ResponsiveGridLayout"
+      labelSpanL="12"
+      labelSpanM="12"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanL="0"
+      columnsL="1">
+      <f:content>
+      <Table id="idOpenProjects"
+        inset="false"
+        items="{
+          path: '/open_projects'
+        }">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="Open Projects" level="H2"/>
+            <ToolbarSpacer/>
+            <Button text="Create Project" press="goToCreateProject" type="Emphasized" />
+            <Button text="See all users" press="handleSeeAllUsers" type="Emphasized" />
+          </Toolbar>
+        </headerToolbar>
+        <columns>
+          <Column
+            width="20em">
+            <Text text="Project Name" />
+          </Column>
+          <Column
+            width="8em"
+            minScreenWidth="Tablet"
+            demandPopin="true">
+            <Text text="Location" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            >
+            <Text text="Estimated Inputs" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            >
+            <Text text="Selection Method" />
+          </Column>
+          <Column>
+            <Text text="Consultant Type" />
+          </Column>
+          <Column>
+            <Text text="Assignment Type" />
+          </Column>
+          <Column>
+            <Text text="Department" />
+          </Column>
+          <Column>
+            <Text text="Division" />
+          </Column>
+          <Column>
+            <Text text="Budget" />
+          </Column>
+          <Column>
+            <Text text="Deadline" />
+          </Column>
+          <Column>
+            <Text text="EOI" />
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <Link
+                text="{project_name}"
+                href="{ProductPicUrl}" />
+              <Text
+                text="{location}" />
+              <Text
+                text="{estimated_inputs}" />
+              <Text
+                text="{selection_method}" />
+              <Text
+                text="{consultant_type}" />
+              <Text
+                text="{assignment_type}" />
+              <Text
+                text="{department}" />
+              <Text
+                text="{division}" />
+              <Text
+                text="{budget}" />
+              <Text
+                text="{deadline_for_submission}" />
+              <Link
+                text="See EOI"
+                href="/#/project-eoi/{id}" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+      <Label/>
+      <Table id="idOngoingProjects"
+        inset="false"
+        items="{
+          path: '/ongoing_projects'
+        }">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="Ongoing Projects" level="H2"/>
+          </Toolbar>
+        </headerToolbar>
+        <columns>
+          <Column
+            width="20em">
+            <Text text="Project Name" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true">
+            <Text text="Location" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            width="8em"
+            >
+            <Text text="Consultant Type" />
+          </Column>
 
-        <Column width="8em">
-          <Text text="Team Leader" />
-        </Column>
-        <Column width="8em">
-          <Text text="Budget" />
-        </Column>
-        <Column width="8em">
-          <Text text="Consultants" />
-        </Column>
-        <Column>
-          <Text text="See Other EOI"></Text>
-        </Column>
-        <Column>
-          <Text text="Actions"></Text>
-        </Column>
-      </columns>
-      <items>
-        <ColumnListItem type="Active">
-          <cells>
-            <Link
-              text="{project_name}"
-              href="{ProductPicUrl}"
-              width="20em" />
-            <Text
-              text="{location}"
-              width="8em"/>
-            <Text
-              text="{consultant_type}"
-              width="8em"/>
-            <Text
-              text="{team_leader}"
-              width="8em"/>
-            <Text
-              text="{budget}"
-              width="8em"/>
-            <Link
-              text="See Consultants"
-              href="/#/accepted-project/{id}"
-              width="8em"/>
-            <Link
-              text="See EOI"
-              href="/#/project-eoi/{id}"
-              width="8em"/>
-            <HBox>
-              <items>
-                <Button text="Done" app:id="{id}" type="Accept" press="projectDone" class="sapUiTinyMarginBeginEnd" />
-              </items>
-            </HBox>
-          </cells>
-        </ColumnListItem>
-      </items>
-    </Table>
-    <Label/>
-    <Table id="idDoneProjects"
-      inset="false"
-      items="{
-        path: '/done_projects'
-      }">
-      <headerToolbar>
-        <Toolbar>
-          <Title text="Done Projects" level="H2"/>
-        </Toolbar>
-      </headerToolbar>
-      <columns>
-        <Column
-          width="20em">
-          <Text text="Project Name" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true">
-          <Text text="Complex" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true">
-          <Text text="Location" />
-        </Column>
-        <Column
-          minScreenWidth="Tablet"
-          demandPopin="true"
-          width="8em"
-          >
-          <Text text="Consultant Type" />
-        </Column>
+          <Column width="8em">
+            <Text text="Team Leader" />
+          </Column>
+          <Column width="8em">
+            <Text text="Budget" />
+          </Column>
+          <Column width="8em">
+            <Text text="Consultants" />
+          </Column>
+          <Column>
+            <Text text="See Other EOI"></Text>
+          </Column>
+          <Column>
+            <Text text="Actions"></Text>
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem type="Active">
+            <cells>
+              <Link
+                text="{project_name}"
+                href="{ProductPicUrl}"
+                width="20em" />
+              <Text
+                text="{location}"
+                width="8em"/>
+              <Text
+                text="{consultant_type}"
+                width="8em"/>
+              <Text
+                text="{team_leader}"
+                width="8em"/>
+              <Text
+                text="{budget}"
+                width="8em"/>
+              <Link
+                text="See Consultants"
+                href="/#/accepted-project/{id}"
+                width="8em"/>
+              <Link
+                text="See EOI"
+                href="/#/project-eoi/{id}"
+                width="8em"/>
+              <HBox>
+                <items>
+                  <Button text="Done" app:id="{id}" type="Accept" press="projectDone" class="sapUiTinyMarginBeginEnd" />
+                </items>
+              </HBox>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+      <Label/>
+      <Table id="idDoneProjects"
+        inset="false"
+        items="{
+          path: '/done_projects'
+        }">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="Done Projects" level="H2"/>
+          </Toolbar>
+        </headerToolbar>
+        <columns>
+          <Column
+            width="20em">
+            <Text text="Project Name" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true">
+            <Text text="Complex" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true">
+            <Text text="Location" />
+          </Column>
+          <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            width="8em"
+            >
+            <Text text="Consultant Type" />
+          </Column>
 
-        <Column width="8em">
-          <Text text="Team Leader" />
-        </Column>
-        <Column width="8em">
-          <Text text="Budget" />
-        </Column>
-        <Column width="8em">
-          <Text text="Consultants" />
-        </Column>
-      </columns>
-      <items>
-        <ColumnListItem>
-          <cells>
-            <Link
-              text="{project_name}"
-              href="{ProductPicUrl}"
-              width="20em" />
-            <Text
-              text="{complex}"
-              width="20em"/>
-            <Text
-              text="{location}"
-              width="5em"/>
+          <Column width="8em">
+            <Text text="Team Leader" />
+          </Column>
+          <Column width="8em">
+            <Text text="Budget" />
+          </Column>
+          <Column width="8em">
+            <Text text="Consultants" />
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <Link
+                text="{project_name}"
+                href="{ProductPicUrl}"
+                width="20em" />
+              <Text
+                text="{complex}"
+                width="20em"/>
+              <Text
+                text="{location}"
+                width="5em"/>
 
-            <Text
-              text="{consultant_type}"
-              width="8em"/>
-            <Text
-              text="{team_leader}"
-              width="8em"/>
-            <Text
-              text="{budget}"
-              width="8em"/>
-            <Link
-              text="See Consultants"
-              href="/#/accepted-project/{id}"
-              width="8em"/>
-          </cells>
-        </ColumnListItem>
-      </items>
-    </Table>
-  </f:content>
-  </f:SimpleForm>
+              <Text
+                text="{consultant_type}"
+                width="8em"/>
+              <Text
+                text="{team_leader}"
+                width="8em"/>
+              <Text
+                text="{budget}"
+                width="8em"/>
+              <Link
+                text="See Consultants"
+                href="/#/accepted-project/{id}"
+                width="8em"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </f:content>
+    </f:SimpleForm>
+  </Page>
+
 </mvc:View>
