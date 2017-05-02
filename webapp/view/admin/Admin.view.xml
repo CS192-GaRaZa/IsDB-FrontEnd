@@ -3,31 +3,23 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
   >
-  <Page>
-    <Panel class="sapUiDemoFlexBoxSizeAdjustments">
-      <FlexBox
-        class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems"
-        alignItems="Start">
-        <items>
 
-          <Text text="Admin Panel"  width="100%" type="Reject" class="sapUiSmallMarginEnd">
-            <layoutData>
-              <FlexItemData growFactor="1" />
-            </layoutData>
-          </Text>
-          <Button text="Create Project" press="goToCreateProject" width="50%" type="Emphasized" >
-            <layoutData>
-              <FlexItemData growFactor="1" />
-            </layoutData>
-          </Button>
-        </items>
-      </FlexBox>
-    </Panel>
-
+  <f:SimpleForm
+    title="Admin Panel"
+    editable="false"
+    layout="ResponsiveGridLayout"
+    labelSpanL="12"
+    labelSpanM="12"
+    labelSpanS="12"
+    adjustLabelSpan="false"
+    emptySpanL="0"
+    columnsL="1">
+    <f:content>
     <Table id="idOpenProjects"
       inset="false"
       items="{
@@ -36,6 +28,9 @@
       <headerToolbar>
         <Toolbar>
           <Title text="Open Projects" level="H2"/>
+          <ToolbarSpacer/>
+          <Button text="Create Project" press="goToCreateProject" type="Emphasized" />
+          <Button text="See all users" press="handleSeeAllUsers" type="Emphasized" />
         </Toolbar>
       </headerToolbar>
       <columns>
@@ -114,7 +109,7 @@
         </ColumnListItem>
       </items>
     </Table>
-
+    <Label/>
     <Table id="idOngoingProjects"
       inset="false"
       items="{
@@ -195,7 +190,7 @@
         </ColumnListItem>
       </items>
     </Table>
-
+    <Label/>
     <Table id="idDoneProjects"
       inset="false"
       items="{
@@ -270,5 +265,6 @@
         </ColumnListItem>
       </items>
     </Table>
-  </Page>
+  </f:content>
+  </f:SimpleForm>
 </mvc:View>

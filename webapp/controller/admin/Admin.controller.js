@@ -88,6 +88,11 @@ sap.ui.define([
 					console.log('errorThrown: ', errorThrown);
 				}
 			});
+    },
+
+    handleSeeAllUsers: function () {
+      UIComponent.getRouterFor(this)
+        .navTo('userList');
     }
   });
 })
