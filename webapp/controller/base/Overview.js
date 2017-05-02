@@ -189,6 +189,14 @@ sap.ui.define([
     onProjectsLinkPress: function () {
       var oRouter = UIComponent.getRouterFor(this);
       oRouter.navTo('projectList');
+    },
+
+    onProjectItemPress: function (oEvent) {
+      var oParams = oEvent.getParameters();
+      var oEOI = oParams.listItem.getBindingContext().getProperty();
+
+      UIComponent.getRouterFor(this)
+        .navTo('projectDetail', { id: oEOI.bank_project.id });
     }
   });
 });

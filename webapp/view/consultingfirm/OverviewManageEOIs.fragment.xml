@@ -9,6 +9,7 @@
     items="{
       path: '/eois'
       }"
+    itemPress="onProjectItemPress"
   >
     <layoutData>
       <l:GridData
@@ -68,7 +69,10 @@
       </Column>
     </columns>
     <items>
-      <ColumnListItem class="sapUiContentPadding">
+      <ColumnListItem
+        class="sapUiContentPadding"
+        type="Active"
+      >
         <cells>
           <ObjectIdentifier title="{bank_project/project_name}" />
           <Text
