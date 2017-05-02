@@ -1,11 +1,13 @@
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
-  'sap/ui/core/UIComponent'
+  'sap/ui/core/UIComponent',
+  'cmsfrontend/model/utils'
 ], function (
   Controller,
   JSONModel,
-  UIComponent
+  UIComponent,
+  utils
 ) {
   "use strict";
   return Controller.extend('cmsfrontend.controller.admin.Admin', {
@@ -54,13 +56,17 @@ sap.ui.define([
       oRouter.navTo('createProject', {}, false);
     },
     projectDone: function (oEvent) {
+      console.log("CLICKED");
       var oButton = oEvent.getSource();
 		  var bpId = oButton.data().id
 
 		  var data = {
 			  id: bpId,
-			  status: 'Done' 
+			  status: 'Done'
 		  };
+
+      console.log(data);
+      console.log(JSON.stringify(data));
 
       $.ajax({
 				url: 'https://isdb-cms-api.herokuapp.com/api/v1/bank_projects/' + bpId,
@@ -68,10 +74,11 @@ sap.ui.define([
 				data: JSON.stringify(data),
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'DuqaP5pUbgNz4UWoc1TY9nEu'
+					"Session-Key": utils.storage.get('token')
 				},
 				success: function(data) {
-					console.log('Successfully rejected');
+          console.log(data);
+					console.log('Successfully done');
 					window.location.replace('/#/admin');
 				},
 				error: function(xhr, status, errorThrown) {

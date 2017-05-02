@@ -5,7 +5,9 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:uxap="sap.uxap"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
 
 	<uxap:ObjectPageLayout
 		id="projectDisplay"
@@ -150,7 +152,9 @@
 										<Label text="" />
 										<Button text="Send EOI"
 											width="50%"
-											press="handleEOIPress"/>
+											press="handleEOIPress"
+                      app:id="{/id}"
+                    />
 									</f:content>
 								</f:SimpleForm>
 							</VBox>

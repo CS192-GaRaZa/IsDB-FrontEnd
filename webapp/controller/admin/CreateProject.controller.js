@@ -49,7 +49,7 @@ sap.ui.define([
 				data: json,
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'euXHdeZRL9UFqkbUpr4yQQ6i'
+					"Session-Key": Utils.storage.get('token')
 				},
 				success: function() {
 					console.log('Success');
@@ -62,6 +62,6 @@ sap.ui.define([
 					console.log('errorThrown: ', errorThrown);
 				}
 			});
-	  }	  
+	  }
   });
 })

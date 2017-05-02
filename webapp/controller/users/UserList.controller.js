@@ -27,6 +27,30 @@ sap.ui.define([
 
   return Controller.extend('cmsfrontend.controller.users.UserList', {
 
+    handleBanPress: function (oEvent) {
+      var oButton = oEvent.getSource();
+      var sId = oButton.data().id;
+
+		  $.ajax({
+				url: 'https://isdb-cms-api.herokuapp.com/api/v1/users/' + sId,
+				method: 'DELETE',
+				contentType: 'application/json',
+				headers: {
+					"Session-Key": utils.storage.get('token')
+				},
+				success: function() {
+					console.log('Success');
+					window.location.replace('/#/admin');
+				},
+				error: function(xhr, status, errorThrown) {
+					console.log('ERROR POSTING REQUEST');
+					console.log('xhr: ', xhr);
+					console.log('status: ', status);
+					console.log('errorThrown: ', errorThrown);
+				}
+			});
+    },
+
     onInit: function () {
       var oModel = new JSONModel({
         query: {

@@ -56,17 +56,17 @@
 					>
 					<Text text="Sector" />
 				</Column>
-				<Column width="8em"> 
+				<Column width="8em">
 					<Text text="Expertise" />
 				</Column>
 				<Column
-					width="15em"> 
+					width="15em">
 					<Text text="Email" />
 				</Column>
-				<Column width="8em"> 
+				<Column width="8em">
 					<Text text="Linkedin" />
 				</Column>
-				<Column width="8em"> 
+				<Column width="8em">
 					<Text text="Mobile Number" />
 				</Column>
 			</columns>
@@ -75,34 +75,36 @@
 					<cells>
 						<Link
 							text="{user/display_name}"
-							href="{user/kind/id}" 
+							class="sapUiSmallMarginTopBottom"
+              press="onUserNamePress"
+              app:id="{user/id}"
+              app:kind="{user/kind}"
+            />
+						<Text
+							text="{user/kind}"
 							class="sapUiSmallMarginTopBottom"/>
 						<Text
-							text="{user/kind}" 
+							text="{user/type}"
 							class="sapUiSmallMarginTopBottom"/>
 						<Text
-							text="{user/type}" 
+							text="{user/sector}"
 							class="sapUiSmallMarginTopBottom"/>
 						<Text
-							text="{user/sector}" 
-							class="sapUiSmallMarginTopBottom"/>
-						<Text
-							text="{user/expertise}" 
+							text="{user/expertise}"
 							class="sapUiSmallMarginTopBottom"/>
 						<Text
 							text="{user/email}"
 							class="sapUiSmallMarginTopBottom" />
 						<Text
-							text="{user/linkedin}" 
+							text="{user/linkedin}"
 							class="sapUiSmallMarginTopBottom"/>
 						<Text
-							text="{user/mobile_number}" 
+							text="{user/mobile_number}"
 							class="sapUiSmallMarginTopBottom"/>
 					</cells>
 				</ColumnListItem>
 			</items>
 		</Table>
 	</Page>
-	
-</mvc:View>
 
+</mvc:View>

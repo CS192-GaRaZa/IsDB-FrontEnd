@@ -231,18 +231,22 @@ sap.ui.define([
       });
     },
 
-    handleEOIPress : function () {
+    handleEOIPress : function (oEvent) {
 
       var oView = this.getView();
       var oModel = oView.getModel();
+      var oButton = oEvent.getSource();
+      var sId = oButton.data().id;
+
+      console.log(sId);
 
 
-
-      var oSessionData = Cookies.getJSON("isdb");
       var send = {
-        "bank_project_id": oModel.getData().id,
+        "bank_project_id": sId,
         "status": "Pending"
       };
+
+      console.log(send);
 
       $.ajax({
         url : "http://isdb-cms-api.herokuapp.com/api/v1/eois",

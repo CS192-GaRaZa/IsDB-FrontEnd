@@ -156,6 +156,7 @@
           "pattern": "project-eoi/:id:",
           "name": "projectEOI",
           "target": "projectEOI"
+        },
         {
           "pattern": "accepted-project/:id:",
           "name": "acceptedProject",

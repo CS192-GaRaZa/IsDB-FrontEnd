@@ -132,10 +132,6 @@
 				<Label text="Estimated Project Cost" labelFor="a"/>
 				<Input value="{/estimated_cost}" />
 
-				<Label text="Budget" labelFor="a"/>
-				<Input value="{/budget}" />
-
-
 				<Label text="Selection Committee Members" labelFor="" design="Bold" />
 				<TextArea value="{/selection_committee_members}" rows="8" />
 			</f:content>

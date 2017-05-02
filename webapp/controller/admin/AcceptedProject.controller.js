@@ -1,11 +1,13 @@
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/ui/model/json/JSONModel',
-  'sap/ui/core/UIComponent'
+  'sap/ui/core/UIComponent',
+  'cmsfrontend/model/utils'
 ], function (
   Controller,
   JSONModel,
-  UIComponent
+  UIComponent,
+  utils
 ) {
   "use strict";
   return Controller.extend('cmsfrontend.controller.admin.AcceptedProject', {
@@ -20,7 +22,7 @@ sap.ui.define([
 				method: 'GET',
 				contentType: 'application/json',
 				headers: {
-					"Session-Key": 'ZR9VnnXHf7JGdj13PNxydxCa'
+					"Session-Key": utils.storage.get('token')
 				},
 				success: function(data) {
 					console.log('Success');
@@ -41,6 +43,25 @@ sap.ui.define([
 	  onInit: function () {
 		  console.log('In AcceptedProject.controller.js')
 		  UIComponent.getRouterFor(this).getRoute('acceptedProject').attachMatched(this.onRouteMatched, this);
-	  }
+	  },
+
+    onUserNamePress: function (oEvent) {
+      var oLink = oEvent.getSource();
+      var sId = oLink.data().id;
+      var sKind = oLink.data().kind;
+      console.log(sId + " " + sKind);
+
+      var oRouter = UIComponent.getRouterFor(this);
+      var sRoute;
+      if (sKind === 'consultant') {
+        sRoute = 'consultantDetail';
+      } else if (sKind === 'consulting_firm') {
+        sRoute = 'consultingFirmDetail';
+      } else if (sKind === 'vendor') {
+        sRoute = 'vendorDetail';
+      }
+
+      oRouter.navTo(sRoute, { id: sId, subsection: 'profile' });
+    }
   });
 })
