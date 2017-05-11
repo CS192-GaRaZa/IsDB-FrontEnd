@@ -4,6 +4,7 @@ sap.ui.define([
   'sap/ui/model/json/JSONModel',
   'sap/ui/core/UIComponent',
   'sap/ui/core/routing/History',
+  'sap/m/MessageToast',
   'cmsfrontend/model/type/CustomDate',
   'cmsfrontend/model/formatter',
   'cmsfrontend/model/constants',
@@ -14,6 +15,7 @@ sap.ui.define([
   JSONModel,
   UIComponent,
   History,
+  MessageToast,
   CustomDate,
   formatter,
   constants,
@@ -257,11 +259,13 @@ sap.ui.define([
         success : function(data, textStatus, jqXHR) {
           console.log("SUCCESS");
           console.log("data: ", data);
+          MessageToast.show('Successfully sent EOI');
         },
         error: function(xhr, status) {
           console.log("ERROR POSTING REQUEST");
           console.log("xhr: ", xhr);
           console.log("status: ", status);
+          MessageToast.show('Failed to send EOI');
         },
       });
     },
