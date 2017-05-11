@@ -27,8 +27,15 @@
                       <Input
                           id="idGivenName"
                           type="Text"
-                          value="{/user/given_name}"
+                          value="{
+                            path: '/user/given_name',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {
+                              minLength: 1
+                            }
+                          }"
                           placeholder="{i18n>GivenName}"
+                          valueStateText="Given name must not be empty."
                           />
                     </f:fields>
                   </f:FormElement>
@@ -37,8 +44,15 @@
                       <Input
                           id="idSurname"
                           type="Text"
-                          value="{/user/surname}"
+                          value="{
+                            path: '/user/surname',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {
+                              minLength: 1
+                            }
+                          }"
                           placeholder="{i18n>Surname}"
+                          valueStateText="Surname must not be empty."
                           />
                     </f:fields>
                   </f:FormElement>
@@ -46,9 +60,13 @@
                     <f:fields>
                       <Input
                           id="idEmail"
-                          type="Text"
-                          value="{/user/email}"
+                          type="Email"
+                          value="{
+                            path: '/user/email',
+                            type: '.type.Email'
+                          }"
                           placeholder="{i18n>Email}"
+                          valueStateText="Email must be a valid email address."
                           />
                     </f:fields>
                   </f:FormElement>
@@ -57,8 +75,15 @@
                       <Input
                           id="idPassword"
                           type="Password"
-                          value="{/user/password}"
+                          value="{
+                            path: '/user/password',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {
+                              minLength: 6
+                            }
+                          }"
                           placeholder="{i18n>Password}"
+                          valueStateText="Password must be longer than 6 characters."
                           />
                     </f:fields>
                   </f:FormElement>
