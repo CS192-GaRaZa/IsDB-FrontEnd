@@ -255,6 +255,39 @@ sap.ui.define([
       });
     },
 
+    handleDeletePressTraining : function (oEvent) {
+      var oList = oEvent.getSource();
+      var oItem = oEvent.getParameter("listItem");
+      var sPath = oItem.getBindingContext().getPath();
+
+      // since sPath returns /EmploymentData/{index} I use regEx to remove all non-integers
+      var iIndex = sPath.replace ( /[^\d.]/g, '' );
+
+      var iId = this.getView().getModel().getData().trainings[iIndex].id
+
+      this.getView().getModel().getData().trainings.splice(iIndex, 1);
+      this.getView().getModel().refresh();
+
+      $.ajax({
+        url : "https://isdb-cms-api.herokuapp.com/api/v1/trainings/" + iId,
+        type : "DELETE",
+        headers:{
+         "Session-Key": Cookies.getJSON("isdb").token
+        },
+        contentType : "application/json",
+        success : function(data, textStatus, jqXHR) {
+          response = data;
+          console.log("SUCCESS");
+          console.log("data: ", data);
+        },
+        error: function(xhr, status) {
+          console.log("ERROR POSTING REQUEST");
+          console.log("xhr: ", xhr);
+          console.log("status: ", status);
+        },
+      });
+    },
+
 
     handleDeletePressAssignment : function (oEvent) {
       var oList = oEvent.getSource();
@@ -551,6 +584,19 @@ sap.ui.define([
       };
 
       this.getView().getModel().getData().assignments.push(emptyRow);
+      this.getView().getModel().refresh();
+    },
+
+    // adds an empty row to the training table
+    addRowTraining : function() {
+      var emptyRow = {
+        name: "",
+        provider: "",
+        date_of_completion: "",
+        country: "",
+      };
+
+      this.getView().getModel().getData().trainings.push(emptyRow);
       this.getView().getModel().refresh();
     },
 

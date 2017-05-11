@@ -21,7 +21,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-					<Button id="edit" text="Edit" press="handleEditPress" />
+					<Button id="edit" text="Edit" press="handleEditPress" type="Emphasized" width="15%"/>
 					<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
 					<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
 				</contentRight>

@@ -222,11 +222,59 @@
 										<core:Title />
 										<Label text="Membership/License" />
 										<Text text="{/membership_license}" />
-										<Label text="Trainings" />
-										<Text text="{/trainings}" />
 										<core:Title />
 										<Label text="Languages" />
 										<Text text="{/languages}" />
+									</f:content>
+								</f:SimpleForm>
+
+								<Label />
+
+								<f:SimpleForm
+									title="Trainings"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="1"
+									singleContainerFullSize="false">
+									<f:content>
+										<Table
+											inset="false"
+											items="{/trainings}">
+											<headerToolbar>
+												<Toolbar>
+													<ToolbarSpacer />
+												</Toolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="auto">
+													<Text text="Training Program" />
+												</Column>
+												<Column>
+													<Text text="Institution" />
+												</Column>
+												<Column>
+													<Text text="Country" />
+												</Column>
+												<Column>
+													<Text text="Date of Completion" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="{name}" />
+														<Text text="{provider}" />
+														<Text text="{country}" />
+														<Text text="{date_of_completion}" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
 									</f:content>
 								</f:SimpleForm>
 
