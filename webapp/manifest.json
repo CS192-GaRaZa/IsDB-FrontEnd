@@ -219,7 +219,7 @@
           "viewName": "admin.Admin"
         },
         "createProject": {
-          "viewName": "admin.createProject"
+          "viewName": "admin.CreateProject"
         },
         "userList": {
           "viewName": "users.UserList"
