@@ -323,15 +323,6 @@
 												<l:GridData span="L8 M8 S8" />
 											</layoutData>
 										</TextArea>
-										<Label text="Trainings" />
-										<TextArea
-											width="100%"
-											growing="true"
-											value="{/trainings}">
-											<layoutData>
-												<l:GridData span="L8 M8 S8" />
-											</layoutData>
-										</TextArea>
 										<core:Title />
 										<Label text="Languages" />
 										<TextArea
@@ -342,6 +333,70 @@
 												<l:GridData span="L8 M8 S8" />
 											</layoutData>
 										</TextArea>
+									</f:content>
+								</f:SimpleForm>
+
+								<Label />
+
+								<f:SimpleForm
+									title="Trainings"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanL="0"
+									columnsL="1"
+									singleContainerFullSize="false">
+									<f:content>
+										<Table
+											inset="false"
+											items="{/trainings}"
+											mode="Delete"
+											delete="handleDeletePressTraining">
+											<headerToolbar>
+												<Toolbar>
+													<ToolbarSpacer />
+													<Button
+														text="Add Entry"
+														press="addRowTraining" />
+												</Toolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="auto">
+													<Text text="Training Program" />
+												</Column>
+												<Column>
+													<Text text="Institution" />
+												</Column>
+												<Column>
+													<Text text="Country" />
+												</Column>
+												<Column>
+													<Text text="Date of Completion" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Input value="{name}" />
+														<Input value="{provider}" />
+														<Select
+														  id="trainingCountrySelect"
+									                      value="{country}"
+									                      change="handleEducationCountryChange"
+									                      selectedKey="{country}"
+									                      items="{countryModel>/}">
+									                      <items>
+									                        <core:Item key="{countryModel>name}" text="{countryModel>name}" />
+									                      </items>
+									                    </Select>
+														<Input value="{date_of_completion}" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
 									</f:content>
 								</f:SimpleForm>
 
