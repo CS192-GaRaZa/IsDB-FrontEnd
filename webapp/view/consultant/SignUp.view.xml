@@ -34,8 +34,8 @@
                               minLength: 1
                             }
                           }"
-                          placeholder="{i18n>GivenName}"
                           valueStateText="Given name must not be empty."
+                          placeholder="{i18n>GivenName}"
                           />
                     </f:fields>
                   </f:FormElement>

@@ -21,6 +21,7 @@ sap.ui.define([
     },
 
     getSignUpInputs: function () {
+      var oView = this.getView();
       return [
         oView.byId('idGivenName'),
         oView.byId('idSurname'),

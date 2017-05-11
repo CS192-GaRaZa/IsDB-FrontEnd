@@ -1,15 +1,14 @@
 sap.ui.define([
-  'sap/ui/core/mvc/Controller',
-  "sap/ui/model/json/JSONModel"
+  'cmsfrontend/controller/base/SignUp',
+  'sap/ui/model/json/JSONModel'
 ], function LoginController(
-  Controller,
+  SignUp,
   JSONModel
 ) {
   'use strict';
-  return Controller.extend('cmsfrontend.controller.vendor.SignUp', {
-
-    onInit: function onInit() {
-      var oModel = new JSONModel({
+  return SignUp.extend('cmsfrontend.controller.vendor.SignUp', {
+    getSignUpModel: function () {
+      return new JSONModel({
         "user": {
           "vendor_name": "",
           "email": "",
@@ -18,50 +17,16 @@ sap.ui.define([
           "role": "vendor"
         }
       });
-      this.getView().setModel(oModel);
     },
 
-    onPressConfirm: function onPressConfirm() {
-      var _this = this;
-      var oModel = this.getView().getModel();
-
-      $.ajax({
-        url: 'https://isdb-cms-api.herokuapp.com/api/v1/users/',
-        method: 'POST',
-        data: oModel.getJSON(),
-        contentType: 'application/json',
-        success: _this._onSuccess.bind(_this),
-        error: function(xhr, status, errorThrown) {
-          console.log('ERROR POSTING REQUEST');
-          console.log('xhr: ', xhr);
-          console.log('status: ', status);
-          console.log('errorThrown: ', errorThrown);
-        }
-      });
-    },
-
-    _onSuccess: function _onSuccess(data, textStatus, jqXHR) {
-      var _this = this;
+    getSignUpInputs: function () {
       var oView = this.getView();
-      var oDialog = oView.byId("idAccountCreated");
-
-      if (!oDialog) {
-        var oFragmentController = {
-          onPressOk: function onPressOk() {
-            oDialog.close();
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(_this);
-            oRouter.navTo("login");
-          }
-        };
-
-        oDialog = sap.ui.xmlfragment(oView.getId(),
-            "cmsfrontend.view.fragments.AccountCreated",
-            oFragmentController);
-        oView.addDependent(oDialog);
-      }
-
-      oDialog.open();
+      return [
+        oView.byId('idVendorName'),
+        oView.byId('idEmail'),
+        oView.byId('idPassword')
+      ];
     }
-
   });
 });
+

@@ -27,7 +27,14 @@
                       <Input
                           id="idVendorName"
                           type="Text"
-                          value="{/user/vendor_name}"
+                          value="{
+                            path: '/user/vendor_name',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {
+                              minLength: 1
+                            }
+                          }"
+                          valueStateText="Name must not be empty."
                           placeholder="{i18n>VendorName}"
                           />
                     </f:fields>
@@ -37,7 +44,11 @@
                       <Input
                           id="idEmail"
                           type="Text"
-                          value="{/user/email}"
+                          value="{
+                            path: '/user/email',
+                            type: '.type.Email'
+                          }"
+                          valueStateText="Email must be a valid email address."
                           placeholder="{i18n>Email}"
                           />
                     </f:fields>
@@ -47,7 +58,14 @@
                       <Input
                           id="idPassword"
                           type="Password"
-                          value="{/user/password}"
+                          value="{
+                            path: '/user/password',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {
+                              minLength: 6
+                            }
+                          }"
+                          valueStateText="Password must be longer than 6 characters."
                           placeholder="{i18n>Password}"
                           />
                     </f:fields>
